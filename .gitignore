@@ -17,8 +17,9 @@
 *.lof
 *.lot
 *.maf
-*.mtc
-*.mtc1
+*.mtc*
 *.out
 *.synctex.gz
 *.zip
+*.nlo
+*.brf
