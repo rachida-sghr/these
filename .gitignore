@@ -23,4 +23,5 @@
 *.zip
 *.nlo
 *.brf
-manuscrit/These.pdf
+build/
+These.pdf
