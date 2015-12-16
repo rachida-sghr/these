@@ -15,25 +15,53 @@ et entre des organisations.~"
 Nous adoptons cette définition car elle a l'avantage de ne pas réduire le SI 
 d'une organisation à son système informatique. Ce dernier est constitué de 
 l'ensemble du patrimoine matériel (hardware) et applicatif (software) de la dite 
-organisation et a pour objectif d'automatiser le traitement de l'information. 
-Ainsi, le SI comprend le système informatique mais aussi des ressources humaines 
-(partenaires, personnel, etc.) et immatérielles (procédures de gestion, 
-savoir-faire métier, etc.).
+organisation et a pour objectif d'automatiser le traitement de l'information. Nous adoptons l'acronyme IT (\textit{Information Technologie}) pour le différencier du SI.
+
+On suppose souvent que tout les SI sont totalement informatisés et c'est une des raisons qui amène à confondre SI et IT. Cependant, le SI comprend le système non seulement le informatique mais aussi des ressources humaines (partenaires, personnel, etc.) et immatérielles (procédures de gestion, savoir-faire métier, etc.).
+
+
 
 \textbf{Architecture d'Entreprise  (AE)}
 
-Selon Scott Bernard, une entreprise est une organisation ou une sous-partie d'une organisation qui poursuit des objectifs communs, en s'appuyant sur les mêmes processus et en utilisant les mêmes ressources. Une entreprise peut être publique ou privée, avoir ou pas un but lucratif. 
+Selon Scott Bernard \cite{bernard2012introduction}, une entreprise est une 
+organisation ou une sous-partie d'une organisation qui poursuit des objectifs 
+communs, en s'appuyant sur les mêmes processus et en utilisant les mêmes 
+ressources. Une entreprise peut être publique ou privée, avoir ou pas un but 
+lucratif. 
 
-Dans ce contexte, l'Architecture d'Entreprise est une discipline qui a pour vocation de décrire une telle organisation en offrant une vue générale et homogène de son métier, de son patrimoine applicatif et de infrastructure technique ainsi que leur évolution pour en faciliter l'analyse par biais d'un ensemble cohérents de principes, méthodes et modèles \cite{lankhorst2009enterprise}.
+Dans ce contexte, l'Architecture d'Entreprise est une discipline qui a pour 
+vocation de décrire une telle organisation en offrant une vue générale et 
+homogène de son métier, de son patrimoine applicatif et de infrastructure 
+technique ainsi que leur évolution pour en faciliter l'analyse par biais d'un 
+ensemble cohérents de principes, méthodes et modèles 
+\cite{lankhorst2009enterprise}.
 
-Dans la littérature, il existe une multitude de définitions de l'AE émanant du monde académique mais aussi industriel. Néanmoins, aucune définition n'a été universellement adoptée \cite{mentz2012comparison} \cite{ranganathan2005enterprise}. Ce fait est certainement du à la nature intrinsèque de l'AE. En effet, cette dernière est régie par un ensemble de préceptes et de bonnes pratiques que chacun reste libre d'adapter à son propre besoin. C'est ce qui a amené Dankova à classifier les définitions existantes selon l'aspect sur lequel leurs auteurs décident de mettre l'accent. Il en ressort quatre catégories de définition : 
+Par analogie avec l'architecture de bâtiment, construire une maison en procédant 
+chambre par chambre sans plan d'architecture général peut mener à un résultat 
+peu probant. Il en est de même pour le développement d'une organisation sans une 
+architecture globale de référence, entrainant ainsi une duplication des 
+ressources et donc un manque d'efficacité \cite{bernard2012introduction}.
+
+Dans la littérature, il existe une multitude de définitions de l'AE émanant du 
+monde académique mais aussi industriel. Néanmoins, aucune définition n'a été 
+universellement adoptée \cite{mentz2012comparison} 
+\cite{ranganathan2005enterprise}. Ce fait est certainement du à la nature 
+intrinsèque de l'AE. En effet, cette dernière est régie par un ensemble de 
+préceptes et de bonnes pratiques que chacun reste libre d'adapter à son propre 
+besoin. C'est ce qui a amené Dankova à classifier les définitions existantes 
+selon l'aspect sur lequel leurs auteurs décident de mettre l'accent. Il en 
+ressort quatre catégories de définition : 
 \begin{itemize}
 \item Planification et conception
 
-L'AE représente un plan descriptif de la structure d'une organisation avec ses différents composants et les relations entre ces composants. La but de ce plan étant de trouver le moyen le plus efficace pour que l'entreprise  son objectif.
+L'AE représente un plan descriptif de la structure d'une organisation avec ses 
+différents composants et les relations entre ces composants. La but de ce plan 
+étant de trouver le moyen le plus efficace pour que l'entreprise  son objectif.
 \item Planification et conception
 
-L'AE est conçue comme un ensemble de principes, de règles et de modèles que doit respecter l'implémentation de l'entreprise ne partant du métier jusqu'à l'infrastructure technique.
+L'AE est conçue comme un ensemble de principes, de règles et de modèles que doit 
+respecter l'implémentation de l'entreprise ne partant du métier jusqu'à 
+l'infrastructure technique.
 \item ICT
 
 \textcolor{red}{to do}
@@ -43,34 +71,37 @@ L'AE est conçue comme un ensemble de principes, de règles et de modèles que d
 \end{itemize}
 
 
-Cependant, cette classification révèle que le terme AE peut prêter à confusion car il est à la fois utilisé pour désigner :
+Cependant, cette classification révèle que le terme AE peut prêter à confusion 
+car il est à la fois utilisé pour désigner :
 \begin{itemize}
-\item l'activité de conception d'une architecture i.e. la description des éléments composant l'organisation en question et leurs relations mais aussi 
+\item l'activité de conception d'une architecture i.e. la description des 
+éléments composant l'organisation en question et leurs relations mais aussi 
 \item l'ensemble des artefacts résultant de cette activité.
 \end{itemize}
 
-Pour éviter toute confusion, nous désignons l'activité de conception par le terme Architecture d'Entreprise et résultat de cette activité comme l'architecture de l'entreprise.
+Pour éviter toute confusion, nous désignons l'activité de conception par le 
+terme Architecture d'Entreprise et résultat de cette activité comme 
+l'architecture de l'entreprise.
 
 \textcolor{red}{Cette partie est encore un sacré chantier...}
 
 
-\subsection{De la gestion du patrimoine applicatif vers la stratégie 
-d'entreprise}
+\subsection{De l'architecture IT vers l'Architecture d'Entreprise}
 
-L'AE trouve son origine dans les travaux de Zachman \cite{zachman1987framework} 
-dans lesquels il propose un cadre d'architecture pour les systèmes applicatifs.
-D'après \cite{bernard2012introduction}, le terme Architecture d'Entreprise a 
-fait sa première apparition dans le livre de Steven Spewak intitulé "Enterprise 
-Archietcture Planning : developing a blueprint for data, applications and 
-technology" \cite{spewak1993enterprise}.
+L'origine de l'EA\footnote{D'après Scott Bernard \cite{bernard2012introduction}, le terme Architecture d'Entreprise a fait sa première apparition dans le livre de Steven Spewak intitulé "Enterprise Archietcture Planning : developing a blueprint for data, applications and technology" \cite{spewak1993enterprise}.} remonte au travaux de Zachman qui est souvent considéré comme le père de l'AE. Dans ces travaux précurseurs, il propose un cadre d'architecture pour l'IT \cite{zachman1987framework}.
 
-Initialement, l'Architecture d'Entreprise (AE) a été conçue pour optimiser la 
+Ainsi, l'Architecture d'Entreprise (AE) a initialement été conçue pour optimiser la 
 gestion du patrimoine applicatif et de l'infrastructure technique d'une 
-entreprise \cite{kappelman2008enterprise}. Ainsi, à  ses débuts, l'AE se 
+entreprise \cite{kappelman2008enterprise}. À ses débuts, l'AE se 
 focalise sur les artefacts liés aux technologies de l'information comme les 
-plateformes applicatives, les logiciels et les processus applicatifs, dans 
-l'optique d'une gestion plus efficace et d'un meilleur retour sur investissement 
+plateformes et les processus applicatifs, les équipements informatiques, les bases de données et les réseaux de télécommunications dans l'optique d'une gestion plus efficace et d'un meilleur retour sur investissement 
 \cite{winter2006essential}. 
+
+Cependant, le rôle de plus en plus prégnants de l'IT et son impact sur le c\oe{}ur de métier des organisations ainsi que l'accroissement de sa complexité \cite{ranganathan2005enterprise} ont fait de l'architecture de l'IT d'une entreprise une problématique inhérente à l'architecture de l'ensemble de l'entreprise. Ainsi, l'AE a commencé à intégrer des aspects métier tels que les objectifs de l'organisation, les processus métier, les indicateurs de performances \cite{winter2006essential}. En intégrant ainsi des problématiques métier, L'AE ne relève plus de l'architecture IT mais de l'architecture du SI dans son ensemble.
+
+Pour Scott Bernard, l'AE doit même aller plus loin en intégrant les aspects concernant la stratégie de l'entreprise \cite{bernard2012introduction}. L'AE devient ainsi un instrument pour profiter pleinement de l'ensemble des ressources de l'entreprise (métier, IT, humaines, etc.). Pour Schott Bernand, le terme "~entreprise~" implique donc une vue stratégique de haut niveau de l'organisation dans son ensemble. Quand au terme "~architecture~", il implique la mise en place d'une cadre structuré pour l'analyse, le planning, et le développement de toutes les ressources dont dispose cette organisation.  
+
+  
 
 
 
@@ -643,6 +674,7 @@ de la transformation.
 
 
  
+
 
 
 
