@@ -2,8 +2,8 @@
 
 all: These.pdf
 	[ -d build ] || mkdir build
-	latexmk -cd manuscrit/These.tex -output-directory=../build/
-	mv build/These.pdf .
+	latexmk -cd manuscrit/main.tex -output-directory=../build/
+	mv build/main.pdf these.pdf
 
 clean:
 	rm -rf build
