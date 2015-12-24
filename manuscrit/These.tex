@@ -1,12 +1,20 @@
-\documentclass[a4paper,11pt,twoside]{StyleThese}
+\documentclass[a4paper,11pt,twoside]{book}
+\usepackage[utf8]{inputenc}
+\usepackage{color}
+\usepackage{graphicx}
+\usepackage{amsthm}
+% Evite les erreurs de justification
+% http://tex.stackexchange.com/questions/174903/justified-text-extending-beyond-margin
+\usepackage{microtype}
+\usepackage[french]{babel}
 
-\include{formatAndDefs}
+\newtheorem{definition}{Definition}
 
 \begin{document}
 
-%\include{TitlePage}
+\include{TitlePage}
 
-\dominitoc
+% \dominitoc
 
 \pagenumbering{roman}
 
@@ -26,7 +34,7 @@ A faire en dernier :-)
 
 \include{Annexe1}
 
-\bibliographystyle{StyleThese}
+\bibliographystyle{plain}
 \bibliography{These}
 
 
