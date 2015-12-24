@@ -1,0 +1,25 @@
+\documentclass[a4paper,11pt,twoside]{book}
+\usepackage[utf8]{inputenc}
+\usepackage{color}
+\usepackage{graphicx}
+\usepackage{amsthm}
+% Evite les erreurs de justification
+% http://tex.stackexchange.com/questions/174903/justified-text-extending-beyond-margin
+\usepackage{microtype}
+\usepackage[french]{babel}
+
+\newtheorem{definition}{Definition}
+
+\begin{document}
+    \include{title}
+    \cleardoublepage
+    \section*{Remerciements}
+    A faire en dernier :-)
+    \tableofcontents
+    \mainmatter
+    \include{chapter1}
+    \appendix
+    \include{annexe1}
+    \bibliographystyle{plain}
+    \bibliography{bibliography}
+\end{document}

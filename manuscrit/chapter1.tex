@@ -109,7 +109,7 @@ Integrating} & \textbf{enterprise environment} \\
 
 \begin{figure}[!htbp]
  \begin{center}
-   \includegraphics[width=1\textwidth]{Chapitre1/ea_schools.png}
+   \includegraphics[width=1\textwidth]{images/Chapitre1/ea_schools.png}
  \end{center}
  \caption{Écoles de pensée de l'architecture d'Entreprise 
 \protect\cite{lapalme2012three} - FIGURE À TRADUIRE !}
@@ -302,14 +302,14 @@ en est ainsi de la norme IEEE-1471(ref), du standard RM-ODP (réf) (Reference
 Model of Open Distributed Processing) ou encore du standard MDA (Model Driven 
 Architecture) (réf).
 
-Pour la norme IEEE-1471 les concepts de vue et de points de vue sont essentiels. 
+Pour la norme IEEE\-1471 les concepts de vue et de points de vue sont essentiels. 
 Une vue est définie comme étant une représentation du système selon une certaine 
 perspective à laquelle est associée un ensemble de préoccupations. Les vues 
 permettent ainsi de séparer les préoccupations des différentes parties 
 prenantes. Un point de vue est quand un lui un template pour la création de 
 vues. Il formalise les objectifs des parties prenantes concernées par la vue 
 ainsi que les techniques qui permettent de la créer et de l'analyser. Pour 
-définir un point de vue, la norme IEEE-1471 exigent de spécifier les attributs 
+définir un point de vue, la norme IEEE\-1471 exigent de spécifier les attributs 
 suivant :
 \begin{itemize}
 \item le nom du point de vue
@@ -445,11 +445,11 @@ modèle. En nous appuyant sur les définitions données dans les travaux
 \cite{seidewitz2003models}, nous adoptons la définition suivante du terme modèle 
 :
 
-\begin{theorem}
+\begin{definition}
 Un modèle est une abstraction d'un système, selon le bon point de vue, qui 
 permet de répondre à des questions prédéfinies sur ce système en lieu et place 
 de celui-ci.
-\end{theorem}
+\end{definition}
 
 De cette définition découle la première relation fondamentale de l'IDM qui lie 
 le modèle et le système qu'il représente. Celle-ci est nommée 
@@ -460,7 +460,7 @@ le modèle et le système qu'il représente. Celle-ci est nommée
 
 \begin{figure}[!htbp]
  \begin{center}
-  \includegraphics[width=1\textwidth]{Chapitre1/favresystememodele.png}
+  \includegraphics[width=1\textwidth]{images/Chapitre1/favresystememodele.png}
  \end{center}
  \caption{Relation entre système et modèle \protect\cite{favre2006ingenierie}}
  \label{fig:systemModele}
@@ -486,10 +486,10 @@ Il existe plusieurs définitions de la notion de métamodèle dans la littératu
 Cependant la définition suivante est communément admise 
 \cite{bezivin2004rapport}.
 
-\begin{theorem}
+\begin{definition}
 Un métamodèle est un modèle du langage de modélisation qui sert à exprimer les 
 modèles.
-\end{theorem}
+\end{definition}
 Une autre définition courante mais erronée de la notion de métamodèle suppose 
 qu'un métamodèle est un modèle d'un modèle. La figure~\ref{fig:modelofmodel} 
 reprend l'exemple de la cartographie évoquée plus haut. Nous appliquons 
@@ -501,7 +501,7 @@ n'est donc pas un modèle d'un modèle.
 
 \begin{figure}[!htbp]
  \begin{center}
-  \includegraphics[width=1\textwidth]{Chapitre1/modelofmodel.png}
+  \includegraphics[width=1\textwidth]{images/Chapitre1/modelofmodel.png}
  \end{center}
  \caption{Modèle de modèle selon l'exemple de la cartographie 
 \protect\cite{favre2006ingenierie}}
@@ -518,7 +518,7 @@ une carte de la France. En effet, pour être lisible, la carte doit être confor
 
 \begin{figure}[!htbp]
  \begin{center}
-  \includegraphics[width=1\textwidth]{Chapitre1/cartecompleteIDM.png}
+  \includegraphics[width=1\textwidth]{images/Chapitre1/cartecompleteIDM.png}
  \end{center}
  \caption{Relations entre système, modèles, métamodèle et langage de 
 modélisation \protect\cite{favre2006ingenierie}}
@@ -552,11 +552,11 @@ d'abstraction : au niveau d'un métamodèle auquel elle doit se conformer.
 transformation est une opération qui peut avoir en entrée un ou plusieurs 
 modèles source et en sortie un ou plusieurs modèles cible~: 
 
-\begin{theorem}
+\begin{definition}
 Une transformation génère automatiquement un ou plusieurs modèles cible à partir 
 d'un ou plusieurs modèles source, selon une description établie de la 
 transformation. 
-\end{theorem}
+\end{definition}
 
 C'est cette dernière définition que nous allons adopter dans ce document. Par 
 ailleurs, notons que, si les métamodèles source et cible sont différents, la 
@@ -580,17 +580,17 @@ Un moteur de transformation exécute ou interprète la description. Il applique
 donc la description aux modèles source pour produire les modèles cible en 
 suivant les étapes ci-dessous \cite{tratt2005model}~:
 
-\begin{bulletList}
+\begin{itemize}
 \item Identifier l'élément du ou des modèles source à transformer.
 \item Pour chaque élément identifié, produire l'élément cible qui lui est 
 associé dans le ou les modèles cible.
 \item Produire une trace de la transformation qui lie les éléments du ou des 
 modèles cibles aux éléments du ou des modèles source.
-\end{bulletList}
+\end{itemize}
 
 \begin{figure}[!htbp]
  \begin{center}
-   \includegraphics[width=0.7\textwidth]{Chapitre1/composanttransfo.png}
+   \includegraphics[width=0.7\textwidth]{images/Chapitre1/composanttransfo.png}
  \end{center}
  \caption{Composants d'une transformation de modèle}
  \label{fig:composantTransfo}
@@ -664,7 +664,7 @@ Les deux modèles à composer peuvent aussi présenter des concepts en commun. D
 techniques existent pour composer des modèles, que nous illustrons dans la 
 figure \ref{fig:compoExemple}~:
 
-\begin{bulletList}
+\begin{itemize}
 \item La première technique consiste à les fusionner. Dans ce cas, le modèle 
 final résultant de la composition doit contenir toutes les informations issues 
 des modèles initiaux, sans duplication des informations communes 
@@ -681,7 +681,7 @@ correspondances entre les éléments qui représentent un même concept. Un
 métamodèle générique est créé pour définir les correspondances qui sont donc 
 modélisées dans le modèle final. On y retrouve donc les éléments en commun 
 dupliqués mais liés par un lien de correspondance. 
-\end{bulletList}
+\end{itemize}
 
 Il est à noter que le modèle issu du tissage de deux modèles $M_{A}$ et $M_{B}$ 
 peut être utilisé comme modèle intermédiaire que l'on note $M_{T}$ pour la 
@@ -692,7 +692,7 @@ composition semi-automatique de modèles.
 
 \begin{figure}[!htbp]
  \begin{center}
-  \includegraphics[width=1\textwidth]{Chapitre1/compoExemple.png}
+  \includegraphics[width=1\textwidth]{images/Chapitre1/compoExemple.png}
  \end{center}
  \caption{Exemple de composition de deux modèles}
  \label{fig:compoExemple}
@@ -762,7 +762,7 @@ transformation, etc. \cite{czarnecki2006feature}.
 
 \cite{blanc2011mda} retient trois grandes catégories d'approches~:
 
-\begin{bulletList}
+\begin{itemize}
 \item Par programmation
 
 Les modèles offrent une interface qui permet d'écrire les transformations dans 
@@ -799,11 +799,11 @@ ainsi la vision unificatrice de l'IDM à travers le paradigme du « tout est
 modèle » \cite{bezivin2005unification}. Le langage de transformation ATL, que 
 nous présentons dans la section~\ref{sec:ATL}, a été développé dans ce sens. 
 
-\end{bulletList}
+\end{itemize}
 
 \begin{figure}[!htbp]
  \begin{center}
-  \includegraphics[width=1\textwidth]{Chapitre1/transfoPrincipe.png}
+  \includegraphics[width=1\textwidth]{images/Chapitre1/transfoPrincipe.png}
  \end{center}
  \caption{Méta niveaux d'une transformation de modèle}
  \label{fig:TransfoPrincipe}
