@@ -121,6 +121,80 @@ rencontrer et cette taxonomie. Lapalme en propose déjà un dans son papier mais
 je vais le compléter avec ma propre biblio.}
 
 
+\newlength{\bigtable}
+\setlength{\bigtable}{1.3\textwidth}
+\setlength{\dashlinedash}{0.5pt}
+\setlength{\dashlinegap}{1pt}
+\setlength{\arrayrulewidth}{0.5pt}
+\begin{adjustbox}{width=\bigtable,center}
+    \newlength{\mycolumnwidth}
+    \setlength{\mycolumnwidth}{\dimexpr0.28\bigtable-2\tabcolsep\relax}
+    \newlength{\myfirstcolumn}
+    \setlength{\myfirstcolumn}{\dimexpr0.16\bigtable-2\tabcolsep\relax}
+    \scriptsize
+    \begin{tabulary}{\bigtable}{@{}>{\bfseries}p{\myfirstcolumn}p{\mycolumnwidth}p{\mycolumnwidth}p{\mycolumnwidth}@{}}
+        %  --------------------------------------------------------------------
+        \toprule
+        & \centering\textbf{Enterprise IT Architecting} \
+        & \centering\textbf{Enterprise Integration} \
+		& \centering\textbf{Enterprise Ecological\newline Adaptation}\
+        \tabularnewline\midrule
+        %  --------------------------------------------------------------------
+        \multirow{1}{\myfirstcolumn}{Motto} \
+        & Enterprise architecture is the glue between business and IT \
+        & Enterprise architecture is the link between strategy and execution \
+        & Enterprise architecture is the means for organisational innovation and sustainability \
+        \tabularnewline\midrule
+        %  --------------------------------------------------------------------
+        \multirow{3}{\myfirstcolumn}{Objectives and concerns} \
+        & Effectively enable the enterprise strategy \
+        & Effectively implement the enterprise strategy \
+        & Innovate and adapt \
+        \tabularnewline\addlinespace\cdashline{2-4}\addlinespace%\tabularnewline\cmidrule{2-4}
+        & Support IT planning and reduce costs \
+        & Support organizational coherence \
+        & Support organizational coherence \
+        \tabularnewline\addlinespace\cdashline{2-4}\addlinespace%\tabularnewline\cmidrule{2-4}
+        & Enable business \
+        & \
+        & Encourage system-in-environment coevolution \
+        \tabularnewline\midrule
+        %  --------------------------------------------------------------------
+        \multirow{4}{\myfirstcolumn}[4pt]{Principles and assumptions} \
+        & Apply a reductionist (machnistic) stance \
+        & Apply a holist (systemic) stance \
+        & Apply a holist (systemic) stance \
+        \tabularnewline\addlinespace\cdashline{2-4}\addlinespace%\tabularnewline\cmidrule{2-4}
+        & Do not question business strategies \
+        & Do not question business strategies and objectives \
+        & System-in-environment coevolution \
+        \tabularnewline\addlinespace\cdashline{2-4}\addlinespace%\tabularnewline\cmidrule{2-4}
+        & Design organizational dimensions independently \
+        & Manage the environment \
+        & Environment can be changed \
+        \tabularnewline\addlinespace\cdashline{2-4}\addlinespace%\tabularnewline\cmidrule{2-4}
+        & Do not worry about non-IT dimenstions; they are not your concerns \
+        & Jointly design all organizational dimensions \
+        & Jointly design all organizational dimensions \
+        \tabularnewline\midrule
+        %  --------------------------------------------------------------------
+        \multirow{3}{\myfirstcolumn}[9pt]{Skills} \
+        & Have techinal competence and engineering knowledge \
+        & Facilitate small-group collaboration \
+        & Foster dialogue \
+        \tabularnewline\addlinespace\cdashline{2-4}\addlinespace%\tabularnewline\cmidrule{2-4}
+        & \
+        & Apply systems thinking \
+        & Apply system and system-in-environment thinking \
+        \tabularnewline\addlinespace\cdashline{2-4}\addlinespace%\tabularnewline\cmidrule{2-4}
+        & \
+        & \
+        & Facilitate larger-groups collaboration \
+        \tabularnewline\bottomrule
+    \end{tabulary}
+\end{adjustbox}
+
+
 
 %Dans ce contexte, l'Architecture d'Entreprise est une discipline qui a pour 
 %vocation de décrire une telle organisation en offrant une vue générale et 
