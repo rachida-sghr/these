@@ -1,0 +1,44 @@
+\section{Problématique}
+
+\subsection{Contexte industriel}
+
+Un Smart Grid est un réseau électrique intelligent permettant d'optimiser la production, la distribution et la consommation d'électricité grâce à l'introduction des Technologies de l'Information et de la Communication (TIC) sur le réseau électrique \footnote{www.smartgrids-cre.fr}.
+
+Les compagnies d'électricité doivent faire évoluer leur Systèmes d'Information (SI) car les Smart Grids apportent, par essence, de profonds changements au niveau des SI qui les pilotent  : nouveaux flux d'information provenant du réseau électrique, entrée en jeu de nouveaux acteurs tels que les producteurs décentralisés (éolien, photovoltaïque), nouveaux équipements communicants comme le compteur Linky \footnote{www.erdf.fr/Linky}, nécessaire conformité aux nouvelles réglementations et directives européennes \footnote{www.horizon2020.gouv.fr}, nouveaux usages (véhicule électrique, maison connectée). 
+
+Les Smart Grids impliquent un changement de paradigme que les compagnies d'électricité doivent pleinement intégrer dans leur stratégies de développement en envisageant de nouveaux modèles métier et de nouveaux partenaires, tout en tenant compte des exigences du marché et du législateur et de l'émergence de nouvelles technologies. 
+
+Une étude américaine, menée par IBM, CISCO, EPRI et South Carolina Edison, fait état de cinq thèmes stratégiques clé pour l'implémentation des Smart Grids:
+\begin{itemize}
+\item Permettre au consommateur de contrôler sa consommation d'énergie et de réduire son emprunte carbone en utilisant des équipement intelligents et des véhicules électriques et en produisant de l'énergie renouvelable à domicile.
+\item Améliorer la sécurité et la productivité des employés en mettant à leur disposition des outils performants pour le contrôle à distance, des équipements de protection et des applications mobiles par exemple.
+\item Intégrer des sources d'énergie renouvelables distribuées sur le réseau en assurant la protection des équipements électriques, le stockage de l'énergie et la stabilité du réseau.
+\item Améliorer l'efficience et la résilience du réseau à travers les systèmes de mesure en temps réel, l'analyse et le contrôle à distance.
+
+%%FB Ce denier point est peut-être une conséquence de l'informatisation qui est nécessaire pour les points précédents (à cause des constantes de temps, du grand nombre de parties prenantes etc.)
+\item Fournir les informations et la connectivité nécessaires par le développement d'une infrastructure TIC.
+\end{itemize}
+
+Les compagnies d'électricité élaborent souvent différents scénarios de stratégies possibles pour répondre aux enjeux Smart Grid. Mais la prise de décision n'est pas aisée au vue de la complexité des Smart Grids et de la forte interdépendance de composants tels que les cadres de régulation, les consommateurs, les marchés de l'énergie, les technologies en constante évolution). 
+
+%%FB Un peu rapide le "aussi"
+%%FB Dire que les 4 1ers points rendent nécessaire l'automatisation des actions et du traitement de l'information, d'où le 5e point, et d'où l'impact des choix stratégiques sur le SI.
+Aussi, le choix d'une stratégie impacte-t-il directement le SI. Néanmoins, les processus Smart Grid étant fortement automatisés, la mise en œuvre effective de cette stratégie dépend du SI qui l'exécute.
+% et des ressources disponibles (humaines, financières, techniques) ce qui amène donc les parties prenantes à reconsidérer leur choix stratégique.
+
+La question soulevée par ce contexte industriel à laquelle nous nous intéressons est la suivante : \textbf{Comment évaluer une stratégie de développement d'un Smart Grid à travers sa déclinaison au niveau du SI ?}
+
+Évaluer la déclinaison d'une stratégie au niveau du SI oblige à prendre en compte l'architecture globale de la compagnie. %%FB à justifier
+Cette activité est connue sous le nom d'Architecture d'Entreprise. En effet, \cite{ross2006enterprise} considèrent que l'architecture d'entreprise offre «~une vision générale de comment une compagnie va mettre en \oe{}uvre sa stratégie~». 
+
+L'exécution effective d'une stratégie est cependant confrontée à des barrières de communication au sein de l'organisation \cite{vcater2010factors}. Le recours à l'architecture d'entreprise est d'autant plus justifié qu'elle représente un outil pour la transmission des objectifs stratégiques à tous les niveaux hiérarchiques de l'organisation en question \cite{kappelman2008enterprise}. 
+
+L'architecture d'entreprise offre une vision globale et transverse de l'entreprise \cite{zachman1987framework}  permettant d'aligner efficacement les intérêts des acteurs impliqués dans l'implémentation des Smart Grids tels que les experts métier, les conseillers stratégiques, les experts environnementaux, les experts en normalisation \cite{buckl2010conceptual}. Le recours à l'architecture d'entreprise est ainsi pleinement justifié.
+
+Les Smart Grids sont, par essence, des systèmes très  dynamiques et complexes \cite{monti_power_2010}. La déclinaison d'une stratégie Smart Grid au niveau du SI de la compagnie engendre ainsi des systèmes dynamiques au comportements complexes. \cite{borshchev2004system} affirme que le seul moyen d'adresser cette complexité est  de simuler ces systèmes. La simulation est une technique connue pour valider ou critiquer la conception d'un système dès les premières étapes de son cycle de développement. Les acteurs impliqués dans l'implémentation des Smart Grids acquièrent, par la  simulation, une connaissance approfondie et directe des modèles créés pour valider ou critiquer un choix stratégique.
+
+Néanmoins, les approches d'architecture d'entreprise se focalisent souvent sur des aspects statiques et structurels tels que les interconnexions entre les différentes applications métier \cite{buckl2008towards}. Les modèles issus de ces approches sont alors utilisés exclusivement à des fins de documentation et de communication entre parties prenantes \cite{kulkarni2013modelling}. 
+
+Notre problématique de recherche émerge de cet état de fait, nous la résumons dans la question suivante :
+\textbf{Quels critères doivent satisfaire les modèles issus de l'architecture d'entreprise pour permettre, par la simulation, d'évaluer la stratégie de l'entreprise en question~?}
+     
