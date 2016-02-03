@@ -1,6 +1,96 @@
-\section{Problématique}
+\chapter{Motivations et problématique}
+\label{chap:problematique}
 
-\subsection{Contexte industriel}
+\section{Contexte industriel}
+
+\subsection{Que'est ce qu'un Smart Grid ?}
+Le terme «~Smart grid~» est une appellation générale désignant les technologies « intelligentes » qui «~augmentent~» les réseaux électriques actuels en améliorant leurs performances.\footnote{À la manière de «~l'augmentation de l'humain~» qui désigne l'amélioration technique des performances humaines, aussi bien physiques, intellectuelles qu'émotionnelles \cite{le2013humain}.}
+
+Cette «~augmentation~» peut servir différents objectifs dépendant aussi bien des limites du système électrique existant, du cadre régulatoire que de l'agenda politique. Il existe autant de définitions du terme «~Smart grid~» que d'objectifs motivant leur implémentation.
+
+En Europe, par exemple, l'intégration des sources d'énergies renouvelables et la participation active des consommateurs à la conduite du système électrique sont au centre des préoccupations des Smart Grids européens, et ce pour satisfaites les exigences des cadres de régulation et des volontés politiques en matière d'écologie.
+
+Dans un contexte européen, les Smart Grids désignent ainsi «~des réseaux électriques qui intègrent de manière intelligente les comportements et les actions de tous les acteurs connectés - les producteurs, les consommateurs et ceux qui consomment et produisent en même temps - afin de garantir une fourniture d'électricité efficiente, durable, économique et sûre.~» \cite{ETP}.
+
+Les États Unis connaissent, quant à eux, un nombre de coupure de courant qui ne cesse d'augmenter passant de 76 pannes en 2007 à plus de 300 en 2011 \cite{detroit}. Ces pannes sont aussi fréquentes qu'importantes : en 2003, un blackout dans l'Ohio prive 50 millions de personnes d'électricité et coûte 6 milliards de dollars \cite{andersson2005causes}.
+
+Ces pannes sont dues à une infrastructure électrique vieillissante, en grande partie mécanisée et souffrant du manque d'investissement; à la croissance démographique~; à des conditions climatiques de plus en plus extrêmes \cite{outages}.
+
+Aux États Unis, moderniser le réseau électrique en investissant dans les Smart Grids est ainsi essentiellement guidé par un impératif de sûreté. Pour définir le Smart Grid, le département de l'énergie américain (\textit{United States
+Department of Energy}) dresse une liste d'exigences mettant l'accent sur la sûreté des réseaux électriques. Selon cette définition \cite{USDE}, un Smart Grid doit ainsi répondre aux exigences suivantes :
+\begin{itemize}
+\item Auto-réparation en cas d'événements perturbateurs~;
+\item Permettre la participation active des consommateurs~; 
+\item Résilience face aux attaques physiques et cybernétiques~;
+\item Fournir une électricité de qualité face aux besoins du 21\up{ème} siècle~;
+\item Intégration des moyens de production et de stockage d'électricité~;
+\item Exploitation optimisée des infrastructures et conduite efficace des réseaux électriques.
+\end{itemize} 
+
+À partir de ces deux définitions, nous constatons que l'obsolescence du système électrique (dans le cas des États Unis) ainsi que les impératifs régulatoires et climatiques (dans le cas de l'Europe) font de la mise à niveau des réseaux électriques un enjeu crucial. Cependant, la modernisation des réseaux électriques passe plutôt par le déploiement des Technologies de l'Information et de la Communication (TIC), donc par l'implémentation des Smart Grids, que par le remplacement massif des infrastructures électriques existantes.
+
+En effet, envisager de renforcer et de remplacer massivement le réseau uniquement n'est pas une solution optimale et semble difficilement réalisable vu la croissance démographique constante des zones urbaines et le coût important des investissements à consentir \cite{cre}.
+
+\subsection{Contexte économique, cadre législatif et modes de con\-sommation en constante mutation}
+
+Le système électrique actuel est mis à l'épreuve par l'entrée en jeu de nouveaux acteurs économiques et de nouveaux cadres législatifs. 
+
+
+D'une part, la libéralisation du marché de l'électricité permet à un producteur lambda de produire et de vendre son électricité après s'être convenablement raccordé au réseau électrique de distribution ou de transport (donc entre les centrales de production et les consommateurs). Contrairement aux centrales de production dites centralisée car localisées en amont du réseau électrique de transport, ces sources d'énergie sont distribuées. 
+
+Les sources d'énergie distribuées perturbent fortement la stabilité des réseaux électriques. En injectant du courant, elles peuvent déséquilibrer le niveau de tension du réseau et endommager ainsi les équipements du système électrique tels que les transformateurs, les lignes et les protections. 
+
+D'autre part, les enjeux environnementaux encouragent le recours aux énergies renouvelables. Dans sa directive du 23 avril 2009, la commission européenne fixe à 20\% la part de contribution des ressources renouvelables dans la production d'énergie à l'horizon de 2020. Les réseaux de distribution d'électricité sont ainsi amenés à connaître une croissance constante de ces producteurs décentralisés dans les années à venir.
+
+Cette même directive fixe à 20\% la réduction des émissions de $CO_{2}$ par rapport à leur niveau en 1990 et à 20\% augmentation de l'efficacité énergétique. Les pics de consommation en période de pointe (comme en fin de journée un jour de semaine lorsque les gens rentrent chez eux, allument leurs télévisions, plaques électriques et autres outils électroménagers), sont coûteux et émetteurs de $CO_{2}$. En effet, pour garantir l'équilibre entre l'offre et la demande, les producteurs recourent à des centrales à charbon, à fioul et à gaz comme l'illustre la figure \ref{fig:courbeCharge}.
+
+\begin{figure}[!htbp]
+ \begin{center}
+  \includegraphics[width=0.5\textwidth]{images/problematique/ccharge.jpg}
+ \end{center}
+ \caption{Placement du type d'énergie sollicitée sur la courbe de charge française du mardi 20 novembre 2012 (à remplacer par une plus belle/récente)(source RTE)}
+ \label{fig:courbeCharge}
+\end{figure}
+
+Ces pics sont amenés à connaître une intensification significative avec l'émergence de nouveaux usages de consommation dont, notamment, la mobilité électrique. France, les pouvoirs publics misent sur deux millions de véhicules électriques en circulation en 2020. L'impacte de ces véhicules sur l'équilibre entre l'offre et la demande n'est pas négligeable. En effet, la recharge complète d'un véhicule électrique ayant 150 km d'autonomie est équivalente en terme d'appel de puissance à~:
+\begin{itemize}
+\item un chauffe-eau si la recharge s'effectue en 8~h (recharge normale)~;
+\item un immeuble si la recharge s'effectue en 1~h (recharge accélérée)~;
+\item un quartier urbain si la recharge s'effectue en 3~min (recharge rapide).
+\end{itemize}
+
+
+
+\subsection{Architecture Smart Grids : vers des réseaux électriques flexibles et communicants}
+
+t législaIncitations tarifaires -> pilotage par la demande (effacement)  et
+Objectifs environnementaux facteur 4 -> déploiement des ENR -> intermittante, injecte aussi de l'énergie.
+nouveaux usages
+
+
+Infrastructure électriques (ligne, transformateur, centrales de production)
+Outils additionnels
+Moyens de télécommunication (CPL, 3G, radio, ...)
+Technologie de l'information pour automatiser le traitement des informations, contrôler à distance les composants électriques 
+
+Rendre les réseaux électriques intelligents consiste donc en grande partie à les instrumenter pour les rendre communicants.
+
+\begin{figure}[!htbp]
+ \begin{center}
+  \includegraphics[width=1\textwidth]{images/problematique/archiSmartgrids.png}
+ \end{center}
+ \caption{Architecture d'un Smart Grid pour la  de l'électricité \protect\cite{favre2006ingenierie}}
+ \label{fig:archismartgrids}
+\end{figure}
+
+
+
+
+
+
+%En effet, la libéralisation du marché de l'électricité exige que le consommateur ait une connaissance en temps réel de l'évolution tarifaire horaire de l'électricité et qu'il puisse même choisir d'injecter sa propre propre production d'énergie sur le réseau.
+
+\section{Impact des Smart Grids sur les SI et l'AE}
 
 Un Smart Grid est un réseau électrique intelligent permettant d'optimiser la production, la distribution et la consommation d'électricité grâce à l'introduction des Technologies de l'Information et de la Communication (TIC) sur le réseau électrique \footnote{www.smartgrids-cre.fr}.
 
