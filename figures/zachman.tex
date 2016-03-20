@@ -6,12 +6,6 @@
 % to draw them. Alignment is pretty much custom. I just hope this is gonna work
 % with no adjusment when putting this in the main document.
 
-\documentclass{article}
-\usepackage{adjustbox}
-\usepackage{arydshln,tabulary,multirow,booktabs,array}
-\usepackage{tikz}
-\usetikzlibrary{calc}
-
 \newcommand\tikzmark[1]{%
     \tikz[overlay,remember picture] \coordinate (#1);}
 
@@ -24,22 +18,17 @@
 \newcommand\tworows{%
   \multirow{2}{\mycolumnwidth}{}}
 
+\newlength{\zachmantable}
+\setlength{\zachmantable}{\textwidth}
 
-\begin{document}
-\newlength{\bigtable}
-\setlength{\bigtable}{\textwidth}
-\setlength{\dashlinedash}{0.5pt}
-\setlength{\dashlinegap}{1pt}
-\setlength{\arrayrulewidth}{0.5pt}
-\begin{adjustbox}{width=\bigtable,center}
+\begin{adjustbox}{width=\zachmantable,center}
     \newlength{\myfirstcolumnwidth}
-    \setlength{\myfirstcolumnwidth}{\dimexpr0.25\bigtable-2\tabcolsep\relax}
+    \setlength{\myfirstcolumnwidth}{\dimexpr0.25\zachmantable-2\tabcolsep\relax}
     \newlength{\mycolumnwidth}
-    \setlength{\mycolumnwidth}{\dimexpr0.16\bigtable-2\tabcolsep\relax}
+    \setlength{\mycolumnwidth}{\dimexpr0.16\zachmantable-2\tabcolsep\relax}
     \scriptsize
-    
-    % \begin{tabulary}{\bigtable}{m{\myfirstcolumnwidth}|m{\mycolumnwidth}|m{\mycolumnwidth}|m{\mycolumnwidth}|m{\mycolumnwidth}|m{\mycolumnwidth}|m{\mycolumnwidth}}
-    \begin{tabulary}{\bigtable}{m{\myfirstcolumnwidth}m{\mycolumnwidth}m{\mycolumnwidth}m{\mycolumnwidth}m{\mycolumnwidth}m{\mycolumnwidth}m{\mycolumnwidth}}
+    % \begin{tabulary}{\zachmantable}{m{\myfirstcolumnwidth}|m{\mycolumnwidth}|m{\mycolumnwidth}|m{\mycolumnwidth}|m{\mycolumnwidth}|m{\mycolumnwidth}|m{\mycolumnwidth}}
+    \begin{tabulary}{\zachmantable}{m{\myfirstcolumnwidth}m{\mycolumnwidth}m{\mycolumnwidth}m{\mycolumnwidth}m{\mycolumnwidth}m{\mycolumnwidth}m{\mycolumnwidth}}
         % \toprule
         \cmidrule[\heavyrulewidth]{2-7}
         \tworows\tikzmark{zachmantopleft} \
@@ -116,7 +105,7 @@
         % \tabularnewline
         \textit{Builder} &&&&&& \
         \tabularnewline\midrule
-        
+
         \tikzmark{zachmanleftbottom}\textbf{Detailed Representations} \
         & \tworows \
         & \tworows \
@@ -143,6 +132,7 @@
         \def\zachmanleftoffset{2.83}  % ~ first column offset (found manually)
         \newcommand\drawcolsep[1]{%
             \draw[dotted] let \p3=(zachmanlefttop), \p4=(zachmanleftbottom) in ($(\x3,\y3)+(\zachmanleftoffset+#1*\zachmancolwidth,0.2)$) -- ($(\x3,\y4)+(\zachmanleftoffset+#1*\zachmancolwidth,-0.64)$);}
+        \drawcolsep{0}
         \drawcolsep{1}
         \drawcolsep{2}
         \drawcolsep{3}
@@ -150,4 +140,3 @@
         \drawcolsep{5}
     \end{tikzpicture}
 \end{adjustbox}
-\end{document}
