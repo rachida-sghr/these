@@ -93,6 +93,7 @@ Enfin, pour certains auteurs, l'entreprise évolue dans un environnement souvent
 
 
 	\subsection{Écoles de pensée de l'Architecture d'Entreprise} 
+	\label{Lapalme}
 
 Aucune définition de l'EA n'a été universellement adoptée \cite{mentz2012comparison} \cite{ranganathan2005enterprise}. Il existe en effet une pléiade de définitions émanant aussi bien du milieu académique que du milieu industriel donnant ainsi lieu à plusieurs écoles de pensée. Ce manque de consensus est du à la nature intrinsèque de l'activité d'EA car elle est régie par un ensemble de préceptes et de bonnes pratiques que l'architecte reste libre d'adapter au contexte de l'entreprise. 
 
@@ -268,14 +269,17 @@ Les approches orientées points de vue sont largement utilisées en ingénierie 
 
 \textbf{Le cadre Zachman}
 
-Zachman \cite{zachman1987framework} propose de structurer et d'organiser les différentes représentations intervenant dans la description d'une entreprise en les classant selon une matrice à deux dimensions. Comme l'illustre la figure~\ref{fig:Zachman}, chaque cellule de la matrice correspond à l'intersection entre une partie prenante impliquée dans le processus de conception de l'architecture et un enjeu de conception présenté sous forme d'une question. Chaque représentation est adaptée aux acteurs impliqués. Le cadre Zachman demande de spécifier~:
+Zachman \cite{zachman1987framework} propose de structurer et d'organiser les différentes représentations intervenant dans la description d'une entreprise en les classant selon une matrice à deux dimensions. La dimension verticale correspond aux points de vue et la dimension horizontale aux abstractions. Comme l'illustre la figure~\ref{fig:Zachman}, chaque cellule de la matrice correspond à l'intersection entre une partie prenante impliquée dans le processus de conception de l'architecture et une abstraction présentée sous forme d'une question. Chaque représentation est ainsi adaptée aux acteurs impliqués. 
+
+
+Le cadre Zachman demande de spécifier~:
 
 	\begin{itemize}
 
-\item six parties prenantes qui sont le Visionnaire, le Propriétaire, le Concepteur, le Réalisateur, le Sous-traitant et l'Exécutant \textit{(visionary, owner, designer, builder, implementer, worker)})~;
+\item la dimension verticale est divisée en six points de vue qui sont le Planificateur, le Propriétaire, le Concepteur, le Réalisateur, le Sous-traitant et l'Exécutant \textit{(visionary, owner, designer, builder, implementer, worker)})~;
 
-\item six enjeux de conception sous forme d'interrogations~:~Quoi, Comment, Où, Qui, Quand, et Pourquoi \textit{(What, How, Where, Who, When, Why)}.
-	\end{itemize}
+\item la dimension horizontale est divisée en six abstractions qui correspondent au Quoi, Comment, Où, Qui, Quand, et Pourquoi \textit{(What, How, Where, Who, When, Why)}.
+	\end{itemize}	
 
 Encore largement utilisé, le cadre Zachman est le premier à adresser l'entreprise dans son ensemble. Il est de plus facile à comprendre et ne dépend ni d'une méthode ni d'un outil en particulier. Sa mise en pratique est cependant fastidieuse à cause du grand nombre de cellules à modéliser. En outre, la mise en cohérence entre les différents artefacts n'est pas évidente car les relations entre les cellules n'est pas explicitement spécifiées. Le cadre Zachman offre un schéma de classification bien structuré mais ne spécifie aucune méthode pour mener les différentes activités d'architecture \cite{lankhorst2013enterprise}.
 
@@ -493,7 +497,7 @@ L'autoréférentialité augmente la complexité d'analyse. Peu de travaux consid
 	\subsubsection{Finalités}
 	Pour Shannon \cite{shannon1975systems}, la simulation est 
 «~\emph{un processus consistant à modéliser un système réel et à mener des expérimentations sur le modèle obtenu dans le but de comprendre le comportement du système et/ou d'évaluer différentes stratégies concernant son fonctionnement}~». 
-Quel qu'en soit le domaine d'application, la simulation est un moyen d'apprécier les choix des concepteurs sur le comportement du système modélisé. Elle se traduit par exemple par l'animation d'un modèle (représentant notre perception du système, qu'il soit existant ou à construire) et l'étude du comportement de ce modèle en fonction des variables en entrée.  
+Quel qu'en soit le domaine d'application, la simulation est un moyen d'apprécier les choix des cepteurs sur le comportement du système modélisé. Elle se traduit par exemple par l'animation d'un modèle (représentant notre perception du système, qu'il soit existant ou à construire) et l'étude du comportement de ce modèle en fonction des variables en entrée.  
 
 La simulation des architectures d'entreprise permet de modifier des stratégies localement et d'observer l'impact de ces modification sur le comportement globale du système \cite{2008towards}. La simulation des architectures d'entreprise est d'autant plus cruciale dans le contexte des Smart Grids. Ces derniers sont en constante et rapide transformation~:~évolution des cadres législatifs, apparition de nouveaux partenaires, hétérogénéité des interactions avec les clients finaux (les compteurs intelligents, Internet, les téléphones ou encore les tablettes). 
 
