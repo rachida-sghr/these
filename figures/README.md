@@ -1,4 +1,4 @@
-Figures tikz a copier/coller dans le manuscrit.
+Figures tikz a inclure dans le manuscrit.
 
 Pour compiler une figure:
 
