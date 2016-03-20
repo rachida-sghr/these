@@ -1,4 +1,4 @@
-La compilation necessite 
+La compilation necessite
 
 - une distribution `LaTeX` incluant `pdflatex` et `latexmk`
 - un shell unix (teste avec `bash` et `zsh`)
@@ -18,4 +18,10 @@ rm -rf build
 
 $ ls
 latexmkrc  Makefile  manuscrit  README.md  These.pdf
+```
+
+Pour compiler les figures:
+
+```
+make figures
 ```

@@ -24,4 +24,7 @@
 *.nlo
 *.brf
 build/
+these.pdf
 These.pdf
+figures/*.pdf
+figures/build
