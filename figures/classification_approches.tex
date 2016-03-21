@@ -1,0 +1,43 @@
+\begin{figure}[!htbp]
+    \begin{tikzpicture}
+        \hspace*{-1cm}
+        \path[mindmap,concept level 1/.append style={level distance=4cm}]
+        node[concept, scale=0.7] {L'analyse en Architecture d'Entreprise}
+        [clockwise from=0]
+        child[concept color=black] {
+          node[concept, scale=0.9] {Sujet de l'analyse}
+          [clockwise from=60]
+          child { node[concept, scale=0.9] {Structure} }
+          child { node[concept, scale=0.9] {Dynamique} }
+          child { node[concept, scale=0.9] {Statistiques} }
+        }
+        child[concept color=black] {
+          node[concept, scale=0.9] {Référence temporelle}
+          [clockwise from=-30]
+          child { node[concept, scale=0.9] {Ex post} }
+          child { node[concept, scale=0.9] {Ex ante} }
+        }
+        child[concept color=black] {
+        	  node[concept, scale=0.9] {Techniques}
+          [clockwise from=-60]
+          child { node[concept, scale=0.9] {Basée sur les experts} }
+          child { node[concept, scale=0.9] {À base de règles} }
+          child { node[concept, scale=0.9] {À base d'indicateurs} }
+        }
+        child[concept color=black] {
+          node[concept, scale=0.9] {Préoc\-cupations}
+          [clockwise from=-150]
+          child { node[concept, scale=0.9] {Fonction\-nelles} }
+          child { node[concept, scale=0.9] {Non Fonctionnelles} }
+        }
+        child[concept color=black] {
+        	  node[concept, scale=0.9] {Auto\-référentialité}
+          [clockwise from=-180]
+          child { node[concept, scale=0.9] {Aucune} }
+          child { node[concept, scale=0.9] {un niveau} }
+          child { node[concept, scale=0.9] {plusieurs niveaux} }
+        };
+    \end{tikzpicture}
+    \caption{Classification des approches d'analyse selon Buckl et al. \protect\cite{buckl2009classifying}}
+    \label{fig:classBuckl}
+\end{figure}

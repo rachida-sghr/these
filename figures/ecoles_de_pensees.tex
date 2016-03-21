@@ -1,0 +1,80 @@
+\newlength{\ecolesdepensees}
+\setlength{\ecolesdepensees}{1.3\textwidth}
+\setlength{\dashlinedash}{0.5pt}
+\setlength{\dashlinegap}{1pt}
+\setlength{\arrayrulewidth}{0.5pt}
+\begin{adjustbox}{width=\ecolesdepensees,center}
+    \newlength{\mycolumnwidth}
+    \setlength{\mycolumnwidth}{\dimexpr0.28\ecolesdepensees-2\tabcolsep\relax}
+    \newlength{\myfirstcolumn}
+    \setlength{\myfirstcolumn}{\dimexpr0.16\ecolesdepensees-2\tabcolsep\relax}
+    \scriptsize
+
+    \begin{tabulary}{\ecolesdepensees}{@{}>{\bfseries}p{\myfirstcolumn}p{\mycolumnwidth}p{\mycolumnwidth}p{\mycolumnwidth}@{}}
+        %  --------------------------------------------------------------------
+        \toprule
+        & \centering\textbf{Enterprise IT Architecting} \
+        & \centering\textbf{Enterprise Integration} \
+		& \centering\textbf{Enterprise Ecological\newline Adaptation}\
+        \tabularnewline\midrule
+        %  --------------------------------------------------------------------
+        \multirow{1}{\myfirstcolumn}{Devise} \
+        & L'architecture d'entreprise raccorde l'IT au métier de l'entreprise \
+        & L'architecture d'entreprise lie la stratégie et son exécution \
+        & L'architecture d'entreprise est un moyen d'innovation organisationnelle et une garantie de durabilité  \
+        \tabularnewline\midrule
+        %  --------------------------------------------------------------------
+        \multirow{3}{\myfirstcolumn}{Objectifs et préoccupations} \
+        & Planifier l'IT et en optimiser les coûts \
+        & Implémenter efficacement la stratégie de l'entreprise \
+        & Adapter et innover \
+
+        \tabularnewline\addlinespace\cdashline{2-4}\addlinespace%\tabularnewline\cmidrule{2-4}
+        & Appuyer le métier \
+        & Assurer la cohésion de l'organisation \
+        & Assurer la cohésion de l'organisation \\
+
+        \tabularnewline\addlinespace\cdashline{2-4}\addlinespace%\tabularnewline\cmidrule{2-4}
+        & \
+        & \
+        & Encourager la co-évolution entre l'entreprise et son environnement \
+        \tabularnewline\midrule
+        %  --------------------------------------------------------------------
+        \multirow{4}{\myfirstcolumn}[4pt]{Principes et postulats} \
+        & Appliquer une approche réductionniste \
+        & Appliquer une approche holistique \
+        & Appliquer une approche holistique \
+
+        \tabularnewline\addlinespace\cdashline{2-4}\addlinespace%\tabularnewline\cmidrule{2-4}
+        & Ne pas remettre en question la stratégie et les objectifs métier \
+        & Ne pas remettre en question la stratégie et les objectifs métier \
+        & Créer la stratégie de l'entreprise est une priorité \
+
+        \tabularnewline\addlinespace\cdashline{2-4}\addlinespace%\tabularnewline\cmidrule{2-4}
+        & Concevoir les composants de l'organisation de manière indépendante \
+        & Concevoir les différents aspects de l'entreprise de manière intégrative\
+        & Concevoir les différents aspects de l'entreprise de manière intégrative\
+
+        \tabularnewline\addlinespace\cdashline{2-4}\addlinespace%\tabularnewline\cmidrule{2-4}
+        & Ne pas se préoccuper des aspects non IT \
+        & Tenir compte de l'environnement comme source de changement \
+        & L'environnement peut être transformé \
+        \tabularnewline\midrule
+%        %  --------------------------------------------------------------------
+%        \multirow{3}{\myfirstcolumn}[9pt]{Skills} \
+%        & Have techinal competence and engineering knowledge \
+%        & Facilitate small-group collaboration \
+%        & Foster dialogue \
+%
+%\tabularnewline\addlinespace\cdashline{2-4}\addlinespace%\tabularnewline\cmidrule{2-4}
+%        & \
+%        & Apply systems thinking \
+%        & Apply system and system-in-environment thinking \
+%
+%\tabularnewline\addlinespace\cdashline{2-4}\addlinespace%\tabularnewline\cmidrule{2-4}
+%        & \
+%        & \
+%        & Facilitate larger-groups collaboration \
+%        \tabularnewline\bottomrule
+    \end{tabulary}
+\end{adjustbox}
