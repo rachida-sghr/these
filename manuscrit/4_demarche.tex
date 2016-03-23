@@ -23,7 +23,7 @@ Nous considérons donc que la documentation et la communication, l'analyse et la
 
 \begin{figure}[!htbp]
  \begin{center}
-  \includegraphics[trim= 0cm 5cm 0cm 0cm, width=1\textwidth]{images/demarche/approche_conceptuelle.pdf}
+  \includegraphics[trim= 0cm 3.5cm 0cm 0cm, width=1\textwidth]{images/demarche/approche_conceptuelle.pdf}
  \end{center}
  \caption{Approche conceptuelle pour l'analyse d'une architecture d'entreprise}
  \label{fig:approche_conceptuelle}
@@ -36,6 +36,8 @@ Comme relaté dans l'état de l'art, l'analyse fait partie des activités les mo
 
 
 \section{Un cadre d'architecture dirigé par les modèles exécutables}
+
+\subsection{Approche par points de vue}
 
 Toute simulation d'un système commence par sa modélisation. Pour modéliser des systèmes complexes comme les architectures d'entreprise, nous adoptons une approche par points de vue. Celle-ci facilite la conception des modèles par les acteurs impliqués en séparant leurs préoccupations respectives. Elle permet également de présenter les modèles obtenus, ainsi que les résultats de simulation de manière plus compréhensible à ces acteurs, car chaque point de vue n'utilise que les concepts métier propres à chaque acteur, selon sa perspective. 
 
@@ -78,28 +80,96 @@ De plus, nous modélisons le comportement de chaque vue dans l'aspect «~\textit
 	Cet aspect décrit les modules logiciels qui implantent les blocs fonctionnels ainsi que leur orchestration en processus applicatifs. Dans un premier temps, il est conseillé de dresser un inventaire de l'existant applicatif et d'en extraire les modules capables de réaliser les opérations des blocs fonctionnels. Ensuite, si aucune application ou module existant ne peut répondre au besoin des nouveaux processus métier, l'architecte technique fait le choix des nouveaux composants applicatifs à mettre en place. En plus d'identifier les composants applicatifs existants ou à développer, l'architecte applicatif spécifie leurs interconnexions tels que échange de messages, synchronisation de données, transfert de fichiers périodique.
 	\end{itemize}
 	
-Nous étendons chacune des vues par l'aspect «~\textit{objectif}~». Cet aspect correspond au «~\textit{pourqoi}~» du cadre Zachman qui spécifie les motivations de l'architecture. D'une part, modéliser cet aspect permet de garder une traçabilité d'une entre les processus modélisés et les objectifs qu'ils sont censés remplir. D'autre part, il permet de décliner les objectifs métier en objectifs applicatifs, et les objectifs applicatifs en objectifs fonctionnels. Comme nos travaux adoptent l'école de pensée «~Architecture du Système Entreprise~», nous souhaitons évaluer non seulement la composante SI mais l'ensemble de l'entreprise dont la stratégie. L'aspect objectif est un moyen de modéliser explicitement la stratégie de l'entreprise, traduite en un ensemble cohérent d'objectifs métier, en vue (1) d'évaluer la capacité des processus mis en place à y répondre et (2) d'évaluer la stratégie elle-même par rapport à la réalité de l'entreprise. 
- 
+Nous étendons chacune des vues par l'aspect «~\textit{objectif}~». Cet aspect correspond au «~\textit{pourqoi}~» du cadre Zachman qui spécifie les motivations de l'architecture. D'une part, modéliser cet aspect permet de garder une traçabilité d'une entre les processus modélisés et les objectifs qu'ils sont censés remplir. D'autre part, il permet de décliner les objectifs métier en objectifs applicatifs, et les objectifs applicatifs en objectifs fonctionnels. Comme nos travaux adoptent l'école de pensée «~Architecture du Système Entreprise~», nous souhaitons évaluer non seulement la composante SI mais l'ensemble de l'entreprise dont la stratégie. L'aspect objectif est un moyen de modéliser explicitement la stratégie de l'entreprise, traduite en un ensemble cohérent d'objectifs métier et ce pour évaluer la capacité des processus mis en place à y répondre et pour évaluer la stratégie elle-même par rapport à la réalité de l'entreprise. 
+
+\subsection{Intégration d'une architecture d'entreprise} 
+
+L'alignement et la cohérence sont des problématiques centrales en EA \cite{kaisler_enterprise_2005}. Notre contribution essentielle est de dédier un point de vue spécifique pour adresser ce type de problématique~:~le \textbf{point de vue intégration} illustré par la figure \ref{fig:vue_integration}. Ce point de vue définit un \textit{mapping} d'alignement en spécifiant (1)~les entités à aligner, (2)~les liens de cohérence entre ces éléments et (3) les transformations de modèles nécessaires au raffinement des ces entités. Les transformations de modèles facilitent et automatisent les passages d'une vue à l'autre. Ce point de vue permet une intégration «~IntraVue~» et «~InterVues~» (entres les aspects d'une seule vue). La figure \ref{fig:metamodele_framework} donne un métamodèle de notre framework en explicitant les concepts abordés et leurs relations.
+
 \begin{figure}[!htbp]
  \begin{center}
   \includegraphics[trim= 3cm 3cm 0cm 0cm, width=1\textwidth]{images/demarche/vue_integration.pdf}
  \end{center}
- \caption{Vue Intégration}
+ \caption{Framework proposé avec la vue Intégration}
  \label{fig:vue_integration}
 \end{figure}
 
-It is a requirement that the enterprise concepts and
-models should be simple enough so that they may be used as a communication, analysis and discussion
-tool.
+L'intégration inter-vues décrit les relations entre les vues (sauf la vue intégration). La vue intégration est donc transverse à toutes les autres vues et permet de modéliser explicitement les notions de raffinement à travers la classe «~InterVues~» (voir figure \ref{fig:metamodele_framework}), tant pour  les aspects \emph{processus} et \textit{information} que sur les aspects \emph{objectif}.
 
-The enterprise models need to be defined with simple common sense rules, but also
-be sound and coherent. This means the models must provide a high-level view that abstracts
-technical details and interconnections while keeping a complex structure traceable and coherent. 
+\begin{figure}[!htbp]
+ \begin{center}
+  \includegraphics[trim= 0cm 13cm 0cm 2cm, width=1\textwidth]{images/demarche/metamodele_framework.pdf}
+ \end{center}
+ \caption{Métamodèle du framework proposé}
+ \label{fig:metamodele_framework}
+\end{figure}
+
+Nous donnons le métamodèle de la vue intégration dans la figure \ref{fig:metamodele_vue_integration}. Cette vue permet des vérifications horizontales à l'intérieur de chacune des vues. En effet, l'association «~utilise~» assure donc la compatibilité des données échangées entre les tâches d'un processus métier, les fonctions d'un bloc fonctionnel ou entre les modules d'une application (voir figure \ref{fig:metamodele_vue_integration}). L'association «~rempli par~» hérite aussi de la classe «~IntraVue~» et associe explicitement une entité à l'objectif qui lui est assigné. De cette manière, il est possible de tracer l'implémentation effective d'une stratégie métier à travers l'ensemble de l'entreprise, des entités métier à l'IT.
+
+La définition d'un métamodèle précis pour le framework permet de plus de contrôler la conformité des modèles d'architecture. Ainsi, une entité du modèle (telle qu'une fonction, une tâche du processus métier, un objectif, etc.) appartient toujours à deux vues~:~une vue intégration en plus d'une autre vue parmi les vues métier, fonctionnelle, applicative et technique. Autre exemple, tous les objectifs de la vue métier doivent avoir des liens de cohérence inter-vues avec les objectifs de la vue fonctionnelle et de même pour ces dernier avec les objectif de la vue applicative et ainsi de suite. De même pour les autres entités des aspects information et processus. Une fois le modèle d'architecture créé, il est possible de vérifier sa conformité au métamodèle et de s'assurer que la cohérence entre les différentes entités de modèles est bien maintenue. 
+
+La vue intégration permet en outre de vérifier qu'une application implémente bien tous les blocs fonctionnels nécessaires au déroulement d'un processus métier. Cette vue donne ainsi accès aux informations de traçabilité qui permettent de déterminer l'impact d'une modification ou d'une défaillance d'un module applicatif sur les processus métier. Elle permet aussi de vérifier que les formats applicatifs permettent d'encoder les types de données fonctionnelles requis, qui eux-même raffinent les concepts métiers. Cette vue détermine les éventuelles transformations de modèle nécessaires au déploiement en spécialisant l'association «~raffine~». Le choix des modèles à transformer dépend fortement de leur nature (modèles graphiques, textuels, etc.) et mais aussi de leur niveau d'abstraction. Par exemple, la génération de code demande un modèle en entrée suffisamment détaillé pour exécuter une transformation pertinente. L'état de l'art actuel des langages de transformation de modèle privilégie l'usage des transformations de modèle entre la vue fonctionnelle et et la vue applicative. 
+
+
+\begin{figure}[!htbp]
+ \begin{center}
+  \includegraphics[trim= 0cm 18cm 0cm 0cm, width=1\textwidth]{images/demarche/metamodele_vue_integration.pdf}
+ \end{center}
+ \caption{Métamodèle de la vue intégration}
+ \label{fig:metamodele_vue_integration}
+\end{figure}
+
+
+\subsection{Analyse de l'architecture d'entreprise}
+
+\subsubsection{Analyse du comportement : simulation dirigée par les processus métier}
+
+Pour simuler le comportement d'une entreprise nous nous appuyant sur les modèles d'architecture d'entreprise préalablement définis par les différentes parties prenantes. L'EA permettent de capturer l'essentiel des composants d'une entreprise sous forme d'abstraction. Une approche par points de vue guide la décomposition d'une entreprise en vues pertinentes pour les différents acteurs. Ces vues apportent une aide supplémentaire à la définition du périmètre des modèles de simulation. La vue intégration permet en particulier de définir les liens entres les différentes vues, donc entre les différents modèles de simulation et de garantir la cohérence et donc la pertinence de la simulation. Comme les modèles de simulation sont directement dérivés de l'architecture d'entreprise telle qu'elle est définie par les parties prenantes, elle est d'autant plus facile à appréhender à comprendre. Ces derniers peuvent aussi aisément communiquer et échanger autour des résultats de la simulation. 
+
+Les modèles d'entreprise doivent offrir un niveau d'abstraction suffisant à la compréhension, l'analyse et la communication. Les modèles doivent donc permettre d'abstraire les détails techniques et les nombreuses interconnexions tout en garantissant la traçabilité et la cohérence de l'ensemble de l'architecture. Notre approche consiste donc de mettre en lumière les composants et les relations qui sont critiques pour le comportement de l'ensemble de l'architecture. En effet, modéliser l'architecture d'une entreprise revient à la modélisation de systèmes complexes. Herbet Simon \cite{simon1990prediction} dans ses travaux de modélisation de systèmes complexes affirme que «~l'approximation judicieuse et non la puissance de calcul d'une machine~» reste la manière la plus effective d'adresser des systèmes complexes.
+
+La simulation des processus métier est souvent réduite à de la simple animation visuelle de diagrammes pour vérifier l'orchestration des taches métier. Nous proposons de piloter la simulation du comportement de l'architecture par le processus métier. Dans ce cas, le calcul d'une valeur ne se fait pas au niveau de la tache métier mais du module applicatif qui l'implémente. Le processus métier est modélisé sous forme de diagrammes d'activité fUML. Dans ce cas les simulations du comportement de l'architecture d'entreprise est pilotée par les processus métier qui sont alors responsable d'orchestrer l'ensemble des modèles comme l'illustre la figure \ref{fig:Simulation_Approche}. La simulation est lancée après l'intégration de l'architecture à travers la création de lien de cohérences intra-vue et inter-vues. Ces liens sont par la suite utilisés pour mettre en œuvre la simulation. D'une part, la \textit{Tâche~A} de la figure \ref{fig:Simulation_Approche} appelle le \textit{Module~A} car le \textit{Module~A} raffine la \textit{Fonction~A} qui elle-même raffine la \textit{Tâche~A}. D'autre part, les liens de cohérences intravue garantisse une compatibilité entre les informations envoyés par la \textit{Tâche~A} et celles attendues par la \textit{Tâche~B}, de même entre la \textit{Fonction~A} et la \textit{Fonction~B} et entre le \textit{Module~A} et le \textit{Module~B}.
+\begin{figure}[!htbp]
+ \begin{center}
+  \includegraphics[trim= 0cm 2cm 0cm 0cm, width=1\textwidth]{images/demarche/approche_simulation.pdf}
+ \end{center}
+ \caption{Simulation dirigée par les processus métier}
+ \label{fig:Simulation_Approche}
+\end{figure}
+
+En plus de s'appuyer sur les processus métier pour piloter la simulation de l'ensemble du comportement de l'architecture d'entreprise, notre approche consiste à mettre à profit les techniques et les langages de l'IDM pour faciliter l'automatisation de l'activité d'analyse du comportement. Nous nous appuyant sur le manifesto de IBM \cite{chesbrough2006research} concernat l'IDM dans la sélection de techniques et langages qui soient pertinents pour notre approche. Le mnifesto de IBM recommande l'utilisation de langages (1)~exécutables, (2)~standardisés et (3) compréhensibles par les experts du domaine. C'est le cas de fUML, BPMN et OCL. La figure \ref{IDM_EA} fait la correspondance entre les langages et la possibilité de les utiliser selon les vues. 
+
+Ces langages permettent une exécution directe des modèles créés. Contrairement à d'autres méthodes de simulation de processus métier qui utilisent l'IDM pour isoler la définition du processus de son exécution. Ces méthodes font ensuite appel aux transformations de modèle pour automatiser la conversion entre les modèles de représentation et leur exécution. 
+
+
+
+\begin{figure}[!htbp]
+ \begin{center}
+  \includegraphics[width=0.7\textwidth]{images/demarche/langages_vues.png}
+ \end{center}
+ \caption{Langages de l'IDM pour l'EA}
+ \label{fig:IDM_EA}
+\end{figure}
+
+
+\subsubsection{Analyse de la structure}
+Tout comme l'analyse du comportement, l'analyse de la structure de l'architecture d'entreprise est étroitement liée à l'impératif de cohérence.  Il faut s'assurer de la cohérence globale entres les modèles des différentes vues avant d'initier une simulation de scénarios de structuration de l'architecture. 
+
+Avant de mener des analyses d'impact par exemple, il faut s'assurer que les modèles métier, fonctionnel et applicatifs sont bien alignés.
+Notre contribution est de montrer la manière dont les langages et techniques de l'IDM peuvent être utilisés pour l'analyse structurelle des modèles d'entreprise. Pour celà la métamodélisation associée à un langage de contraintes et de requête tels que OCLinEcore ou QVT permettent de~:
+\begin{enumerate}
+\item modéliser des règles de structure supplémentaires qui précisent d'avantage méta-modèle d'architecture. Une fois que le modèle d'architecture conforme à ce métamodèle est créé, il est possible de vérifier qu'il respecte bien toutes les contraintes exprimé sur le métamodèle~;
+\item mener des analyses des analyses d'ampacts pour évaluer l'impact de l'indisponibilité d'un module applicatif sur l'architecture globale par exemple. En mettant à profit les liens de cohérence de la vue intégration, il est alors possible de déterminer quels sont les processus métier ou fonctionnel touchés par cette défaillance applicative. De même, il est possible d'identifier les modules applicatifs existants pouvant participer à la réalisation d'un nouveau métier si ces processus fait intervenir des taches métier déjà implémenter dans le SI.
+\end{enumerate}
+
 
  
 
 %(Describes the system’s functional elements, their responsibilities, interfaces, and primary interactions. A Functional view is the cornerstone of most ADs and is often the first part of the description that stakeholders try to read. It drives the shape of other system structures such as the information structure, concurrency structure, deployment structure, and so on. It also has a significant impact on the system’s quality properties such as its ability to change, its ability to be secured, and its runtime performance.)
 
+%\subsubsection{Le Model Typing pour la cohérence inter- et intra-vue}
+%Le \textit{Model Typing} est une technique de l'IDM appliqué au développement logiciel permettant de contrôler les types de modèles d'entrée des transformations de modèle à leur exécution. Nous proposons d'appliquer les principes du \textit{Model Typing} aux modèles d'EA et aux transformations de modèle qui leurs sont associées. Par exemple, un processus métier utilise en entrée et en sortie des modèles représentant des concepts métier. Un processus peut donc être considéré comme une transformation de modèle. 
+%Ainsi, le \textit{Model Typing} peut être utilisé pour l'intégration horizontale (i.e. cohérence et orchestration des processus d'une même vue). 
 
 
 
