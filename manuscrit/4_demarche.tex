@@ -153,14 +153,19 @@ Ces langages permettent une exécution directe des modèles créés. Contraireme
 
 
 \subsubsection{Analyse de la structure}
-Tout comme l'analyse du comportement, l'analyse de la structure de l'architecture d'entreprise est étroitement liée à l'impératif de cohérence.  Il faut s'assurer de la cohérence globale entres les modèles des différentes vues avant d'initier une simulation de scénarios de structuration de l'architecture. 
+Tout comme l'analyse du comportement, l'analyse de la structure de l'architecture d'entreprise est étroitement lié à l'impératif de cohérence.  Il est indispensable s'assurer de la cohérence entres les modèles des différentes vues avant d'initier une analyse structurelle qui soit pertinente pour les parties prenantes et en particulier pour l'architecte d'entreprise. 
 
-Avant de mener des analyses d'impact par exemple, il faut s'assurer que les modèles métier, fonctionnel et applicatifs sont bien alignés.
-Notre contribution est de montrer la manière dont les langages et techniques de l'IDM peuvent être utilisés pour l'analyse structurelle des modèles d'entreprise. Pour celà la métamodélisation associée à un langage de contraintes et de requête tels que OCLinEcore ou QVT permettent de~:
+Notre contribution consiste à définir la manière dont les langages et techniques de l'IDM peuvent être utilisés pour mener une analyse structurelle des modèles d'entreprise. Le cadre d'EA que nous proposons permet d'acquérir une vision globale et cohérente de l'ensemble des artefacts qui la composent. La taille de plus en pls importantes des entreprises actuelle fait que la complexité de l'entreprise en tant que système se retrouve dans les modèles d'architecture qui le représentent.
+
+L'analyse automatisée de ces modèles facilite leur appréhension par l'acteur qui mène ces analyses (en l'occurrence l'architecte d'entreprise). Elle permet de révéler la structure de l'entreprise et le fonctionnement de cette structure. Un intérêt  typique de l'analyse de la structure est la mesure de l'impact du changement \cite{de2005change} sur l'architecture. L'analyse de l'impact du changement consiste à dévoiler les effets de bord d'un changement apporté à un élément de l'architecture.  
+
+Les langages de modélisation doivent donc permettre de représenter convenablement les différents composants de l'entreprise en plus d'offrir la possibilité d'analyser la structure des modèles créés dans l'objectif de mieux comprendre le système réel, qui est dans ce cas l'entreprise. Nous proposons donc de tirer profit des méthodes IDM telle la métamodélisation et de les associer à des langages capables d'exprimer et d'exécuter des contraintes et des requêtes sur les modèles tels que OCLinEcore ou QVT. Grâce à ce type de langage il est possible de~:
 \begin{enumerate}
-\item modéliser des règles de structure supplémentaires qui précisent d'avantage méta-modèle d'architecture. Une fois que le modèle d'architecture conforme à ce métamodèle est créé, il est possible de vérifier qu'il respecte bien toutes les contraintes exprimé sur le métamodèle~;
-\item mener des analyses des analyses d'ampacts pour évaluer l'impact de l'indisponibilité d'un module applicatif sur l'architecture globale par exemple. En mettant à profit les liens de cohérence de la vue intégration, il est alors possible de déterminer quels sont les processus métier ou fonctionnel touchés par cette défaillance applicative. De même, il est possible d'identifier les modules applicatifs existants pouvant participer à la réalisation d'un nouveau métier si ces processus fait intervenir des taches métier déjà implémenter dans le SI.
+\item modéliser des règles de structure supplémentaires qui précisent d'avantage méta-modèle d'architecture. Une fois que le modèle d'architecture est conforme à ce métamodèle, il est possible de vérifier qu'il respecte bien toutes les contraintes exprimées au niveau du métamodèle~;
+\item analyser l'impact du changement pour évaluer par exemple l'impact de l'indisponibilité d'un module applicatif sur l'architecture globale. En mettant à profit les liens de cohérence de la vue intégration, il est alors possible de déterminer quels sont les processus métier ou fonctionnels touchés par cette défaillance applicative. De même, il est possible d'identifier les modules applicatifs existants pouvant participer à la réalisation d'un nouveau métier si ces processus fait intervenir des taches métier déjà implémentées dans le SI.
 \end{enumerate}
+
+
 
 
  

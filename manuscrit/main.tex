@@ -11,6 +11,13 @@
 \usepackage{adjustbox}
 \usepackage{arydshln,tabulary,multirow,booktabs,array}
 \usepackage{url}
+\usepackage{rotating}
+\usepackage{listings}
+
+\lstnewenvironment{queryl}[1][] 
+ {\lstset{frame=shadowbox,escapechar=`,linewidth=8cm, #1}}
+ {}
+
 
 \usepackage{tikz}
 \usetikzlibrary{mindmap,trees}
@@ -30,11 +37,12 @@
 %    \section*{Remerciements}
     \tableofcontents
     \mainmatter
-%    \include{chapter1}
+    \include{chapter1}
     \include{1_problematique}
     \include{2_etat_de_l_art_EA}
-%   \include{3_etat_de_l_art_IDM}
+   \include{3_etat_de_l_art_IDM}
 	\include{4_demarche}
+	\include{5_implementation}
     
     
     
