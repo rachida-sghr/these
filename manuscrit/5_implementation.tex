@@ -46,20 +46,7 @@ Nous considérons un premier cas où il n'est pas possible de recharger la batte
 En utilisant le langage OCL, nous modélisons la fonction d'affectation sous la forme de deux contraintes et d'une requête. La première contrainte OCL signifie que si un véhicule électrique est affecté à une tournée alors l'énergie dont il dispose permet d'assurer la totalité de la tournée.
 La deuxième contrainte signifie que si aucun véhicule électrique n'est capable d'assurer une tournée donnée alors c'est un véhicule thermique qui lui est associé. Enfin, la requête calcule le nombre total de kilomètres électriques correspondant à la distance parcourue par les véhicules électrique après l'affectation. Cette requête permet d'évaluer l'utilisation  des véhicules électriques dans l'optique d'atteindre l'objectif fonctionnel.
 
-\begin{queryl}[linewidth=15cm]
-context Tournee
-inv : 
-self.ve.autonomie * self.ve.niveauBatterie > self.energieRequise
-
-context Tournee
-inv : self.ve <> undefined xor self.vt <> undefined
-
-context Tournee :: elecKm() : int
-body :  
-(Tournee::allInstances() -> collect(t.ve <> undefined|t.distance)) 
--> sum()
-\end{queryl}
-
+\lstinputlisting{figures/code/tournee.ocl}
 
 \subsection{Vue applicative}
 
@@ -139,11 +126,4 @@ La simulation retourne comme résultat les affectations des véhicles aux tourn�
 %Un nouveau process faisant intervenir d'ancienne tâche, quelle ancienne appli réutilisée
 %Détecter les problèmes d'interop' entre modules
  
-
-
-
-
-
-
-\lstinputlisting{figures/minizinc/affectations.mzn}
-
+\lstinputlisting{figures/code/affectations.mzn}

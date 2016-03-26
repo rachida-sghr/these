@@ -1,0 +1,8 @@
+context Tournee
+inv : self.ve.autonomie * self.ve.niveauBatterie > self.energieRequise
+
+context Tournee
+inv : self.ve <> undefined xor self.vt <> undefined
+
+context Tournee :: elecKm() : int
+body : (Tournee::allInstances() -> collect(t.ve <> undefined|t.distance)) -> sum()
