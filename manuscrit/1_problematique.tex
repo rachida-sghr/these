@@ -110,7 +110,8 @@ gaz comme l'illustre la figure \ref{fig:courbeCharge}.
 
 \begin{figure}[!htbp]
  \begin{center}
-  \includegraphics[width=0.5\textwidth]{figures/images/problematique/ccharge.jpg}
+  
+\includegraphics[width=0.5\textwidth]{figures/images/problematique/ccharge.jpg}
  \end{center}
  \caption{Placement du type d'énergie sollicitée sur la courbe de charge 
 française du mardi 20 novembre 2012 (à remplacer par une plus 
@@ -369,7 +370,7 @@ communiquer avec les bornes de recharge.
 en compte l'entreprise dans son ensemble afin de garantir une cohérence entre 
 la stratégie d'évolution adoptée et les \gls{si} qui implémentent cette 
 stratégie. Parce que l'alignement entre la stratégie métier et le \gls{si} est 
-au cœur de l'\gls{ea} \cite{zachman1997enterprise}, nous
+au cœur de l'\gls{ea}\footnote{L'acronyme EA (\textit{Enterprise Architecture}) est souvent utilisé même dans la communauté francophone.} \cite{zachman1997enterprise}, nous
 adoptons l'\gls{ea} pour évaluer l'impact des technologies Smart Grids sur les
 gestionnaires des réseaux électriques. Il est en effet indispensable de
 concevoir une architecture cible pour avoir  «~une vision générale de comment
@@ -398,29 +399,26 @@ stratégie adoptée et les \gls{si} qui les implémentent.
 
 \subsection{Le recours a la simulation}
 
-Etant donné le grande nombre de parties prenantes qui 
-interagissent entre eux, tout en ayant des comportements autonomes et des 
-objectifs différents, les Smart Grids correspondent à des systèmes  dynamiques et complexes 
-\cite{monti_power_2010}. C'est le cas par exemples des producteurs d'énergie 
-renouvelable ou des consommateurs actifs sur le réseau électriques. La 
-déclinaison d'une stratégie orientée Smart Grid au niveau du 
-\gls{si} du gestionnaire de réseau met donc en jeu des systèmes dynamiques au 
-comportements complexes. Borshchev et Filippov\cite{borshchev2004system} 
-affirment que le seul moyen d'adresser cette complexité est de simuler ces 
-systèmes. La simulation est une technique connue pour valider ou critiquer la 
-conception d'un système dès les premières étapes de son cycle de développement. 
-Les acteurs impliqués dans le déploiement des 
+Les Smart Grids correspondent à des systèmes dynamiques et complexes 
+\cite{monti_power_2010} étant donné le grand nombre de parties prenantes qui 
+interagissent eux (tels que les producteurs d'énergie renouvelable ou les 
+consommateurs actifs sur le réseau), tout en ayant des comportements autonomes 
+et des objectifs différents. Les \gls{si} pilotant les  Smart Grids correspondent par 
+conséquence à des systèmes dynamiques aux comportements complexes. Borshchev et 
+Filippov\cite{borshchev2004system} affirment que le seul moyen d'adresser cette 
+complexité est de simuler ces systèmes. La simulation est une technique connue 
+pour valider ou critiquer la conception d'un système dès les premières étapes 
+de son cycle de développement. Les acteurs impliqués dans le déploiement des 
 Smart Grids acquièrent, par la  simulation, une connaissance approfondie et 
 directe des modèles créés pour valider ou critiquer leur choix d'implémentation.
 
-Néanmoins, les approches d'architecture d'entreprise se focalisent le plus 
-souvent sur 
-des aspects statiques et structurels tels que les interconnexions entre les 
-différentes applications métier \cite{buckl2008towards}. De plus, les modèles 
-issus de ces approches sont ne sont pas exécutables et sont conçus en priorité 
-pour la documentation et la communication entre parties prenantes 
-\cite{kulkarni2013modelling}. Notre 
-problématique de recherche se résume de ce fait dans la question suivante :
+Néanmoins, les approches d'\gls{ea} se focalisent le plus souvent sur des aspects 
+statiques et structurels tels que les interconnexions entre les différentes 
+applications métier \cite{buckl2008towards}. De plus, les modèles issus de ces 
+approches sont ne sont pas exécutables et sont conçus en 
+priorité pour la documentation et la communication entre parties prenantes 
+\cite{kulkarni2013modelling}. Notre problématique de recherche se résume de ce 
+fait dans la question suivante :
 
-\textbf{Quels critères doivent satisfaire les modèles issus de l'architecture 
-d'entreprise pour en permettre la simulation?}
+\textbf{Quels méthodes, modèles et outils adopter pour simuler une architecture 
+d'entreprise afin de la valider?}
