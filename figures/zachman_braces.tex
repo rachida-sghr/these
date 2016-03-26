@@ -5,40 +5,33 @@
 % HACK (and an ugly one) since booktabs breaks vertical separators, we use tikz
 % to draw them. Alignment is pretty much custom. I just hope this is gonna work
 % with no adjusment when putting this in the main document.
-\setlength{\mytablewidth}{\textwidth}
-\setlength{\myfirstcolwidth}{\dimexpr0.25\mytablewidth-2\tabcolsep\relax}
-\setlength{\mycolwidth}{\dimexpr0.16\mytablewidth-2\tabcolsep\relax}
+\setlength{\mytablewidth}{1.1\textwidth}
+\setlength{\myfirstcolwidth}{\dimexpr0.21\mytablewidth-2\tabcolsep\relax}
+\setlength{\mycolwidth}{\dimexpr0.14\mytablewidth-2\tabcolsep\relax}
+\setlength{\mylastcolwidth}{\dimexpr0.19\mytablewidth-2\tabcolsep\relax}
 
-\begin{adjustbox}{width=\mytablewidth,center}
+\begin{adjustbox}{width=1.2\mytablewidth,center}
     \scriptsize
-    % \begin{tabulary}{\mytablewidth}{m{\myfirstcolwidth}|m{\mycolwidth}|m{\mycolwidth}|m{\mycolwidth}|m{\mycolwidth}|m{\mycolwidth}|m{\mycolwidth}}
-    \begin{tabulary}{\mytablewidth}{m{\myfirstcolwidth}m{\mycolwidth}m{\mycolwidth}m{\mycolwidth}m{\mycolwidth}m{\mycolwidth}m{\mycolwidth}}
-        % \toprule
-        \cmidrule[\heavyrulewidth]{2-7}
+    \begin{tabulary}{\mytablewidth}{m{\myfirstcolwidth}m{\mycolwidth}m{\mycolwidth}m{\mycolwidth}m{\mycolwidth}m{\mycolwidth}m{\mylastcolwidth}}
+        \cmidrule[\heavyrulewidth]{2-6}
         \mrows{2}\tikzmark{zachmantopleft} \
-        & \centbf{Data} \
-        & \centbf{Function} \
-        & \centbf{Network} \
-        & \centbf{People} \
-        & \centbf{Time} \
+        & \centbf{Donnees} \
+        & \centbf{Fonctions} \
+        & \centbf{Personnel} \
+        & \centbf{Temps} \
         & \centbf{Motivation}\tikzmark{zachmantopright} \
-        % \tabularnewline
-        % & \centering(Things) \
-        % & \centering(Process) \
-        % & \centering(Location) \
-        % & \centering(People) \
-        % & \centering(Time) \
-        % & \centering(Motivation) \
+        & \
+
         \tabularnewline
-        & \centit{What} \
-        & \centit{How} \
-        & \centit{Where} \
-        & \centit{Who} \
-        & \centit{When} \
-        & \centit{Why} \
-        \tabularnewline\midrule
-        
-        \tikzmark{zachmanlefttop}\textbf{Scope} \
+        & \centit{Quoi} \
+        & \centit{Comment} \
+        & \centit{Qui} \
+        & \centit{Quand} \
+        & \centit{Pourquoi} \
+        & \
+        \tabularnewline\cmidrule[\lightrulewidth]{1-6}
+
+        \tikzmark{zachmanlefttop}\textbf{Portee} \
         & \mrows{2} \
         & \mrows{2} \
         & \mrows{2} \
@@ -48,10 +41,10 @@
         \tabularnewline
         % \centering(Contextual) &&&&&& \
         % \tabularnewline
-        \textit{Planner} &&&&&& \
-        \tabularnewline\midrule
-        
-        \textbf{Business Model} \
+        \textit{Planificateur} &&&&&& \multibrace{4}{\mycolwidth}{\gls{cim}} \
+        \tabularnewline\cmidrule[\lightrulewidth]{1-6}
+
+        \textbf{Modele metier} \
         & \mrows{2} \
         & \mrows{2} \
         & \mrows{2} \
@@ -59,25 +52,31 @@
         & \mrows{2} \
         & \mrows{2} \
         \tabularnewline
-        % \textering(Conceptual) &&&&&& \
-        % \tabularnewline
-        \textit{Owner} &&&&&& \
-        \tabularnewline\midrule
-        
-        \textbf{System Model} \
+        \textit{Proprietaire} &&&&&& \
+        \tabularnewline\cmidrule[\lightrulewidth]{1-6}
+
+        \textbf{Modele systeme} \
         & \mrows{2} \
         & \mrows{2} \
         & \mrows{2} \
         & \mrows{2} \
         & \mrows{2} \
-        & \mrows{2} \
+        & \multibrace{2}{\mycolwidth}{\gls{pim}} \
         \tabularnewline
         % \textering(Logical) &&&&&& \
         % \tabularnewline
-        \textit{Designer} &&&&&& \
-        \tabularnewline\midrule
-        
-        \textbf{Technology Model} \
+        \textit{Concepteur} &&&&&& \
+        \tabularnewline\cmidrule[\lightrulewidth]{1-6}
+
+        \textbf{Modele} \
+        & \mrows{2} \
+        & \mrows{2} \
+        & \mrows{2} \
+        & \mrows{2} \
+        & \mrows{2} \
+        & \multibrace{3}{\mycolwidth}{\gls{psm}} \
+        \tabularnewline
+        \textbf{Technologique} \
         & \mrows{2} \
         & \mrows{2} \
         & \mrows{2} \
@@ -87,33 +86,33 @@
         \tabularnewline
         % \textering(Physical) &&&&&& \
         % \tabularnewline
-        \textit{Builder} &&&&&& \
-        \tabularnewline\midrule
+        \textit{Realisateur} &&&&&& \
+        \tabularnewline\cmidrule[\lightrulewidth]{1-6}
 
-        \tikzmark{zachmanleftbottom}\textbf{Detailed Representations} \
+        \tikzmark{zachmanleftbottom}\textbf{Modele detaille} \
         & \mrows{2} \
         & \mrows{2} \
         & \mrows{2} \
         & \mrows{2} \
         & \mrows{2} \
-        & \mrows{2} \
+        & \multibrace{2}{\mycolwidth}{Code} \
         \tabularnewline
         % \textering(Out of context) &&&&&& \
         % \tabularnewline
-        \textit{Sub-contracter} &&&&&& \
-        \tabularnewline\bottomrule
+        \textit{Sous-traitant} &&&&&& \
+        \tabularnewline\cmidrule[\heavyrulewidth]{1-6}
     \end{tabulary}
     \begin{tikzpicture}[overlay,remember picture]
 
         % top horizontal arrow
-        \draw[<->] let \p1=(zachmantopleft), \p2=(zachmantopright) in ($(\x1,\y1)+(1.5,0.5)$) -- node[label=Abstractions (columns)] {} ($(\x2,\y2)+(0,0.5)$);
+        \draw[<->] let \p1=(zachmantopleft), \p2=(zachmantopright) in ($(\x1,\y1)+(1.5,0.7)$) -- node[label=Abstractions (columns)] {} ($(\x2,\y2)+(0,0.7)$);
 
         % left vertical arrow
         \draw[<->] let \p3=(zachmanlefttop), \p4=(zachmanleftbottom) in ($(\x3,\y3)+(-0.3,0.2)$) -- node[label={[label distance=-2ex, text depth=3ex, label position=above, rotate=90]above:Perspectives (rows)}] {} ($(\x3,\y4)+(-0.3,-0.5)$);
 
         % HACK: draw vertical column separators
-        \def\zachmancolwidth{2}  % ~ column width (found manually)
-        \def\zachmanleftoffset{3}  % ~ first column offset (found manually)
+        \def\zachmancolwidth{1.962}  % ~ column width (found manually)
+        \def\zachmanleftoffset{2.72}  % ~ first column offset (found manually)
         \newcommand\drawcolsep[1]{%
             \draw[dotted] let \p3=(zachmanlefttop), \p4=(zachmanleftbottom) in ($(\x3,\y3)+(\zachmanleftoffset+#1*\zachmancolwidth,0.2)$) -- ($(\x3,\y4)+(\zachmanleftoffset+#1*\zachmancolwidth,-0.64)$);}
         \drawcolsep{0}

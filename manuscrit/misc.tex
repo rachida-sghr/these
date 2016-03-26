@@ -1,0 +1,28 @@
+\newcommand\tikzmark[1]{%
+    \tikz[overlay,remember picture] \coordinate (#1);}
+
+\newcommand\centbf[1]{%
+    \centering\textbf{#1}}
+
+\newcommand\centit[1]{%
+    \centering\textit{#1}}
+
+% ============================================================================
+% tableaux
+% ============================================================================
+
+\newlength{\mytablewidth}
+% souvent, la premiere et derniere colonne ont des tailles differentes des
+% autres colonnes, on definit donc trois largeurs de colonne.
+\newlength{\myfirstcolwidth}
+\newlength{\mycolwidth}
+\newlength{\mylastcolwidth}
+
+% \multirow avec la bonne largeur de colonne
+\newcommand\mrows[1]{%
+  \multirow{#1}{\mycolwidth}{}}
+
+% accolate verticale sur plusieurs lignes
+% http://tex.stackexchange.com/a/218053/32098
+\newcommand\multibrace[3]{\rdelim\}{#1}{3mm}[\pbox{#2}{#3}]}
+
