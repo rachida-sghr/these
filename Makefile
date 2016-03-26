@@ -2,7 +2,7 @@
 
 all: These.pdf
 	[ -d build ] || mkdir build
-	latexmk -cd manuscrit/main.tex -output-directory=../build/
+	latexmk -cd manuscrit/main.tex -output-directory=../build/ -auxdir=../build
 	mv build/main.pdf these.pdf
 
 figures:

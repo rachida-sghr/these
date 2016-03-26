@@ -8,27 +8,26 @@ $pdflatex = "pdflatex --shell-escape %O %S";
 # $pdf_previewer = "start open -a preview %O %S";
 
 add_cus_dep('glo', 'gls', 0, 'run_makeglossaries');
+add_cus_dep('glo2', 'gls2', 0, 'run_makeglossaries');
 add_cus_dep('acn', 'acr', 0, 'run_makeglossaries');
+add_cus_dep('slo', 'sls', 0, 'run_makeglossaries');
 
 sub run_makeglossaries {
+    $dir = dirname($_[0]);
+    $file = basename($_[0]);
     if ( $silent ) {
-        system "makeglossaries -q '$_[0]'";
+        system "makeglossaries -q -d '$dir' '$file'";
     }
     else {
-        system "makeglossaries '$_[0]'";
+        system "makeglossaries -d '$dir' '$file'";
     };
 }
 
+add_cus_dep('idx', 'ind', 0, 'texindy');
+sub texindy{
+    system("texindy -L french \"$_[0].idx\"");
+}
 
-# Custom dependency and function(s) for epstopdf package
-# epstopdf =< 1.4:
-# add_cus_dep( 'eps', 'pdf', 0, 'cus_dep_delete_dest' );
-
-# epstopdf >= 1.5:
-# load it as \usepackage[update,prepend]{epstopdf}
-# detects an outdated pdf-image, and triggers a pdflatex-run
 add_cus_dep( 'eps', 'pdf', 0, 'cus_dep_require_primary_run' );
 
-push @generated_exts, 'glo', 'gls', 'glg';
-push @generated_exts, 'acn', 'acr', 'alg';
-$clean_ext .= ' %R.ist %R.xdy';
+@generated_exts = qw(aux idx ind lo* out toc acn acr alg bbl bcf fls gl* ist run.xml sbl* sl* sym* xdy unq synctex.gz mw *~);

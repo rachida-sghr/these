@@ -21,7 +21,8 @@
 
 \newtheorem{definition}{Definition}
 
-\usepackage[xindy,toc]{glossaries}
+\usepackage[nomain,acronym,xindy,toc]{glossaries}
+\input{glossaire}
 \makeglossaries
 
 \input{listing}
@@ -40,6 +41,7 @@
     
     \appendix
     \include{annexe1}
+    \printglossaries
     \bibliographystyle{bibstyle}
     \bibliography{bibliography}
 \end{document}
