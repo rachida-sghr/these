@@ -11,48 +11,35 @@
 
 \begin{adjustbox}{width=\mytablewidth,center}
     \scriptsize
-    % \begin{tabulary}{\mytablewidth}{m{\myfirstcolwidth}|m{\mycolwidth}|m{\mycolwidth}|m{\mycolwidth}|m{\mycolwidth}|m{\mycolwidth}|m{\mycolwidth}}
-    \begin{tabulary}{\mytablewidth}{m{\myfirstcolwidth}m{\mycolwidth}m{\mycolwidth}m{\mycolwidth}m{\mycolwidth}m{\mycolwidth}m{\mycolwidth}}
-        % \toprule
-        \cmidrule[\heavyrulewidth]{2-7}
+    \begin{tabulary}{\mytablewidth}{m{\myfirstcolwidth}m{\mycolwidth}m{\mycolwidth}m{\mycolwidth}m{\mycolwidth}m{\mycolwidth}}
+
+        \cmidrule[\heavyrulewidth]{2-6}
         \mrows{2}\tikzmark{zachmantopleft} \
-        & \centbf{Data} \
-        & \centbf{Function} \
-        & \centbf{Network} \
-        & \centbf{People} \
-        & \centbf{Time} \
+        & \centbf{Donnees} \
+        & \centbf{Fonctions} \
+        & \centbf{Personnel} \
+        & \centbf{Temps} \
         & \centbf{Motivation}\tikzmark{zachmantopright} \
-        % \tabularnewline
-        % & \centering(Things) \
-        % & \centering(Process) \
-        % & \centering(Location) \
-        % & \centering(People) \
-        % & \centering(Time) \
-        % & \centering(Motivation) \
         \tabularnewline
-        & \centit{What} \
-        & \centit{How} \
-        & \centit{Where} \
-        & \centit{Who} \
-        & \centit{When} \
-        & \centit{Why} \
+        & \centit{Quoi} \
+        & \centit{Comment} \
+        & \centit{Qui} \
+        & \centit{Quand} \
+        & \centit{Pourquoi} \
         \tabularnewline\midrule
-        
-        \tikzmark{zachmanlefttop}\textbf{Scope} \
-        & \mrows{2} \
+
+        \tikzmark{zachmanlefttop}\textbf{Portee} \
         & \mrows{2} \
         & \mrows{2} \
         & \mrows{2} \
         & \mrows{2} \
         & \mrows{2} \
         \tabularnewline
-        % \centering(Contextual) &&&&&& \
-        % \tabularnewline
-        \textit{Planner} &&&&&& \
+
+        \textit{Planner} &&&&& \
         \tabularnewline\midrule
-        
-        \textbf{Business Model} \
-        & \mrows{2} \
+
+        \textbf{Modele metier} \
         & \mrows{2} \
         & \mrows{2} \
         & \mrows{2} \
@@ -61,37 +48,37 @@
         \tabularnewline
         % \textering(Conceptual) &&&&&& \
         % \tabularnewline
-        \textit{Owner} &&&&&& \
-        \tabularnewline\midrule
-        
-        \textbf{System Model} \
-        & \mrows{2} \
-        & \mrows{2} \
-        & \mrows{2} \
-        & \mrows{2} \
-        & \mrows{2} \
-        & \mrows{2} \
-        \tabularnewline
-        % \textering(Logical) &&&&&& \
-        % \tabularnewline
-        \textit{Designer} &&&&&& \
-        \tabularnewline\midrule
-        
-        \textbf{Technology Model} \
-        & \mrows{2} \
-        & \mrows{2} \
-        & \mrows{2} \
-        & \mrows{2} \
-        & \mrows{2} \
-        & \mrows{2} \
-        \tabularnewline
-        % \textering(Physical) &&&&&& \
-        % \tabularnewline
-        \textit{Builder} &&&&&& \
+        \textit{Proprietaire} &&&&& \
         \tabularnewline\midrule
 
-        \tikzmark{zachmanleftbottom}\textbf{Detailed Representations} \
+        \textbf{Modele systeme} \
         & \mrows{2} \
+        & \mrows{2} \
+        & \mrows{2} \
+        & \mrows{2} \
+        & \mrows{2} \
+        \tabularnewline
+        \textit{Concepteur} &&&&& \
+        \tabularnewline\midrule
+
+        \textbf{Modele} \
+        & \mrows{2} \
+        & \mrows{2} \
+        & \mrows{2} \
+        & \mrows{2} \
+        & \mrows{2} \
+        \tabularnewline
+        \textbf{Technologique} \
+        & \mrows{2} \
+        & \mrows{2} \
+        & \mrows{2} \
+        & \mrows{2} \
+        & \mrows{2} \
+        \tabularnewline
+        \textit{Realisateur} &&&&& \
+        \tabularnewline\midrule
+
+        \tikzmark{zachmanleftbottom}\textbf{Modele detaille} \
         & \mrows{2} \
         & \mrows{2} \
         & \mrows{2} \
@@ -100,16 +87,16 @@
         \tabularnewline
         % \textering(Out of context) &&&&&& \
         % \tabularnewline
-        \textit{Sub-contracter} &&&&&& \
+        \textit{Sous-traitant} &&&&& \
         \tabularnewline\bottomrule
     \end{tabulary}
     \begin{tikzpicture}[overlay,remember picture]
 
         % top horizontal arrow
-        \draw[<->] let \p1=(zachmantopleft), \p2=(zachmantopright) in ($(\x1,\y1)+(1.5,0.5)$) -- node[label=Abstractions (columns)] {} ($(\x2,\y2)+(0,0.5)$);
+        \draw[<->] let \p1=(zachmantopleft), \p2=(zachmantopright) in ($(\x1,\y1)+(1.5,0.5)$) -- node[label=Abstractions (colonnes)] {} ($(\x2,\y2)+(0,0.5)$);
 
         % left vertical arrow
-        \draw[<->] let \p3=(zachmanlefttop), \p4=(zachmanleftbottom) in ($(\x3,\y3)+(-0.3,0.2)$) -- node[label={[label distance=-2ex, text depth=3ex, label position=above, rotate=90]above:Perspectives (rows)}] {} ($(\x3,\y4)+(-0.3,-0.5)$);
+        \draw[<->] let \p3=(zachmanlefttop), \p4=(zachmanleftbottom) in ($(\x3,\y3)+(-0.3,0.2)$) -- node[label={[label distance=-2ex, text depth=3ex, label position=above, rotate=90]above:Perspectives (lignes)}] {} ($(\x3,\y4)+(-0.3,-0.5)$);
 
         % HACK: draw vertical column separators
         \def\zachmancolwidth{2}  % ~ column width (found manually)
@@ -121,6 +108,5 @@
         \drawcolsep{2}
         \drawcolsep{3}
         \drawcolsep{4}
-        \drawcolsep{5}
     \end{tikzpicture}
 \end{adjustbox}

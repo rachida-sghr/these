@@ -63,8 +63,6 @@
         & \mrows{2} \
         & \multibrace{2}{\mycolwidth}{\gls{pim}} \
         \tabularnewline
-        % \textering(Logical) &&&&&& \
-        % \tabularnewline
         \textit{Concepteur} &&&&&& \
         \tabularnewline\cmidrule[\lightrulewidth]{1-6}
 
@@ -84,8 +82,6 @@
         & \mrows{2} \
         & \mrows{2} \
         \tabularnewline
-        % \textering(Physical) &&&&&& \
-        % \tabularnewline
         \textit{Realisateur} &&&&&& \
         \tabularnewline\cmidrule[\lightrulewidth]{1-6}
 
@@ -97,18 +93,16 @@
         & \mrows{2} \
         & \multibrace{2}{\mycolwidth}{Code} \
         \tabularnewline
-        % \textering(Out of context) &&&&&& \
-        % \tabularnewline
         \textit{Sous-traitant} &&&&&& \
         \tabularnewline\cmidrule[\heavyrulewidth]{1-6}
     \end{tabulary}
     \begin{tikzpicture}[overlay,remember picture]
 
         % top horizontal arrow
-        \draw[<->] let \p1=(zachmantopleft), \p2=(zachmantopright) in ($(\x1,\y1)+(1.5,0.7)$) -- node[label=Abstractions (columns)] {} ($(\x2,\y2)+(0,0.7)$);
+        \draw[<->] let \p1=(zachmantopleft), \p2=(zachmantopright) in ($(\x1,\y1)+(1.5,0.7)$) -- node[label=Abstractions (colonnes)] {} ($(\x2,\y2)+(0,0.7)$);
 
         % left vertical arrow
-        \draw[<->] let \p3=(zachmanlefttop), \p4=(zachmanleftbottom) in ($(\x3,\y3)+(-0.3,0.2)$) -- node[label={[label distance=-2ex, text depth=3ex, label position=above, rotate=90]above:Perspectives (rows)}] {} ($(\x3,\y4)+(-0.3,-0.5)$);
+        \draw[<->] let \p3=(zachmanlefttop), \p4=(zachmanleftbottom) in ($(\x3,\y3)+(-0.3,0.2)$) -- node[label={[label distance=-2ex, text depth=3ex, label position=above, rotate=90]above:Perspectives (lignes)}] {} ($(\x3,\y4)+(-0.3,-0.5)$);
 
         % HACK: draw vertical column separators
         \def\zachmancolwidth{1.962}  % ~ column width (found manually)
