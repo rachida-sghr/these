@@ -139,18 +139,15 @@ La simulation des processus métier est souvent réduite à de la simple animati
 
 En plus de s'appuyer sur les processus métier pour piloter la simulation de l'ensemble du comportement de l'architecture d'entreprise, notre approche consiste à mettre à profit les techniques et les langages de l'IDM pour faciliter l'automatisation de l'activité d'analyse du comportement. Nous nous appuyant sur le manifesto de IBM \cite{chesbrough2006research} concernat l'IDM dans la sélection de techniques et langages qui soient pertinents pour notre approche. Le mnifesto de IBM recommande l'utilisation de langages (1)~exécutables, (2)~standardisés et (3) compréhensibles par les experts du domaine. C'est le cas de fUML, BPMN et OCL. La figure \ref{fig:IDM_EA} fait la correspondance entre les langages et la possibilité de les utiliser selon les vues. 
 
-Ces langages permettent une exécution directe des modèles créés. Contrairement à d'autres méthodes de simulation de processus métier qui utilisent l'IDM pour isoler la définition du processus de son exécution. Ces méthodes font ensuite appel aux transformations de modèle pour automatiser la conversion entre les modèles de représentation et leur exécution. 
-
-
-
 \begin{figure}[!htbp]
- \begin{center}
-  \includegraphics[width=0.7\textwidth]{figures/images/demarche/langages_vues.png}
- \end{center}
- \caption{Langages de l'IDM pour l'EA}
- \label{fig:IDM_EA}
+    \begin{center}
+        \input{figures/langages_vues}
+    \end{center}
+    \caption{Langages de l'IDM pour l'EA}
+    \label{fig:IDM_EA}
 \end{figure}
 
+Ces langages permettent une exécution directe des modèles créés. Contrairement à d'autres méthodes de simulation de processus métier qui utilisent l'IDM pour isoler la définition du processus de son exécution. Ces méthodes font ensuite appel aux transformations de modèle pour automatiser la conversion entre les modèles de représentation et leur exécution. 
 
 \subsubsection{Analyse de la structure}
 Tout comme l'analyse du comportement, l'analyse de la structure de l'architecture d'entreprise est étroitement lié à l'impératif de cohérence.  Il est indispensable s'assurer de la cohérence entres les modèles des différentes vues avant d'initier une analyse structurelle qui soit pertinente pour les parties prenantes et en particulier pour l'architecte d'entreprise. 
