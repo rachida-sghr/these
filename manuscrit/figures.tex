@@ -1,0 +1,22 @@
+\usepackage{adjustbox}
+\usepackage{arydshln,tabulary,multirow,booktabs,array,bigdelim}
+\usepackage{graphicx}
+\usepackage{pbox}
+\usepackage{rotating}
+\usepackage{tikz}
+\usetikzlibrary{calc,mindmap,trees}
+\tikzset{concept/.append style={fill={none}}}
+
+\newlength{\mytablewidth}
+\newlength{\myfirstcolwidth}
+\newlength{\mycolwidth}
+\newlength{\mylastcolwidth}
+\newcommand\mrows[1]{\multirow{#1}{\mycolwidth}{}}
+% accolade verticale sur plusieurs lignes
+% http://tex.stackexchange.com/a/218053/32098
+\newcommand\multibrace[3]{\rdelim\}{#1}{3mm}[\pbox{#2}{#3}]}
+% pour laisser une "marque" utilisable plus tard avec tikz
+% utile pour tracer des fleches au dessus des tableaux par exemple
+\newcommand\tikzmark[1]{\tikz[overlay,remember picture] \coordinate (#1);}
+\newcommand\centbf[1]{\centering\textbf{#1}}
+\newcommand\centit[1]{\centering\textit{#1}}

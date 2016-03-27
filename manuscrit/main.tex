@@ -2,34 +2,41 @@
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage[french]{babel}
+
+% liens internes
 \usepackage[pagebackref=true]{hyperref}
+% liens externes
+\usepackage{url}
+
+% frames
+\usepackage{framed}
+
 % sauts de ligne entre les paragraphes, plutot qu'une simple indentation
 \usepackage{parskip}
-\usepackage{url}
-\usepackage{color}
-\usepackage{graphicx}
-\usepackage{amsthm}
+
 % evite les erreurs de justification
 % http://tex.stackexchange.com/questions/174903/justified-text-extending-beyond-margin
 \usepackage{microtype}
-\usepackage{adjustbox}
-% packages pour les tableaux
-\usepackage{arydshln,tabulary,multirow,booktabs,array,bigdelim}
-\usepackage{pbox}
-\usepackage{rotating}
-\usepackage{tikz}
-\usetikzlibrary{calc,mindmap,trees}
-\tikzset{concept/.append style={fill={none}}}
 
+% packages et commandes pour les figures
+\input{figures}
+% listing configuration pour le code
+\input{listing}
 
+\usepackage{enumitem}
+% puces avec frenchb (http://tex.stackexchange.com/a/123669/32098)
+\renewcommand*{\FrenchLabelItem}{$-$}
+
+\usepackage{amsthm}
 \newtheorem{definition}{Definition}
 
+% numerotation au dela des sub-sections
+\setcounter{secnumdepth}{5}
+
+% glossaire
 \usepackage[nomain,acronym,xindy,toc]{glossaries}
 \input{glossaire}
 \makeglossaries
-
-\input{misc}
-\input{listing}
 
 \begin{document}
 %    \include{title}
