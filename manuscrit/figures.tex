@@ -4,7 +4,7 @@
 \usepackage{pbox}
 \usepackage{rotating}
 \usepackage{tikz}
-\usetikzlibrary{calc,mindmap,trees}
+\usetikzlibrary{calc,mindmap,trees,fit,positioning}
 \tikzset{concept/.append style={fill={none}}}
 
 \newlength{\mytablewidth}
@@ -25,3 +25,37 @@
 % http://tex.stackexchange.com/a/132800/32098
 \def\checkmark{\tikz\fill[scale=0.4](0,.35) -- (.25,0) -- (1,.7) -- (.25,.15) -- cycle;}
 \def\scalecheck{\resizebox{\widthof{\checkmark}*\ratio{\widthof{x}}{\widthof{\normalsize x}}}{!}{\checkmark}}
+
+% http://tex.stackexchange.com/questions/245825/how-to-draw-an-ekg-tracing-with-tikz/245839#245839
+% http://tex.stackexchange.com/questions/173569/tikz-pic-parameter
+% carte de france
+% TODO: rendre les couleurs parametrables
+\definecolor{cFFFFFF}{RGB}{255,255,255}
+\definecolor{cE3ECF6}{RGB}{227,236,246}
+\definecolor{cBCBD43}{RGB}{188,189,67}
+\definecolor{c999999}{RGB}{153,153,153}
+\definecolor{c666666}{RGB}{102,102,102} % frontieres et regions
+\definecolor{cCCCCCC}{RGB}{204,204,204}
+\tikzset{
+    pics/france/.style args={scale #1}{
+        code={
+            \begin{scope}[y=0.80pt, x=0.80pt, yscale=-1.000000, xscale=1.000000, inner sep=0pt, outer sep=0pt, scale=#1]
+                \input{figures/france}
+            \end{scope}
+        },
+    }
+}
+
+% region rhone alpes
+% TODO: rendre les couleurs parametrables
+\definecolor{cffffff}{RGB}{255,255,255}
+\definecolor{c828282}{RGB}{130,130,130}
+\tikzset{
+    pics/region/.style args={scale #1}{
+        code={
+            \begin{scope}[y=0.80pt, x=0.80pt, yscale=-1.000000, xscale=1.000000, inner sep=0pt, outer sep=0pt, scale=#1]
+                \input{figures/region}
+            \end{scope}
+        },
+    }
+}

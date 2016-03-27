@@ -1,0 +1,66 @@
+%\newsavebox\lstbox
+%\begin{lrbox}{\lstbox}
+%    \begin{minipage}{0.25\textwidth}
+%        \begin{lstlisting}[style=xmlfig]
+%<carte>
+% <pays>France</pays>
+% <regions>
+%  <region>
+%   <nom>Rhone-Alpes</nom>
+%   <departement>
+%    <nom>Drome</nom>
+%   </departement>
+%   ...
+%  </region>
+%  ...
+% </regions>
+%</carte>\end{lstlisting}
+%    \end{minipage}
+%\end{lrbox}
+
+%\begin{tikzpicture}[]
+%    \node (xml) at (-4, -1.86) {\usebox\lstbox};
+%    \node[align=center,below] at (xml.south) {Modele};
+%
+%    % the local bounding box is to give a name to the pic:
+%    % http://tex.stackexchange.com/a/241737/32098
+%    \pic[local bounding box=carte] (carte) at (0, 0) {france={scale 0.2}};
+%    \node[align=center,below] at (carte.south) {Modele};
+%
+%    \node[inner sep=4pt] (photo) at (7,-1.86) {\includegraphics[scale=0.12]{figures/images/france_satellite.jpg}};
+%    \node[align=center,below] at (photo.south) {Systeme modelise};
+%
+%    \draw[->] (carte) -- (photo.west) node[midway,above] {Represente} node[midway,below]{$\mu$};
+%    \draw[->] (xml) -- (carte.west) node[midway,above] {Represente} node[midway,below]{$\mu$};
+%\end{tikzpicture}
+
+\newsavebox\lstbox
+\begin{lrbox}{\lstbox}
+    \begin{minipage}{0.25\textwidth}
+        \begin{lstlisting}[style=xmlfig]
+<carte>
+ <pays>France</pays>
+ <region>
+  <nom>Rhone-Alpes</nom>
+  <departement>
+   <nom>Drome</nom>
+  </departement>
+  ...
+</carte>\end{lstlisting}
+    \end{minipage}
+\end{lrbox}
+\begin{tikzpicture}[]
+    \node (xml) at (-3.6, -1.4) {\usebox\lstbox};
+    \node[align=center,below] at (xml.south) {Modele};
+
+    % local bounding box to give a name to the pic: http://tex.stackexchange.com/a/241737/32098
+    \pic[local bounding box=carte] (carte) at (0, 0) {france={scale 0.15}};
+    \node[align=center,below] at (carte.south) {Modele};
+
+    \node[inner sep=2pt] (photo) at (6,-1.4) {\includegraphics[scale=0.09]{figures/images/france_satellite.jpg}};
+    \node[align=center,below] at (photo.south) {Systeme modelise};
+
+    % fleches
+    \draw[->] (carte) -- (photo.west) node[midway,above] {Represente} node[midway,below]{$\mu$};
+    \draw[->] (xml) -- (carte.west) node[midway,above] {Represente} node[midway,below]{$\mu$};
+\end{tikzpicture}
