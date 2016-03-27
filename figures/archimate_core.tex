@@ -1,0 +1,26 @@
+\setlength{\mytablewidth}{\textwidth}
+\setlength{\myfirstcolwidth}{\dimexpr0.23\mytablewidth-2\tabcolsep\relax}
+\setlength{\mycolwidth}{\dimexpr0.26\mytablewidth-2\tabcolsep\relax}
+
+\begin{tabulary}{\mytablewidth}{m{\myfirstcolwidth}m{\mycolwidth}m{\mycolwidth}m{\mycolwidth}}
+    % \cmidrule[\heavyrulewidth]{2-4}
+    & \centbf{Structure passive} & \centbf{Comportement} & \centbf{Structure active}\
+    \tabularnewline\cmidrule{2-4}
+    \hfill \textbf{Metier} & \tikzmark{tabletop} & & \
+    \tabularnewline\cmidrule{2-4}
+    \hfill \textbf{Application} & & & \
+    \tabularnewline\cmidrule{2-4}
+    \hfill \textbf{Techonologie} & \tikzmark{tablebottom} & & \
+    \tabularnewline\cmidrule{2-4}
+\end{tabulary}
+
+\begin{tikzpicture}[overlay,remember picture]
+    \def\mytablecolwidth{3.291}  % ~ column width (found manually)
+    \def\mytableleftof{-0.21}  % ~ first column offset (found manually)
+    \newcommand\drawcolsep[2]{%
+    \draw[#2] let \p3=(tabletop), \p4=(tablebottom) in ($(\x3,\y3)+(\mytableleftof+#1*\mytablecolwidth,0.45)$) -- ($(\x3,\y4)+(\mytableleftof+#1*\mytablecolwidth,-0.22)$);}
+    \drawcolsep{0}{}
+    \drawcolsep{1}{dotted}
+    \drawcolsep{2}{dotted}
+    \drawcolsep{3}{}
+\end{tikzpicture}
