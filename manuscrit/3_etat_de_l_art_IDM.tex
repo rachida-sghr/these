@@ -539,23 +539,23 @@ L'\textit{Open Group} propose de mettre en cohérence les notations utilisés en
 
 Le métamodèle d'Archimate est concis mais vise à couvrir la majorité des concepts intervenants dans la création d'une architecture d'entreprise. Archimate utilise trois vues~:~métier, applicative et technique. Pour chacune des vues, trois types d'éléments différents sont spécifiés~:~structure active, comportement et structure passive. Les structures actives correspondent aux éléments dotés d'un comportement tels qu'un acteur métier, un module applicatif ou encore un élément de l'infrastructure technique. Le comportement correspond à ensemble d'activités ou de tâches poursuivie par un ou plusieurs éléments de la structure active. Il peut s'agit par exemple d'un processus métier. Les structures passives correspondent aux éléments manipulés par le comportement comme par exemple les objets métier. Archimate associe des couleurs différentes aux éléments en fonction de leur type (voir figure \ref{fig:archimate}). Les éléments de type structure active sont bleus, ceux de type comportement sont jaunes et enfin ceux de type structure passive sont verts. 
 
-Le métamodèle du langage Archimate est un adossé d'une syntaxe concrète graphique permettant visualiser les modèles. Mais aucune sémantique standard d'exécution n'est formalisée. Les modèles d'architecture sont ainsi souvent purement contemplatifs et les outils implémentant Archimate n'offrent pas la possibilité d'exécuter ces modèles à des fins d'analyse de structure et de comportement. 
-
-\begin{figure}[!htbp]
- \begin{center}
-   \includegraphics[width=0.5\textwidth]{figures/images/Chapitre1/archimate_core.png}
- \end{center}
+\begin{table}[!ht]
+    \vspace*{0.5em}
+    \begin{center}
+        \input{figures/archimate_core}
+    \end{center}
  \caption{Composants du langage Archimate}
  \label{fig:archimate}
-\end{figure}
+\end{table}
 
-
+Le métamodèle du langage Archimate est un adossé d'une syntaxe concrète graphique permettant visualiser les modèles. Mais aucune sémantique standard d'exécution n'est formalisée. Les modèles d'architecture sont ainsi souvent purement contemplatifs et les outils implémentant Archimate n'offrent pas la possibilité d'exécuter ces modèles à des fins d'analyse de structure et de comportement. 
 
 \subsection{Approches d'Architecture d'Entreprise recourant à l'Ingénierie Dirigée par les Modèles}
 
 L'IDM a prouvé sa capacité à adresser des systèmes complexes \cite{france2007model}. L'application des techniques de l'IDM aux approches d'EA font l'objet de quelques rares travaux \cite{bruneliere2013support}. Les travaux de Frankel et al. \cite{frankel2003zachman} font figure de précurseurs. Ces derniers décrivent un mapping entre le cadre Zachman et les vues MDA (figure \ref{fig:mapping-zachman-mda}). Mais le périmètre de ces travaux se réduit à l'architecture IT de l'entreprise plutôt qu'à l'entreprise dans son ensemble.
 
-\begin{table}
+\begin{table}[!ht]
+    \vspace*{0.5em}
     \input{figures/zachman}
     \caption{Mapping Zachman/MDA \protect\cite{frankel2003zachman}}
     \label{fig:mapping-zachman-mda}
