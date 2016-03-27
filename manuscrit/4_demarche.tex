@@ -129,7 +129,8 @@ Pour simuler le comportement d'une entreprise nous nous appuyant sur les modèle
 Les modèles d'entreprise doivent offrir un niveau d'abstraction suffisant à la compréhension, l'analyse et la communication. Les modèles doivent donc permettre d'abstraire les détails techniques et les nombreuses interconnexions tout en garantissant la traçabilité et la cohérence de l'ensemble de l'architecture. Notre approche consiste donc de mettre en lumière les composants et les relations qui sont critiques pour le comportement de l'ensemble de l'architecture. En effet, modéliser l'architecture d'une entreprise revient à la modélisation de systèmes complexes. Herbet Simon \cite{simon1990prediction} dans ses travaux de modélisation de systèmes complexes affirme que «~l'approximation judicieuse et non la puissance de calcul d'une machine~» reste la manière la plus effective d'adresser des systèmes complexes.
 
 La simulation des processus métier est souvent réduite à de la simple animation visuelle de diagrammes pour vérifier l'orchestration des taches métier. Nous proposons de piloter la simulation du comportement de l'architecture par le processus métier. Dans ce cas, le calcul d'une valeur ne se fait pas au niveau de la tache métier mais du module applicatif qui l'implémente. Le processus métier est modélisé sous forme de diagrammes d'activité fUML. Dans ce cas les simulations du comportement de l'architecture d'entreprise est pilotée par les processus métier qui sont alors responsable d'orchestrer l'ensemble des modèles comme l'illustre la figure \ref{fig:Simulation_Approche}. La simulation est lancée après l'intégration de l'architecture à travers la création de lien de cohérences intra-vue et inter-vues. Ces liens sont par la suite utilisés pour mettre en œuvre la simulation. D'une part, la \textit{Tâche~A} de la figure \ref{fig:Simulation_Approche} appelle le \textit{Module~A} car le \textit{Module~A} raffine la \textit{Fonction~A} qui elle-même raffine la \textit{Tâche~A}. D'autre part, les liens de cohérences intravue garantisse une compatibilité entre les informations envoyés par la \textit{Tâche~A} et celles attendues par la \textit{Tâche~B}, de même entre la \textit{Fonction~A} et la \textit{Fonction~B} et entre le \textit{Module~A} et le \textit{Module~B}.
-\begin{figure}[!htbp]
+
+\begin{figure}[!ht]
  \begin{center}
   \includegraphics[trim= 0cm 2cm 0cm 0cm, width=1\textwidth]{figures/images/demarche/approche_simulation.pdf}
  \end{center}
@@ -139,15 +140,16 @@ La simulation des processus métier est souvent réduite à de la simple animati
 
 En plus de s'appuyer sur les processus métier pour piloter la simulation de l'ensemble du comportement de l'architecture d'entreprise, notre approche consiste à mettre à profit les techniques et les langages de l'IDM pour faciliter l'automatisation de l'activité d'analyse du comportement. Nous nous appuyant sur le manifesto de IBM \cite{chesbrough2006research} concernat l'IDM dans la sélection de techniques et langages qui soient pertinents pour notre approche. Le mnifesto de IBM recommande l'utilisation de langages (1)~exécutables, (2)~standardisés et (3) compréhensibles par les experts du domaine. C'est le cas de fUML, BPMN et OCL. La figure \ref{fig:IDM_EA} fait la correspondance entre les langages et la possibilité de les utiliser selon les vues. 
 
-\begin{figure}[!htbp]
+
+Ces langages permettent une exécution directe des modèles créés. Contrairement à d'autres méthodes de simulation de processus métier qui utilisent l'IDM pour isoler la définition du processus de son exécution. Ces méthodes font ensuite appel aux transformations de modèle pour automatiser la conversion entre les modèles de représentation et leur exécution. 
+
+\begin{table}[!ht]
     \begin{center}
         \input{figures/langages_vues}
     \end{center}
     \caption{Langages de l'IDM pour l'EA}
     \label{fig:IDM_EA}
-\end{figure}
-
-Ces langages permettent une exécution directe des modèles créés. Contrairement à d'autres méthodes de simulation de processus métier qui utilisent l'IDM pour isoler la définition du processus de son exécution. Ces méthodes font ensuite appel aux transformations de modèle pour automatiser la conversion entre les modèles de représentation et leur exécution. 
+\end{table}
 
 \subsubsection{Analyse de la structure}
 Tout comme l'analyse du comportement, l'analyse de la structure de l'architecture d'entreprise est étroitement lié à l'impératif de cohérence.  Il est indispensable s'assurer de la cohérence entres les modèles des différentes vues avant d'initier une analyse structurelle qui soit pertinente pour les parties prenantes et en particulier pour l'architecte d'entreprise. 
