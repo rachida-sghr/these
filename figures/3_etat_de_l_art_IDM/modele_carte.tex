@@ -51,16 +51,16 @@
 \end{lrbox}
 \begin{tikzpicture}[]
     \node (xml) at (-3.6, -1.4) {\usebox\lstbox};
-    \node[align=center,below] at (xml.south) {Modele};
+    \node[align=center,below] at (xml.south) {Modèle};
 
     % local bounding box to give a name to the pic: http://tex.stackexchange.com/a/241737/32098
     \pic[local bounding box=carte] (carte) at (0, 0) {france={scale 0.15}};
-    \node[align=center,below] at (carte.south) {Modele};
+    \node[align=center,below] at (carte.south) {Modèle};
 
     \node[inner sep=2pt] (photo) at (6,-1.4) {\includegraphics[scale=0.09]{figures/lib/france_satellite.jpg}};
-    \node[align=center,below] at (photo.south) {Systeme modelise};
+    \node[align=center,below] at (photo.south) {Système modélisé};
 
     % fleches
-    \draw[->] (carte) -- (photo.west) node[midway,above] {Represente} node[midway,below]{$\mu$};
-    \draw[->] (xml) -- (carte.west) node[midway,above] {Represente} node[midway,below]{$\mu$};
+    \draw[->] (carte) -- (photo.west) node[midway,above] {Représente} node[midway,below]{$\mu$};
+    \draw[->] (xml) -- (carte.west) node[midway,above] {Représente} node[midway,below]{$\mu$};
 \end{tikzpicture}
