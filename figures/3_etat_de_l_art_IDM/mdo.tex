@@ -1,0 +1,14 @@
+\begin{tikzpicture}[
+    myblock/.style={rectangle,draw,minimum width=0.8\textwidth,minimum height=1cm,align=center},
+    mytext/.style={midway,fill=white,font=\itshape\footnotesize},
+]
+
+    \node at (0,0) [myblock] (t) {Modele de l'organisation};
+
+    \node at (0,-3) [myblock] (m) {Modele specifique a la plate-forme};
+
+    \node at (0,-6) [myblock] (b) {Plate-forme pour l'organisation};
+
+    \draw[-angle 60] (t) -- (m) node [mytext] {Transformation de modele};
+    \draw[-angle 60] (m) -- (b) node [mytext] {Transformation de modele};
+\end{tikzpicture}

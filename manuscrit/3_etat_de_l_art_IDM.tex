@@ -190,11 +190,11 @@ modèles cibles aux éléments du ou des modèles source.
 \end{itemize}
 
 \begin{figure}[!htbp]
- \begin{center}
-   \includegraphics[width=0.7\textwidth]{figures/3_etat_de_l_art_IDM/composanttransfo.png}
- \end{center}
- \caption{Composants d'une transformation de modèle}
- \label{fig:composantTransfo}
+    \begin{center}
+        \input{figures/3_etat_de_l_art_IDM/composants_transfo}
+    \end{center}
+    \caption{Composants d'une transformation de modèle}
+    \label{fig:composantTransfo}
 \end{figure}
 
 \subsection{Usages de la transformation de modèles }
@@ -524,12 +524,12 @@ L'\gls{idm} a prouvé sa capacité à adresser des systèmes complexes \cite{fra
 
 \cite{clark_towards_2014} proposent d'étendre la démarche \gls{mda},  traditionnellement appliquée au développement de systèmes informatiques, à l'ensemble de l'entreprise pour mettre en place une organisation dirigée par les modèles ou MDO (\textit{Model Driven Organisation}). Comme l'illustre la figure \ref{fig:mdo}, une MDO comprend un modèle de l'organisation (\textit{Model of the Organization}), un modèle spécifique à une plateforme (\textit{Platform Specific Model}) et une plateforme d'entreprise (\textit{Platform for Organization}). 
 
-\begin{figure}[!htbp]
- \begin{center}
-   \includegraphics[width=0.7\textwidth]{figures/3_etat_de_l_art_IDM/mdo.png}
- \end{center}
- \caption{Architecture d'une organisation dirigée par les modèles (à remplacer par une belle figure) \protect\cite{clark_towards_2014}}
- \label{fig:mdo}
+\begin{figure}[!ht]
+    \begin{center}
+        \input{figures/3_etat_de_l_art_IDM/mdo}
+    \end{center}
+    \caption{Architecture d'une organisation dirigée par les modèles (à remplacer par une belle figure) \protect\cite{clark_towards_2014}}
+    \label{fig:mdo}
 \end{figure}
 
 Le modèle de l'organisation correspond à l'ensemble des modèles métier présentant les processus, les objectifs, les acteurs, les ressources. L'organisation fait appel à son IT pour réaliser ses objectifs métier. L'ensemble du système informatique correspond alors à la plateforme opérationnelle de l'entreprise. Comme pour \gls{mda}, le modèle spécifique à une plateforme est dérivé du modèle de l'organisation et sert de pivot pour générer automatiquement la plateforme de l'organisation par transformation de modèles.
