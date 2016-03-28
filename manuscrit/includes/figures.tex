@@ -40,22 +40,33 @@
     pics/france/.style args={scale #1}{
         code={
             \begin{scope}[y=0.80pt, x=0.80pt, yscale=-1.000000, xscale=1.000000, inner sep=0pt, outer sep=0pt, scale=#1]
-                \input{figures/france}
+                \input{figures/lib/france}
             \end{scope}
         },
     }
 }
 
-% region rhone alpes
-% TODO: rendre les couleurs parametrables
-\definecolor{cffffff}{RGB}{255,255,255}
-\definecolor{c828282}{RGB}{130,130,130}
-\tikzset{
-    pics/region/.style args={scale #1}{
-        code={
-            \begin{scope}[y=0.80pt, x=0.80pt, yscale=-1.000000, xscale=1.000000, inner sep=0pt, outer sep=0pt, scale=#1]
-                \input{figures/region}
-            \end{scope}
-        },
-    }
+% % region rhone alpes
+% % TODO: rendre les couleurs parametrables
+% \definecolor{cffffff}{RGB}{255,255,255}
+% \definecolor{c828282}{RGB}{130,130,130}
+% \tikzset{
+%     pics/region/.style args={scale #1}{
+%         code={
+%             \begin{scope}[y=0.80pt, x=0.80pt, yscale=-1.000000, xscale=1.000000, inner sep=0pt, outer sep=0pt, scale=#1]
+%                 \input{../figures/lib/region}
+%             \end{scope}
+%         },
+%     }
+% }
+
+\lstdefinestyle{xmlfig}{
+  backgroundcolor=\color{superlightgray},
+  stringstyle=\color{darkgray},
+  basicstyle=\tiny\ttfamily,
+  language=XML,
+  frame=single,
+  numbers=none,
+  basicstyle=\tiny\ttfamily,
+  keywordstyle=\bfseries,
 }

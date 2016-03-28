@@ -3,6 +3,9 @@ BUILD_DIR=build/
 function setup() {
     rm -rf ${BUILD_DIR}
     mkdir ${BUILD_DIR}
+    cd ${BUILD_DIR}
+    ln -s .. figures
+    cd ..
 }
 
 function cleanup() {
@@ -10,25 +13,21 @@ function cleanup() {
 }
 
 function main() {
-    local fullname=
-    local name=
-    local files="*.tex"
+    local filename=
+    local file=
     setup
-    if [ ! -z $@ ] ; then
-        files=$@
-    fi
-    for file in ${files}
+    for file in $@
     do
         cp -f ${file} ${BUILD_DIR}/
-        fullname=$(basename ${file})
-        name="${fullname%.*}"
-        compile ${name}
+        filename=$(basename ${file})
+        compile "$(dirname ${file})/${filename%.*}"
     done
     cleanup
 }
 
 function compile() {
     local target=${1}
+    local base=$(basename ${target})
 
     cat<<EOF>${BUILD_DIR}/build.tex
 \documentclass[a4paper,11pt,twoside]{book}
@@ -41,28 +40,18 @@ function compile() {
 \usepackage{amsthm}
 % http://tex.stackexchange.com/questions/174903/justified-text-extending-beyond-margin
 \usepackage{microtype}
-% tables
-\usepackage{adjustbox}
-\usepackage{arydshln,tabulary,multirow,booktabs,array}
-
-% tikz
-\usepackage{tikz}
-\usetikzlibrary{calc}
-\usetikzlibrary{mindmap,trees}
-\tikzset{concept/.append style={fill={none}}}
-
-% table lengths
-\setlength{\dashlinedash}{0.5pt}
-\setlength{\dashlinegap}{1pt}
-\setlength{\arrayrulewidth}{0.5pt}
+\usepackage[nomain,acronym,xindy,toc]{glossaries}
+\input{../../manuscrit/glossaire}
+\input{../../manuscrit/includes/listings}
+\input{../../manuscrit/includes/figures}
 
 \begin{document}
-\include{${target}}
+\input{../${target}}
 \end{document}
 EOF
 
     latexmk -r ../latexmkrc -cd ${BUILD_DIR}/build.tex -output-directory=../${BUILD_DIR}
-	mv build/build.pdf ${target}.pdf
+	mv build/build.pdf ${base}.pdf
 }
 set -x
 main $@
