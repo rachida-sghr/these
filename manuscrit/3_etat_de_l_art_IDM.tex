@@ -52,6 +52,7 @@ modèle. En nous appuyant sur les définitions données dans les travaux
 \cite{minsky1967computation} \cite{bezivin2001towards} et 
 \cite{seidewitz2003models}, nous adoptons la définition suivante du terme modèle~:
 
+
 \begin{definition}
 Un modèle est une abstraction d'un système, selon le bon point de vue, qui 
 permet de répondre à des questions prédéfinies sur ce système en lieu et place 
@@ -88,6 +89,7 @@ trouve plutôt son origine dans les méthodes de modélisation telles que Merise
 
 Il existe plusieurs définitions de la notion de métamodèle dans la littérature. 
 Cependant la définition suivante est communément admise \cite{bezivin2004rapport}.
+\\\
 
 \begin{definition}
 Un métamodèle est un modèle du langage de modélisation qui sert à exprimer les 
@@ -370,15 +372,14 @@ devenir difficilement maintenables.
 
 \item [Par template]:~Dans cette approche, des canevas des modèles cibles sont définis. Ces modèles contiennent des paramètres qui sont remplacés par les informations contenues 
 dans les modèles source. Ce type de transformation est souvent utilisé pour les 
-transformations modèle-à-texte et est associé au visitor-pattern qui va 
-traverser la structure interne du modèle source.
+transformations qui génère des modèles dont la syntaxe concrète  est textuel.  Cette approche est associée au visitor-pattern qui va traverser la structure interne du modèle source. 
 %Cette approche est utilisée par l'outil Enterprise Architect par exemple. 
 
 \item [Par modélisation]:~Cette approche vise à appliquer les principes de l'\gls{idm} aux transformations de modèle elles-mêmes. Les modèles de transformation sont ainsi prennes, réutilisables et indépendants des plates-formes d'exécution  \cite{bezivin2006model}. Pour cela, des langages de modélisation dédiés à l'activité de transformation de modèles sont utilisés. Cette approche considère donc la transformation comme 
 un modèle à part entière conforme à un métamodèle de transformation. La figure 
 \ref{fig:TransfoPrincipe} illustre cette approche en positionnant la transformation par rapport aux niveaux d'abstraction de l'\gls{idm}. Elle corrobore 
 ainsi la vision unificatrice de l'\gls{idm} à travers le paradigme du «~tout est 
-modèle \cite{bezivin2005unification}. Dans la section suivante, nous présentons quelques langages de transformation de modèle adoptant cette approche..
+modèle \cite{bezivin2005unification}.
 \end{description}
 
 
@@ -393,35 +394,34 @@ modèle \cite{bezivin2005unification}. Dans la section suivante, nous présenton
 
 \section{Langages et outils pour la transformation de modèle}
 Sans viser à l'exhaustivité, nous introduisons succinctement quelques langages et outils 
-dédiés à la transformation de modèles. 
+dédiés à la transformation de modèles.  
 
 \subsection{ATL}
 \label{sec:ATL}
-\gls{atl} \cite{jouault2006transforming} 
-\cite{jouault2008atl} est né de la volonté de proposer des langages de 
-modélisation dédiés à la transformation de modèle en définissant un métamodèle 
-et des outils pour l'exécution des transformations. Il permet de réaliser des 
-transformations de type modèle-à-modèle et de type modèle-à-texte.
+\gls{atl}\footnote{http://www.eclipse.org/atl/} est né de la volonté de proposer des langages de modélisation dédiés à la transformation de modèle en définissant un métamodèle 
+et des outils pour l'exécution des transformations. 
+%Il permet de réaliser des transformations de type modèle-à-modèle et de type modèle-à-texte.
 
-\gls{atl} est un langage hybride (déclaratif et impératif) à base de contraintes \gls{ocl}. Une règle déclarative, appelée Matched rule, permet de décrire 
-l'implémentation de mapping simples entre les modèles source et cible en 
-utilisant des patrons source (\textit{InPattern}) mappés avec les éléments 
-source et des patrons cibles (\textit{outPattern}) mappés avec les éléments 
-cible. 
+\gls{atl} est un langage hybride (déclaratif et impératif) à base de contraintes \gls{ocl} \cite{jouault2006transforming}. 
+%Une règle déclarative, appelée \textit{Matched rule}, permet de décrire 
+%l'implémentation de mapping simples entre les modèles source et cible en 
+%utilisant des patrons source (\textit{InPattern}) mappés avec les éléments 
+%source et des patrons cibles (\textit{OutPattern}) mappés avec les éléments 
+%cible. 
 
-L'approche impérative explicite les étapes d'exécution de la transformation à 
-travers les Helpers. Le mécanisme de Helpers permet en outre d'éviter la 
-redondance de code et la création de longues règles écrites en \gls{ocl}, ce qui 
-confère une meilleure lisibilité aux programmes \gls{atl}. 
-
-Une transformation écrite en \gls{atl} est composée d'un ensemble de règles qui 
-spécifient comment créer et initialiser les éléments des modèles cible. Il n'est 
-pas possible de spécifier l'ordre d'exécution des règles de transformation. Cet 
-ordre est établi automatiquement, exception faite pour les \textit{lazy rules} 
-qui ont besoin qu'on fasse spécifiquement appel à elles. \gls{atl} est conforme au 
-méta-métamodèle \gls{mof} et est doté d'une syntaxe concrète textuelle. Il est intégré 
-à l'environnement Eclipse. Une transformation prend en entrée un ensemble de 
-modèles conformes au méta-métamodèle Ecore ou à KM3 \cite{jouault2006km3}.
+%L'approche impérative explicite les étapes d'exécution de la transformation à 
+%travers les \textit{Helpers}. Le mécanisme de \textit{Helpers} permet en outre d'éviter la 
+%redondance de code et la création de longues règles écrites en \gls{ocl}, ce qui 
+%confère une meilleure lisibilité aux programmes \gls{atl}. 
+%
+%Une transformation écrite en \gls{atl} est composée d'un ensemble de règles qui 
+%spécifient comment créer et initialiser les éléments des modèles cible. Il n'est 
+%pas possible de spécifier l'ordre d'exécution des règles de transformation. Cet 
+%ordre est établi automatiquement, sauf  pour les \textit{Lazy rules} 
+%qui demandent de faire spécifiquement appel à elles. \gls{atl} est conforme au 
+%méta-métamodèle \gls{mof} et est doté d'une syntaxe concrète textuelle. Il est intégré 
+%à l'environnement Eclipse. Une transformation prend en entrée un ensemble de 
+%modèles conformes au méta-métamodèle Ecore ou à KM3 \cite{jouault2006km3}.
 
 %\gls{atl} ne prend pas en charge les transformations incrémentales. Il commence par 
 %lire entièrement les modèles source et génère des modèles cible complet. Les 
@@ -430,43 +430,41 @@ modèles conformes au méta-métamodèle Ecore ou à KM3 \cite{jouault2006km3}.
 
 \gls{atl} peut réaliser des transformations sur place, c'est-à-dire, une 
 transformation où le modèle source et le modèle cible sont confondus en 
-utilisant le mode raffinement de modèle. Cependant ce mode présente quelques 
-limitations avec certaines fonctionnalités comme celle des \textit{lazy rules}.
+utilisant le mode raffinement de modèle. 
+
+%Cependant ce mode présente quelques limitations avec certaines fonctionnalités comme celle des \textit{Lazy rules}.
 
 \subsection{QVT}
-\gls{qvt} \cite{kurtev2008state} \cite{omg2011meta} a rejoint la batterie de standards de l'\gls{omg}. Le métamodèle de \gls{qvt} est conforme au \gls{mof}. Comme \gls{atl}, \gls{qvt} se base sur \gls{ocl} pour accéder aux éléments des modèles.
-\gls{qvt} définit trois langages de transformation de type modèle-à-modèle. 
-QVT-Relations (QVT-R) et QVT-Core (QVT-C) sont des langages déclaratifs qui 
-adressent deux niveaux d'abstraction différents. QVT-Operational Mappings 
-(QVT-OM) est un langage impératif qui étend QVT-R et QVT-C.
+\gls{qvt} \cite{kurtev2008state} \cite{omg2011meta} est un standard de l'\gls{omg}. Le métamodèle de \gls{qvt} est conforme au \gls{mof}. Comme \gls{atl}, \gls{qvt} se base sur \gls{ocl} pour accéder aux éléments des modèles.
+\gls{qvt} définit deux langages de transformation de type modèle-à-modèle. 
+QVT \textit{Declarative} (QVTd)\footnote{http://projects.eclipse.org/projects/modeling.mmt.qvtd} est un langage déclaratif. QVT \textit{Operational} (QVTo) est un langage impératif\footnote{http://projects.eclipse.org/projects/modeling.mmt.qvt-oml}.
 
-QVT-R est un langage de transformation de haut niveau d'abstraction doté de 
-syntaxes concrètes textuelle et graphique. Les transformations, 
-bidirectionnelles, sont spécifiées sous forme de relations entre les modèles 
-source et cible. Une transformation a pour but de vérifier la cohérence entre 
-deux modèles, renforcer la cohérence en modifiant le modèle cible, synchroniser 
-deux modèles ou encore pour raffiner un modèle par une transformation sur-place. 
-La sémantique de QVT-R est définie par une transformation vers QVT-C.
+%QVT-R est un langage de transformation de haut niveau d'abstraction doté de 
+%syntaxes concrètes textuelle et graphique. Les transformations, 
+%bidirectionnelles, sont spécifiées sous forme de relations entre les modèles 
+%source et cible. Une transformation a pour but de vérifier la cohérence entre 
+%deux modèles, renforcer la cohérence en modifiant le modèle cible, synchroniser 
+%deux modèles ou encore pour raffiner un modèle par une transformation sur-place. 
+%La sémantique de QVT-R est définie par une transformation vers QVT-C.
 
-QVT-C est un langage de transformation de bas niveau qui sert de base pour 
-QVT-R. Les deux langages ont le même niveau d'expressivité. Une transformation consiste 
-en la déclaration de mapping entre les métamodèles source et cible en utilisant 
-des patterns. Contrairement à QVT-R, la traçabilité est explicitement définie à 
-travers les liens entre les métamodèles.
-
-QVT-OM est un langage de transformation impératif qui étend QVT-R avec des 
-constructions impératives basées sur une extension impérative de \gls{ocl}. Les 
-transformations sont unidirectionnelles mais établissent explicitement des 
-modèles de traçabilité.
-
-\gls{qvt} est aussi doté d'un mécanisme de \textit{graybox} qui permet de faire appel 
-à des algorithmes complexes écrits dans n'importe quel langage de programmation 
-et d'utiliser des librairies existantes. Mais ce mécanisme rend la transformation opaque puisqu'il n'est pas contrôlé par le moteur d'exécution. 
-Nous pouvons citer SmartQVT ou encore ModelMorf comme machines d'exécution de 
-transformation écrite en \gls{qvt}.
+%QVT-C est un langage de transformation de bas niveau qui sert de base pour 
+%QVT-R. Les deux langages ont le même niveau d'expressivité. Une transformation consiste à définir un mapping entre les métamodèles source et cible en utilisant 
+%des patterns. Contrairement à QVT-R, la traçabilité est explicitement définie à 
+%travers les liens entre les métamodèles.
+%
+%QVT-OM est un langage de transformation impératif qui étend QVT-R avec des 
+%constructions impératives basées sur une extension impérative de \gls{ocl}. Les 
+%transformations sont unidirectionnelles mais établissent explicitement des 
+%modèles de traçabilité.
+%
+%\gls{qvt} est aussi doté d'un mécanisme de \textit{graybox} qui permet de faire appel 
+%à des algorithmes complexes écrits dans n'importe quel langage de programmation 
+%et d'utiliser des librairies existantes. Mais ce mécanisme rend la transformation opaque puisqu'il n'est pas contrôlé par le moteur d'exécution. 
+%Nous pouvons citer SmartQVT ou encore ModelMorf comme machines d'exécution de 
+%transformation écrite en \gls{qvt}.
 
 \subsection{Kermeta}
-Kermeta est un langage généraliste de méta-modélisation exécutable et de 
+Kermeta\footnote{http://www.kermeta.org/} est un langage généraliste de méta-modélisation exécutable et de 
 méta-programmation orientée objet qui peut aussi décrire des transformations de 
 modèle. Intégré à EMF, il est doté d'un métamodèle conforme au \gls{mof} qu'il étend 
 avec un langage d'action impératif utilisé pour écrire le corps des opérations 
@@ -475,17 +473,16 @@ syntaxe abstraite d'une sémantique opérationnelle). On peut ainsi décrire
 n'importe quel traitement sur un modèle ce qui est assimilé à une transformation 
 de modèle.
 
-Le langage d'action de Kermeta permet d'écrire des expressions impératives qui 
-spécifient explicitement la construction des éléments des modèles cible. A 
-l'inverse de QVT-OM, Kermeta n'est pas un langage à base de règles.  
-Kermeta est capable de gérer les exceptions mais les transformations 
-multidirectionnelles ne sont pas supportées par les outils d'exécution. Il en 
-est de même pour la transformation incrémentale. Les modèles source sont lus en 
-une seule fois et les modèles cible sont produits complets lors de l'exécution 
-de la transformation.
+%Le langage d'action de Kermeta permet d'écrire des expressions impératives qui 
+%spécifient explicitement la construction des éléments des modèles cible. A 
+%l'inverse de QVT-OM, Kermeta n'est pas un langage à base de règles.  
+%Kermeta est capable de gérer les exceptions mais les transformations 
+%multidirectionnelles ne sont pas supportées par les outils d'exécution. Il en 
+%est de même pour la transformation incrémentale.
+%Les modèles source sont lus en une seule fois et les modèles cible sont produits complets lors de l'exécution de la transformation.
 
 \subsection{Acceleo}
-to be continued
+Acceleo\footnote{http://www.eclipse.org/acceleo/} est un langage de transformation de modèles pour lequel les modèles cible ont une syntaxe concrète textuelle. Il suit une approche de transformation par \textit{template}. Le template correspond au modèle cible qui prend la forme d'un texte avec des espaces réservés aux informations provenant des modèles source. Accelo utilise OCL pour accéder au modèles source.  
 
 \section{L'Ingénierie Dirigée par les Modèles pour l'Architecture d'Entreprise}
 
@@ -493,15 +490,15 @@ L'\gls{idm} se cantonne souvent au processus de développement logiciel en offra
 
 \subsection{Méta-modélisation en Architecture d'Entreprise}
 
-Les cadres d'architecture contribuent à réduire considérablement la complexité liée à un système telle que l'entreprise en décomposant celle-ci en plusieurs vues. Les architectes d'entreprise doivent ensuite représenter les artefacts qui composent ces différentes vue. Le recours aux techniques de modélisation n'est donc pas étranger à l'EA. Les architectes d'entreprise ont besoin d'une représentation claire et pertinente des composants de l'entreprise pour leur propre compréhension mais aussi à des fins de communication avec les autres parties prenantes comme les experts métier, les architectes applicatifs ou encore les responsables stratégiques. 
+Les cadres d'EA contribuent à réduire la complexité liée à un système telle que l'entreprise en décomposant celle-ci en plusieurs vues. Les architectes d'entreprise doivent ensuite représenter les artefacts qui composent ces différentes vue. Le recours aux techniques de modélisation n'est donc pas étranger à l'EA. Les architectes d'entreprise ont besoin d'une représentation claire et pertinente des composants de l'entreprise pour leur propre compréhension mais aussi pour faciliter la communication avec les autres parties prenantes comme les experts métier, les architectes fonctionnels, les architectes applicatifs, etc. 
 
-Souvent, les cadres d'architecture ne préconisent pas de langages de modélisation en particulier et se contentent d'ériger un ensemble de bonnes pratiques. Pour représenter l'entreprise, les architectes utilisent alors des notations qui leurs sont propres. Deux architectes appartenant à des filiales différentes d'une même entreprise et utilisant des notations différentes sont susceptibles d'engendrer des problèmes de communication et d'interopérabilité à l'échelle de l'entreprise. 
+Souvent, les cadres d'architecture ne préconisent pas de langages de modélisation en particulier et se contentent d'ériger un ensemble de bonnes pratiques. Pour représenter l'entreprise, les architectes utilisent alors leurs propres systèmes de notations. Si deux architectes appartenant à des filiales différentes d'une même entreprise utilisent des notations différentes, des problèmes de communication, de collaboration et d'interopérabilité à l'échelle de l'entreprise risquent d'apparaître. L'architecture de l'entreprise perd alors de sa crédibilité en tant que référentiel d'entreprise.
 
-Graphiques ou textuelles, ces notations manquent cruellement d'une sémantique précise et formalisée. L'apparition de difficultés liées à la compréhension et à la collaboration entre les acteurs impliqués dans l'EA est alors inéluctable. L'architecture de l'entreprise perd alors de sa crédibilité en tant que référentiel d'entreprise. Les outils de visualisation et d'analyse sont d'autant plus difficiles à développer à cause du manque de formalisme des modèles purement contemplatifs.
+Graphiques ou textuelles, ces notations manquent de plus d'une sémantique précise et formalisée entrainant la création de modèles purement contemplatifs. Les outils de visualisation et d'analyse sont d'autant plus difficiles à développer.
 
-L'\textit{Open Group} propose de mettre en cohérence les notations utilisés en EA en créant un langage de modélisation standardisé nommé Archimate. Archimate sert ainsi à décrire l'entreprise, sa structure organisationnelle, ses processus, ses règles métier ou encore son SI. Archimate est un langage de représentation graphique utilisé pour documenter et à communier les architectures d'entreprise au sein d'une même organisation ou entre différentes organisations. Archimate est en outre étroitement lié au cadre d'architecture TOGAF. 
+L'\textit{Open Group} propose de mettre en cohérence les notations utilisées en EA en créant un langage de modélisation standardisé nommé Archimate. Archimate sert ainsi à décrire l'entreprise, sa structure organisationnelle, ses processus, ses règles métier ou encore son SI. Archimate est un langage de représentation graphique utilisé pour documenter et à communier les architectures d'entreprise au sein d'une même organisation ou entre différentes organisations. Archimate est en outre étroitement lié au cadre d'architecture TOGAF. 
 
-Le métamodèle d'Archimate est concis mais vise à couvrir la majorité des concepts intervenants dans la création d'une architecture d'entreprise. Archimate utilise trois vues~:~métier, applicative et technique. Pour chacune des vues, trois types d'éléments différents sont spécifiés~:~structure active, comportement et structure passive. Les structures actives correspondent aux éléments dotés d'un comportement tels qu'un acteur métier, un module applicatif ou encore un élément de l'infrastructure technique. Le comportement correspond à ensemble d'activités ou de tâches poursuivie par un ou plusieurs éléments de la structure active. Il peut s'agit par exemple d'un processus métier. Les structures passives correspondent aux éléments manipulés par le comportement comme par exemple les objets métier. Archimate associe des couleurs différentes aux éléments en fonction de leur type (voir figure \ref{fig:archimate}). Les éléments de type structure active sont bleus, ceux de type comportement sont jaunes et enfin ceux de type structure passive sont verts. 
+Bien que concis, le métamodèle d'Archimate vise à couvrir la majorité des concepts intervenants dans la création d'une architecture d'entreprise. Archimate utilise trois vues~:~métier, applicative et technique. Pour chacune des vues, trois types d'éléments différents sont spécifiés~:~structure active, comportement et structure passive (voir figure \ref{fig:archimate}). Les structures actives correspondent aux éléments dotés d'un comportement. Il peut s'agir d'un acteur métier, d'un module applicatif ou d'un élément de l'infrastructure technique. Le comportement est défini comme un ensemble d'activités ou de tâches poursuivies par un ou plusieurs éléments de la structure active. Il peut s'agit par exemple d'un processus métier. La structure passive comportent les éléments manipulés par les éléments de la structure active, comme par exemple les objets métier. 
 
 \begin{table}[!ht]
     \vspace*{0.5em}
@@ -512,7 +509,7 @@ Le métamodèle d'Archimate est concis mais vise à couvrir la majorité des con
  \label{fig:archimate}
 \end{table}
 
-Le métamodèle du langage Archimate est un adossé d'une syntaxe concrète graphique permettant visualiser les modèles. Mais aucune sémantique standard d'exécution n'est formalisée. Les modèles d'architecture sont ainsi souvent purement contemplatifs et les outils implémentant Archimate n'offrent pas la possibilité d'exécuter ces modèles à des fins d'analyse de structure et de comportement. 
+Le métamodèle du langage Archimate est un adossé d'une syntaxe concrète graphique permettant visualiser les modèles. Il associe par exemple des couleurs différentes aux éléments en fonction de leur type. Les éléments de type structure active sont bleus, ceux de type comportement sont jaunes et enfin ceux de type structure passive sont verts. Mais aucune sémantique standard d'exécution n'est formalisée. Les modèles d'architecture sont ainsi souvent purement contemplatifs et les outils implémentant Archimate n'offrent pas la possibilité d'exécuter ces modèles à des fins d'analyse de structure et de comportement. 
 
 \subsection{Approches d'Architecture d'Entreprise recourant à l'Ingénierie Dirigée par les Modèles}
 
