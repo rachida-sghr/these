@@ -3,14 +3,14 @@
 \usepackage[utf8]{inputenc}
 \usepackage[french]{babel}
 
-%marges 
-\usepackage[left=3cm,right=3cm,top=4cm,bottom=4cm]{geometry}
-
 %interligne
 %\linespread{1.4}
+% a loader *avant* hyperref: http://tex.stackexchange.com/a/79551/32098
+\usepackage{titletoc}
+\usepackage[toctitles]{titlesec}
 
 % liens internes
-\usepackage[pagebackref=true]{hyperref}
+\usepackage[hidelinks,pagebackref=true]{hyperref}
 % liens externes
 \usepackage{url}
 
@@ -48,14 +48,47 @@
 \makeglossaries
 
 \begin{document}
-%    \include{title}
+    % ===========================================
+    % Partial TOCs
+    % ===========================================
+    % http://tex.stackexchange.com/a/69587/32098
+    \addtocontents{toc}{\protect\setlength{\parskip}{0pt}}
+
+    % http://tex.stackexchange.com/a/66346/32098 and http://tex.stackexchange.com/a/41393/32098
+    \titlecontents{psection} % set formatting for \section -
+    [2.6em]                  % adjust left margin
+    {\bfseries}              % font formatting
+    {\contentslabel{2.3em}}  % section label and offset
+    {\hspace*{-2.3em}}
+    {\hfill\contentspage}
+
+    \titlecontents{psubsection}
+    [5.8em]
+    {}
+    {\contentslabel{3.2em}}
+    {}
+    {\hfill\contentspage}
+    %{\titlerule*[0.5pc]{.}\contentspage}
+
+    % http://tex.stackexchange.com/a/66346/32098
+    \newcommand{\PartialToc}{%
+        \vspace*{1pc}\vbox{\textbf{Sommaire}}\vspace*{0.5pc}
+        \hrule\vspace*{0.5pc}
+        \startcontents[chapters]
+        \printcontents[chapters]{p}{1}{}\vspace*{0.5pc}\hrule}
+    % ===========================================
+    % Content
+    % ===========================================
+    % \include{title}
     \cleardoublepage
-%    \section*{Remerciements}
+    % \section*{Remerciements}
     \tableofcontents
     \mainmatter
+    \part{Etat de l'Art}
     \include{1_problematique}
     \include{2_etat_de_l_art_EA}
     \include{3_etat_de_l_art_IDM}
+    \part{Contribution}
 	\include{4_demarche}
 	\include{5_implementation}
     
