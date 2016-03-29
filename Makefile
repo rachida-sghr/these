@@ -6,7 +6,5 @@ all: These.pdf
 	mv build/main.pdf these.pdf
 
 figures:
-	cd figures ; ./build.sh ; cd ..
-
-clean:
+	cd figures ; find . -path ./lib -prune -o -maxdepth 2 -iname *.tex -exec ./build.sh  {} \; ; cd :
 	rm -rf build
