@@ -23,7 +23,7 @@ Nous considérons donc que la documentation et la communication, l'analyse et la
 \item un architecte d'entreprise dont la mission est de mettre en cohérence l'ensemble des vues.
 \end{itemize}
 
-\begin{figure}[!htbp]
+\begin{figure}[!ht]
  \begin{center}
   \includegraphics[trim= 0cm 3.5cm 0cm 0cm, width=1\textwidth]{figures/4_demarche/approche_conceptuelle.pdf}
  \end{center}
@@ -60,7 +60,7 @@ Nous ne modélisons pas les informations dans une vue dédiée contrairement aux
 	Cet aspect établit le modèle de données applicatives qui dépend fortement des applications choisies : il décrit les formats de données compatibles avec les modules applicatifs.
 	\end{itemize}
 	
-\begin{figure}[!htbp]
+\begin{figure}[!ht]
  \begin{center}
   \includegraphics[trim= 0cm 3cm 0cm 0cm, width=1\textwidth]{figures/4_demarche/vue_aspect.pdf}
  \end{center}
@@ -88,7 +88,7 @@ Nous étendons chacune des vues par l'aspect «~\textit{objectif}~». Cet aspect
 
 L'alignement et la cohérence sont des problématiques centrales en EA \cite{kaisler_enterprise_2005}. Notre contribution essentielle est de dédier un point de vue spécifique pour adresser ce type de problématique~:~le \textbf{point de vue intégration} illustré par la figure \ref{fig:vue_integration}. Ce point de vue définit un \textit{mapping} d'alignement en spécifiant (1)~les entités à aligner, (2)~les liens de cohérence entre ces éléments et (3) les transformations de modèles nécessaires au raffinement des ces entités. Les transformations de modèles facilitent et automatisent les passages d'une vue à l'autre. Ce point de vue permet une intégration «~IntraVue~» et «~InterVues~» (entres les aspects d'une seule vue). La figure \ref{fig:metamodele_framework} donne un métamodèle de notre framework en explicitant les concepts abordés et leurs relations.
 
-\begin{figure}[!htbp]
+\begin{figure}[!ht]
  \begin{center}
   \includegraphics[trim= 3cm 3cm 0cm 0cm, width=1\textwidth]{figures/4_demarche/vue_integration.pdf}
  \end{center}
@@ -98,7 +98,7 @@ L'alignement et la cohérence sont des problématiques centrales en EA \cite{kai
 
 L'intégration inter-vues décrit les relations entre les vues (sauf la vue intégration). La vue intégration est donc transverse à toutes les autres vues et permet de modéliser explicitement les notions de raffinement à travers la classe «~InterVues~» (voir figure \ref{fig:metamodele_framework}), tant pour  les aspects \emph{processus} et \textit{information} que sur les aspects \emph{objectif}.
 
-\begin{figure}[!htbp]
+\begin{figure}[!ht]
  \begin{center}
   \includegraphics[trim= 0cm 13cm 0cm 2cm, width=1\textwidth]{figures/4_demarche/metamodele_framework.pdf}
  \end{center}
@@ -113,7 +113,7 @@ La définition d'un métamodèle précis pour le framework permet de plus de con
 La vue intégration permet en outre de vérifier qu'une application implémente bien tous les blocs fonctionnels nécessaires au déroulement d'un processus métier. Cette vue donne ainsi accès aux informations de traçabilité qui permettent de déterminer l'impact d'une modification ou d'une défaillance d'un module applicatif sur les processus métier. Elle permet aussi de vérifier que les formats applicatifs permettent d'encoder les types de données fonctionnelles requis, qui eux-même raffinent les concepts métiers. Cette vue détermine les éventuelles transformations de modèle nécessaires au déploiement en spécialisant l'association «~raffine~». Le choix des modèles à transformer dépend fortement de leur nature (modèles graphiques, textuels, etc.) et mais aussi de leur niveau d'abstraction. Par exemple, la génération de code demande un modèle en entrée suffisamment détaillé pour exécuter une transformation pertinente. L'état de l'art actuel des langages de transformation de modèle privilégie l'usage des transformations de modèle entre la vue fonctionnelle et et la vue applicative. 
 
 
-\begin{figure}[!htbp]
+\begin{figure}[!ht]
  \begin{center}
   \includegraphics[trim= 0cm 18cm 0cm 0cm, width=1\textwidth]{figures/4_demarche/metamodele_vue_integration.pdf}
  \end{center}
