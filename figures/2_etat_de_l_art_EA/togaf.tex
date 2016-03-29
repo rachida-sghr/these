@@ -3,16 +3,16 @@
     \node at (0,0) [mynode] (center) {Gestion des\\ exigences} ;
     \foreach \i in {0,...,7} {
         \ifthenelse{\i=0}{\def\mytext{\textbf{A}\\ Vision}}{}
-        \ifthenelse{\i=1}{\def\mytext{\textbf{B}\\ Architecture\\ metier}}{}
+        \ifthenelse{\i=1}{\def\mytext{\textbf{B}\\ Architecture\\ métier}}{}
         \ifthenelse{\i=2}{\def\mytext{\textbf{C}\\ Architectures SI}}{}
         \ifthenelse{\i=3}{\def\mytext{\textbf{D}\\ Architectures\\ techniques}}{}
-        \ifthenelse{\i=4}{\def\mytext{\textbf{E}\\ Opportunites \\ et solutions}}{}
+        \ifthenelse{\i=4}{\def\mytext{\textbf{E}\\ Opportunités \\ et solutions}}{}
         \ifthenelse{\i=5}{\def\mytext{\textbf{F}\\ Plan de\\ migration}}{}
         \ifthenelse{\i=6}{\def\mytext{\textbf{G}\\ Gouvernance}{}}
         \ifthenelse{\i=7}{\def\mytext{\textbf{H}\\ Gestion du\\ changement\\ d'architecture}}{}
         \node at (90+-45*\i:4cm) [mynode] (\i) {\mytext} ;
     }
-    \node at (0, 7.3cm) [mynode] (preliminaires) {Preliminaires} ;
+    \node at (0, 7.3cm) [mynode] (preliminaires) {Préliminaires} ;
 
     \draw[angle 60-angle 60] (preliminaires) -- (0);
 

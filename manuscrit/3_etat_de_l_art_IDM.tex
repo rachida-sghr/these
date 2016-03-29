@@ -40,7 +40,7 @@ logicielle, jusque-là centrée sur le code produit par l'informaticien
 En mettant à profit des disciplines telles que la modélisation par objets, 
 l'ingénierie des langages, la compilation de langages, les méthodes formelles ou encore la programmation par composants, l'\gls{idm} offre un cadre intégrateur reposant 
 sur quelques concepts fondamentaux : la notion de modèle et la relation 
-\textit{ReprésentationDe}, la notion de métamodèle et la relation 
+\textit{Représente}, la notion de métamodèle et la relation 
 \textit{ConformeÀ}.
 
 \section{Concepts fondamentaux}
@@ -51,7 +51,7 @@ de vie du système. Il n'existe pas de définition universelle de la notion de
 modèle. En nous appuyant sur les définitions données dans les travaux 
 \cite{minsky1967computation} \cite{bezivin2001towards} et 
 \cite{seidewitz2003models}, nous adoptons la définition suivante du terme modèle~:
-
+\\\
 
 \begin{definition}
 Un modèle est une abstraction d'un système, selon le bon point de vue, qui 
@@ -153,6 +153,7 @@ d'abstraction au dessus de celui des modèles~:~au niveau d'un métamodèle auqu
 Mens et Van Gorp \cite{mens2006taxonomy} étendent cette définition en considérant qu'une 
 transformation est une opération qui peut avoir en entrée un ou plusieurs 
 modèles source et en sortie un ou plusieurs modèles cible~: 
+\\\
 
 \begin{definition}
 Une transformation génère automatiquement un ou plusieurs modèles cible à partir 
@@ -375,7 +376,7 @@ dans les modèles source. Ce type de transformation est souvent utilisé pour le
 transformations qui génère des modèles dont la syntaxe concrète  est textuel.  Cette approche est associée au visitor-pattern qui va traverser la structure interne du modèle source. 
 %Cette approche est utilisée par l'outil Enterprise Architect par exemple. 
 
-\item [Par modélisation]:~Cette approche vise à appliquer les principes de l'\gls{idm} aux transformations de modèle elles-mêmes. Les modèles de transformation sont ainsi prennes, réutilisables et indépendants des plates-formes d'exécution  \cite{bezivin2006model}. Pour cela, des langages de modélisation dédiés à l'activité de transformation de modèles sont utilisés. Cette approche considère donc la transformation comme 
+\item [Par modélisation]:~Cette approche vise à appliquer les principes de l'\gls{idm} aux transformations de modèle elles-mêmes. Les modèles de transformation sont ainsi prennes, réutilisables et indépendants des plates-formes d'exécution  \cite{bezivin2006model}. Pour cela, des langages de modélisation dédiés à l'activité de transformation de modèle sont utilisés. Cette approche considère donc la transformation comme 
 un modèle à part entière conforme à un métamodèle de transformation. La figure 
 \ref{fig:TransfoPrincipe} illustre cette approche en positionnant la transformation par rapport aux niveaux d'abstraction de l'\gls{idm}. Elle corrobore 
 ainsi la vision unificatrice de l'\gls{idm} à travers le paradigme du «~tout est 
@@ -534,17 +535,17 @@ L'\gls{idm} a prouvé sa capacité à adresser des systèmes complexes \cite{fra
 
 Le modèle de l'organisation correspond à l'ensemble des modèles métier présentant les processus, les objectifs, les acteurs, les ressources. L'organisation fait appel à son IT pour réaliser ses objectifs métier. L'ensemble du système informatique correspond alors à la plateforme opérationnelle de l'entreprise. Comme pour \gls{mda}, le modèle spécifique à une plateforme est dérivé du modèle de l'organisation et sert de pivot pour générer automatiquement la plateforme de l'organisation par transformation de modèles.
 
-Dans leurs travaux, \cite{clark_towards_2014} proposent un cadre théorique et une étude d'opportunité quant à la généralisation de \gls{mda} à l'échelle de l'entreprise. Cependant \gls{mda} reflète la vision particulière de l'\gls{omg} concernant l'\gls{idm}. L'approche \gls{mda} est de ce fait restreinte aux standards de l'\gls{omg}. Les travaux de Clark et al. sont donc limités par l'approche \gls{mda} (celle-ci étant un sous-ensemble de l'\gls{idm}).
+Dans leurs travaux, Clark et al. \cite{clark_towards_2014} proposent un cadre théorique et une étude d'opportunité quant à la généralisation de \gls{mda} à l'échelle de l'entreprise. Cependant \gls{mda} reflète la vision particulière de l'\gls{omg} concernant l'\gls{idm}. L'approche \gls{mda} est de ce fait restreinte aux standards de l'\gls{omg}. Les travaux de Clark et al. sont donc limités par l'approche \gls{mda} (celle-ci étant un sous-ensemble de l'\gls{idm}).
 
 L'\gls{idm} préconise le recours aux modèles exécutables pendant tout le cycle de vie du système à implémenter. Cependant, à l'échelle d'une entreprise, l'utilisation de ce type de modèles est souvent limité à l'implémentation des systèmes informatiques, c'est à dire à l'implémentation de la vue applicative et la vue technique d'une architecture d'entreprise. L'usage des modèles en tant artefacts exécutables est peu commun en EA \cite{kulkarni_modelling_2013}.
 
-Parmi les travaux mettant à contribution les techniques de l'\gls{idm} nous citons ceux de \cite{clark2011leap}. Ces derniers proposent un langage concis et exécutable pour modéliser et simuler les différentes vues d'une architecture d'entreprise. Cependant ce langage est principalement textuel. Il offre une visualisation graphique des aspects structuraux d'une organisation sous la forme d'un diagramme de classes. Mais la syntaxe concrète pour la spécification du comportement est essentiellement textuelle. L'adoption de ce langage par les parties prenantes à profil non technique n'est pas évidente. Or l'EA a pour vocation d'offrir un référentiel compréhensible et partagé par toutes les parties prenantes.
+Parmi les travaux mettant à contribution les techniques de l'\gls{idm} nous citons ceux de Clark et al. \cite{clark2011leap}. Ces derniers proposent un langage concis et exécutable pour modéliser et simuler les différentes vues d'une architecture d'entreprise. Cependant ce langage est principalement textuel. Il offre une visualisation graphique des aspects structuraux d'une organisation sous la forme d'un diagramme de classes. Mais la syntaxe concrète pour la spécification du comportement est essentiellement textuelle. L'adoption de ce langage par les parties prenantes à profil non technique n'est pas évidente. Or l'EA a pour vocation d'offrir un référentiel compréhensible et partagé par toutes les parties prenantes.
 
-Les travaux de \cite{bruneliere2013mde} tirent profit des capacités de l'\gls{idm} à automatiser la manipulation des modèles pour offrir une assistance dans la création et la visualisation d'architectures d'entreprise. La plateforme proposée s'appuie sur \gls{togaf} et fournit un support pour la gouvernance et la prise de décision souvent gérées manuellement. Ces travaux se focalisent sur les techniques \gls{idm} permettent de (1) concevoir une cartographie de l'existant par rétro ingénierie à partir des données disponibles dans le SI, (2) adapter la représentation graphique des modèles au besoin des utilisateurs concernés, (3) gérer plusieurs vues d'un même système et automatiser leur manipulation. \cite{bruneliere2013mde} démontrent que les techniques de l'\gls{idm} apportent des réponses à certaines limitations liées aux pratiques actuelles d'EA mais ne supportent pas la simulation des modèles obtenus. 
+Les travaux de Brunelière et al. \cite{bruneliere2013mde} tirent profit des capacités de l'\gls{idm} à automatiser la manipulation des modèles pour offrir une assistance dans la création et la visualisation d'architectures d'entreprise. La plateforme proposée s'appuie sur \gls{togaf} et fournit un support pour la gouvernance et la prise de décision souvent gérées manuellement. Ces travaux se focalisent sur les techniques \gls{idm} permettent de (1) concevoir une cartographie de l'existant par rétro ingénierie à partir des données disponibles dans le SI, (2) adapter la représentation graphique des modèles au besoin des utilisateurs concernés, (3) gérer plusieurs vues d'un même système et automatiser leur manipulation. Brunelière et al. \cite{bruneliere2013mde} démontrent que les techniques de l'\gls{idm} apportent des réponses à certaines limitations liées aux pratiques actuelles d'EA mais ne supportent pas la simulation des modèles obtenus. 
 
-\cite{manzur2015xarchimate} utilisent les techniques de l'\gls{idm} (en particulier la métamodélisation) pour analyser la composante dynamique des modèles Archimate à travers la simulation de propriétés non fonctionnelles. Dans un premier temps, ils réduisent le métamodèle  d'Archimate en ne retenant que les concepts indispensables à la modélisation des propriétés non fonctionnelles. Comme Archimate est d'abord conçu pour modéliser la structure des architectures d'entreprise, \cite{manzur2015xarchimate} enrichissent dans un deuxième temps le métamodèle obtenu avec deux autres types de concepts (1) des concepts pour décrire le comportement et (2) des concepts uniquement liés à l'exécution. 
+Manzur et al.\cite{manzur2015xarchimate} utilisent les techniques de l'\gls{idm} (en particulier la métamodélisation) pour analyser la composante dynamique des modèles Archimate à travers la simulation de propriétés non fonctionnelles. Dans un premier temps, ils réduisent le métamodèle  d'Archimate en ne retenant que les concepts indispensables à la modélisation des propriétés non fonctionnelles. Comme Archimate est d'abord conçu pour modéliser la structure des architectures d'entreprise, Manzur et al. \cite{manzur2015xarchimate} enrichissent dans un deuxième temps le métamodèle obtenu avec deux autres types de concepts (1) des concepts pour décrire le comportement et (2) des concepts uniquement liés à l'exécution. 
 
-Les travaux de \cite{manzur2015xarchimate} illustrent les avantages de la métamodélisation et la définition d'une sémantique formelle pour l'exécution de modèles d'architecture d'entreprise. Néanmoins, ces travaux ne concernent que les propriétés non fonctionnelles des modèles d'architecture. Ces travaux formalisent aussi bien le métamodèle de la vue métier  que ceux des vues applicative et technique. Cependant la simulation des différentes se fait séparément les unes des autres. L'approche ne permet donc pas de simuler simultanément l'ensemble de l'architecture. 
+Les travaux de Manzur et al. \cite{manzur2015xarchimate} illustrent les avantages de la métamodélisation et la définition d'une sémantique formelle pour l'exécution de modèles d'architecture d'entreprise. Néanmoins, ces travaux ne concernent que les propriétés non fonctionnelles des modèles d'architecture. Ces travaux formalisent aussi bien le métamodèle de la vue métier  que ceux des vues applicative et technique. Cependant la simulation des différentes se fait séparément les unes des autres. L'approche ne permet donc pas de simuler simultanément l'ensemble de l'architecture. 
 
 
 %{\color{gray}
