@@ -27,3 +27,4 @@ build/
 These.pdf
 figures/*.pdf
 figures/build
+/.project
