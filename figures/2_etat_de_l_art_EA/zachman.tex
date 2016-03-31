@@ -13,7 +13,7 @@
     \scriptsize
     \begin{tabulary}{\mytablewidth}{m{\myfirstcolwidth}m{\mycolwidth}m{\mycolwidth}m{\mycolwidth}m{\mycolwidth}m{\mycolwidth}}
 
-        \cmidrule[\heavyrulewidth]{2-6}
+        % \cmidrule[\heavyrulewidth]{2-6}
         \mrows{2}\tikzmark{zachmantopleft} \
         & \centbf{Données} \
         & \centbf{Fonctions} \
@@ -93,16 +93,16 @@
     \begin{tikzpicture}[overlay,remember picture]
 
         % top horizontal arrow
-        \draw[<->] let \p1=(zachmantopleft), \p2=(zachmantopright) in ($(\x1,\y1)+(1.5,0.5)$) -- node[label=Abstractions (colonnes)] {} ($(\x2,\y2)+(0,0.5)$);
+        \draw[<->] let \p1=(zachmantopleft), \p2=(zachmantopright) in ($(\x1,\y1)+(1.6,0.4)$) -- node[label=Abstractions (colonnes)] {} ($(\x2,\y2)+(0.4,0.4)$);
 
         % left vertical arrow
-        \draw[<->] let \p3=(zachmanlefttop), \p4=(zachmanleftbottom) in ($(\x3,\y3)+(-0.3,0.2)$) -- node[label={[label distance=-2ex, text depth=3ex, label position=above, rotate=90]above:Perspectives (lignes)}] {} ($(\x3,\y4)+(-0.3,-0.5)$);
+        \draw[<->] let \p3=(zachmanlefttop), \p4=(zachmanleftbottom) in ($(\x3,\y3)+(-0.3,0.3)$) -- node[label={[label distance=-2ex, text depth=3ex, label position=above, rotate=90]above:Perspectives (lignes)}] {} ($(\x3,\y4)+(-0.3,-0.45)$);
 
         % HACK: draw vertical column separators
-        \def\zachmancolwidth{2}  % ~ column width (found manually)
-        \def\zachmanleftoffset{3}  % ~ first column offset (found manually)
+        \def\zachmancolwidth{2.41}  % ~ column width (found manually)
+        \def\zachmanleftoffset{3.55}  % ~ first column offset (found manually)
         \newcommand\drawcolsep[1]{%
-            \draw[dotted] let \p3=(zachmanlefttop), \p4=(zachmanleftbottom) in ($(\x3,\y3)+(\zachmanleftoffset+#1*\zachmancolwidth,0.2)$) -- ($(\x3,\y4)+(\zachmanleftoffset+#1*\zachmancolwidth,-0.64)$);}
+            \draw[dotted] let \p3=(zachmanlefttop), \p4=(zachmanleftbottom) in ($(\x3,\y3)+(\zachmanleftoffset+#1*\zachmancolwidth,0.24)$) -- ($(\x3,\y4)+(\zachmanleftoffset+#1*\zachmancolwidth,-0.59)$);}
         \drawcolsep{0}
         \drawcolsep{1}
         \drawcolsep{2}

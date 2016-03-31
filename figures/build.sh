@@ -35,6 +35,7 @@ function compile() {
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage[french]{babel}
+\usepackage[left=3cm,right=3cm,twoside]{geometry}
 \usepackage{color}
 \usepackage{graphicx}
 \usepackage{amsthm}
