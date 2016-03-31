@@ -5,15 +5,15 @@
 % HACK (and an ugly one) since booktabs breaks vertical separators, we use tikz
 % to draw them. Alignment is pretty much custom. I just hope this is gonna work
 % with no adjusment when putting this in the main document.
-\setlength{\mytablewidth}{1.1\textwidth}
+\setlength{\mytablewidth}{\textwidth}
 \setlength{\myfirstcolwidth}{\dimexpr0.21\mytablewidth-2\tabcolsep\relax}
 \setlength{\mycolwidth}{\dimexpr0.14\mytablewidth-2\tabcolsep\relax}
-\setlength{\mylastcolwidth}{\dimexpr0.19\mytablewidth-2\tabcolsep\relax}
+\setlength{\mylastcolwidth}{\dimexpr0.06\mytablewidth-2\tabcolsep\relax}
 
-\begin{adjustbox}{width=1.2\mytablewidth,center}
+\begin{adjustbox}{width=\mytablewidth,center}
     \scriptsize
     \begin{tabulary}{\mytablewidth}{m{\myfirstcolwidth}m{\mycolwidth}m{\mycolwidth}m{\mycolwidth}m{\mycolwidth}m{\mycolwidth}m{\mylastcolwidth}}
-        \cmidrule[\heavyrulewidth]{2-6}
+        % \cmidrule[\heavyrulewidth]{2-6}
         \mrows{2}\tikzmark{zachmantopleft} \
         & \centbf{Données} \
         & \centbf{Fonctions} \
@@ -99,16 +99,16 @@
     \begin{tikzpicture}[overlay,remember picture]
 
         % top horizontal arrow
-        \draw[<->] let \p1=(zachmantopleft), \p2=(zachmantopright) in ($(\x1,\y1)+(1.5,0.7)$) -- node[label=Abstractions (colonnes)] {} ($(\x2,\y2)+(0,0.7)$);
+        \draw[<->] let \p1=(zachmantopleft), \p2=(zachmantopright) in ($(\x1,\y1)+(1.5,0.4)$) -- node[label=Abstractions (colonnes)] {} ($(\x2,\y2)+(0,0.4)$);
 
         % left vertical arrow
-        \draw[<->] let \p3=(zachmanlefttop), \p4=(zachmanleftbottom) in ($(\x3,\y3)+(-0.3,0.2)$) -- node[label={[label distance=-2ex, text depth=3ex, label position=above, rotate=90]above:Perspectives (lignes)}] {} ($(\x3,\y4)+(-0.3,-0.5)$);
+        \draw[<->] let \p3=(zachmanlefttop), \p4=(zachmanleftbottom) in ($(\x3,\y3)+(-0.3,0.3)$) -- node[label={[label distance=-2ex, text depth=3ex, label position=above, rotate=90]above:Perspectives (lignes)}] {} ($(\x3,\y4)+(-0.3,-0.5)$);
 
         % HACK: draw vertical column separators
-        \def\zachmancolwidth{1.962}  % ~ column width (found manually)
-        \def\zachmanleftoffset{2.72}  % ~ first column offset (found manually)
+        \def\zachmancolwidth{2.12}  % ~ column width (found manually)
+        \def\zachmanleftoffset{2.95}  % ~ first column offset (found manually)
         \newcommand\drawcolsep[1]{%
-            \draw[dotted] let \p3=(zachmanlefttop), \p4=(zachmanleftbottom) in ($(\x3,\y3)+(\zachmanleftoffset+#1*\zachmancolwidth,0.2)$) -- ($(\x3,\y4)+(\zachmanleftoffset+#1*\zachmancolwidth,-0.64)$);}
+            \draw[dotted] let \p3=(zachmanlefttop), \p4=(zachmanleftbottom) in ($(\x3,\y3)+(\zachmanleftoffset+#1*\zachmancolwidth,0.24)$) -- ($(\x3,\y4)+(\zachmanleftoffset+#1*\zachmancolwidth,-0.59)$);}
         \drawcolsep{0}
         \drawcolsep{1}
         \drawcolsep{2}
