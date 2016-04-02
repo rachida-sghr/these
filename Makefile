@@ -8,3 +8,6 @@ all: These.pdf
 figures:
 	cd figures ; find . -path ./lib -prune -o -maxdepth 2 -iname *.tex -exec ./build.sh  {} \; ; cd :
 	rm -rf build
+
+clean:
+	rm -rf build
