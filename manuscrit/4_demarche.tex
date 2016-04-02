@@ -229,14 +229,12 @@ schéma directeur et une vue d'ensemble de l'état de l'entreprise et ne remplit
 pas son rôle de garant de la cohérence et de l'alignement métier/IT lors de 
 l'implémentation du système final.
 	
-	Enfin, les représentation purement  ne permettent pas les liens de traçabilité 
-sont indispensables à la vérification de la cohérence de l'architecture sur 
-toute la trajectoire de l'entreprise. Souvent, ces liens ne sont pas 
-explicitement représentée dans les cadres d'EA actuels. Lorsque ces liens sont 
+	Enfin, les représentations purement contemplative ne permettent pas d'exploiter les liens de traçabilité 
+indispensables à la vérification de la cohérence de l'architecture sur 
+toute la trajectoire de l'entreprise. La plupart des cadres d'EA ne représentent pas 
+explicitement ces liens de cohérence. Ainsi, lorsque ces liens sont 
 représentés, c'est sous une forme purement contemplative qui ne permet donc pas 
-de les exploiter informatiquement \textit{a posteriori}, pour vérifier que tous 
-les composants de la vue technique participent bien à l'exécution de la 
-stratégie de l'entreprise par exemple. 
+de les exploiter informatiquement \textit{a posteriori} pour valider la cohérence globale de l'architecture.   À titre d'exemple, ces liens sont utiles pour vérifier que les composants de la vue technique participent bien à l'exécution de la stratégie de l'entreprise. 
 	
 	\subsection{L'architecture d'entreprise pour les Smart Grids}
 	
@@ -244,8 +242,10 @@ La découverte des Smart Grids a été menée de plusieurs manières.
 
 Avant d'aboutir à, Hypothèse : L'entreprise comme un projet - Fractal
 Entreprise = petit projet
+Structure fractale
  
 \subsubsection{Démonstrateurs européens}
+\label{sec:DemonstrateursSG}
 
 Tout d'abord, nous avons étudié les spécifications des démonstrateurs Smart 
 Grids européens et en particulier celles de ADDRESS\footnote{site internet} et 
@@ -391,230 +391,6 @@ vue par vue
 la formulation de la problématique 
 
 
-\section{Méthodes de recherche}
-Une démarche classique de recherche commence par la formulation d'une question 
-de départ. La question qui a initié nos travaux est la suivante~: «~Comment 
-simuler afin de les valider les SI des Smart Grids ?~».  Comme en témoigne notre 
-l'état de l'art, cette question fait l'objet de très peu de travaux (section 
-\ref{approche_simu_existante}). Une recherche exploratoire a donc été nécessaire 
-pour mettre en évidence les caractéristiques d'un phénomène nouveau selon une 
-démarche inductive. 
-
-Cette phase exploratoire a été préalable à la définition du cadre d'architecture 
-\textit{ExcuteEA}. La construction de ce cadre d'architecture et sa mise à 
-l'épreuve ont fait l'objet d'une recherche explicative pour laquelle nos avons 
-adopté une démarche déductive.
-
-L'intérêt de cette partie est de traiter la question de la cohérence entre nos 
-objectifs de recherche et la démarche que nous adoptons pour y répondre. Mais 
-nous ne cherchons pas à donner l'impression que notre plan de recherche a été 
-entièrement établi avant de le mettre en œuvre. À l'inverse, nous l'avons 
-construit au fur et à mesure de nos interactions avec le terrain d'étude. 
-
-Tout d'abord, nous présentons la démarche inductive entreprise pour délimiter 
-notre objet d'étude. Nous reprenons les étapes de cette recherche exploratoire 
-par ordre chronologique~: exploration de la vue métier, puis de la vue 
-applicative et en fin de la vue fonctionnelle. Nous présentons ensuite la 
-démarche déductive ayant abouti à la construction du cadre d'architecture 
-ExecuteEA.
-
-%"Quelle que soit la nature de la démarche, la capacité d'ouverture et de prise 
-en compte d'éléments nouveaux est primordiale." ici ou dans la conclusion ?
-
-%Dans une démarche classique de recherche, la définition de l'objet d'étude est 
-préalable à la 
-%Plusieurs méthodes de recherche
-%démarches de recherches employée par ordres chronologiques
-%Combinaisons de méthodes 
-%Vocation exploratoires de nos recherches
-%Nous ne cherchons pas ici à donner l'impression que nous avons entièrement mis 
-au point notre plan de recherche avant de le mettre en oeuvre. Celui-ci s'est au 
-contraire construit au fur et à mesure de notre interaction avec le terrain.
-%
-%"la cohérence du protocole de recherche avec la nature des questions que nous 
-nous posons"
-%"Mais un autre élément mérite d'être distingué : la délimitation de l'objet 
-d'étude pose des problèmes tels qu'elle constitue une recherche en elle-même"
-%"Quelle que soit la nature de la démarche, la capacité d'ouverture et de prise 
-en compte d'éléments nouveaux est primordiale."
-
-
-	\subsection{Délimitation de l'objet de recherche}
-%	Q : Est-ce que le recours à la demarche inductive est bien justifié ?
-%		Est-ce l'investigation satisfait bien les critères de cohérence interne ?
-		
-	Une attention singulière est apportée à la délimitation de l'objet d'étude. 
-Cette délimitation est souvent le résultat de l'observation du terrain d'étude~: 
-l'entreprise et son SI d'une manière générale et l'entreprise et son SI dans le 
-cas particulier des Smart Grids. L'entreprise et son SI forment un système 
-complexe dont l'observation n'est pas triviale. La délimitation de l'objet 
-d'étude a donc été en soi à l'origine d'une démarche de recherche.
-	
-	Cette partie a pour objectif de démonter la pertinence d'une démarche inductive 
-pour l'identification de notre objet d'étude. D'une part, une démarche inductive 
-est utile pour formuler des hypothèses ou soulever des questions et pour aborder 
-un problème qui a été peu étudié comme c'est le cas de la simulation des SI. 
-Elle aboutit à des propositions générales à partir de cas particuliers~: c'est 
-une démarche par exploration. 
-	Cette démarche est donc adaptée pour~: 
-	\begin{enumerate}
-	\item délimiter l'objet de l'étude, c'est à dire identifié ce qui est dans le 
-contexte de la simulation des SI et ce qui ne l'est pas~;
-	\item jeter les bases d'une étude théorique ultérieure.
-	\end{enumerate}
-	
-	D'autre part, l'induction est une démarche de recherche classique en sciences 
-sociales. Elle correspond au raisonnement empiriste qui affirme que 
-l'observation et l'expérience sont la source de la connaissance du monde réel et 
-du concret \cite{madeleine2001methodes}. Nous cherchons en effet à comprendre 
-notre objet d'étude empiriquement. Le recours à cette démarche est d'autant plus 
-justifié par la nature socio-technique du SI. En définissant le SI, Robert Reix 
-met en évidence sa composante sociale (\ref{ch:EA}). 
-	
-	%Une étude ethnographique est Notre démarche inductive est donc doublée d'.
-
-	La volonté d'identification de notre objet d'étude est portée par la question 
-suivante «~Qu'est ce que la simulation d'un SI d'entreprise ?~». Néanmoins, même 
-empirique, une démarche de recherche doit nécessairement s'inscrire dans un 
-cadre de cohérence. Nous avons donc veillé à construire un protocole 
-d'investigation épistémologiquement valide et conforme aux critères de cohérence 
-interne. Notre protocole d'investigation est axé sur l'observation et 
-l'expérience. Il est constitué de trois grandes étapes ~:
-		
-		\begin{enumerate}
-		
-	\item observation du terrain d'étude, c'est à dire analyse des pratiques 
-courantes des personnes concernées par la simulation. Nous avons identifié deux 
-catégories de personnes susceptibles de nous intéresser~: les experts (en SI ou 
-en simulation) et les personnes susceptibles d'instrumenter la simulation des SI 
-pour leurs travaux de recherche ou d'ingénierie (il s'agit là des utilisateurs 
-finaux). Nous avons privilégié les ingénieurs-chercheurs d'\gls{edf}~R\&D car le 
-contexte \gls{cifre} de la thèse a facilité l'accès à ces 
-personnes.L'observation aboutit à la formulation d'hypothèses «~aprioristes~». 
-Ce type d'hypothèse est exploratoire car elles ont pour but de soulever des 
-interrogations~;
-	%observatio participative, démarche ethnographique
-	
-	\item développement d'un prototype de simulation tenant compte du résultat des 
-observations de l'étape précédente. Le prototype n'a pas pour vocation de 
-proposer une solution finale mais plutôt tester rapidement les hypothèses 
-formulées précédemment~;
-	
-	\item validation ou mise à l'épreuve du prototype sur le terrain d'étude. Cette 
-mise à l'épreuve commence par la définition d'un cas d'application pertinent 
-permettant de vérifier les hypothèses formulées à l'étape d'observation. Elle se 
-poursuit par la collecte et l'analyse du retour des personnes concernées. Le 
-contexte \gls{cifre} a là aussi facilité les échanges avec les 
-ingénieurs-chercheurs de EDF R\&D, et en particulier ceux du département 
-\gls{mire}. Notre intégration à l'équipe des ingénieurs-cherches du département 
-\gls{mire}, et en particulier à l'équipe du projet de simulation des Smart Grid, 
-a contribué à la qualité des échanges avec les personnes interrogées.
-	
-		\end{enumerate}
-		
-	Le raisonnement par induction aboutit à des propositions générales à partir de 
-cas singuliers. Nous avons donc commencer par décomposer le terrain d'étude, 
-c'est à dire le SI de l'entreprise. Les bases théoriques de la discipline des SI 
-ont permis de procéder à cette décomposition afin de mettre en évidence ses 
-singularités. Les approches par points de vue sont largement utilisée pour 
-traiter la complexité des SI en le décomposant en plusieurs vues~: la vue 
-métier, la vue fonctionnelle, la vue applicative, la vue technique. Chaque vue 
-correspond à la perspective d'un groupe de personnes aux profils différents mais 
-complémentaires. Les investigations ont été menées sur les trois premières vue — 
-métier, fonctionnelle, applicative. La vue technique n'a pas été traitée~: le 
-temps nécessaire aux expérimentations est incompatible avec les délais de cette 
-thèse et son financement dans le cadre d'une \gls{cifre}.
-	
-	Le protocole d'investigation est alors appliqué à chacune des vues métier, 
-fonctionnelle et applicative. L'objectif de la démarche engagée est de définir 
-l'objet d'étude, en ayant comme question de départ «~Qu'est ce que la simulation 
-d'un SI d'entreprise ?~». Cependant, nous avons veillé à garder une capacité 
-d'ouverture aux idées nouvelles. Nous présentons
-	
-		\subsubsection{Investigations menées pour la vue métier}
-	
-			\paragraph{Observation}
-		
-			\paragraph{Prototypage}
-		
-			\paragraph{Validation}
-	Simu processus et aspect information (Data Simu)
-	
-		\subsubsection{Investigations menées pour la vue fonctionnelle} 
-			\paragraph{Observation}
-		
-			\paragraph{Prototypage}
-		
-			\paragraph{Validation}
-	DSML pour le Volt Var Control
-		\subsubsection{Investigations menées pour la vue applicative} 
-			\paragraph{Observation}
-		
-			\paragraph{Prototypage}
-		
-			\paragraph{Validation}
-	Ptolemy : Simu appli + couplage réseau élec
-	
-	
-	\subsection{Conclusion}
-Redéfinition de l'objet d'étude
-Reformulation de la question de départ -> ref problématique 
-Le cœur de la problématique 
-Adéquation de la démarche et de l'objectif de la recherche (objet d'étude)
-	
-La question de l'analyse par simulation du SI fait l'objet de 
-Démarche exploratoire / Démarche ethnographique 
-La délimitation du sujet de recherches est en soit à l'origine d'une démarche de 
-recherche à part entière  inductive, se prête mieux au sujet nouveau, faisant 
-l'objet de peu de travaux
-Jeter les bases d'une étude ultérieure
-
-
-Mettre en évidence les caractéristiques du phénomène et construire des 
-hypothèses 
-"Les hypothèses et même les questions sont susceptibles d'évoluer au fur et à 
-mesure de la recherche"
-
-"En retour, le travail empirique se verra régulièrement réorienté en fonction 
-des approfondissements successifs du cadre théorique "
-
-Étude sociologique -> entretien avec les experts, sur leur avis de nos 
-prototypes mais aussi 
-
-Plusieurs démarches d'investigation 
-prototypage et entretien 
-ou SI transverse et SI spécialisé ? SI purement logiciel / SI socio-technique 
-(interaction humaine) 
-Une différence d'échelle 
-		 
-
-
-	\subsection{Conceptualisation / construction du cadre d'architecture 
-\textit{ExecuteEA}}
-%À partir de la compréhension empirique de notre objet d'étude et de la 
-formulation d'une problématique 
-La reformulation de la question de départ abouti à la définition d'une 
-problématique 
-La question de départ est au cœur de la problématique 
-
-permet la Définition du cadre théorique 
-
-La proposition est au contraire déductive
-Sujet identifiés, hypothèses formulées
-systèmes similaires : SI et entreprise -> établir les similarités
-Les hypothèses etc.  
-Choix de la théorie à appliquer : IDM (hypothèse et conclusion)/ apport de l'IDM 
-a-à l'EA, hypothèse (même problématique) à une échelle différente  ‹
-Itérative et là Smook 
-
-	\subsubsection{Conclusion}
-	
-	
-	
-	
-	
-	
-	
 
 L'EA peut avoir différents objectifs. Kurpjuweit et Winter 
 \cite{kurpjuweit2007viewpoint} identifient trois objectifs de l'EA par rapport 
@@ -931,10 +707,9 @@ attendues par la \textit{Tâche~B}, de même entre la \textit{Fonction~A} et la
 
 \begin{figure}[!ht]
  \begin{center}
-  \includegraphics[trim= 0cm 2cm 0cm 0cm, 
-width=1\textwidth]{figures/4_demarche/approche_simulation.pdf}
+  \includegraphics[trim= 0cm 3cm 0cm 0cm, width=1\textwidth]{figures/4_demarche/approche_simulation.pdf}
  \end{center}
- \caption{Simulation dirigée par les processus métier}
+ \caption{Simulation de l'architecture dirigée par les processus}
  \label{fig:Simulation_Approche}
 \end{figure}
 
