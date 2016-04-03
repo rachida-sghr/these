@@ -54,12 +54,12 @@ function replace_figures() {
 
     if [ ${build_type} = "FULL" ] ; then
         echoinfo "Replacing figures in ${file} by beautiful but long to compile tikz figures."
-        sed -i 's/%_BUILD_FULL\s*\(.*\)$/\1 %_BUILD_FULL/g' ${file}
-        sed -i 's/\(.*\)\s*%_BUILD_QUICK\(.*\)$/%_BUILD_QUICK \1/g' ${file}
+        sed -i.bk 's/%_BUILD_FULL\s*\(.*\)$/\1 %_BUILD_FULL/g' ${file}
+        sed -i.bk 's/\(.*\)\s*%_BUILD_QUICK\(.*\)$/%_BUILD_QUICK \1/g' ${file}
     elif [ ${build_type} = "QUICK" ] ; then
         echoinfo "Replacing figures in ${file} by quick to compile but not so nice figures."
-        sed -i 's/%_BUILD_QUICK\s*\(.*\)$/\1 %_BUILD_QUICK/g' ${file}
-        sed -i 's/\(.*\)\s*%_BUILD_FULL \(.*\)$/%_BUILD_FULL \1/g' ${file}
+        sed -i.bk 's/%_BUILD_QUICK\s*\(.*\)$/\1 %_BUILD_QUICK/g' ${file}
+        sed -i.bk 's/\(.*\)\s*%_BUILD_FULL \(.*\)$/%_BUILD_FULL \1/g' ${file}
     fi
 }
 
