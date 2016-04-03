@@ -294,10 +294,10 @@ La normalisation de \textit{Use Case} ou de cas d'utilisation consiste
 à faire le mapping entre cette spécification et le cadre d'architecture \gls{sgam} qui 
 est spécialisé dans l'architecture des Smart Grids, présenté dans le 
 chapitre~\ref{ch:EA}.
-La normalisation de Use Case est utilisée par le projet européen GRID4EU\footnote{http://www.grid4eu.eu/} qui rassemble six démonstrateurs Smart Grid différents. Les use case obtenus sont ensuite mis en correspondance avec le cadre d'architecture \gls{SGAM} après l'implémentation des six démonstrateurs pour comparer les 
-retours d'expériences. Nous retenons le démonstrateur de la société nationale d'électricité italienne (\gls{enel}) et le cas métier de la régulation de tension sur des réseaux de distribution présentant une forte pénétration de DER. C'est en effet le cas d'application de la norme et du cadre \gls{SGAM} le plus abouti. 
+La normalisation de Use Case est utilisée par le projet européen GRID4EU\footnote{http://www.grid4eu.eu/} qui rassemble six démonstrateurs Smart Grid différents. Les use case obtenus sont ensuite mis en correspondance avec le cadre d'architecture \gls{sgam} après l'implémentation des six démonstrateurs pour comparer les 
+retours d'expériences. Nous retenons le démonstrateur de la société nationale d'électricité italienne (\gls{enel}) et le cas métier de la régulation de tension sur des réseaux de distribution présentant une forte pénétration de DER. C'est en effet le cas d'application de la norme et du cadre \gls{sgam} le plus abouti. 
 
-D'une part, dans le SGAM la traçabilité entre les vues n'est pas directe. Elle 
+D'une part, dans le \gls{sgam} la traçabilité entre les vues n'est pas directe. Elle 
 est assurée par la superposition des différentes vue d'architecture sur le plan 
 Smart Grid. Ce dernier décrit un réseau électrique selon deux composantes~: 
 physique et organisationnelle. La figure illustre ce mapping pour la vue métier. 
@@ -341,7 +341,7 @@ C++  et des experts de la régulation de tension. Les experts techniques
 interrogés utilisent leurs propres langages de modélisation (automates 
 programmables) et d'implémentation (C++). Ils sont de plus peu sensibles aux 
 problématiques soulevées par l'EA. En effet, ils n'avait pas connaissance du 
-SGAM ni de la normalisation de use case pour la régulation de tension des 
+\gls{sgam} ni de la normalisation de use case pour la régulation de tension des 
 réseaux de distribution. Ceci peut être expliqué en partie par le fait qu'ils 
 traitent des problématiques électrotechniques pointues. 
 
@@ -475,7 +475,7 @@ métier et la vue applicative sont incontournables pour n'importe quel cadre
 d'architecture. Ensuite, selon les cadres d'architecture, la vue fonctionnelle 
 est modélisée de deux manière~:~ elle est soit intégrée à la vue applicative 
 sous forme de services (Archimate, TOGAF, RM-ODP), soit modélisée à part entière 
-dans une vue dédiée (Club Urba, SGAM, Zachman). Nous prenons le parti de 
+dans une vue dédiée (Club Urba, \gls{sgam}, Zachman). Nous prenons le parti de 
 modéliser explicitement les fonctions dans une vue dédiée. En effet, passer 
 directement de la vue du métier à la vue applicative peut être en quelque sorte 
 brutal pour l'analyste métier mais aussi pour l'architecte applicatif. La vue 
@@ -483,7 +483,7 @@ fonctionnelle permet une transition progressive de la logique métier vers
 l'architecture logicielle.
 
 Nous ne modélisons pas les informations dans une vue dédiée contrairement aux 
-cadre RM-ODP ou SGAM. Nous explicitons les informations en tant qu'aspect pour 
+cadre RM-ODP ou \gls{sgam}. Nous explicitons les informations en tant qu'aspect pour 
 chacune des autres vues comme recommandé par le cadre Zachman (Le quoi de la 
 dimension horizontale). L'aspect «~\textit{information}~» permet d'avoir un 
 modèle explicite des données utilisées dans chacune des vues métier, 
