@@ -6,11 +6,8 @@ all:
 full:
 	./build.sh -i -v 
 
-quick:
-	./build.sh -q -i -v
-
 dev:
-	./build.sh -q
+	./build.sh -q -i -v
 
 figures:
 	cd figures ; find . -path ./lib -prune -o -maxdepth 2 -iname *.tex -exec ./build.sh  {} \; ; cd :
