@@ -52,7 +52,7 @@ function compile() {
 EOF
 
     latexmk -r ../latexmkrc -cd ${BUILD_DIR}/build.tex -output-directory=../${BUILD_DIR}
-	mv build/build.pdf ${base}.pdf
+	mv build/build.pdf ${target}.pdf
 }
 set -x
 main $@

@@ -4,24 +4,14 @@ La compilation necessite
 - un shell unix (teste avec `bash` et `zsh`)
 - `make`
 
-Exemple:
+Plusieurs options sont possibles pour compiler la these.
 
-```
-$ ls
-latexmkrc  Makefile  manuscrit  README.md
-
-$ make && ls
-build  latexmkrc  Makefile  manuscrit  README.md  These.pdf
-
-$ make clean
-rm -rf build
-
-$ ls
-latexmkrc  Makefile  manuscrit  README.md  These.pdf
-```
-
-Pour compiler les figures:
-
-```
-make figures
-```
+- `make dev`: les figures trop longues a compilees sont remplacees par des pdf.
+  L'output de `pdflatex` est masque.
+- `make quick`: les figures trop longues a compilees sont remplacees par des
+  pdf.  L'output de `pdflatex` est visible.
+- `make full`: les figures longues a compilees sont conservees, ce qui augmente
+  significativement le temps de compilation. L'output de `pdflatex` est
+  visible.
+- `make`: les figures longues a compilees sont conservees, ce qui augmente
+  significativement le temps de compilation. L'output de `pdflatex` est masque.
