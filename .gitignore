@@ -25,6 +25,7 @@
 *.brf
 build/
 These.pdf
+these.pdf
 figures/*.pdf
 figures/build
 /.project
