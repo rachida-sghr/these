@@ -1,6 +1,13 @@
 \chapter{Méthodologie de la recherche}
 \label{ch:methodo}
 
+La méthodologie de recherche permet non seulement de comprendre la mise en place 
+d'une démarche de recherche mais aussi les résultats l'étude. Le but de ce 
+chapitre est double. D'une part, nous veillons à démonter l'adéquation entre 
+notre démarche et l'objet de recherche. D'autres part, ce chapitre éclaire le 
+cheminement des travaux de recherche pour comprendre la construction de la 
+démarche adoptée. 
+
 Une démarche classique de recherche commence par la formulation d'une question 
 de départ. La question qui a initié nos travaux est la suivante~: «~Comment 
 simuler afin de les valider les SI des Smart Grids ?~».  Comme en témoigne notre 
@@ -141,24 +148,63 @@ d'un SI d'entreprise ?~». Cependant, nous avons veillé à garder une capacité
 d'ouverture aux idées nouvelles. Nous présentons
 	
 		\subsection{Investigations menées pour la vue métier}
-			La première étape d'observation a débuté avec un stage de fin d'étude de six mois que nous avons effectué au sein du département \gls{mire}. L'objectif du stage a consisté à explorer le sujet «~~Simulation du SI des Smart Grids » afin de préparer un sujet de thèse. Il s'est donc accordé avec l'objectif des investigations menées pour la vue métier.
+			La première étape d'observation a débuté avec un stage de fin d'étude de six 
+mois que nous avons effectué au sein du département \gls{mire}. L'objectif du 
+stage a consisté à explorer le sujet «~Simulation du SI des Smart Grids~» afin 
+de préparer un sujet de thèse. Il s'est donc accordé avec l'objectif des 
+investigations menées pour la vue métier.
 			
 			\subsubsection{Observation}
-				Pour cette première phase d'observation, des entretiens ont été menés avec des experts SI internes à l'entreprise et mais aussi externes à celle-ci lors d'un séminaire professionnel\footnote{Model Driven Day, 21 novembre 2001, Paris Cœur Défense}. Des entretiens ont aussi été menés avec des ingénieurs-chercheurs du département \gls{mire} ayant participé à des démonstrateurs Smart Grids européens pour mettre en évidence les pratiques de spécification de la composante SI des Smart Grids. 
+				Pour cette première phase d'observation, des entretiens ont été menés avec 
+des experts SI internes à l'entreprise et mais aussi externes à celle-ci lors 
+d'un séminaire professionnel ayant pour thème la modélisation des SI \footnote{Model Driven Day, 21 novembre 2001, Paris 
+Cœur Défense}. Des entretiens ont aussi été menés avec des ingénieurs-chercheurs 
+du département \gls{mire} ayant participé à des démonstrateurs Smart Grids 
+européens pour mettre en évidence les pratiques de spécification de la 
+composante SI des Smart Grids. 
 
 				Les hypothèses formulées à l'issue des ces observations sont les suivantes~:
 				\begin{itemize}
 					\item la simulation de SI est une discipline peu étudiée~;
-					\item la simulation des processus métier est pertinente pour les SI des Smart Grids dans le mesure ou elle permet de valider les scénarios élaborés pour les démonstrateurs, mais aussi pour les SI tout court~;
-					\item lors de cette simulation, il est nécessaire de maintenir une cohérence entre processus et données manipulées.
+					\item la simulation des processus métier est pertinente pour les SI des 
+Smart Grids dans le mesure ou elle permet de valider les scénarios élaborés pour 
+les démonstrateurs, mais aussi pour les SI tout court~;
+					\item lors de cette simulation, il est nécessaire de maintenir une 
+cohérence entre le processus et les données qu'il manipule~;
+					%\item les langages de modélisation exécutables présentent des avantages pour la simulation des SI.
 				\end{itemize}
 		
 			\subsubsection{Prototypage}
-				Le prototypage a nécessité une étude des outils existants proposant de simuler des processus métier, ce qui a permis d'identifier les outils suivant~: Enterprise Architect, Bonita, Amuse et Rhapsody. Il a ensuite essentiellement à tester leur capacité de simulation selon une grille d'évaluation. Le critère de sélection principal a été la capacité de l'outil à exécuter des diagrammes d'activité UML. En effet, c'est dans ce langage que sont représentés les processus métier dans les documents de spécification des démonstrateurs Smart Grid. Le deuxième critère d'évaluation retenu a été la possibilité d'ajout de nouvelles fonctionnalités à l'outil. À l'issue de cette étude comparative, l'outil Enterprise Architect dans sa version 9.2 a été retenu. En effet, à l'époque de l'étude, EA était le seul à pouvoir animer des diagrammes d'activité et à offrir la possibilité d'ajout de fonctionnalité par le mécanisme de plugin. C'était en outre l'outil de modélisation UML de référence de l'équipe d'ingénieurs-chercheurs au sein de laquelle nous avons effectué ce stage.
+				Le prototypage a nécessité une étude des outils existants proposant de 
+simuler des processus métier, ce qui a permis d'identifier les outils suivant~: 
+Enterprise Architect, Bonita, Amuse et Rhapsody. Il a ensuite essentiellement à 
+tester leur capacité de simulation selon une grille d'évaluation. Le critère de 
+sélection principal a été la capacité de l'outil à exécuter des diagrammes 
+d'activité UML. En effet, c'est dans ce langage que sont représentés les 
+processus métier dans les documents de spécification des démonstrateurs Smart 
+Grid. Le deuxième critère d'évaluation retenu a été la possibilité d'ajout de 
+nouvelles fonctionnalités à l'outil. À l'issue de cette étude comparative, 
+l'outil Enterprise Architect dans sa version 9.2 a été retenu. En effet, à 
+l'époque de l'étude, EA était le seul à pouvoir animer des diagrammes d'activité 
+et à offrir la possibilité d'ajout de fonctionnalité par le mécanisme de plugin. 
+C'était en outre l'outil de modélisation UML de référence de l'équipe 
+d'ingénieurs-chercheurs au sein de laquelle nous avons effectué ce stage.
 				
-				Cependant, dans sa version 9.2, l'outil n'assure pas la cohérence entre les objets métier (modélisés avec diagramme de classe) et le processus (modélisé avec un diagramme d'activité) au cours de la simulation. De plus, l'outil ne gère pas la persistance des résultats de la simulation. La mise en cohérence a donc nécessité le développement d'un plugin que nous avons baptisé DataSimu. DataSimu permet de (1)~créer un jeu de donnée en entrée de la simulation à partir des concepts métier en instanciant un diagramme de classe (2)~simuler le processus métier avec ce jeu de donnée (3)~récupérer le jeu de données en sortie de la simulation et les stocker dans une base de données. Nous avons mené l'implémentation de DataSimu en binôme avec un étudiant en troisième année d'école d'ingénieur. L'interface graphique de DataSimu est illustrée par la figure. L'annexe (ANNEXE) détaille l'architecture de DataSimu et présente un manuel d'utilisation. 
+				Cependant, dans sa version 9.2, l'outil n'assure pas la cohérence entre les 
+objets métier (modélisés avec diagramme de classe) et le processus (modélisé 
+avec un diagramme d'activité) au cours de la simulation. De plus, l'outil ne 
+gère pas la persistance des résultats de la simulation. La mise en cohérence a 
+donc nécessité le développement d'un plugin que nous avons baptisé DataSimu. 
+DataSimu permet de (1)~créer un jeu de donnée en entrée de la simulation à 
+partir des concepts métier en instanciant un diagramme de classe (2)~simuler le 
+processus métier avec ce jeu de donnée (3)~récupérer le jeu de données en sortie 
+de la simulation et les stocker dans une base de données. Nous avons mené 
+l'implémentation de DataSimu en binôme avec un étudiant en troisième année 
+d'école d'ingénieur. L'interface graphique de DataSimu est illustrée par la 
+figure. L'annexe (ANNEXE) détaille l'architecture de DataSimu et présente un 
+manuel d'utilisation. 
 				
-				\begin{figure}[!ht]
+\begin{figure}[!ht]
  \begin{center}
   \includegraphics[width=1\textwidth]{figures/6_methodologie/data_simu.png}
  \end{center}
@@ -167,12 +213,66 @@ d'ouverture aux idées nouvelles. Nous présentons
 \end{figure}
 				
 			\subsubsection{Validation}
-			Pour valider les hypothèses formulées à l'issue de l'observation, un cas d'application Smart Grid a été mis au point~: le pilotage d'une charge domestique. Ce cas d'application est issu de l'étude des spécifications des démonstrateurs Smart Grid ADDRESS et PREMIO introduits dans la section~\ref{sec:DemonstrateursSG}. Il s'agit de piloter une batterie de stockage d'énergie installée chez un client (particulier ou industriel). En fonction de l'état du réseau, une centrale de pilotage contrôle cette batterie (stockage d'énergie pour une utilisation ultérieure), tout en tenant compte des consignes du client. Ce cas métier a été modélisé et simulé avec l'outil Enterprise Architect doté du plugin DataSimu. Une description détaillée du cas métier et du déroulement de la simulation est donnée dans l'annexe \ref{annexe:DataSimu}. 
+			Pour valider les hypothèses formulées à l'issue de l'observation, un cas 
+d'application Smart Grid a été mis au point~: le pilotage d'une charge 
+domestique. Ce cas d'application est issu de l'étude des spécifications des 
+démonstrateurs Smart Grid ADDRESS et PREMIO introduits dans la 
+section~\ref{sec:DemonstrateursSG}. Il s'agit de piloter une batterie de 
+stockage d'énergie installée chez un client (particulier ou industriel). En 
+fonction de l'état du réseau, une centrale de pilotage contrôle cette batterie 
+(stockage d'énergie pour une utilisation ultérieure), tout en tenant compte des 
+consignes du client. Ce cas métier a été modélisé et simulé avec l'outil 
+Enterprise Architect doté du plugin DataSimu. Une description détaillée du cas 
+métier et du déroulement de la simulation est donnée dans l'annexe 
+\ref{annexe:DataSimu}. 
 			
-			Le prototype de simulation et sa mise en œuvre à travers le cas métier du pilotage d'une charge domestique ont été soumis aux experts SI du département \gls{mire} et aux ingénieurs-chercheurs contribuant aux démonstrateurs Smart Grid PREMIO et ADDRESS. Les entretiens suivant la démonstration ont validé (1) la pertinence de la simulation dans le contexte des SI des Smart Grids (2) la séparation du processus métier et des objets métier tout en maintenant une cohérence lors de la simulation. 
+			Le prototype de simulation et sa mise en œuvre à travers le cas métier du 
+pilotage d'une charge domestique ont été soumis aux experts SI du département 
+\gls{mire} et aux ingénieurs-chercheurs contribuant aux démonstrateurs Smart 
+Grid PREMIO et ADDRESS. Les entretiens suivant la démonstration ont validé (1) 
+la pertinence de la simulation dans le contexte des SI des Smart Grids (2) la 
+séparation du processus métier et des objets métier tout en maintenant une 
+cohérence lors de la simulation. 
 			
-			Ces entretiens, en plus de l'étude des outils de simulation des processus métier, ont permis de constater que la question de la simulation est peu abordé dans le contexte des SI. Ces travaux d'investigation ont de plus donnée lieu à une publication \cite{seghiri2012animation} et ont été poursuivis par les travaux présentés dans cette thèse. 
+			Ces entretiens, assortis l'étude des outils de simulation des processus 
+métier, ont permis de constater que la question de la simulation est peu abordé 
+dans le contexte des SI. Ces travaux d'investigation ont de plus donné lieu à 
+une publication \cite{seghiri2012animation} et ont été poursuivis par les 
+travaux présentés dans cette thèse.
+ 
+				\subsubsection{Conclusion}
+			Cette première itération du protocole d'investigation a conforté nos hypothèses initiales à savoir que la simulation est peu abordée dans le contexte des SI mais qu'elle est pertinente pour valider/critiquer les scénarios de cas métier Smart Grid avant leur implémentation.
 
+			\subsection{Investigations menées pour la vue applicative} 
+				La vue applicative tient une place de choix dans les SI des entreprises. Pour des SI fortement informatisé, il arrive même souvent que le SI soit réduit aux applications informatiques et à l'infrastructure qui les supportent. Cette constatation est encore plus avérée dans le cas des Smart Grids dont le principe est le déploiement de TIC sur le réseau électrique pour automatiser son pilotage. Le choix chronologique de poursuivre les investigations en abordant la vue métier découle de cette constatation.		
+			
+				\subsubsection{Observation}
+				Les investigations menées pour la vue applicative ont nécessité d'approfondir nos connaissances du fonctionnement du réseau électrique. Pour cette deuxième phase d'observation, nous avons conduit des entretiens avec deux profiles de personnes~: des experts et des ingénieurs-chercheurs spécialisé dans le réseau électrique de distribution  appartement au département \gls{mire}. En effet, plus que les réseaux de transport, ce sont les réseaux de distribution qui sont concernée par les Smart Grids. Les réseaux de transports français sont déjà fortement automatisés. 
+				L'objectif de ces entretiens est double~: approfondir nos connaissances du réseau électrique et comprendre les pratiques des personnes interrogées en matière de simulation.
+				Les experts sus-mentionnés sont responsables de la conception d'applications pour la conduite du réseau électrique. Le langages de conception les plus utilisés sont les automates programmables. Les ingénieurs-chercheurs sont quand à eux responsable du développement des applications, le plus souvent en Matlab ou  C++.
+				Les hypothèses formulées à l'issue de cette observation sont les suivante~:
+				\begin{itemize}
+					\item la simulation du SI pour les Smart Grid est liée à la simulation des réseaux électriques~;
+					\item la simulation du SI des Smart Grid nécessite de traiter la problématique de l'hétérogénéité des modèles.
+				\end{itemize}
+				
+				\subsubsection{Prototypage}
+				Le cas d'application du pilotage d'une charge domestique n'a pas été utilisé pour le prototypage de la vue applicative. Les modèles de la vue applicative nécessitent un niveau de détail plus élevé que les modèles de la vue métier. Or les spécifications des démonstrateurs ADDRESS et PREMIO n'offrent pas le niveau de détails nécessaires. Le Use Case normalisé par \gls{enel} (voir section~\ref{sec:ENEL) pour la régulation de tension sur les réseau de distribution a été adopté et affiné par les discutions avec les ingénieurs-chercheurs du département \gls{mire} travaillant sur la même thématique. 
+				Ils s'agit d'adapter la tension du réseau électrique en fonction de la charge et de la production pour maintenir un niveau de tension respectable. Les deux leviers d'action sont utilisés, les régleurs en charge et les \gls{der}. Les régleurs en charges pilotés à distance agissent sur le niveau de tension au niveau des postes sources. Le pilotage des \gls{der} permet de contrôler la quantité d'énergie qu'ils injectent sur le réseau. 
+				
+				Ce cas métier fait intervenir un SI qui calcule les consignes envoyées aux DER et au régleur en charge et un réseau électrique qui réagit à ces consignes. Nous avons utilisé l'outil Ptolemy\footnote{http://ptolemy.eecs.berkeley.edu/}de modélisation hétérogène pour développer un prototype de simulation. La figure~\ref{fig:simu_ptolemy} illustre le modèle de simulation. Les éléments modélisés sont le SI et le réseau électrique (\textit{Network}). Le comportement du SI est avec une machine à état.  
+				
+\begin{figure}[!ht]
+ \begin{center}
+  \includegraphics[trim = 0cm 5cm 0cm 0cm, width=1\textwidth]{figures/6_methodologie/simu_ptolemy.png}
+ \end{center}
+ \caption{Prototype Ptolemy pour une simulation hétérogène comprenant le SI (discret) et le réseau électrique (continue)}
+ \label{fig:simu_ptolemy}
+\end{figure}
+		
+				\subsubsection{Validation}
+	Ptolemy : Simu appli + couplage réseau élec
+			
 	
 		\subsection{Investigations menées pour la vue fonctionnelle} 
 			\subsubsection{Observation}
@@ -181,13 +281,7 @@ d'ouverture aux idées nouvelles. Nous présentons
 		
 			\subsubsection{Validation}
 	DSML pour le Volt Var Control
-		\subsection{Investigations menées pour la vue applicative} 
-			\subsubsection{Observation}
 		
-			\subsubsection{Prototypage}
-		
-			\subsubsection{Validation}
-	Ptolemy : Simu appli + couplage réseau élec
 	
 	
 		\subsection{Conclusion}
@@ -243,7 +337,12 @@ Itérative et là Smook
 
 	\subsubsection{Conclusion}
 	
+
+L'observation menée à travers les entretiens et la revue des standards utilisés dans le domaine SI a permis d'identifier un nouveau langage de modélisation fUML. Encore en phase d'élaboration au sein de l'\gls{omg}, ce langage n'a pas pu être testé. Cependant, nous l'avons identifié comme candidat potentiel pour la simulation de diagrammes d'activité.
+
+Le protocole d'investigation s'est de plus révélé adéquat avec notre terrain d'étude. En effet, l
+
+Ces experts ne sont pas sensibilisés au domaine SI et considèrent les applications développées pour le réseau électrique comme partie intégrante de celui 
 	
 	
-	
-	
+

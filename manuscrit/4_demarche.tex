@@ -229,12 +229,17 @@ schéma directeur et une vue d'ensemble de l'état de l'entreprise et ne remplit
 pas son rôle de garant de la cohérence et de l'alignement métier/IT lors de 
 l'implémentation du système final.
 	
-	Enfin, les représentations purement contemplative ne permettent pas d'exploiter les liens de traçabilité 
+	Enfin, les représentations purement contemplative ne permettent pas d'exploiter 
+les liens de traçabilité 
 indispensables à la vérification de la cohérence de l'architecture sur 
-toute la trajectoire de l'entreprise. La plupart des cadres d'EA ne représentent pas 
+toute la trajectoire de l'entreprise. La plupart des cadres d'EA ne représentent 
+pas 
 explicitement ces liens de cohérence. Ainsi, lorsque ces liens sont 
 représentés, c'est sous une forme purement contemplative qui ne permet donc pas 
-de les exploiter informatiquement \textit{a posteriori} pour valider la cohérence globale de l'architecture.   À titre d'exemple, ces liens sont utiles pour vérifier que les composants de la vue technique participent bien à l'exécution de la stratégie de l'entreprise. 
+de les exploiter informatiquement \textit{a posteriori} pour valider la 
+cohérence globale de l'architecture.   À titre d'exemple, ces liens sont utiles 
+pour vérifier que les composants de la vue technique participent bien à 
+l'exécution de la stratégie de l'entreprise. 
 	
 	\subsection{L'architecture d'entreprise pour les Smart Grids}
 	
@@ -282,18 +287,15 @@ traçabilité entre l'architecture proposée dans la spécification et son
 implémentation réelle n'est explicité.
  
 \subsubsection{Normalisation de \textit{Use Case} Smart Grids}
+\label{sec:ENEL}
 
-La normalisation de \textit{Use Case} ou de cas d'utilisation use case consiste 
+La normalisation de \textit{Use Case} ou de cas d'utilisation consiste 
 à imposer un canevas pour la spécification des cas d'utilisation Smart Grid puis 
-à faire le mapping entre cette spécification et le cadre d'architecture SGAM qui 
+à faire le mapping entre cette spécification et le cadre d'architecture \gls{sgam} qui 
 est spécialisé dans l'architecture des Smart Grids, présenté dans le 
-chapitre~\ref{ch:EA}.  projets de démonstrateurs européens 
-Plusieurs projets de démonstrateurs européens ont appliqué cette norme et ont 
-fait ce mapping après l'implémentation du démonstrateur pour mieux comparer les 
-retours d'expériences. Cette étude de terrain s'est portée en particulier sur le 
-démonstrateur italien ENEL pour la régulation de tension sur des réseaux de 
-distribution à forte pénétration de DER car c'est le cas d'application de la 
-norme et du cadre SGAM le plus abouti. 
+chapitre~\ref{ch:EA}.
+La normalisation de Use Case est utilisée par le projet européen GRID4EU\footnote{http://www.grid4eu.eu/} qui rassemble six démonstrateurs Smart Grid différents. Les use case obtenus sont ensuite mis en correspondance avec le cadre d'architecture \gls{SGAM} après l'implémentation des six démonstrateurs pour comparer les 
+retours d'expériences. Nous retenons le démonstrateur de la société nationale d'électricité italienne (\gls{enel}) et le cas métier de la régulation de tension sur des réseaux de distribution présentant une forte pénétration de DER. C'est en effet le cas d'application de la norme et du cadre \gls{SGAM} le plus abouti. 
 
 D'une part, dans le SGAM la traçabilité entre les vues n'est pas directe. Elle 
 est assurée par la superposition des différentes vue d'architecture sur le plan 
@@ -314,7 +316,7 @@ cadres de travail ref frameworks).  De plus, cet exercice ayant été mené par 
 enrichie que la vue métier par exemple.  
 
 Bien que le plus abouti des use case normalisé, l'étude de la régulation de 
-tension sur un  réseau électrique est pas suffisante pour appréhender cette 
+tension sur un  réseau électrique n'est pas suffisante à l'appréhension cette 
 problématique sans connaissances préalable sur le fonctionnement des réseaux de 
 distribution. Pour cette raison et afin de collecter plus d'information sur le 
 sujet, nous nous intéressons aux projets internes à l'entreprise EDF qui 
@@ -707,7 +709,8 @@ attendues par la \textit{Tâche~B}, de même entre la \textit{Fonction~A} et la
 
 \begin{figure}[!ht]
  \begin{center}
-  \includegraphics[trim= 0cm 3cm 0cm 0cm, width=1\textwidth]{figures/4_demarche/approche_simulation.pdf}
+  \includegraphics[trim= 0cm 3cm 0cm 0cm, 
+width=1\textwidth]{figures/4_demarche/approche_simulation.pdf}
  \end{center}
  \caption{Simulation de l'architecture dirigée par les processus}
  \label{fig:Simulation_Approche}
@@ -810,3 +813,4 @@ a
 %peut donc être considéré comme une transformation de modèle. 
 %%Ainsi, le \textit{Model Typing} peut être utilisé pour l'intégration 
 %horizontale (i.e. cohérence et orchestration des processus d'une même vue). 
+
