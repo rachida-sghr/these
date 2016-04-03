@@ -1,6 +1,8 @@
 \chapter{Méthodologie de la recherche}
 \label{ch:methodo}
 
+\PartialToc
+
 La méthodologie de recherche permet non seulement de comprendre la mise en place 
 d'une démarche de recherche mais aussi les résultats l'étude. Le but de ce 
 chapitre est double. D'une part, nous veillons à démonter l'adéquation entre 
@@ -241,9 +243,10 @@ une publication \cite{seghiri2012animation} et ont été poursuivis par les
 travaux présentés dans cette thèse.
  
 				\subsubsection{Conclusion}
-			Cette première itération du protocole d'investigation a conforté nos hypothèses initiales à savoir que la simulation est peu abordée dans le contexte des SI mais qu'elle est pertinente pour valider/critiquer les scénarios de cas métier Smart Grid avant leur implémentation.
+			Cette première application du protocole d'investigation a conforté nos hypothèses initiales à savoir que la simulation est peu abordée dans le contexte des SI mais qu'elle est pertinente pour valider/critiquer les scénarios de cas métier Smart Grid avant leur implémentation.
 
 			\subsection{Investigations menées pour la vue applicative} 
+			\label{sec:investig_appli}
 				La vue applicative tient une place de choix dans les SI des entreprises. Pour des SI fortement informatisé, il arrive même souvent que le SI soit réduit aux applications informatiques et à l'infrastructure qui les supportent. Cette constatation est encore plus avérée dans le cas des Smart Grids dont le principe est le déploiement de TIC sur le réseau électrique pour automatiser son pilotage. Le choix chronologique de poursuivre les investigations en abordant la vue métier découle de cette constatation.		
 			
 				\subsubsection{Observation}
@@ -257,31 +260,94 @@ travaux présentés dans cette thèse.
 				\end{itemize}
 				
 				\subsubsection{Prototypage}
-				Le cas d'application du pilotage d'une charge domestique n'a pas été utilisé pour le prototypage de la vue applicative. Les modèles de la vue applicative nécessitent un niveau de détail plus élevé que les modèles de la vue métier. Or les spécifications des démonstrateurs ADDRESS et PREMIO n'offrent pas le niveau de détails nécessaires. Le Use Case normalisé par \gls{enel} (voir section~\ref{sec:ENEL} pour la régulation de tension sur les réseau de distribution a été adopté et affiné par les discutions avec les ingénieurs-chercheurs du département \gls{mire} travaillant sur la même thématique. 
-				Ils s'agit d'adapter la tension du réseau électrique en fonction de la charge et de la production pour maintenir un niveau de tension respectable. Les deux leviers d'action sont utilisés, les régleurs en charge et les \gls{der}. Les régleurs en charges pilotés à distance agissent sur le niveau de tension au niveau des postes sources. Le pilotage des \gls{der} permet de contrôler la quantité d'énergie qu'ils injectent sur le réseau. 
 				
-				Ce cas métier fait intervenir un SI qui calcule les consignes envoyées aux DER et au régleur en charge et un réseau électrique qui réagit à ces consignes. Nous avons utilisé l'outil Ptolemy\footnote{http://ptolemy.eecs.berkeley.edu/}de modélisation hétérogène pour développer un prototype de simulation. La figure~\ref{fig:simu_ptolemy} illustre le modèle de simulation. Les éléments modélisés sont le SI et le réseau électrique (\textit{Network}). Le comportement du SI est avec une machine à état.  
+				Nous avons utilisé l'outil de modélisation hétérogène Ptolemy\footnote{http://ptolemy.eecs.berkeley.edu/}  pour développer un prototype de simulation illustré par la figure~\ref{fig:simu_ptolemy}. L'observation a permis d'identifier les éléments à modéliser, à savoir le SI et le réseau électrique. Ici l'hétérogénéité des modèles provient de leur dépendance au temps. La modélisation du comportement du SI et celui du réseau électrique fait intervenir deux domaines de calcul différents~: à temps discret pour le SI et à temps discret périodique pour le réseau électrique. 
+				Ainsi, dans le modèle Ptolemy illustré par la figure ~\ref{fig:simu_ptolemy}, le domaine de calcul adopté pour le SI est le \textit{Descrete Event} (DE), celui adopté pour le réseau de distribution électrique est le \textit{Synchronous Data Flow} (SDF). Ptolemy permet d'adapter ces deux domaines de calcul pendant la simulation d'un cas métier et d'adresser l'hétérogénéité des modèles du SI et du réseau électrique. 
 				
 \begin{figure}[!ht]
  \begin{center}
-  \includegraphics[trim = 0cm 5cm 0cm 0cm, width=1\textwidth]{figures/6_methodologie/simu_ptolemy.png}
+  \includegraphics[trim = 0cm 8cm 0cm 0cm, width=1\textwidth]{figures/6_methodologie/simu_ptolemy.pdf}
  \end{center}
- \caption{Prototype Ptolemy pour une simulation hétérogène comprenant le SI (discret) et le réseau électrique (continue)}
+ \caption{Prototype Ptolemy pour une simulation hétérogène comprenant le SI (discret) et le réseau électrique (continu)}
  \label{fig:simu_ptolemy}
 \end{figure}
 		
 				\subsubsection{Validation}
-	Ptolemy : Simu appli + couplage réseau élec
-			
+		Le cas d'application du pilotage d'une charge domestique n'a pas été utilisé pour le prototypage de la vue applicative. Les modèles de la vue applicative nécessitent un niveau de détail plus élevé que les modèles de la vue métier. Or les spécifications des démonstrateurs ADDRESS et PREMIO n'offrent pas le niveau de détails nécessaires. Le Use Case normalisé par \gls{enel} (voir section~\ref{sec:ENEL} pour la régulation de tension sur les réseau de distribution a été adopté et affiné par les discutions avec les ingénieurs-chercheurs du département \gls{mire} travaillant sur la même thématique. 
+		
+		Ils s'agit d'adapter la tension du réseau électrique en fonction de la charge et de la production pour maintenir un niveau de tension respectable. Les deux leviers d'action sont utilisés, les régleurs en charge et les \gls{der}. Les régleurs en charges pilotés à distance agissent sur le niveau de tension au niveau des postes sources. Le pilotage des \gls{der} permet de contrôler la quantité d'énergie qu'ils injectent sur le réseau. Ce cas métier fait intervenir un SI qui calcule les consignes envoyées aux DER et au régleur en charge et un réseau électrique qui réagit à ces consignes. Il est à noté que le SI réduit à sa vue purement applicative en ne de modélisant que l'application qui calcule les consignes.
+		
+		Ce cas métier a été modélisé puis simulé avec le prototype Ptolemy de modélisation et de simulation hétérogènes. Le comportement du SI est modélisé avec une machine à état qui calcule des consignes pour le DER et le régleur en charge en fonction du niveau de tension du réseau électrique. Le DER et le régleur en charge  régulent la tension du réseau électrique en appliquant ces consignes. Le réseau de distribution est composé d'un DER, d'un consommateur d'électricité et d'un régleur en charge dont les comportements font varier le niveau de tension.
+		
+		La simulation de la régulation de tension avec le prototype Ptolemy ont été soumis aux experts et ingénieurs chercheurs identifiés dans la phase d'observation. Bien que leurs retours ait permis de confirmer les hypothèses formulées concernant la problématique d'hétérogénéité, cette problématique a été écartée de notre périmètre de recherche. En effet, les ingénieurs-chercheurs spécialistes du réseau électrique de distribution utilisent leur propres outils de simulation. Le prototype développé a permis de mettre en évidence la problématique de l'hétérogénéité des modèles mais pas de les résoudre. Un projet de co-simulation des domaines SI, réseau électrique et télécommunication a été lancé, suite aux résultats de différents projets de simulation dans le département \gls{mire}, dont nos travaux de thèse pour le domaine SI.
+		
+		  
+				\subsubsection{Conclusion}
+		Cette deuxième application du protocole d'investigation pour la vue applicative a permis de confirmer nos hypothèses concernant la problématique de l'hétérogénéité des modèles de simulation mais surtout de réduire notre périmètre de recherches. En effet, l'hétérogénéité est traitée par un projet du département \gls{mire}, auquel nos travaux ont été intégrés. L'implémentation du cas métier de la régulation de tension à travers le prototype Ptolemy, et le retours qu'en ont fait les personnes interrogées, nous a en outre permis d'affiner le cas métier de la régulation de tension. Sa réutilisation pour les investigations menées pour la vue fonctionnelle en a été d'autant plus facilitée.   
 	
 		\subsection{Investigations menées pour la vue fonctionnelle} 
+		La vue fonctionnelle est une vue charnière entre le métier et les applications qui les implémente. En effet, elle décompose chacune tâche métier en fonctions. Les investigations menées sur la vue fonctionnelle sont essentiels dans la mesure où cette vue permet de maintenir le lien entre le métier et l'IT. 
 			\subsubsection{Observation}
-		
+		Pour cette dernière phase d'observation, nous avons mené des entretiens avec des personnes du domaine SI et des personnes du domaine du réseau électrique. Nos observations ont permis de constater que les ingénieurs-chercheurs du département \gls{mire} qui conçoivent des applications pour les réseaux électriques, utilisent leurs propres systèmes de notations et ne sont que très peu familiers avec les concepts du domaine SI telle que la vue fonctionnelle. Il s'est avéré en effet, qu'une distinction entre SI de gestion et SI industriel est faite au sein du département. Les applications qui automatisent la conduite du réseau relèvent des SI industriels. Les SI de gestion, ou SI transverses, correspondent à des SI intégrant des actions humaines dans leurs processus ou gérant des activités liées aux personnes.
+		Ainsi, les hypothèses formulées suite à ses observations sont les suivantes~:
+		\begin{itemize}
+			\item la simulation des SI des Smart Grids est aussi pertinente pour les SI industriels que pour les SI de gestion~;
+			\item le langage de modélisation su SI doit être compréhensibles par les parties prenantes~;
+		\end{itemize}	 
 			\subsubsection{Prototypage}
+		Les hypothèses formulées à l'issue de l'observation impliquent le prototypage nécessite la mise au point préalable d'un cas métier. D'une part, les investigations pour la vue métier ont permis de validé la pertinence de la simulation d'un SI de gestion. En effet, le pilotage d'une batterie installée chez un client implique l'intervention systématique de ce dernier à travers son consentement/refus à stocker ou injecter l'énergie de sa batterie en fonction de la compensation tarifaire perçue. Il a été donc plus judicieux de s'orienter vers un SI industriel pour cette dernière application du protocole  d'investigation. D'autre part, la deuxième hypothèse portant sur la compréhension du langage de modélisation su SI par les partie prenante a orienté le prototypage vers la création d'un \gls{dsml}. La création d'un \gls{dsml} nécessite cependant de connaitre au préalable son domaine d'application, qui est ici le cas métier Smart Grid traité. 
+		Le cas métier retenu est la régulation de tension d'un réseau électrique présentant une forte pénétration de \gls{der}. En effet, les ingénieurs-chercheurs du département \gls{mire} considèrent qu'il relève du domaine des SI industriel. Son implémentation pour la vue applicative a permis en outre de l'affiner. 
+		Ainsi, le prototypage a consisté à développer un \gls{dsml} pour la vue fonctionnelle selon une démarche IDM. Après l'analyse du processus fonctionnel de la régulation de tension, nous avons développé un métamodèle. Dans ce métamodèle, illustré par la figure~\ref{fig:meta_dsml}, les concepts essentiels d'un processus fonctionnel de régulation de tension ont été définis en respectant les termes utilisés par les experts du réseau électrique~:
+		
+		\begin{itemize}
+		
+\item Événement (\textit{Event})
+
+Ce sont les événements qui peuvent apparaitre sur le réseau de distribution. Il s'agit de la contrainte haute (la tension sur le réseau dépasse la tension réglementaire U\textsubscript{Max}), de la contrainte basse (la tension sur les réseau dépasse la tension réglementaire U\textsubscript{Min}) et contrainte à la fois haute et basse~;
+
+\item Action de régulation (\textit{RegulationAction})
+
+Ce sont les leviers à actionner pour adresser une contrainte : élever le niveau de tension via le régleur en charge (\textit{IncreasePad}), baisser le niveau de tension via le régleur en charge (\textit{DecreasePad}), ou en effaçant un DER (\textit{DeleteDER})~;
+
+\item Contrainte à respecter (\textit{Constraint})
+
+Le processus fonctionnel de régulation de tension est limité par des contraintes liée aux équipements du réseau. Le régleur en charge abaisse (respectivement élève) la tension sans dépasser une marge basse (LowMargin) (respectivement une marge haute(\textit{HighMargin})). Il n'est de plus pas possible de mettre le régleur en charge en butée haute ou basse (\textit{LowerStop, UpperStop}). En effet, quand le régleur en charge abaisse ou élève la tension, il change de plot. Le nombre de plot étant limité, il est interdit d'utiliser les plots extrêmes par mesure de sécurité~;
+
+\item Structure de contrôle (\textit{ControlStructure})
+
+Pour ce prototype, nous avons uniquement implémenté le \textit{If}. 
+
+		\end{itemize}
+		
+\begin{figure}[!ht]
+ \begin{center}
+  \includegraphics[trim = 0cm 3cm 0cm 0cm, width=1\textwidth]{figures/6_methodologie/metamodele_dsml.pdf}
+ \end{center}
+ \caption{Métamodèle d'un processus fonctionnel de régulation de tension sur un réseau de distribution électrique}
+ \label{fig:meta_dsml}
+\end{figure} 
+
+Une syntaxe concrète et une sémantique d'exécution ont aussi été conçues pour ce \gls{dsml}. Le DSML a ensuite été implémenté par un stagiaire dans l'environnement Eclipse. L'utilisation d'Eclipse est largement répondue dans la communauté de l'IDM. la fondation Eclipse héberge le projet \textit{Eclipse Modeling }qui propose des langages et outils dédiées au développement de \gls{dsml}. La sémantique d'exécution a été implémentée avec Kermeta. Kermeta offre la possibilité de définir de spécifier la sémantique d'exécution directement au niveau du métamodèle à l'aide un langage d'action. 
+
 		
 			\subsubsection{Validation}
-	DSML pour le Volt Var Control
-		
+Le prototype ainsi implémenté permet de créer et de simuler des processus fonctionnel pour la régulation de tension. La figure\ref{fig:proto_dsml} est une capture d'écran représentant le prototype. La partie droite correspond à la palette de création de processus de régulation où se trouvent les concepts du métamodèle sous leur forme graphique. La partie gauche correspond à un exemple de processus modélisé avec cette palette. 
+
+\begin{figure}[!ht]
+ \begin{center}
+  \includegraphics[trim = 0cm 0cm 0cm 0cm, width=1\textwidth]{figures/6_methodologie/proto_dsml.pdf}
+ \end{center}
+ \caption{Exemple de processus fonctionnel de régulation de tension modélisé avec le prototype de \gls{dsml}}
+ \label{fig:proto_dsml}
+\end{figure} 
+
+Le prototype a été soumis à des personnes appartenant aux profiles identifiés dans l'observation, c'est à dire des personnes du domaine SI et des personnes du domaine du réseau électrique. Les personnes du domaine SI sont principalement des architectes SI. Leur retour a été positif. Ils ont trouvé dans le DSML développé un moyen de modéliser des processus pour le métier et d'échanger avec les personnes du domaine électrique qui ne maitrisent pas toujours les langages traditionnellement utilisés dans le domaine SI comme UML. Le retour des personnes du domaine du réseau électrique n'a pas été aussi enthousiaste que celui des personnes du domaine SI. Il s'agit d'abord d'un problème de sémantique. En effet, il n'ont pas vu d'intérêt à modéliser des « fonctions » de conduite de réseau avec un nouveau DSML. Le terme « fonction » est associé au domaine purement électrique et non SI. Or ces fonctions sont habituellement modélisées avec les automates programmables ou encore le langage Matlab. Ces langages sont éprouvés pour le domaine du réseau électrique mais ne sont pas adaptés à la vue fonctionnelle du SI. Cette dernière ne met l'accent sur le détail de l'implémentation de la fonction mais plutôt sur l'orchestration des plusieurs fonctions et leur structuration en blocs fonctionnels.
+
+L'analyse du résultat des entretiens menés avec les personnes du domaine SI et les personne du domaine des réseaux électrique a validé partiellement les hypothèses formulées à l'issue de l'observation. Ainsi, en montrant leur intérêt pour le DSML, les personnes du domaine SI ont affirmé l'intérêt de modéliser et de simuler le SI avec des langages compréhensibles par les personnes du métier, en l'occurrence celles du domaine du réseau électrique. 
+En revanche, le retour des personnes du domaine du réseau électrique a, au regard de notre analyse, infirmé l'hypothèse selon laquelle a simulation des SI des Smart Grids est aussi pertinente pour les SI industriels que pour les SI de gestion. En effet, les SI industriels sont déjà l'objet de simulations (avec les automates programmables et Matlab par exemple).
+
+			\subsubsection{Conclusion}
+Cette dernière application du protocole d'investigation a cette étude a permis en outre d'identifier deux types de SI pour les Smart Grid. L'étude a confirmé la pertinence de la simulation de SI pour la vue fonctionnelle, mais seulement pour un SI de gestion. Les SI purement informatiques, autrement dit ceux qui ne font pas intervenir de tâche humaine et qui pilotent directement les équipements électriques, ne sont pas concernés par notre recherches. En effet, ils existent déjà des langages dédiée à leur modélisation et simulation (automates programmables et Matlab). Le terme «~SI industriel~» employé pour qualifier ces systèmes a été, à notre sens trompeuse dans le sens où il s'agit plutôt d'une restriction ou d'une spécialisation du terme SI. En effet, selon la définition de Reix (cf. section~\ref{sec:reix}), toute ressource intervenant sur le cycle de vie d'une information au sein d'une organisation fait partie du SI, y compris le personnel. 
 	
 	
 		\subsection{Conclusion}
@@ -343,6 +409,7 @@ L'observation menée à travers les entretiens et la revue des standards utilis�
 Le protocole d'investigation s'est de plus révélé adéquat avec notre terrain d'étude. En effet, l
 
 Ces experts ne sont pas sensibilisés au domaine SI et considèrent les applications développées pour le réseau électrique comme partie intégrante de celui 
-	
+
+Les investigations menées pour la vue applicative a permis de recentrer la simulation des les SI des Smart Grids sur la simulation de leurs SI uniquement sans traiter la question de la co-simulation SI/réseau électrique comme expliqué dans la section~\ref{sec:investig_appli}. 
 	
 
