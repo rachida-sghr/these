@@ -399,7 +399,7 @@ modèle \cite{bezivin2005unification}.
 \end{figure}
 
 
-\section{Langages et outils pour la transformation de modèle}
+	\subsection{Langages et outils pour la transformation de modèle}
 Sans viser à l'exhaustivité, nous introduisons succinctement quelques langages et outils 
 dédiés à la transformation de modèles.  
 
@@ -441,7 +441,7 @@ utilisant le mode raffinement de modèle.
 
 %Cependant ce mode présente quelques limitations avec certaines fonctionnalités comme celle des \textit{Lazy rules}.
 
-\subsection{QVT}
+\subsubsection{QVT}
 \gls{qvt} \cite{kurtev2008state} \cite{omg2011meta} est un standard de l'\gls{omg}. Le métamodèle de \gls{qvt} est conforme au \gls{mof}. Comme \gls{atl}, \gls{qvt} se base sur \gls{ocl} pour accéder aux éléments des modèles.
 \gls{qvt} définit deux langages de transformation de type modèle-à-modèle. 
 QVT \textit{Declarative} (QVTd)\footnote{http://projects.eclipse.org/projects/modeling.mmt.qvtd} est un langage déclaratif. QVT \textit{Operational} (QVTo) est un langage impératif\footnote{http://projects.eclipse.org/projects/modeling.mmt.qvt-oml}.
@@ -470,7 +470,7 @@ QVT \textit{Declarative} (QVTd)\footnote{http://projects.eclipse.org/projects/mo
 %Nous pouvons citer SmartQVT ou encore ModelMorf comme machines d'exécution de 
 %transformation écrite en \gls{qvt}.
 
-\subsection{Kermeta}
+\subsubsection{Kermeta}
 Kermeta\footnote{http://www.kermeta.org/} est un langage généraliste de méta-modélisation exécutable et de 
 méta-programmation orientée objet qui peut aussi décrire des transformations de 
 modèle. Intégré à EMF, il est doté d'un métamodèle conforme au \gls{mof} qu'il étend 
@@ -488,7 +488,7 @@ de modèle.
 %est de même pour la transformation incrémentale.
 %Les modèles source sont lus en une seule fois et les modèles cible sont produits complets lors de l'exécution de la transformation.
 
-\subsection{Acceleo}
+\subsubsection{Acceleo}
 Acceleo\footnote{http://www.eclipse.org/acceleo/} est un langage de transformation de modèles pour lequel les modèles cible ont une syntaxe concrète textuelle. Il suit une approche de transformation par \textit{template}. Le template correspond au modèle cible qui prend la forme d'un texte avec des espaces réservés aux informations provenant des modèles source. Accelo utilise OCL pour accéder au modèles source.  
 
 \section{L'Ingénierie Dirigée par les Modèles pour l'Architecture d'Entreprise}
