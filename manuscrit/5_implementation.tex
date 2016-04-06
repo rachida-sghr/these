@@ -1,3 +1,4 @@
+%!TEX  root = main.tex
 \chapter{Implémentation et Validation}
 \label{ch:implem}
 
@@ -46,7 +47,7 @@ Les blocs fonctionnels offrent une vue plus détaillée des tâches métier. Il 
 Nous considérons un premier cas où il n'est pas possible de recharger la batterie au cours de la tournée. L'aspect \emph{information} de la vue fonctionnelle prend la forme de données fonctionnelles  modélisées par un diagramme de classes sur lequel s'appliquent les contraintes OCL (\ref{fig:architecture_generale_usecase}). OCL est adapté aux diagrammes de classes. De plus, OCL est un langage standardisé et exécutable pour l'expression de contraintes. Il est possible de modéliser les autres algorithmes de traitement (calcul des tournées à partir de bon de travaux, calcul de l'énergie nécessaire à une tournée, etc.) à l'aide de diagrammes d'activité exécutables.
 
 En utilisant le langage OCL, nous modélisons la fonction d'affectation sous la forme de deux contraintes et d'une requête. La première contrainte OCL signifie que si un véhicule électrique est affecté à une tournée alors l'énergie dont il dispose permet d'assurer la totalité de la tournée.
-La deuxième contrainte signifie que si aucun véhicule électrique n'est capable d'assurer une tournée donnée alors c'est un véhicule thermique qui lui est associé. Enfin, la requête calcule le nombre total de kilomètres électriques correspondant à la distance parcourue par les véhicules électrique après l'affectation. Cette requête permet d'évaluer l'utilisation  des véhicules électriques dans l'optique d'atteindre l'objectif fonctionnel.
+La deuxième contrainte signifie que si aucun véhicule électrique n'est capable d'assurer une tournée donnée alors c'est un véhicule thermique qui lui est associé. Enfin, la requête calcule le nombre total de kilomètres électriques correspondant à la distance parcourue par les véhicules électrique après l'affectation. Cette requête permet d'évaluer l'utilisation  des véhicules électriques dans l'optique d'atteindre l'objectif fonctionnel. 
 
 \lstinputlisting{figures/5_implementation/tournee.ocl}
 

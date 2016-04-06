@@ -1,0 +1,15 @@
+# Fdb version 3
+["pdflatex"] 1459872645 "4_proposition.tex" "4_proposition.pdf" "4_proposition" 1459872649
+  "/usr/local/texlive/2014/texmf-dist/fonts/map/fontname/texfonts.map" 1272929888 3287 e6b82fe08f5336d4d5ebc73fb1152e87 ""
+  "/usr/local/texlive/2014/texmf-dist/fonts/tfm/public/cm/cmbx10.tfm" 1136768653 1328 c834bbb027764024c09d3d2bf908b5f0 ""
+  "/usr/local/texlive/2014/texmf-dist/fonts/tfm/public/cm/cmti10.tfm" 1136768653 1480 aa8e34af0eb6a2941b776984cf1dfdc4 ""
+  "/usr/local/texlive/2014/texmf-dist/web2c/texmf.cnf" 1398200874 31722 4f52421e59a4b9e910cf18e64c1f2b4a ""
+  "/usr/local/texlive/2014/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1401025944 1445653 26a0aacf3d70032b1ec192e8c7792117 ""
+  "/usr/local/texlive/2014/texmf-var/web2c/pdftex/pdflatex.fmt" 1401025990 3832012 904d82bdcc8abf2b1cd296990b82553b ""
+  "/usr/local/texlive/2014/texmf.cnf" 1401025936 577 a59edbde8d3a8c549d0eeaab1739e2ff ""
+  "4_proposition.aux" 1459872274 10092 3045b64cd086d4f841a131096024e05b ""
+  "4_proposition.tex" 1459872642 54045 1b4e343f3f54c1f6f0ea13f07a7ea3dc ""
+  "figures/4_demarche/langages_vues.tex" 1459165891 830 b31440c701168b1b8cc457228ba7313b ""
+  (generated)
+  "4_proposition.log"
+  "4_proposition.pdf"
