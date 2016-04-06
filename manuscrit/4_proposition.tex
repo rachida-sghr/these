@@ -1,5 +1,5 @@
 %!TEX  root = main.tex
-\chapter{Identification des concepts et proposition}
+\chapter{Caractérisation des pratiques actuelles d'Architecture d'Entreprise et démarche engagée}
 \label{ch:demarche}
 
 \PartialToc
@@ -56,12 +56,12 @@ Dans ce chapitre nous exposons d'abord le bilan de l'état de l'art
 
 
 
-\section{Analyse des pratiques actuelles en Architecture d'Entreprise}
+\section{Bilan et analyse des pratiques actuelles en Architecture d'Entreprise}
 
 	% Bilan de l'état de l'art n'est pas suffisante selon les objectifs de l'EA
 	% définit par machin (partie 11/12/13) L'EA ancrée dans la pratique donc
 	% entretien, documentation, etc. Hypothèse forte - parallèle entre EA et doc
-	% de spec SG (qui est le domaine d'application) -> légitimisaation (partie 14)
+	% de spec SG (qui est le domaine d'application) -> légitimation (partie 14)
 
 L'emploi de l'EA peut servir différents desseins. Kurpjuweit et Winter
 \cite{kurpjuweit2007viewpoint} classent les objectifs de l'EA en trois
@@ -73,7 +73,7 @@ ces limites s'appuie essentiellement sur l'analyse de la documentation
 de projets Smart Grid à laquelle nous avons eu accès, sur les
 entretiens menés avec les personnes impliquées dans la rédaction ou
 l'utilisation de cette documentation au sein du département
-\gls{mire}, et sur des entretiens menés avec des les experts en EA de
+\gls{mire}, et sur des entretiens menés avec les experts en EA de
 EDF R\&D. À ce titre, deux observations méritent d'être mentionnées~:
 
 \begin{itemize}
@@ -81,17 +81,18 @@ EDF R\&D. À ce titre, deux observations méritent d'être mentionnées~:
  \item  premièrement, le nombre restreint des documents consultés
  n'est certes pas représentatif des pratiques courantes. Cependant,
  les limitations identifiées sont corroborées par les travaux
- académiques présentés dans le chapitre~\ref{ch:EA}, portant sur
+ académiques présentés dans le chapitre~\ref{ch:EA} portant sur
  l'état de l'art de l'EA ~;
 
  \item deuxièmement, nous n'avons pas eu accès à des documents
  d'architecture d'entreprise en tant que telle pour des raisons de
- confidentialité et de réglementation interne \gls{edf}. Cependant,
- la documentation à l'échelle d'un projet Smart Grid a été estimé
- suffisant pour appréhender une architecture d'entreprise dans sa
- globalité. L'ensemble des artefacts identifiés dans la taxonomie de
- Zachman pour une entreprise se retrouvent à l'échelle d'un projet
- mené au sein de cette même entreprise. En effet, ces projets
+ confidentialité et de réglementation interne  à \gls{edf}. Cependant,
+ la documentation à l'échelle d'un projet Smart Grid a été estiméz
+ suffisante pour appréhender une architecture d'entreprise dans sa
+ globalité. En effet, l'ensemble des artefacts identifiés dans la taxonomie de
+ Zachman~\cite{zachman1987framework} pour une entreprise se
+ retrouvent à l'échelle d'un projet
+ mené au sein de cette même entreprise. Par exemple, ces projets
  impliquent souvent plusieurs acteurs, une multitude de processus
  métier, une décomposition de ce processus en fonctions, des
  applications à implémenter, des objectifs à accomplir, etc.
@@ -100,7 +101,8 @@ EDF R\&D. À ce titre, deux observations méritent d'être mentionnées~:
 
 
 
- \subsection{L'Architecture d'Entreprise pour la documentation et la communication}
+ \subsection{L'Architecture d'Entreprise pour la documentation}
+ %et la communication
 
 
 L'EA permet de capturer les composants de l'entreprise dans
@@ -156,8 +158,9 @@ d'automatiser cette mise à jour, voire même d'automatiser l'analyse de
 l'architecture d'entreprise comme expliqué dans la section suivante.
 
 
-	\subsection{L'Architecture d'Entreprise pour l'analyse et la compréhension}
+	\subsection{L'Architecture d'Entreprise pour l'analyse}
 	\label{sec:EA_analyse_limite}
+%et la compréhension
 
 L'analyse de la structure et du comportement de entreprise permet d'acquérir
 une connaissance plus approfondie de l'ensemble de l'architecture. L'analyse des
@@ -188,29 +191,30 @@ les incohérences potentielles entre les besoins formulés par le métier et le 
 qui est tenu de les satisfaire.
 
 Pour ces travaux de recherches, plusieurs cas d'études ont été examinés,
-dont notamment la régulation de tension sur le réseau électrique
+dont notamment la régulation de tension d'un réseau de distribution électrique
 \cite{seghiri2014simulation}, le pilotage d'une batterie chez un particulier
 \cite{seghiri2012animation} et la gestion d'une flotte de véhicules électriques
 \cite{seghiri2015simulation}. Qu'il s'agisse d'un projet de recherche européen
 (le pilotage d'une batterie chez un particulier), d'un projet interne à EDF (la
 régulation de tension), ou d'un projet opérationnel impliquant EDF ainsi que
 d'autres partenaires (la gestion d'une flotte de véhicules électriques),
-l'analyse de la documentation à laquelle nous avons eu accès ne va pas au delà
+la documentation à laquelle nous avons eu accès ne va pas au delà
 de la description générale des fonctionnalités attendues. Cette documentation
 ne permet pas d'analyser afin de les valider la structure et le comportement du
 système avant son implémentation finale. Pour accéder à un niveau de détails
-suffisant à l'analyse de l'architecture de ces cas d'étude, une rétro-
-ingénierie et des échanges avec les développeurs et les concepteurs ont été
+suffisant à l'analyse de l'architecture de ces cas d'étude, une rétro-ingénierie
+et des échanges avec les développeurs et les concepteurs ont été
 nécessaires. Ces constatations tirées du terrain rejoignent les conclusions de
-l'état de l'art concernant les limites des «~modèles contemplatifs.
+l'état de l'art concernant les limites des «~modèles contemplatifs~» exposé
+dans le chapitre ~\ref{ch:IDM}.
 
-Deuxièmement, les mises en œuvre courantes d'EA adoptent une approche
+Deuxièmement, les mises en œuvre courantes de l'EA adoptent une approche
 descendante où l'architecte d'entreprise ne fait qu'aligner le SI à la stratégie
 de l'entreprise en considérant cette dernière comme acquise. Une démarche
 descendante implique que la vision et les grandes lignes de la stratégie sont
 conçues en amont de l'EA et indépendamment de la réalité du SI qui va
-l'implémenter. Les choix stratégiques sont alors faits dans « une tour d'ivoire
-» et sont ainsi déconnectés de la réalité du SI. Il nous paraît au contraire
+l'implémenter. Les choix stratégiques sont alors faits dans «~ une tour d'ivoire~»
+et sont ainsi déconnectés de la réalité du SI. Il nous paraît au contraire
 important que l'analyse de l'architecture d'entreprise permette d'évaluer et
 d'éclairer les choix stratégiques eux-mêmes, en plus de planifier leur
 déclinaison au niveau du SI.
@@ -254,7 +258,8 @@ par l'architecte d'entreprise.
 %	Syndrome de la tour d'ivoire -> modèles complexes et abstraits Partage de
 %	représentation pour une compréhension commune des documents
 
-	\subsection{L'Architecture d'Entreprise pour la conception et l'implémentation}
+	\subsection{L'Architecture d'Entreprise pour la conception}
+    %et l'implémentation
 
  L'EA a pour rôle de décrire l'état courant de l'entreprise (\textit{as-is}),
 l'état désirée (\textit{to-be}) et les étapes pour passer du premier au
@@ -319,87 +324,201 @@ titre d'exemple, ces liens sont utiles pour vérifier que tous les composants de
 la vue technique participent bien à l'exécution de la stratégie de
 l'entreprise.
 
-\subsection{Conclusion} Qu'il s'agisse de la documentation et de la
+\subsection{Des représentations informelles, hétérogènes et incompatibles avec
+la constante évolution de l'entreprise}
+Qu'il s'agisse de la documentation et de la
 communication, de l'analyse et de le compréhension ou de la conception
-et de l'implémentation, l'EA est limitée par l'emploi de
-représentations informelles et purement descriptive.
+et de l'implémentation, l'EA est limitée par l'emploi et la production de
+représentations informelles et purement descriptives.
 
-Dans le cadre d'une démarche IDM, ces représentations sont qualifiés
-de modèles purement contemplatifs. L'IDM traite la question des
-modèles purement contemplatif dans le cadre du génie logicielle, en
-proposant une approche unificatrice par les modèles
-\cite{jezequel2006genie}. La revue de la littérature relevant de l'IDM
-et des pratiques courantes de l'EA, nous amène à envisager l'IDM comme
-cadre méthodologique et technologique pour l'EA. Dans la partie
-suivante, nous faisons le parallèle entre les deux disciplines pour
+    \begin{figure}[!ht]
+
+         \begin{center}
+
+        \includegraphics[width=1\textwidth]{figures/4_demarche/pratique_courante_ea.pdf}
+
+         \end{center}
+
+         \caption{Activités et artefacts produits pour les différentes vue d'une architecture d'entreprise}
+
+         \label{fig:limites_ea}
+
+    \end{figure}
+
+
+L'EA englobe ces différentes activités et les décline selon
+les différentes vues d'architecture (voir chapitre~\ref{ch:EA}) comme
+l'illustre la figure~\ref{fig:limites_ea}. Les artefacts produits par les différentes
+activités des différentes vues sont donc d'autant plus nombreux. Ces artefacts
+adressent les préoccupations de différentes parties-prenantes.
+
+La revue de la littérature relative à l'EA, nous a permis de catégoriser ces
+parties-prenantes en identifiant une rôle par vue d'architecture. L'identification
+de ces rôles obéit au principe même de l'EA. Chacun de ces rôles a pour
+mission de construire une vision holistique au regard de ses propres
+préoccupations. C'est
+donc pour cette raison que nous identifions un architecte par vue~:
+
+\begin{description}
+
+    \item[l'architecte métier]
+
+    Le rôle de l'architecte métier consiste à documenter, analyser et concevoir
+    des processus métier permettant à l'entreprise de réaliser sa stratégie.
+    Il orchestre les processus métier et les flux d'information en cohérence
+    avec la stratégie pour aboutir à l'architecture métier de l'entreprise~;
+
+    \item[l'architecte fonctionnel]
+
+    Le rôle de l'architecte fonctionnel consiste à documenter, analyse et
+    concevoir les blocs fonctionnels qui réalisent les processus de
+    le vue métier. Il orchestre ces blocs fonctionnels et les flux d'informations
+    qui circulent entre ces blocs pour aboutir à l'architecture fonctionnelle
+    de l'entreprise~;
+
+    \item[l'architecture applicatif]
+
+    Le rôle de l'architecte applicatif consiste à documenter, analyser
+    et concevoir les applications permettant d'implémenter les blocs
+    de la vue fonctionnelle. Il doit assurer une bonne orchestration de ces
+    applications et des informations échangées pour aboutir à l'architecture
+    applicative de l'entreprise.
+
+\end{description}
+
+Les architectes sont essentiellement tenus de documenter,
+d'analyser et de concevoir des architectures selon leurs propres perspectives,
+en assurant les critères de \emph{cohérence interne} à chacune des vues mais
+en respectant aussi les critères de \emph{cohérence externe} avec les autres
+vues. Cependant, la nature informelle des artefacts impliqués dans les différentes
+activités d’architecture rend difficile le maintien de cette cohérence.
+
+Comme exposé dans la problématique (chapitre~\ref{ch:problematique}), les entreprises
+évoluent dans un contexte en continuelle mouvance les obligeant à adapter
+constamment leurs stratégies. En conséquence, l'architecture doit satisfaire,
+en plus des contraintes de cohérence, les contraintes de souplesse et de réactivité.
+Là encore, la nature informelle des artefacts d’architecture ne permet pas
+de satisfaire aux contraintes de souplesse et de réactivité.
+
+
+Dans le cadre d'une démarche IDM, ce type d'artefacts est qualifié
+de purement contemplatif. L'IDM traite la question des modèles purement
+contemplatifs dans le contexte particulier du génie logiciel, en proposant
+une approche unificatrice par les modèles~\cite{jezequel2006genie}.
+Une revue comparative des littératures relevant de l'IDM et des pratiques courantes
+de l'EA, nous amène à envisager l'IDM comme cadre méthodologique
+et technologique pour l'EA. Dans la partie suivante,
+nous faisons donc le parallèle entre les deux disciplines afin de
 justifier le recours à une démarche IDM  pour traiter les limites  des
 pratiques actuelles d'EA.
 
-\section{L'IDM comme cadre méthodologique et technologique}
+\section{L'Ingénierie Dirigée par les Modèles~:\\ un cadre méthodologique et technologique}
 
-    Pour répondre à la problématique exposée dans le chapitre
-    \ref{ch:problematique}, nous adoptons une démarche IDM.  La problématique que traite les présents travaux est résumée par la question suivante~: 
+    La problématique que traite les présents travaux (voir chapitre~\ref{ch:problematique})
+    est résumée dans la question suivante~:
 
     %\begin{framed}
     {\bfseries Quels méthodes, modèles et outils adopter pour simuler une architecture d'entreprise afin de la valider?}
     %\end{framed}
 
-    Nous commençons par démontrer la pertinence de la mise en œuvre
-    démarche IDM  pour traiter  la problématique.  Nous décrivons
-    ensuite la dite démarche.
+    Pour répondre à cette problématique, nous avons adopté une démarche IDM.
+    Nous commençons par démontrer la pertinence de ce choix de démarche
+    au regard de la problématique traitée.  Nous décrivons ensuite la dite démarche.
 
     \subsection{De la cohérence entre démarche adoptée et
     problématique traitée}
 
-    Pour justifier le recours à une démarche IDM en mettant en
-    évidence les caractéristiques le génie logiciel et l'EA. En effet,
-    l'IDM est originellement développée pour le domaine du génie
-    logiciel. Nous identifions à cet effet un nombre de similarités
-    entre les deux disciplines.
+    Le recours à une démarche IDM tire sa légitimité de la mise en
+    évidence des caractéristiques communes des deux disciplines que
+    sont le génie logiciel et l'EA. La démarche IDM est certes originellement développée
+    pour le génie logiciel. Cependant, nous identifions un nombre de similarités
+    entre les deux disciplines justifiant l'adéquation d'une démarche IDM pour l'EA.
 
-    Premièrement, l'EA comme le génie logiciel cherchent à construire
-    des systèmes manifpulant de l'information. Il s'agit de système à
-    logiciel prépondérant \cite{jezequel2012ingenierie} pour le génie
-    logiciel et de du système entreprise dans le cadre l'EA. Or à
-    l'ère de l'information, les entreprises se mettent à produire et à
+    Premièrement, l'EA tout comme le génie logiciel, cherchent à construire
+    des systèmes manipulant de l'information. Il s'agit d'un système à
+    logiciel prépondérant pour le génie
+    logiciel~\cite{jezequel2012ingenierie} et du système entreprise pour l'EA.
+    Or les entreprises se mettent de plus en plus à produire et à
     consommer de l'information \cite{zachman1997enterprise}, à
     commencer par les Smart Grids dont le fonctionnent reposent sur la
-    mise en réseau, au sens informatique, des équipements électriques.
+    mise en réseau, au sens informatique, des équipements électriques. Certains auteurs
+    évoquent même une nouvelle ère de l'information qui sonnerait
+    la fin de l'ère d'industrialisation en inscrivant les entreprises dans une économie
+    de l'information~\cite{toffler1981third}~\cite{webster2014theories}.
 
     Deuxièmement, l'EA et le génie logiciel comportent des activités
-    similaires (expression des besoins et des objectifs, analyse,
-    conception, maintenance, documentation, implémentation,
-    validation, etc.) produisant des artefacts différents.
+    similaires comme l'expression des besoins et des objectifs, l'analyse,
+    la conception, la maintenance, la documentation, l'implémentation ou encore
+    la validation. Ces activités reste similaires dans leur nature même
+    si elles ne portent pas sur le même système, en l'occurrence l'entreprise et
+    le logiciel.
 
-    Troisièmement, l'EA comme le génie logiciel sont confrontés aux
-    limites d'artefacts hétérogènes et de nature informelle (mise à
-    part le code) produits lors au cours du cycle de vie d'un système
-    logiciel telle que la documentation ou les spécifications.  En
-    génie logiciel, Jézéquel et al. \cite{jezequel2006genie} affirment
+    Troisièmement, en génie logiciel, les partie-prenantes sont
+    confrontés aux limites de ces artefacts hétérogènes et de nature informelle (mise à
+    part le code) produits au différentes étapes du cycle de vie du système (documentation,
+    spécifications, etc.). Jézéquel et al. \cite{jezequel2006genie} affirment
     que «~ces artefacts donnent de multiples points de vue sur le
     logiciel en cours de développement et, en pratique, sont souvent
-    indépendants les uns des autres», et que le problème est «~d’être
+    indépendants les uns des autres~», et que le problème est «~d’être
     capable d'assurer une cohérence entre ces vues, ou au minimum une
     traçabilité entre les éléments des différents artefacts~».
+    Comme exposé dans la partie précédente, le même problème se pose pour l'EA.
 
-    La similarité des domaines et communauté des objectifs légitiment donc pleinement le recours à l'IDM comme cadre
-    méthodologique et technologique pour mener  les différents
-    activités qu’englobe l'EA.
+    %Quatrièmement, demande de ractivité et de soupelesse. Stratégie en évolution pour l'EA et spect pouvante pour le génie logiciel
 
-    \subsection{Démarche IDM mise en œuvre pour l'EA}
+    Similarité des domaines et communauté des objectifs légitiment
+    donc pleinement le recours à l'IDM comme cadre
+    méthodologique et technologique pour répondre à la problématique de
+    cette thèse.
+
+    \subsection{Contribution de l'Ingénierie Dirigée par les Modèles\\à l'Architetcure d'Entreprise}
+
+    \subsubsection{Apports}
+
+    La vision que nous souhaitons transmettre dans cette partie est la suivante~:
+    l'Ingénierie Dirigée par les Modèles est un moyen d'unifier les activités
+    et les artefacts de l'Architecture d'Entreprise. Ainsi unifiée, l'EA parviendra à réaliser
+    pleinement ses objectifs d'alignement effectif et d'accompagnement efficace de
+    l'entreprise tout au long de sa trajectoire.
+
+    L'IDM offre à cet effet un nombre de méthodes et de technologies permettant d’homogénéiser
+    les vues d'architecture tout en gardant la possibilité d'utiliser la technologie ou la représentation
+    la mieux adaptée à chaque vue.
+    C'est par la méta-modélisation que l'IDM parvient à cette unification. Les métamodèles
+    permettent de formaliser les langages de modélisation  et d'automatiser ainsi
+    le traitement des modèles.
+    Il est alors possible de vérifier automatiquement la conformité de ces modèles au métamodèle.
+    Le métamodèle renferme les règles d'association des concepts manipulés par les modèles.
+    La relation de conformité peut alors servir à assurer la cohérence globale de l'EA.
+    Les modèles d'architecture manipulés deviennent alors productifs,
+    par opposition aux modèles contemplatifs habituellement utilisés. Les modèles productifs sont
+    en réalité des modèles exécutables qui peuvent être transformés en d'autres modèles exécutables
+    selon les besoins de modélisation.
+
+    Le recours intensif aux modèles exécutables dans les activités d'EA
+    pour chacune des vues d'architecture permet de créer une architecture d'entreprise
+    souple et réactive à l'évolution de la stratégie d'entreprise. Les modèles d'une vue être automatiquement
+    raffinés en modèles cible pour la vue d'en dessous grâce aux transformations de modèles. Les modèles
+    exécutables et les transformation de modèles permettront d'automatiser
+    les activités d'EA telles que l'analyse de la structure et du comportement
+    ainsi que la mise à jour.
+
+    L'IDM permet toutes ces possibilités par la formalisation d'un métamodèle pour
+
+    Nous détaillerons plus en détails les possibilités d'utilisation des méthodes et technique de l'IDM
+    dans la suite de ce chapitre. Mais nous présentons d'abord la démarche IDM mise en
+    œuvre pour la création du métamodèle EA2M.
+
+            \subsubsection{Démarche mise en œuvre}
 
     S'il n'existe pas de démarche standardisée pour mettre en œuvre
-    l'IDM \cite{barbier13phd}, les auteurs conviennent néanmoins de la
-    nécessité  de commencer par analyser le domaine d'application.
-    Dans notre contexte, il s'agit donc de la découverte des pratiques
+    l'IDM \cite{barbier13phd}, les différents auteurs conviennent néanmoins de la
+    nécessité  de commencer par analyser le domaine d'application~\cite{jezequel2012ingenierie}.
+    Dans notre contexte, il s'agit de la découverte des pratiques
     d'EA dans le contexte des Smart Grids. L’appréhension du domaine a
-    pour objectif d'identifier les concepts essentiels ainsi que leurs
-    règles d'association afin de concevoir un métamodèle du domaine
-    serviront à concevoir le métamodèle du domaine comme l'illustre la
+    pour objectif d'identifier les concepts essentiels en EA ainsi que leurs
+    règles d'association afin de concevoir un métamodèle du domaine la
     figure~\ref{fig:demarche_idem}.
-    La métamodélisation  est au cœur d'une démarche IDM car c'est sur les métamodèle que se  reposent les 
-
-
 
     \begin{figure}[!ht]
 
@@ -616,7 +735,7 @@ conditions de travail.
 
 
 \section{Le métamodèle EA2M}
-    
+
 
 \section{L'approche EA2M}
 
@@ -957,7 +1076,7 @@ appel aux transformations de modèle pour automatiser la conversion entre les
 modèles de représentation et leur exécution.
 
 \begin{table}[!ht]
-    \begin{center} 
+    \begin{center}
         \input{figures/4_demarche/langages_vues}
     \end{center}
     \caption{Langages de l'IDM pour l'EA}
@@ -991,7 +1110,7 @@ Les langages de modélisation doivent donc permettre de représenter
 convenablement les différents composants de l'entreprise en plus d'offrir la
 possibilité d'analyser la structure des modèles créés dans l'objectif de mieux
 comprendre le système réel, qui est dans ce cas l'entreprise. Nous proposons
-donc de tirer profit des méthodes IDM telle la métamodélisation et de les
+donc de tirer profit des méthodes IDM telle la méta-modélisation et de les
 associer à des langages capables d'exprimer et d'exécuter des contraintes et des
 requêtes sur les modèles tels que OCLinEcore ou QVT. Grâce à ce type de langage
 il est possible de~:

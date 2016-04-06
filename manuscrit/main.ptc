@@ -8,11 +8,11 @@
 \ttl@starttoc {chapters@1}
 \contentsline {section}{\numberline {1.1}Contexte industriel}{1}{section.1.1}
 \contentsline {subsection}{\numberline {1.1.1}Qu'est ce qu'un Smart Grid ?}{1}{subsection.1.1.1}
-\contentsline {subsection}{\numberline {1.1.2}Contexte \IeC {\'e}conomique, cadre l\IeC {\'e}gislatif et \\ modes de consommation en constante mutation}{3}{subsection.1.1.2}
+\contentsline {subsection}{\numberline {1.1.2}Contexte \IeC {\'e}conomique, cadre l\IeC {\'e}gislatif et\\ modes de consommation en constante mutation}{3}{subsection.1.1.2}
 \contentsline {subsection}{\numberline {1.1.3}Architecture des Smart Grids : \\ vers des r\IeC {\'e}seaux \IeC {\'e}lectriques flexibles et communicants}{5}{subsection.1.1.3}
 \contentsline {section}{\numberline {1.2}Probl\IeC {\'e}matique industrielle}{6}{section.1.2}
 \contentsline {section}{\numberline {1.3}Probl\IeC {\'e}matique de recherche}{8}{section.1.3}
-\contentsline {part}{I\hspace {1em}Etat de l'Art}{11}{part.1}
+\contentsline {part}{I\hspace {1em}\IeC {\'E}tat de l'Art\\\IeC {\textemdash }\\Architecture d'Entreprise\\et Ing\IeC {\'e}nierie Dirig\IeC {\'e}e par les Mod\IeC {\`e}les}{11}{part.1}
 \contentsline {chapter}{\numberline {2}Architecture d'Entreprise}{13}{chapter.2}
 \ttl@stoptoc {chapters@1}
 \ttl@starttoc {chapters@2}
@@ -72,68 +72,70 @@
 \contentsline {subsection}{\numberline {3.4.1}M\IeC {\'e}ta-mod\IeC {\'e}lisation en Architecture d'Entreprise}{43}{subsection.3.4.1}
 \contentsline {subsection}{\numberline {3.4.2}Approches d'Architecture d'Entreprise \\ recourant \IeC {\`a} l'Ing\IeC {\'e}nierie Dirig\IeC {\'e}e par les Mod\IeC {\`e}les}{45}{subsection.3.4.2}
 \contentsline {subsection}{\numberline {3.4.3}Langages ex\IeC {\'e}cutables pour l'Architecture d'Entreprise}{47}{subsection.3.4.3}
-\contentsline {part}{II\hspace {1em}Contribution}{49}{part.2}
-\contentsline {chapter}{\numberline {4}Identification des concepts et proposition}{51}{chapter.4}
+\contentsline {part}{II\hspace {1em}Contribution \IeC {\textemdash } EA2M : \\ une approche unificatrice \\par les mod\IeC {\`e}les}{49}{part.2}
+\contentsline {chapter}{\numberline {4}Identification des concepts et proposi}{51}{chapter.4}
 \ttl@stoptoc {chapters@3}
 \ttl@starttoc {chapters@4}
 \contentsline {section}{\numberline {4.1}Analyse des pratiques actuelles en Architecture d'Entreprise}{52}{section.4.1}
-\contentsline {subsection}{\numberline {4.1.1}L'Architecture d'Entreprise pour la documentation et la communication}{53}{subsection.4.1.1}
-\contentsline {subsection}{\numberline {4.1.2}L'Architecture d'Entreprise pour l'analyse et la compr\IeC {\'e}hension}{54}{subsection.4.1.2}
-\contentsline {subsection}{\numberline {4.1.3}L'Architecture d'Entreprise pour la conception et l'impl\IeC {\'e}mentation}{55}{subsection.4.1.3}
-\contentsline {subsection}{\numberline {4.1.4}Conclusion}{57}{subsection.4.1.4}
-\contentsline {section}{\numberline {4.2}L'IDM comme cadre m\IeC {\'e}thodologique et technologique}{57}{section.4.2}
-\contentsline {subsection}{\numberline {4.2.1}De la coh\IeC {\'e}rence entre d\IeC {\'e}marche adopt\IeC {\'e}e et probl\IeC {\'e}matique trait\IeC {\'e}e}{57}{subsection.4.2.1}
-\contentsline {subsection}{\numberline {4.2.2}D\IeC {\'e}marche IDM mise en \IeC {\oe }uvre pour l'EA}{58}{subsection.4.2.2}
-\contentsline {section}{\numberline {4.3}Analyse du Domaine}{59}{section.4.3}
-\contentsline {subsection}{\numberline {4.3.1}L'Architecture d'Entreprise pour les Smart Grids}{59}{subsection.4.3.1}
-\contentsline {subsubsection}{\numberline {4.3.1.1}D\IeC {\'e}monstrateurs europ\IeC {\'e}ens}{59}{subsubsection.4.3.1.1}
-\contentsline {subsubsection}{\numberline {4.3.1.2}Normalisation de \textit {Use Case} Smart Grids}{59}{subsubsection.4.3.1.2}
-\contentsline {subsubsection}{\numberline {4.3.1.3}Projets de recherches et d\IeC {\'e}veloppement}{60}{subsubsection.4.3.1.3}
-\contentsline {subsection}{\numberline {4.3.2}Identification des concepts}{63}{subsection.4.3.2}
-\contentsline {subsubsection}{\numberline {4.3.2.1}Concepts de la vue m\IeC {\'e}tier}{63}{subsubsection.4.3.2.1}
-\contentsline {subsubsection}{\numberline {4.3.2.2}Concepts de la vue fonctionnelle}{63}{subsubsection.4.3.2.2}
-\contentsline {subsubsection}{\numberline {4.3.2.3}Concepts de la vue applicative}{63}{subsubsection.4.3.2.3}
-\contentsline {subsubsection}{\numberline {4.3.2.4}Caract\IeC {\'e}risation des relations inter-vues}{63}{subsubsection.4.3.2.4}
-\contentsline {subsection}{\numberline {4.3.3}Conclusion}{63}{subsection.4.3.3}
-\contentsline {section}{\numberline {4.4}Le m\IeC {\'e}tamod\IeC {\`e}le EA2M}{63}{section.4.4}
-\contentsline {section}{\numberline {4.5}L'approche EA2M}{63}{section.4.5}
-\contentsline {subsection}{\numberline {4.5.1}Analyse : structure et comportement}{63}{subsection.4.5.1}
-\contentsline {section}{\numberline {4.6}Positionnement}{63}{section.4.6}
-\contentsline {section}{\numberline {4.7}Un cadre d'architecture dirig\IeC {\'e} par les mod\IeC {\`e}les ex\IeC {\'e}cutables}{65}{section.4.7}
-\contentsline {subsection}{\numberline {4.7.1}Approche par points de vue}{65}{subsection.4.7.1}
-\contentsline {subsection}{\numberline {4.7.2}Int\IeC {\'e}gration d'une architecture d'entreprise}{67}{subsection.4.7.2}
-\contentsline {subsection}{\numberline {4.7.3}Analyse de l'architecture d'entreprise}{69}{subsection.4.7.3}
-\contentsline {subsubsection}{\numberline {4.7.3.1}Analyse du comportement : simulation dirig\IeC {\'e}e par les processus m\IeC {\'e}tier}{69}{subsubsection.4.7.3.1}
-\contentsline {subsubsection}{\numberline {4.7.3.2}Analyse de la structure}{72}{subsubsection.4.7.3.2}
-\contentsline {chapter}{\numberline {5}Impl\IeC {\'e}mentation et Validation}{75}{chapter.5}
+\contentsline {subsection}{\numberline {4.1.1}L'Architecture d'Entreprise pour la documentation}{53}{subsection.4.1.1}
+\contentsline {subsection}{\numberline {4.1.2}L'Architecture d'Entreprise pour l'analyse}{54}{subsection.4.1.2}
+\contentsline {subsection}{\numberline {4.1.3}L'Architecture d'Entreprise pour la conception}{55}{subsection.4.1.3}
+\contentsline {subsection}{\numberline {4.1.4}Des repr\IeC {\'e}sentations informelles, h\IeC {\'e}t\IeC {\'e}rog\IeC {\`e}nes et incompatibles avec la constante \IeC {\'e}volution de l'entreprise}{57}{subsection.4.1.4}
+\contentsline {section}{\numberline {4.2}L'Ing\IeC {\'e}nierie Dirig\IeC {\'e}e par les Mod\IeC {\`e}les~:\\ un cadre m\IeC {\'e}thodologique et technologique}{58}{section.4.2}
+\contentsline {subsection}{\numberline {4.2.1}De la coh\IeC {\'e}rence entre d\IeC {\'e}marche adopt\IeC {\'e}e et probl\IeC {\'e}matique trait\IeC {\'e}e}{59}{subsection.4.2.1}
+\contentsline {subsection}{\numberline {4.2.2}Contribution de l'Ing\IeC {\'e}nierie Dirig\IeC {\'e}e par les Mod\IeC {\`e}les\\\IeC {\`a} l'Architetcure d'Entreprise}{60}{subsection.4.2.2}
+\contentsline {subsubsection}{\numberline {4.2.2.1}Apports}{60}{subsubsection.4.2.2.1}
+\contentsline {subsubsection}{\numberline {4.2.2.2}Mise en \IeC {\oe }uvre}{61}{subsubsection.4.2.2.2}
+\contentsline {section}{\numberline {4.3}Analyse du Domaine}{62}{section.4.3}
+\contentsline {subsection}{\numberline {4.3.1}L'Architecture d'Entreprise pour les Smart Grids}{62}{subsection.4.3.1}
+\contentsline {subsubsection}{\numberline {4.3.1.1}D\IeC {\'e}monstrateurs europ\IeC {\'e}ens}{62}{subsubsection.4.3.1.1}
+\contentsline {subsubsection}{\numberline {4.3.1.2}Normalisation de \textit {Use Case} Smart Grids}{62}{subsubsection.4.3.1.2}
+\contentsline {subsubsection}{\numberline {4.3.1.3}Projets de recherches et d\IeC {\'e}veloppement}{63}{subsubsection.4.3.1.3}
+\contentsline {subsection}{\numberline {4.3.2}Identification des concepts}{66}{subsection.4.3.2}
+\contentsline {subsubsection}{\numberline {4.3.2.1}Concepts de la vue m\IeC {\'e}tier}{66}{subsubsection.4.3.2.1}
+\contentsline {subsubsection}{\numberline {4.3.2.2}Concepts de la vue fonctionnelle}{66}{subsubsection.4.3.2.2}
+\contentsline {subsubsection}{\numberline {4.3.2.3}Concepts de la vue applicative}{66}{subsubsection.4.3.2.3}
+\contentsline {subsubsection}{\numberline {4.3.2.4}Caract\IeC {\'e}risation des relations inter-vues}{66}{subsubsection.4.3.2.4}
+\contentsline {subsection}{\numberline {4.3.3}Conclusion}{66}{subsection.4.3.3}
+\contentsline {section}{\numberline {4.4}Le m\IeC {\'e}tamod\IeC {\`e}le EA2M}{66}{section.4.4}
+\contentsline {section}{\numberline {4.5}L'approche EA2M}{66}{section.4.5}
+\contentsline {subsection}{\numberline {4.5.1}Analyse : structure et comportement}{66}{subsection.4.5.1}
+\contentsline {section}{\numberline {4.6}Positionnement}{66}{section.4.6}
+\contentsline {section}{\numberline {4.7}Un cadre d'architecture dirig\IeC {\'e} par les mod\IeC {\`e}les ex\IeC {\'e}cutables}{68}{section.4.7}
+\contentsline {subsection}{\numberline {4.7.1}Approche par points de vue}{68}{subsection.4.7.1}
+\contentsline {subsection}{\numberline {4.7.2}Int\IeC {\'e}gration d'une architecture d'entreprise}{70}{subsection.4.7.2}
+\contentsline {subsection}{\numberline {4.7.3}Analyse de l'architecture d'entreprise}{72}{subsection.4.7.3}
+\contentsline {subsubsection}{\numberline {4.7.3.1}Analyse du comportement : simulation dirig\IeC {\'e}e par les processus m\IeC {\'e}tier}{72}{subsubsection.4.7.3.1}
+\contentsline {subsubsection}{\numberline {4.7.3.2}Analyse de la structure}{75}{subsubsection.4.7.3.2}
+\contentsline {chapter}{\numberline {5}Impl\IeC {\'e}mentation et Validation}{77}{chapter.5}
 \ttl@stoptoc {chapters@4}
 \ttl@starttoc {chapters@5}
-\contentsline {section}{\numberline {5.1}Mod\IeC {\`e}les d'architecture d'entreprise pour le cas m\IeC {\'e}tier de la gestion d'une flotte de v\IeC {\'e}hicule \IeC {\'e}lectrqiue}{75}{section.5.1}
-\contentsline {subsection}{\numberline {5.1.1}Vue m\IeC {\'e}tier}{75}{subsection.5.1.1}
-\contentsline {subsection}{\numberline {5.1.2}Vue fonctionnelle}{77}{subsection.5.1.2}
-\contentsline {subsection}{\numberline {5.1.3}Vue applicative}{78}{subsection.5.1.3}
-\contentsline {subsection}{\numberline {5.1.4}Vue int\IeC {\'e}gration}{79}{subsection.5.1.4}
-\contentsline {section}{\numberline {5.2}Analyse par simulation des mod\IeC {\`e}les d'architecture}{80}{section.5.2}
-\contentsline {chapter}{\numberline {6}M\IeC {\'e}thodologie de la recherche}{85}{chapter.6}
+\contentsline {section}{\numberline {5.1}Mod\IeC {\`e}les d'architecture d'entreprise pour le cas m\IeC {\'e}tier de la gestion d'une flotte de v\IeC {\'e}hicule \IeC {\'e}lectrqiue}{77}{section.5.1}
+\contentsline {subsection}{\numberline {5.1.1}Vue m\IeC {\'e}tier}{77}{subsection.5.1.1}
+\contentsline {subsection}{\numberline {5.1.2}Vue fonctionnelle}{79}{subsection.5.1.2}
+\contentsline {subsection}{\numberline {5.1.3}Vue applicative}{80}{subsection.5.1.3}
+\contentsline {subsection}{\numberline {5.1.4}Vue int\IeC {\'e}gration}{81}{subsection.5.1.4}
+\contentsline {section}{\numberline {5.2}Analyse par simulation des mod\IeC {\`e}les d'architecture}{82}{section.5.2}
+\contentsline {chapter}{\numberline {6}M\IeC {\'e}thodologie de la recherche}{87}{chapter.6}
 \ttl@stoptoc {chapters@5}
 \ttl@starttoc {chapters@6}
-\contentsline {section}{\numberline {6.1}D\IeC {\'e}limitation de l'objet de recherche}{86}{section.6.1}
-\contentsline {subsection}{\numberline {6.1.1}Investigations men\IeC {\'e}es pour la vue m\IeC {\'e}tier}{87}{subsection.6.1.1}
-\contentsline {subsubsection}{\numberline {6.1.1.1}Observation}{88}{subsubsection.6.1.1.1}
-\contentsline {subsubsection}{\numberline {6.1.1.2}Prototypage}{88}{subsubsection.6.1.1.2}
-\contentsline {subsubsection}{\numberline {6.1.1.3}Validation}{89}{subsubsection.6.1.1.3}
-\contentsline {subsubsection}{\numberline {6.1.1.4}Conclusion}{90}{subsubsection.6.1.1.4}
-\contentsline {subsection}{\numberline {6.1.2}Investigations men\IeC {\'e}es pour la vue applicative}{90}{subsection.6.1.2}
-\contentsline {subsubsection}{\numberline {6.1.2.1}Observation}{90}{subsubsection.6.1.2.1}
-\contentsline {subsubsection}{\numberline {6.1.2.2}Prototypage}{91}{subsubsection.6.1.2.2}
-\contentsline {subsubsection}{\numberline {6.1.2.3}Validation}{91}{subsubsection.6.1.2.3}
-\contentsline {subsubsection}{\numberline {6.1.2.4}Conclusion}{92}{subsubsection.6.1.2.4}
-\contentsline {subsection}{\numberline {6.1.3}Investigations men\IeC {\'e}es pour la vue fonctionnelle}{92}{subsection.6.1.3}
-\contentsline {subsubsection}{\numberline {6.1.3.1}Observation}{93}{subsubsection.6.1.3.1}
-\contentsline {subsubsection}{\numberline {6.1.3.2}Prototypage}{93}{subsubsection.6.1.3.2}
-\contentsline {subsubsection}{\numberline {6.1.3.3}Validation}{95}{subsubsection.6.1.3.3}
-\contentsline {subsubsection}{\numberline {6.1.3.4}Conclusion}{96}{subsubsection.6.1.3.4}
-\contentsline {subsection}{\numberline {6.1.4}Conclusion}{97}{subsection.6.1.4}
-\contentsline {section}{\numberline {6.2}Conceptualisation / construction du cadre d'architecture \textit {ExecuteEA}}{97}{section.6.2}
-\contentsline {subsubsection}{\numberline {6.2.0.1}Conclusion}{97}{subsubsection.6.2.0.1}
+\contentsline {section}{\numberline {6.1}D\IeC {\'e}limitation de l'objet de recherche}{88}{section.6.1}
+\contentsline {subsection}{\numberline {6.1.1}Investigations men\IeC {\'e}es pour la vue m\IeC {\'e}tier}{89}{subsection.6.1.1}
+\contentsline {subsubsection}{\numberline {6.1.1.1}Observation}{90}{subsubsection.6.1.1.1}
+\contentsline {subsubsection}{\numberline {6.1.1.2}Prototypage}{90}{subsubsection.6.1.1.2}
+\contentsline {subsubsection}{\numberline {6.1.1.3}Validation}{91}{subsubsection.6.1.1.3}
+\contentsline {subsubsection}{\numberline {6.1.1.4}Conclusion}{92}{subsubsection.6.1.1.4}
+\contentsline {subsection}{\numberline {6.1.2}Investigations men\IeC {\'e}es pour la vue applicative}{92}{subsection.6.1.2}
+\contentsline {subsubsection}{\numberline {6.1.2.1}Observation}{92}{subsubsection.6.1.2.1}
+\contentsline {subsubsection}{\numberline {6.1.2.2}Prototypage}{93}{subsubsection.6.1.2.2}
+\contentsline {subsubsection}{\numberline {6.1.2.3}Validation}{93}{subsubsection.6.1.2.3}
+\contentsline {subsubsection}{\numberline {6.1.2.4}Conclusion}{94}{subsubsection.6.1.2.4}
+\contentsline {subsection}{\numberline {6.1.3}Investigations men\IeC {\'e}es pour la vue fonctionnelle}{94}{subsection.6.1.3}
+\contentsline {subsubsection}{\numberline {6.1.3.1}Observation}{95}{subsubsection.6.1.3.1}
+\contentsline {subsubsection}{\numberline {6.1.3.2}Prototypage}{95}{subsubsection.6.1.3.2}
+\contentsline {subsubsection}{\numberline {6.1.3.3}Validation}{97}{subsubsection.6.1.3.3}
+\contentsline {subsubsection}{\numberline {6.1.3.4}Conclusion}{98}{subsubsection.6.1.3.4}
+\contentsline {subsection}{\numberline {6.1.4}Conclusion}{99}{subsection.6.1.4}
+\contentsline {section}{\numberline {6.2}Conceptualisation / construction du cadre d'architecture \textit {ExecuteEA}}{99}{section.6.2}
+\contentsline {subsubsection}{\numberline {6.2.0.1}Conclusion}{99}{subsubsection.6.2.0.1}
 \contentsfinish 

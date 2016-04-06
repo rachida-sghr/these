@@ -485,6 +485,11 @@ INPUT 4_proposition.tex
 INPUT 4_proposition.tex
 INPUT main.ptc
 INPUT main.ptc
+INPUT figures/4_demarche/pratique_courante_ea.pdf
+INPUT ./figures/4_demarche/pratique_courante_ea.pdf
+INPUT ./figures/4_demarche/pratique_courante_ea.pdf
+INPUT /usr/local/texlive/2014/texmf-dist/tex/latex/base/omscmr.fd
+INPUT /usr/local/texlive/2014/texmf-dist/tex/latex/base/omscmr.fd
 INPUT figures/4_demarche/demarche_idm.pdf
 INPUT ./figures/4_demarche/demarche_idm.pdf
 INPUT ./figures/4_demarche/demarche_idm.pdf
