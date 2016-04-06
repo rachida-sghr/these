@@ -23,9 +23,16 @@
 *.zip
 *.nlo
 *.brf
+*.fdb_latexmk
+*.fls
+*.ptc
+*.xdy
+*.sublime-project
+*.sublime-workspace
 build/
 These.pdf
 these.pdf
 figures/*.pdf
 figures/build
 /.project
+
