@@ -130,3 +130,36 @@ La simulation retourne comme résultat les affectations des véhicles aux tourn�
 %Détecter les problèmes d'interop' entre modules
  
 \lstinputlisting{figures/5_implementation/affectations.mzn}
+
+\section{Dicussion}
+
+    \subsection{Positionnement}
+par rapport à ToGAF
+ZAchman
+
+approches d'analyses
+
+vue par vue à quoi sert même théoriquement
+chaque élément modélisé la formulation de la problématique
+La revue de la littérature ainsi que
+l'analyse des pratiques courante d'EA Plusieurs raisons
+motivent l'utilisation de ces points de vue. D'abord, la vue métier et la vue
+applicative sont incontournables pour n'importe quel cadre d'architecture.
+Ensuite, selon les cadres d'architecture, la vue fonctionnelle est modélisée de
+deux manière~:~ elle est soit intégrée à la vue applicative sous forme de
+services (Archimate, TOGAF, RM-ODP), soit modélisée à part entière dans une vue
+dédiée (Club Urba, \gls{sgam}, Zachman). Nous prenons le parti de modéliser
+explicitement les fonctions dans une vue dédiée. En effet, passer directement
+de la vue du métier à la vue applicative peut être en quelque sorte brutal pour
+l'architecte métier mais aussi pour l'architecte applicatif. La vue fonctionnelle
+permet une transition progressive de la logique métier vers l'architecture
+logicielle.
+
+Nous ne modélisons pas les informations dans une vue dédiée contrairement aux
+cadre RM-ODP ou \gls{sgam}. Nous explicitons les informations en tant qu'aspect
+pour chacune des autres vues comme recommandé par le cadre Zachman (Le quoi de
+la dimension horizontale).
+
+    \subsection{Limites de l'approches}
+
+\section{Perspectives}
