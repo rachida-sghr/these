@@ -101,15 +101,15 @@ Un métamodèle est un modèle du langage de modélisation qui sert à exprimer 
 modèles.
 \end{definition}
 
-Une autre définition courante mais erronée de la notion de métamodèle suppose 
-qu'un métamodèle est un modèle de modèle. La figure~\ref{fig:modelofmodel} 
-reprend l'exemple de la cartographie évoquée plus haut. Nous appliquons 
-récursivement la relation \textit{Représente} $(\mu)$ au territoire 
-français. Ici une carte de la France joue le rôle de modèle du territoire 
-français. Un fichier XML spécifiant l'éditeur, l'année d'édition et la langue de carte
-joue le rôle de modèle de cette carte dans une base de donnée. 
-Dans ce contre-exemple, le fichier XMLn'est pas un métamodèle de la France. Un métamodèle 
-n'est donc pas un modèle d'un modèle.
+Une autre définition courante mais erronée de la notion de métamodèle suppose
+qu'un métamodèle est un modèle de modèle. La figure~\ref{fig:modelofmodel}
+reprend l'exemple de la cartographie évoquée plus haut. Nous appliquons
+récursivement la relation \textit{Représente} $(\mu)$ au territoire français.
+Ici une carte de la France joue le rôle de modèle du territoire français. Un
+fichier XML spécifiant l'éditeur, l'année d'édition et la langue de carte joue
+le rôle de modèle de cette carte dans une base de donnée.  Dans ce
+contre-exemple, le fichier XML n'est pas un métamodèle de la France. Un
+métamodèle n'est donc pas un modèle d'un modèle.
 % \hspace{-11cm}\raisebox{-5mm}[0pt][0pt]{%
 % \makebox[0pt][l]{\parbox[t]{\linewidth}{\color{red}%
 % Cet exemple n'est pas terrible. Le fichier XML peut être vu comme une sérialisation de la carte. Il vaudrait mieux considérer un modèle de la carte, qui en capture certaines informations pour une autre utilisation. Par exemple un modèle de la carte pour sa gestion dans une base de données : auteur, copyright, échelle, date de mise à jour, coordonnées géographiques de la zone représentée etc. On verrait alors mieux que ce modèle n'est pas un modèle du territoire, bien qu'il soit un modèle de la carte qui est un modèle du territoire.
