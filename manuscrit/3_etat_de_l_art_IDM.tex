@@ -1,3 +1,4 @@
+%!TEX  root = main.tex
 \chapter{Ingénierie Dirigée par les Modèles}
 \label{ch:IDM}
  
@@ -38,13 +39,17 @@ machine. Dès lors, ces modèles permettent d'industrialiser la production
 logicielle, jusque-là centrée sur le code produit par l'informaticien 
 \cite{bezivin2005unification}.
 
+
+
+\section{Concepts fondamentaux}
+
 En mettant à profit des disciplines telles que la modélisation par objets, 
-l'ingénierie des langages, la compilation de langages, les méthodes formelles ou encore la programmation par composants, l'\gls{idm} offre un cadre intégrateur reposant 
+l'ingénierie des langages, la compilation de langages, les méthodes formelles 
+ou encore la programmation par composants, l'\gls{idm} offre un cadre intégrateur reposant 
 sur quelques concepts fondamentaux : la notion de modèle et la relation 
 \textit{Représente}, la notion de métamodèle et la relation 
 \textit{ConformeÀ}.
 
-\section{Concepts fondamentaux}
 \subsection{Modèle et Représentation}
 La notion de modèle est centrale dans l'\gls{idm} car, comme nous venons de l'évoquer, 
 l'enjeu de cette approche est de rendre les modèles productifs sur tout le cycle 
@@ -101,12 +106,14 @@ qu'un métamodèle est un modèle de modèle. La figure~\ref{fig:modelofmodel}
 reprend l'exemple de la cartographie évoquée plus haut. Nous appliquons 
 récursivement la relation \textit{Représente} $(\mu)$ au territoire 
 français. Ici une carte de la France joue le rôle de modèle du territoire 
-français et un fichier XML joue le rôle de modèle de la carte. Dans ce contre-exemple, le fichier XML n'est pas un métamodèle de la France. Un métamodèle 
+français. Un fichier XML spécifiant l'éditeur, l'année d'édition et la langue de carte
+joue le rôle de modèle de cette carte dans une base de donnée. 
+Dans ce contre-exemple, le fichier XMLn'est pas un métamodèle de la France. Un métamodèle 
 n'est donc pas un modèle d'un modèle.
-\hspace{-11cm}\raisebox{-5mm}[0pt][0pt]{%
-\makebox[0pt][l]{\parbox[t]{\linewidth}{\color{red}%
-Cet exemple n'est pas terrible. Le fichier XML peut être vu comme une sérialisation de la carte. Il vaudrait mieux considérer un modèle de la carte, qui en capture certaines informations pour une autre utilisation. Par exemple un modèle de la carte pour sa gestion dans une base de données : auteur, copyright, échelle, date de mise à jour, coordonnées géographiques de la zone représentée etc. On verrait alors mieux que ce modèle n'est pas un modèle du territoire, bien qu'il soit un modèle de la carte qui est un modèle du territoire.
-}}}
+% \hspace{-11cm}\raisebox{-5mm}[0pt][0pt]{%
+% \makebox[0pt][l]{\parbox[t]{\linewidth}{\color{red}%
+% Cet exemple n'est pas terrible. Le fichier XML peut être vu comme une sérialisation de la carte. Il vaudrait mieux considérer un modèle de la carte, qui en capture certaines informations pour une autre utilisation. Par exemple un modèle de la carte pour sa gestion dans une base de données : auteur, copyright, échelle, date de mise à jour, coordonnées géographiques de la zone représentée etc. On verrait alors mieux que ce modèle n'est pas un modèle du territoire, bien qu'il soit un modèle de la carte qui est un modèle du territoire.
+% }}}
 
 \begin{figure}[!ht]
     %_BUILD_FULL \begin{center}\input{figures/3_etat_de_l_art_IDM/modele_carte}\end{center}
@@ -120,9 +127,12 @@ Par ailleurs, le concept de métamodèle induit la deuxième relation fondamenta
 de l'\gls{idm} liant un modèle à son métamodèle. Cette relation est nommée 
 \textit{ConformeÀ} et notée $\chi$ \cite{bezivin2004search} 
 \cite{favre2004towards}. La figure \ref{fig:carteFavre} reprend l'exemple de la 
-cartographie où la légende de la carte joue le rôle de métamodèle pour 
-une carte de la France. En effet, pour être lisible, la carte doit être conforme 
-à la légende.
+cartographie. La légende de la carte peut être vue comme le métamodèle de la
+carte de la France car elle spécifie les concepts utilisés pour modéliser la carte
+(département et région) et leur relation (une région comporte des département).
+Pour être lisible, la carte doit être conforme à la légende, c'est-à-dire utiliser
+uniquement ces concepts. Cependant, la légende est un cas particulier de métamodèle 
+qui définit la manière dont sont représentés les concepts. 
 
 \begin{figure}[!ht]
     %_BUILD_FULL \begin{center}\input{figures/3_etat_de_l_art_IDM/metamodel_carte}\end{center}
@@ -132,11 +142,11 @@ modélisation \protect\cite{favre2006ingenierie}}
  \label{fig:carteFavre}
 \end{figure}
 
-\raisebox{5mm}[0pt][0pt]{%
-\makebox[0pt][l]{\parbox[t]{\linewidth}{\color{red}%
-Cet exemple est faux. Une carte n'est pas conforme à sa légende.
-Il vaudrait mieux dire que si le modèle du territoire (la carte) est décrit en SVG, alors ce modèle est conforme au métamodèle de SVG. Tu dis toi-même qu'un métamodèle est un modèle d'un langage de modélisation. Le métamodèle de SVG est un modèle du langage SVG dans lequel la carte est décrite.
-}}}
+% \raisebox{5mm}[0pt][0pt]{%
+% \makebox[0pt][l]{\parbox[t]{\linewidth}{\color{red}%
+% Cet exemple est faux. Une carte n'est pas conforme à sa légende.
+% Il vaudrait mieux dire que si le modèle du territoire (la carte) est décrit en SVG, alors ce modèle est conforme au métamodèle de SVG. Tu dis toi-même qu'un métamodèle est un modèle d'un langage de modélisation. Le métamodèle de SVG est un modèle du langage SVG dans lequel la carte est décrite.
+% }}}
 
 \section{Transformation de modèle}
 Comme expliqué précédemment, la préoccupation majeure de l'\gls{idm} est de 
@@ -538,7 +548,7 @@ L'\gls{idm} a prouvé sa capacité à traiter des systèmes complexes \cite{fran
     \begin{center}
         \input{figures/3_etat_de_l_art_IDM/mdo}
     \end{center}
-    \caption{Architecture d'une organisation dirigée par les modèles (\textcolor{red}{à remplacer par une belle figure}) \protect\cite{clark_towards_2014}}
+    \caption{Architecture d'une organisation dirigée par les modèles\protect\cite{clark_towards_2014}}
     \label{fig:mdo}
 \end{figure}
 

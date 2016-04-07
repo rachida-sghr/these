@@ -856,7 +856,7 @@ conditions de travail.
     la vérification de la cohérence de l'ensemble de l'architecture.
 
     Les concepts identifiés, directement issus l'analyse du domaine de l'EA, ont servi à la conception du
-    métamodèle EA3M pour \emph{Enterprise Architecture Models Metamodel}.
+    métamodèle EA2M pour \emph{Enterprise Architecture MetaModel}.
 
 \section{Le métamodèle EA2M}
     La conception du métamodèle EA3M a été menée de manière itérative. En partant de quelques concepts
@@ -938,6 +938,12 @@ conditions de travail.
     La figure~\ref{fig:vue_aspect} illustre la partie du métamodèle dédiée à la représentation globale d'une architecture
     d'entreprise. Comme nous  
 
+\begin{figure}[!ht]
+    \begin{center}
+    \includegraphics[trim= 0cm 14cm 0cm 0cm, width=1\textwidth]{figures/4_demarche/ea3m.pdf}
+    \end{center}
+    \caption{Partie du métamodèle concernant la struture globale d'une architecture d'entreprise} \label{fig:ea3m}
+\end{figure}
 
 L'aspect «~\textit{information}~» permet d'avoir un
 modèle explicite des données utilisées dans chacune des vues métier,
@@ -1021,8 +1027,86 @@ place à y répondre et pour évaluer la stratégie elle-même par rapport à la
 réalité de l'entreprise.}}
 
     \subsubsection{Vue Intégration}
+    L'alignement et la cohérence sont des problématiques centrales en EA
+\cite{kaisler_enterprise_2005}. Notre contribution essentielle est de dédier un
+point de vue spécifique pour adresser ce type de problématique~:~le
+\textbf{point de vue intégration} illustré par la figure
+\ref{fig:vue_integration}. Ce point de vue définit un \textit{mapping}
+d'alignement en spécifiant (1)~les entités à aligner, (2)~les liens de cohérence
+entre ces éléments et (3) les transformations de modèles nécessaires au
+raffinement des ces entités. Les transformations de modèles facilitent et
+automatisent les passages d'une vue à l'autre. Ce point de vue permet une
+intégration «~IntraVue~» et «~InterVues~» (entres les aspects d'une seule vue).
+La figure \ref{fig:metamodele_framework} donne un métamodèle de notre framework
+en explicitant les concepts abordés et leurs relations.
+
+\begin{figure}[!ht]
+ \begin{center}
+ \includegraphics[trim= 3cm 3cm 0cm 0cm, width=1\textwidth]{figures/4_demarche/vue_integration.pdf}
+ \end{center}
+ \caption{Framework proposé avec la vue Intégration} \label{fig:vue_integration}
+\end{figure}
+
+L'intégration inter-vues décrit les relations entre les vues (sauf la vue
+intégration). La vue intégration est donc transverse à toutes les autres vues et
+permet de modéliser explicitement les notions de raffinement à travers la classe
+«~InterVues~» (voir figure \ref{fig:metamodele_framework}), tant pour les
+aspects \emph{processus} et \textit{information} que sur les aspects
+\emph{objectif}.
+
+\begin{figure}[!ht]
+ \begin{center}
+ \includegraphics[trim= 0cm 13cm 0cm 2cm, width=1\textwidth]{figures/4_demarche/metamodele_framework.pdf} \end{center}
+ \caption{Métamodèle du framework proposé}
+ \label{fig:metamodele_framework}
+\end{figure}
+
+Nous donnons le métamodèle de la vue intégration dans la figure
+\ref{fig:metamodele_vue_integration}. Cette vue permet des vérifications
+horizontales à l'intérieur de chacune des vues. En effet, l'association
+«~utilise~» assure donc la compatibilité des données échangées entre les tâches
+d'un processus métier, les fonctions d'un bloc fonctionnel ou entre les modules
+d'une application (voir figure \ref{fig:metamodele_vue_integration}).
+L'association «~rempli par~» hérite aussi de la classe «~IntraVue~» et associe
+explicitement une entité à l'objectif qui lui est assigné. De cette manière, il
+est possible de tracer l'implémentation effective d'une stratégie métier à
+travers l'ensemble de l'entreprise, des entités métier à l'IT.
+
+La définition d'un métamodèle précis pour le framework permet de plus de
+contrôler la conformité des modèles d'architecture. Ainsi, une entité du modèle
+(telle qu'une fonction, une tâche du processus métier, un objectif, etc.)
+appartient toujours à deux vues~:~une vue intégration en plus d'une autre vue
+parmi les vues métier, fonctionnelle, applicative et technique. Autre exemple,
+tous les objectifs de la vue métier doivent avoir des liens de cohérence inter-
+vues avec les objectifs de la vue fonctionnelle et de même pour ces dernier
+avec les objectif de la vue applicative et ainsi de suite. De même pour les
+autres entités des aspects information et processus. Une fois le modèle
+d'architecture créé, il est possible de vérifier sa conformité au métamodèle et
+de s'assurer que la cohérence entre les différentes entités de modèles est bien
+maintenue.
+
+La vue intégration permet en outre de vérifier qu'une application implémente
+bien tous les blocs fonctionnels nécessaires au déroulement d'un processus
+métier. Cette vue donne ainsi accès aux informations de traçabilité qui
+permettent de déterminer l'impact d'une modification ou d'une défaillance d'un
+module applicatif sur les processus métier. Elle permet aussi de vérifier que
+les formats applicatifs permettent d'encoder les types de données fonctionnelles
+requis, qui eux-même raffinent les concepts métiers. Cette vue détermine les
+éventuelles transformations de modèle nécessaires au déploiement en spécialisant
+l'association «~raffine~». Le choix des modèles à transformer dépend fortement
+de leur nature (modèles graphiques, textuels, etc.) et mais aussi de leur niveau
+d'abstraction. Par exemple, la génération de code demande un modèle en entrée
+suffisamment détaillé pour exécuter une transformation pertinente. L'état de
+l'art actuel des langages de transformation de modèle privilégie l'usage des
+transformations de modèle entre la vue fonctionnelle et et la vue applicative.
 
 
+\begin{figure}[!ht] \begin{center}
+\includegraphics[trim= 0cm 18cm 0cm 0cm, width=1\textwidth]{figures/4_demarche/metamodele_vue_integration.pdf}
+\end{center}
+\caption{Métamodèle de la vue intégration}
+\label{fig:metamodele_vue_integration}
+\end{figure}
 
 \section[Le framework ExecuteEA]{Le \emph{framework} \emph{ExecuteEA}}
 \label{sec:executeea}
@@ -1233,87 +1317,6 @@ métier déjà implémentées dans le SI.
 
 
 \subsection{Intégration d'une architecture d'entreprise}
-
-L'alignement et la cohérence sont des problématiques centrales en EA
-\cite{kaisler_enterprise_2005}. Notre contribution essentielle est de dédier un
-point de vue spécifique pour adresser ce type de problématique~:~le
-\textbf{point de vue intégration} illustré par la figure
-\ref{fig:vue_integration}. Ce point de vue définit un \textit{mapping}
-d'alignement en spécifiant (1)~les entités à aligner, (2)~les liens de cohérence
-entre ces éléments et (3) les transformations de modèles nécessaires au
-raffinement des ces entités. Les transformations de modèles facilitent et
-automatisent les passages d'une vue à l'autre. Ce point de vue permet une
-intégration «~IntraVue~» et «~InterVues~» (entres les aspects d'une seule vue).
-La figure \ref{fig:metamodele_framework} donne un métamodèle de notre framework
-en explicitant les concepts abordés et leurs relations.
-
-\begin{figure}[!ht]
- \begin{center}
- \includegraphics[trim= 3cm 3cm 0cm 0cm, width=1\textwidth]{figures/4_demarche/vue_integration.pdf}
- \end{center}
- \caption{Framework proposé avec la vue Intégration} \label{fig:vue_integration}
-\end{figure}
-
-L'intégration inter-vues décrit les relations entre les vues (sauf la vue
-intégration). La vue intégration est donc transverse à toutes les autres vues et
-permet de modéliser explicitement les notions de raffinement à travers la classe
-«~InterVues~» (voir figure \ref{fig:metamodele_framework}), tant pour les
-aspects \emph{processus} et \textit{information} que sur les aspects
-\emph{objectif}.
-
-\begin{figure}[!ht]
- \begin{center}
- \includegraphics[trim= 0cm 13cm 0cm 2cm, width=1\textwidth]{figures/4_demarche/metamodele_framework.pdf} \end{center}
- \caption{Métamodèle du framework proposé}
- \label{fig:metamodele_framework}
-\end{figure}
-
-Nous donnons le métamodèle de la vue intégration dans la figure
-\ref{fig:metamodele_vue_integration}. Cette vue permet des vérifications
-horizontales à l'intérieur de chacune des vues. En effet, l'association
-«~utilise~» assure donc la compatibilité des données échangées entre les tâches
-d'un processus métier, les fonctions d'un bloc fonctionnel ou entre les modules
-d'une application (voir figure \ref{fig:metamodele_vue_integration}).
-L'association «~rempli par~» hérite aussi de la classe «~IntraVue~» et associe
-explicitement une entité à l'objectif qui lui est assigné. De cette manière, il
-est possible de tracer l'implémentation effective d'une stratégie métier à
-travers l'ensemble de l'entreprise, des entités métier à l'IT.
-
-La définition d'un métamodèle précis pour le framework permet de plus de
-contrôler la conformité des modèles d'architecture. Ainsi, une entité du modèle
-(telle qu'une fonction, une tâche du processus métier, un objectif, etc.)
-appartient toujours à deux vues~:~une vue intégration en plus d'une autre vue
-parmi les vues métier, fonctionnelle, applicative et technique. Autre exemple,
-tous les objectifs de la vue métier doivent avoir des liens de cohérence inter-
-vues avec les objectifs de la vue fonctionnelle et de même pour ces dernier
-avec les objectif de la vue applicative et ainsi de suite. De même pour les
-autres entités des aspects information et processus. Une fois le modèle
-d'architecture créé, il est possible de vérifier sa conformité au métamodèle et
-de s'assurer que la cohérence entre les différentes entités de modèles est bien
-maintenue.
-
-La vue intégration permet en outre de vérifier qu'une application implémente
-bien tous les blocs fonctionnels nécessaires au déroulement d'un processus
-métier. Cette vue donne ainsi accès aux informations de traçabilité qui
-permettent de déterminer l'impact d'une modification ou d'une défaillance d'un
-module applicatif sur les processus métier. Elle permet aussi de vérifier que
-les formats applicatifs permettent d'encoder les types de données fonctionnelles
-requis, qui eux-même raffinent les concepts métiers. Cette vue détermine les
-éventuelles transformations de modèle nécessaires au déploiement en spécialisant
-l'association «~raffine~». Le choix des modèles à transformer dépend fortement
-de leur nature (modèles graphiques, textuels, etc.) et mais aussi de leur niveau
-d'abstraction. Par exemple, la génération de code demande un modèle en entrée
-suffisamment détaillé pour exécuter une transformation pertinente. L'état de
-l'art actuel des langages de transformation de modèle privilégie l'usage des
-transformations de modèle entre la vue fonctionnelle et et la vue applicative.
-
-
-\begin{figure}[!ht] \begin{center}
-\includegraphics[trim= 0cm 18cm 0cm 0cm, width=1\textwidth]{figures/4_demarche/metamodele_vue_integration.pdf}
-\end{center}
-\caption{Métamodèle de la vue intégration}
-\label{fig:metamodele_vue_integration}
-\end{figure}
 
 
 

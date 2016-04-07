@@ -1,3 +1,4 @@
+%!TEX  root = main.tex
 \chapter{Architecture d'Entreprise}
 \label{ch:EA}
 
@@ -18,11 +19,11 @@ traite le SI en le corrélant au reste de l'entreprise. En effet, l'EA offre une
 vision globale des composants de l'entreprise tels que les processus métier, les 
 parties prenantes, les informations, les fonctions, les applications 
 informatiques, les infrastructures techniques. 
-
-Nous consacrons cette première partie de l'état de l'art à l'EA en commençant 
-par définir les termes de SI et d'EA. 
  
 \subsection{Terminologie}
+
+Pour cette première partie de l'état de l'art consacré à l'EA, nous commençons 
+par définir les termes de SI et d'EA. 
 	
 \subsubsection{Système d'Information}
 \label{sec:reix}
@@ -258,12 +259,12 @@ dans son état courant et désiré. Comme tableau de bord, l'EA facilite l'accè
 l'information nécessaire à l'optimisation des processus métier et à
 l'alignement effectif entre l'IT et la stratégie adoptée. 
 
+\section{Conception d'une architecture d'entreprise}
+
 L'EA peut faciliter le processus de prise de décision si elle aboutit à une
 vision à la fois globale et adaptée aux décideurs. Dans la section suivante, nous
 présentons quelques approches et cadres d'EA prenant en compte le processus de
 prise de décision et les acteurs qu'il implique.
-
-\section{Conception d'une architecture d'entreprise}
 
 \subsection{Approches orientées points de vue}
 
@@ -435,9 +436,9 @@ Entreprise $\rightarrow$ Information $\rightarrow$ Traitement $\rightarrow$ Ing�
 C'est donc par construction que DASIBAO se propose d'assurer la cohérence des
 différents points de vue.
 
-\subsubsection{SGAM}
+% \subsubsection{SGAM}
 
-Le \gls{sgam} \cite{uslar2012standardization} adresse l'architecture du Smart Grid en englobant les trois domaines : SI, réseau électrique et réseau de télécommunication. (Le reste à récupérer d'une note H rédigée pour EDF.)
+% Le \gls{sgam} \cite{uslar2012standardization} adresse l'architecture du Smart Grid en englobant les trois domaines : SI, réseau électrique et réseau de télécommunication. (Le reste à récupérer d'une note H rédigée pour EDF.)
 
 
 \subsection{Points de vue retenus}
@@ -690,6 +691,12 @@ actuelles vers les architectures cible dans un framework dédié.
 
 \subsection{Analyse de la structure}
 
+L'analyse de la structure est au cœur de la problématique de l'alignment 
+métier/IT. Dans cette partie, nous présentons d'abord les finalités de
+cette activité d'analyse avant d'aborder les techniques existantes et
+leurs limites.
+
+
 \subsubsection{Finalités}
 
 Maintenir une cohérence entre l'infrastructure informatique de l'entreprise
@@ -759,6 +766,14 @@ de l'architecture de l'entreprise en l'adaptant aux acteurs concernés. Mais ell
 
 	
 \subsection{Analyse du comportement}
+
+Le comportement de l'architecture d'entreprise est peu abordé dans la littérature,
+en partie à cause de la nature statique des cadres d'EA. Cependant, l'analyse du
+comportement de l'entreprise peut offrir nombre d'avantages. Dans cette partie, nous
+commençons par exposer les finalités de l'analyse du comportement des
+architecture d'entreprise avant de présenter les travaux qui traitent de cette problémtique
+et leurs limites.
+
 
 \subsubsection{Finalités}
 
