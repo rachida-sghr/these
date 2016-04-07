@@ -85,6 +85,13 @@
     {\contentslabel{3.2em}}
     {}
     {\hfill\contentspage}
+
+    \titlecontents{psubsubsection}
+    [8.0em]
+    {}
+    {\contentslabel{3.2em}}
+    {}
+    {\hfill\contentspage}
     %{\titlerule*[0.5pc]{.}\contentspage}
 
     % http://tex.stackexchange.com/a/66346/32098
@@ -101,7 +108,8 @@
     % \section*{Remerciements}
     \tableofcontents
     \mainmatter
-    
+
+    \setcounter{tocdepth}{3}
     \include{1_problematique}
     \part{État de l'Art\\—\\Architecture d'Entreprise\\et Ingénierie Dirigée par les Modèles}
     \include{2_etat_de_l_art_EA}
