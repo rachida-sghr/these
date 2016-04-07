@@ -4,32 +4,24 @@
 
 \PartialToc
 
-
-
-Créer des modèles d'architecture d'entreprise permettant d'analyse par
-simulation implique de suivre un processus précis. L'objectif de nos travaux est
-de définir le processus de modélisation et de simulation à adopter, les rôles
-impliqués, les artefacts conceptuels requis, ainsi que les outils et les
+Créer des modèles d'architecture d'entreprise permettant d'analyser par
+simulation implique de suivre un processus précis. L'objectif de nos travaux
+est de définir le processus de modélisation et de simulation à adopter, les
+rôles impliqués, les artefacts conceptuels requis, ainsi que les outils et les
 langages adéquats pour mener des analyses de structure et de comportement.
 
 Notre contribution est double. Tout d'abord, nous proposons une démarche de
 modélisation et d'analyse qui s'appuie sur un cadre d'architecture multi-vues.
 Nous dotons ce cadre d'architecture d'une vue supplémentaire qui est la vue
-intégration. Cette vue a pour but d'adresser les problématiques de cohérence et
-d'alignement. Ensuite, nous mettons à profit les langages et standards de l'IDM
-permettant de modéliser et de simuler les architectures d'entreprise.
+\textit{intégration}. Cette vue a pour but d'adresser les problématiques de
+cohérence et d'alignement. Ensuite, nous mettons à profit les langages et
+standards de l'IDM permettant de modéliser et de simuler les architectures
+d'entreprise.
 
-    Approche IDM et technologies associées pour l'EA Nécessite une analyse du
-    domaine -> pratique de l'EA en général et SG en particulier
+% Approche IDM et technologies associées pour l'EA Nécessite une analyse du
+% domaine -> pratique de l'EA en général et SG en particulier
 
-%In this section, we present our approach and we apply it on the case study of
-%managing an electric vehicles fleet. Our contribution is twofold. First, we
-%propose a multi-view framework for EA with an additional view: the integration
-%view. This view aims to address consistency and alignment issues. Second, we
-%use executable and standardized languages from MDE to model and simulate EA.
-
-Dans ce chapitre nous exposons d'abord le bilan de l'état de l'art
-
+% Dans ce chapitre nous exposons d'abord le bilan de l'état de l'art
 
 % Dans ce chapitre, nous exposons d'abord la démarche IDM adoptée :
 % - analyse du domaine (rétro-ingénierie, analyse de la documentation existante et entretien avec les experts) qui aboutit à l'identification des concepts du métamodèle ExecuteEA
@@ -38,246 +30,216 @@ Dans ce chapitre nous exposons d'abord le bilan de l'état de l'art
 % -> analyse structure
 % -> analyse comportement
 
+\section[Bilan des pratiques actuelles d'EA et adoption d'une démarche IDM]{Bilan des pratiques actuelles d'Architecture d'Entreprise et adoption d'une démarche d'Ingénierie Dirigée par les Modèles}
 
+\subsection{Analyse des pratiques actuelles en Architecture d'Entreprise}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-\section[Bilan des pratiques actuelles d'EA et adoption d'une démarche IDM]{Bilan
-des pratiques actuelles d'Architecture d'Entreprise et adoption d'une démarche d'Ingénierie Dirigée par les Modèles}
-
-
-%\chapter[toc version]{doc version}
-%\chaptermark{version for header}
-
-
-
-    \subsection{Analyse des pratiques actuelles en Architecture d'Entreprise}
-
-    % Bilan de l'état de l'art n'est pas suffisante selon les objectifs de l'EA
-    % définit par machin (partie 11/12/13) L'EA ancrée dans la pratique donc
-    % entretien, documentation, etc. Hypothèse forte - parallèle entre EA et doc
-    % de spec SG (qui est le domaine d'application) -> légitimation (partie 14)
+% Bilan de l'état de l'art n'est pas suffisante selon les objectifs de l'EA
+% définit par machin (partie 11/12/13) L'EA ancrée dans la pratique donc
+% entretien, documentation, etc. Hypothèse forte - parallèle entre EA et doc de
+% spec SG (qui est le domaine d'application) -> légitimation (partie 14)
 
 L'emploi de l'EA peut servir différents desseins. Kurpjuweit et Winter
 \cite{kurpjuweit2007viewpoint} classent les objectifs de l'EA en trois
-catégories~:~(1)~la documentation et la communication, (2)~l'analyse
-et la compréhension et (3)~la conception et l'implémentation. Dans
-cette partie, nous exposons les limites des pratiques actuelles de
-l'EA au regard de ces trois catégories d'objectif. L'identification de
-ces limites s'appuie essentiellement sur l'analyse de la documentation
-de projets Smart Grid à laquelle nous avons eu accès, sur les
-entretiens menés avec les personnes impliquées dans la rédaction ou
-l'utilisation de cette documentation au sein du département
-\gls{mire}, et sur des entretiens menés avec les experts en EA de
-EDF R\&D. À ce titre, deux observations méritent d'être mentionnées~:
+catégories~:~(1)~la documentation et la communication, (2)~l'analyse et la
+compréhension et (3)~la conception et l'implémentation. Dans cette partie, nous
+exposons les limites des pratiques actuelles de l'EA au regard de ces trois
+catégories d'objectifs. L'identification de ces limites s'appuie
+essentiellement sur l'analyse de la documentation de projets Smart Grid à
+laquelle nous avons eu accès, mais aussi sur des entretiens avec les personnes
+impliquées dans la rédaction ou l'utilisation de cette documentation au sein du
+département \gls{mire}, ainsi qu'avec les experts en EA de EDF R\&D. À ce
+titre, deux observations méritent d'être mentionnées~:
 
 \begin{itemize}
+    \item premièrement, le nombre restreint des documents consultés n'est pas
+    représentatif des pratiques courantes, mais les limitations identifiées
+    sont corroborées par les travaux académiques présentés dans le
+    chapitre~\ref{ch:EA} portant sur l'état de l'art de l'EA~;
 
- \item  premièrement, le nombre restreint des documents consultés
- n'est certes pas représentatif des pratiques courantes. Cependant,
- les limitations identifiées sont corroborées par les travaux
- académiques présentés dans le chapitre~\ref{ch:EA} portant sur
- l'état de l'art de l'EA ~;
-
- \item deuxièmement, nous n'avons pas eu accès à des documents
- d'architecture d'entreprise en tant que telle pour des raisons de
- confidentialité et de réglementation interne  à \gls{edf}. Cependant,
- la documentation à l'échelle d'un projet Smart Grid a été estiméz
- suffisante pour appréhender une architecture d'entreprise dans sa
- globalité. En effet, l'ensemble des artefacts identifiés dans la taxonomie de
- Zachman~\cite{zachman1987framework} pour une entreprise se
- retrouvent à l'échelle d'un projet
- mené au sein de cette même entreprise. Par exemple, ces projets
- impliquent souvent plusieurs acteurs, une multitude de processus
- métier, une décomposition de ce processus en fonctions, des
- applications à implémenter, des objectifs à accomplir, etc.
-
+    \item deuxièmement, nous n'avons pas eu accès à des documents d'EA en tant
+    que tels, pour des raisons de confidentialité et de réglementation interne
+    à \gls{edf}. Cependant, nous avons estimé que la documentation à l'échelle
+    d'un projet Smart Grid est suffisante pour appréhender une architecture
+    d'entreprise dans sa globalité. En effet, l'ensemble des artefacts
+    identifiés dans la taxonomie de Zachman~\cite{zachman1987framework} pour
+    une entreprise se retrouvent à l'échelle d'un projet mené au sein de cette
+    même entreprise.  Par exemple, ces projets impliquent souvent plusieurs
+    acteurs, une multitude de processus métier, une décomposition de ce
+    processus en fonctions, des applications à implémenter, des objectifs à
+    accomplir, etc.
 \end{itemize}
 
+\subsubsection{L'Architecture d'Entreprise pour la documentation}
 
+L'EA permet de capturer les composants de l'entreprise dans leur état courant
+et leur état voulu. La manière la plus employée pour représenter ces composants
+reste la documentation \cite{barn2013enterprise}. Ces documents couvrent des
+aspects tels que les processus métier, les fonctions, les applications et
+l'infrastructure technique de l'entreprise, ainsi que leurs relations. Pour
+remplir leur rôle de référentiel d'entreprise, ces documents doivent être
+précis et régulièrement mis à jour. L'activité de documentation en EA, telle
+que pratiquée actuellement, est confrontée à des obstacles majeurs empêchant la
+production de documents suffisamment pertinents pour servir de feuille de route
+sur toute la trajectoire de l'entreprise.
 
-        \subsubsection{L'Architecture d'Entreprise pour la documentation}
- %et la communication
+Premièrement, la complexité de l'entreprise se retrouve dans sa représentation.
+En effet, une entreprise comme \gls{erdf} comporte des milliers de processus
+métier et des milliers d'applications supportant ses activités.  Ces processus
+et ces applications sont, qui plus est, fortement interdépendants. Par
+conséquent, l'effort à fournir pour produire une documentation d'architecture
+pertinente est considérable. De plus, maintenir ces documents à jour n'est pas
+aisé du fait (1) du grand nombre d'artefacts à gérer et (2) du manque d'outils
+adéquats comme le confirment Shah et al. \cite{shah2007frameworks} et Roth et
+al. \cite{roth2013enterprise}. Or si la documentation n'est pas convenablement
+mise à jour, la valeur ajoutée et la crédibilité de l'EA sont remises en doute
+par l'ensemble de l'entreprise.
 
+Deuxièmement, l'EA nécessite de collecter des informations provenant d'unités
+et de services différents. Cette collecte est bien souvent centralisée au
+niveau de l'entité IT de l'entreprise, où une seule équipe est chargée
+d'acquérir les informations provenant des autres entités. Cette étiquette IT
+porte souvent préjudice aux efforts d'EA au sein de l'entreprise en la
+réduisant à de l'architecture purement IT. Qualifiant l'EA d'«~enjeu du
+siècle~», Zachman déplore cet état de fait et soutient qu'il est nécessaire que
+l'EA transcende la sphère IT.
 
-L'EA permet de capturer les composants de l'entreprise dans
-leurs états courants et désirés. La manière la plus employée pour représenter
-ces composants reste la documentation \cite{barn2013enterprise}. Ces documents
-couvrent des aspects tels que les processus métier, les fonctions, les
-applications et l'infrastructure technique de l'entreprise, ainsi que leurs
-relations. Pour remplir leur rôle de référentiel d'entreprise, ces documents
-doivent être précis et régulièrement mis à jour. L'activité de documentation en
-EA, telle que pratiquée actuellement, est confrontée à des obstacles majeurs
-empêchant la production de documents suffisamment pertinents pour servir de
-feuille sur toute la trajectoire de l'entreprise~: de son état actuel à son
-état désiré.
-
-Premièrement, la complexité de l'entreprise se retrouve dans sa
-représentation. En effet, une entreprise comme \gls{erdf} comporte des milliers
-de processus métier et des milliers d'applications supportant ses activités.
-Ces processus et ces applications sont, qui plus est, fortement
-interdépendants. Par conséquent, l'effort à fournir pour produire une
-documentation d'architecture pertinente est considérable. De plus, maintenir
-ces documents à jour n'est pas aisé du fait (1) du grand nombre d'artefacts à
-gérer et (2) du manque d'outils adéquats comme le confirment Shah et al.
-\cite{shah2007frameworks} et Roth et al. \cite{roth2013enterprise}. Or si la
-documentation n'est pas convenablement mise à jour, la valeur ajoutée et la
-crédibilité de l'EA sont remises en doute par l'ensemble de l'entreprise.
-
-Deuxièmement, l'EA nécessite de collecter des informations provenant
-d'unités et de services différents (autant stratégiques, opérationnels que
-support). Cette collecte est bien souvent centralisée au niveau de l'entité IT
-de l'entreprise, où une seule équipe est chargée d'acquérir les informations
-provenant des autres entités. Cette étiquette IT fait souvent préjudice aux
-efforts d'EA au sein de l'entreprise en la réduisant à de l'architecture
-purement IT. Qualifiant l'EA d'«~enjeu du siècle~», Zachman déplore cet état de
-fait et soutient qu'il est nécessaire que l'EA transcende la sphère IT.
-
- %-> team organization
-
-Troisièmement, les documents utilisés en EA ne sont pas homogènes. Selon
-leurs besoins, les membres de l'équipe responsable de la documentation ont en
-effet tendance à utiliser des représentations hétérogènes. Shah et al.
+Troisièmement, les documents utilisés en EA ne sont pas homogènes. Selon leurs
+besoins, les membres de l'équipe responsable de la documentation ont en effet
+tendance à utiliser des représentations hétérogènes. Shah et al.
 \cite{shah2007frameworks} font le constat que les équipes d'EA utilisent de
-surcroît plusieurs outils différents pour produire ces représentations
-aboutissant à une documentation ambigüe. Expliciter et exprimer les relations
-entre les représentations n'en est que laborieux et malaisé. La cohérence de
-l'ensemble de l'architecture s'en trouve ainsi compromise.
+surcroît des outils différents pour produire ces représentations, aboutissant à
+une documentation imprécise. Il est alors difficile d'expliciter et d'exprimer
+les relations entre les représentations. La cohérence de l'ensemble de
+l'architecture s'en trouve ainsi compromise.
 
- Pour finir, la valeur ajoutée de l'EA diminue si la documentation produite
+Pour finir, la valeur ajoutée de l'EA diminue si la documentation produite
 n'est pas régulièrement mise à jour. Comme expliqué dans la
 section~\ref{sec:EA_contemplatif}, les documents d'EA correspondent la plupart
 du temps à des modèles purement contemplatifs. C'est, de notre point de vue,
-l'une des raisons majeures qui expliquent le manque certain d'outils permettant
+l'une des raisons majeures qui expliquent le manque d'outils permettant
 d'automatiser cette mise à jour, voire même d'automatiser l'analyse de
 l'architecture d'entreprise comme expliqué dans la section suivante.
 
-
-        \subsubsection{L'Architecture d'Entreprise pour l'analyse}
-    \label{sec:EA_analyse_limite}
+\subsubsection{L'Architecture d'Entreprise pour l'analyse}
+\label{sec:EA_analyse_limite}
 %et la compréhension
 
-L'analyse de la structure et du comportement de entreprise permet d'acquérir
+% L'analyse de la structure et du comportement de l'entreprise permet d'acquérir
+% une connaissance plus approfondie de l'ensemble de l'architecture. Dans cette
+% section nous passons en revue deux facteurs limitants l'analyse: le fait
+% qu'elle soit s'appuie en partie sur une documentation non formelle et
+% hétérogène, et le fait qu'elle suive une approche uniquement
+% \textit{descendante}.
+
+L'analyse de la structure et du comportement de l'entreprise permet d'acquérir
 une connaissance plus approfondie de l'ensemble de l'architecture. L'analyse des
-composants l'entreprise est limitée par la manière dont ces composants sont
+composants de l'entreprise est limitée par la manière dont ces composants sont
 représentés, c'est à dire sous la forme de documentation. Comme ce type de
 représentation ne permet pas l'automatisation de l'analyse, dans la pratique,
 les choix d'architecture reposent entièrement sur le bon sens, l'expérience et
 l'expertise de l'architecte d'entreprise. Comme pour la documentation, l'analyse
 de l'architecture d'une grande entreprise est une activité éprouvante et
 chronophage à cause du grand nombre d'artefacts manipulés et de leurs forte
-interdépendance. Les praticiens mènent souvent les activités d'analyse
+interdépendance. Les architectes mènent souvent les activités d'analyse
 manuellement \cite{barn2013enterprise}, sans le support d'outils intégrant
 naturellement les cadres d'architecture.
 
 Premièrement, la documentation de l'architecture telle que décrite dans la
-section précédente est souvent sources d'erreurs à cause de la grande quantité
+section précédente est souvent source d'erreurs à cause de la grande quantité
 et la forte interdépendance des artefacts manipulés
 \cite{kaisler_enterprise_2005}. Analyser cette documentation est donc
-indispensable à la détection de ces erreurs de représentation.
+indispensable pour détecter ces erreurs de représentation.
 
 Notre tour d'horizon des pratiques actuelles nous amène à constater que l'EA
 joue un rôle prépondérant durant les phases de description de l'existant et de
-spécification du système à mettre en œuvre mais qu'elle n'est pas exploitée dans
-toute sa potentialité. L'entreprise gagnerait à promouvoir l'architecture
+spécification du système à mettre en œuvre, mais qu'elle n'est pas exploitée
+dans toute sa potentialité. L'entreprise gagnerait à promouvoir l'architecture
 d'entreprise au rang de référentiel accompagnant l'entreprise sur toute sa
-trajectoire (de la spécification à la conception). Ceci permettrait d' anticiper
-les incohérences potentielles entre les besoins formulés par le métier et le SI
-qui est tenu de les satisfaire.
+trajectoire. Ceci permettrait d'anticiper les incohérences potentielles entre
+les besoins formulés par le métier, et le SI qui est tenu de les satisfaire.
 
-Pour ces travaux de recherches, plusieurs cas d'études ont été examinés,
-dont notamment la régulation de tension d'un réseau de distribution électrique
+Pour ces travaux de recherches, plusieurs cas d'études ont été examinés, dont
+notamment la régulation de tension d'un réseau de distribution électrique
 \cite{seghiri2014simulation}, le pilotage d'une batterie chez un particulier
 \cite{seghiri2012animation} et la gestion d'une flotte de véhicules électriques
 \cite{seghiri2015simulation}. Qu'il s'agisse d'un projet de recherche européen
 (le pilotage d'une batterie chez un particulier), d'un projet interne à EDF (la
 régulation de tension), ou d'un projet opérationnel impliquant EDF ainsi que
-d'autres partenaires (la gestion d'une flotte de véhicules électriques),
-la documentation à laquelle nous avons eu accès ne va pas au delà
-de la description générale des fonctionnalités attendues. Cette documentation
-ne permet pas d'analyser afin de les valider la structure et le comportement du
+d'autres partenaires (la gestion d'une flotte de véhicules électriques), la
+documentation à laquelle nous avons eu accès ne va pas au delà de la
+description générale des fonctionnalités attendues. Cette documentation ne
+permet pas d'analyser afin de les valider la structure et le comportement du
 système avant son implémentation finale. Pour accéder à un niveau de détails
-suffisant à l'analyse de l'architecture de ces cas d'étude, une rétro-ingénierie
-et des échanges avec les développeurs et les concepteurs ont été
-nécessaires. Ces constatations tirées du terrain rejoignent les conclusions de
-l'état de l'art concernant les limites des «~modèles contemplatifs~» exposé
+suffisant à l'analyse de l'architecture de ces cas d'étude, une
+rétro-ingénierie et des échanges avec les développeurs et les concepteurs ont
+été nécessaires. Ces constatations tirées du terrain rejoignent les conclusions
+de l'état de l'art concernant les limites des «~modèles contemplatifs~» exposé
 dans le chapitre ~\ref{ch:IDM}.
 
 Deuxièmement, les mises en œuvre courantes de l'EA adoptent une approche
-descendante où l'architecte d'entreprise ne fait qu'aligner le SI à la stratégie
-de l'entreprise en considérant cette dernière comme acquise. Une démarche
-descendante implique que la vision et les grandes lignes de la stratégie sont
-conçues en amont de l'EA et indépendamment de la réalité du SI qui va
-l'implémenter. Les choix stratégiques sont alors faits dans «~ une tour d'ivoire~»
-et sont ainsi déconnectés de la réalité du SI. Il nous paraît au contraire
-important que l'analyse de l'architecture d'entreprise permette d'évaluer et
-d'éclairer les choix stratégiques eux-mêmes, en plus de planifier leur
-déclinaison au niveau du SI.
+descendante où l'architecte d'entreprise ne fait qu'aligner le SI à la
+stratégie de l'entreprise. Une démarche descendante implique que la vision et
+les grandes lignes de la stratégie sont conçues en amont de l'EA et
+indépendamment de la réalité du SI qui va l'implémenter. Les choix stratégiques
+sont alors faits dans «~ une tour d'ivoire~» et sont ainsi déconnectés de la
+réalité du SI. Il nous paraît au contraire important que l'analyse de
+l'architecture d'entreprise permette d'évaluer et d'éclairer les choix
+stratégiques eux-mêmes, en plus de planifier leur déclinaison au niveau du SI.
 
- Notre vision rejoint celle de l'école de pensée «~\textit{Enterprise System
-Architecting}~» décrite par Lapalme \cite{lapalme2012three} et présentée dans la
-section~\ref{Lapalme}. Cependant, les approches d'analyse telles que pratiquées
-actuellement ne permettent pas d'y parvenir. L'analyse et la validation de la
-stratégie est désincarnée de l'EA. Par exemple, les algorithmes d'optimisation
-et de simulation de processus métier s'adressent uniquement aux analystes métier
-et ne sont pas couplés à la cartographie du patrimoine applicatif et aux
-capacités de l'infrastructure technique.
+Notre vision rejoint celle de l'école de pensée «~\textit{Enterprise System
+Architecting}~» décrite par Lapalme \cite{lapalme2012three} et présentée dans
+la section~\ref{Lapalme}. Cependant, les approches d'analyse telles que
+pratiquées actuellement ne permettent pas d'y parvenir. L'analyse et la
+validation de la stratégie est désincarnée de l'EA. Par exemple,
+les algorithmes d'optimisation et de simulation de processus métier s'adressent
+uniquement aux analystes métier et ne sont pas couplés à la cartographie du
+patrimoine applicatif et aux capacités de l'infrastructure technique.
 
-Inversement, l'analyse de l'architecture d'entreprise se cantonne à valider
-la robustesse et la résilience du SI en dressant l'inventaire des applications
-d'entreprise, des interfaces logiciels, les serveurs d'application et leur
-aptitude à mettre en œuvre la stratégie de l'entreprise, sans jamais remettre
-celle-ci en question. Appliquée à l'EA, l'approche descendante consiste
+Inversement, l'analyse de l'architecture d'entreprise se cantonne à valider la
+robustesse et la résilience du SI en dressant l'inventaire des applications
+d'entreprise, des interfaces logicielles, des serveurs d'application, et de
+leur aptitude à mettre en œuvre la stratégie de l'entreprise, sans jamais
+chercher à l'adapter au SI. Appliquée à l'EA, l'approche descendante consiste
 décomposer les éléments d'une vue supérieure en éléments plus détaillés dans la
 vue inférieure, présumant que la recomposition des éléments de la vue
 inférieure correspondra parfaitement aux éléments de la vue supérieure. Or, des
 travaux de recherche portant sur la complexité des SI actuels soulignent que
-des propriétés « émergentes » apparaissent quand un grand nombre de systèmes
-complexes sont fortement interconnectés \cite{bullock2004complexity}, comme
-c'est que cas de l'IT d'une entreprise de la taille d'\gls{edf} par exemple.
+des propriétés dite «~émergentes~» apparaissent quand un grand nombre de
+systèmes complexes sont fortement interconnectés \cite{bullock2004complexity},
+comme c'est le cas de l'IT d'une entreprise de la taille d'\gls{edf} par
+exemple.
 
- Une définition de l'émergence est donnée en sciences du Design par Gero
-\cite{gero1992creativity}~: « une propriété qui est uniquement implicite, i.e.
-qui n'est pas représentée explicitement, est dite émergente si elle peut être
-explicitée ». L'analyse de l'EA, doublée d'une approche ascendante (et non
+Une définition de l'\textit{émergence} est donnée en sciences du Design par
+Gero \cite{gero1992creativity}~: « une propriété qui est uniquement implicite,
+i.e.  qui n'est pas représentée explicitement, est dite émergente si elle peut
+être explicitée ». L'analyse de l'EA, doublée d'une approche ascendante (et non
 uniquement descendante), peut expliciter les propriétés émergentes de l'IT de
 l'entreprise et les porter au niveau du métier pour en extraire une plus-value
-pour l'entreprise et orientée avantageusement sa stratégie. L'EA est d'autant
+pour l'entreprise et orienter avantageusement sa stratégie. L'EA est d'autant
 plus pertinente pour l'entreprise si l'analyse de l'architecture n'est pas
-uniquement destinée à exécuter la stratégie de l'entreprise, comme c'est souvent
-le cas, mais à mettre en place de relations bidirectionnelles entre les partie-
-prenantes pour mieux éclairer la prise de décision à tous les niveaux de
-l'entreprise. Ce relations bidirectionnelles seront alors gérées et orchestrées
-par l'architecte d'entreprise.
+uniquement destinée à exécuter la stratégie de l'entreprise, comme c'est
+souvent le cas, mais à mettre en place des relations bidirectionnelles
+(\textit{i.e.} ascendantes et descendantes) entre les acteurs des différentes
+vues de l'architecture, pour mieux éclairer la prise de décision à tous les
+niveaux de l'entreprise. Ces relations bidirectionnelles seront alors gérées et
+orchestrées par l'architecte d'entreprise.\footnote{c'est l'approche décrite dans la section \ref{sec:executeea}, en particulier par la figure \ref{fig:approche_conceptuelle}}
 
 %   Syndrome de la tour d'ivoire -> modèles complexes et abstraits Partage de
 %   représentation pour une compréhension commune des documents
 
-        \subsubsection{L'Architecture d'Entreprise pour la conception}
-    %et l'implémentation
+\subsubsection{L'Architecture d'Entreprise pour la conception et l'implémentation}
 
- L'EA a pour rôle de décrire l'état courant de l'entreprise (\textit{as-is}),
+L'EA a pour rôle de décrire l'état courant de l'entreprise (\textit{as-is}),
 l'état désirée (\textit{to-be}) et les étapes pour passer du premier au
-deuxième. L'observation des pratiques actuelles, par l'analyse de la
+deuxième. L'observation des pratiques actuelles, par la revue de la
 documentation des projets Smart Grid évoqués dans la
-section~\ref{sec:EA_analyse_limite} et par l'analyse de la littérature , pointe
-vers le même constat~: le passage du \textit{as-is} au \textit{to-be} se résume
-à une description de grands principes et à une liste de recommandations
-générales.
+section~\ref{sec:EA_analyse_limite} et par l'analyse de la
+littérature\footnote{voir chapitre~\ref{ch:EA}}, pointe vers le même constat~:
+le passage du \textit{as-is} au \textit{to-be} se résume à une description de
+grands principes et à une liste de recommandations générales.
 
- Ces descriptions générales, bien que nécessaires à la construction et au
+Ces descriptions générales, bien que nécessaires à la construction et au
 partage d'une vision globale de l'entreprise et des grandes étapes, ne sont pas
 suffisantes. Les limites que nous identifions rejoignent les constats de
 l'approche IDM pour le développement logiciel. Il s'agit là encore d'une
@@ -285,9 +247,9 @@ représentation purement contemplative. Celle-ci n'est pas en mesure
 d'accompagner l'entreprise sur toute sa trajectoire en allant jusqu'à
 l'implémentation du système final pour plusieurs raisons.
 
- Tout d'abord, les représentations purement contemplatives restent ambiguës
-et sujettes à des interprétations inadéquates. Les parties prenantes utilisent
-des langages hétérogènes et des systèmes de notations différents en fonction de
+Tout d'abord, les représentations purement contemplatives restent ambiguës et
+sujettes à des interprétations inadéquates. Les parties prenantes utilisent des
+langages hétérogènes et des systèmes de notations différents en fonction de
 leur besoin et de leur perspective. Un terme ou une annotation de la
 perspective métier peut vouloir dire quelque chose de différent s'il est
 utilisé dans une perspective IT. Par exemple, le terme «~qualité~» employé dans
@@ -299,13 +261,13 @@ décalage d'interprétation peut conduire à l'implémentation d'un système
 informatique performant mais qui ne répond pas aux objectifs métier de
 l'entreprise.
 
-Ensuite, ces représentations ne sont pas assez réactives face à l'évolution
-de la stratégie de l'entreprise. L'effort de traduction du besoin métier en
-vision technique est essentiellement humain et consiste en la rédaction de
+Ensuite, ces représentations ne sont pas assez réactives face à l'évolution de
+la stratégie de l'entreprise. L'effort de traduction du besoin métier en vision
+technique est essentiellement humain et consiste en la rédaction de
 spécifications sous la forme de listes, textes et figures. Mettre à jour ces
 spécifications suite à un changement de stratégie nécessite un effort et un
 temps non négligeables. D'ailleurs, les documents de spécification ne sont
-souvent pas mis à jour après les demandes d'évolutions. Celles-ci sont
+souvent pas mis à jour après les demandes d'évolution. Celles-ci sont
 directement implémentées dans le code remettant en cause la traçabilité de
 l'évolution de l'entreprise.
 
@@ -315,12 +277,12 @@ elles ne sont pas suffisamment diffusées et partagées au sein de l'entreprise
 et ne l'accompagnent pas sur toute sa trajectoire. D'un point de vue
 organisationnel, les équipes des différents projets ne sont pas toujours
 conscientes de l'existence d'une architecture d'entreprise de référence
-\cite{shah2007frameworks}. L'EA échoue par là pas à offrir un schéma directeur
-et une vue d'ensemble de l'état de l'entreprise et ne remplit pas son rôle de
+\cite{shah2007frameworks}. L'EA échoue par là à offrir un schéma directeur et
+une vue d'ensemble de l'état de l'entreprise et ne remplit pas son rôle de
 garant de la cohérence et de l'alignement métier/IT lors de l'implémentation du
 système final.
 
- Enfin, les représentations purement contemplatives ne permettent pas
+Enfin, les représentations purement contemplatives ne permettent pas
 d'exploiter les liens de traçabilité indispensables à la vérification de la
 cohérence de l'architecture sur toute la trajectoire de l'entreprise. La
 plupart des cadres d'EA ne représentent pas explicitement ces liens de
@@ -331,45 +293,42 @@ titre d'exemple, ces liens sont utiles pour vérifier que tous les composants de
 la vue technique participent bien à l'exécution de la stratégie de
 l'entreprise.
 
-        \subsubsection{Des représentations informelles, hétérogènes et incompatibles avec
+\subsubsection{Des représentations informelles, hétérogènes et incompatibles avec
 la constante évolution de l'entreprise}
-Qu'il s'agisse de la documentation et de la
-communication, de l'analyse et de le compréhension ou de la conception
-et de l'implémentation, l'EA est limitée par l'emploi et la production de
-représentations informelles et purement descriptives.
 
-    \begin{figure}[!ht]
-         \begin{center}
-        \includegraphics[width=1\textwidth]{figures/4_demarche/pratique_courante_ea.pdf}
-         \end{center}
-         \caption{Activités et artefacts produits pour les différentes vue d'une architecture d'entreprise}
-         \label{fig:limites_ea}
-    \end{figure}
+Qu'il s'agisse de la documentation et de la communication, de l'analyse et de
+le compréhension ou de la conception et de l'implémentation, l'EA est limitée
+par l'emploi et la production de représentations informelles et purement
+descriptives.
 
-L'EA englobe ces différentes activités et les décline selon
-les différentes vues d'architecture (voir chapitre~\ref{ch:EA}) comme
-l'illustre la figure~\ref{fig:limites_ea}. Les artefacts produits par les différentes
+\begin{figure}[!ht]
+     \begin{center}
+    \includegraphics[width=1\textwidth]{figures/4_demarche/pratique_courante_ea.pdf}
+     \end{center}
+     \caption{Activités et artefacts produits pour les différentes vue d'une architecture d'entreprise}
+     \label{fig:limites_ea}
+\end{figure}
+
+L'EA englobe ces différentes activités et les décline selon les différentes
+vues d'architecture (voir chapitre~\ref{ch:EA}) comme l'illustre la
+figure~\ref{fig:limites_ea}. Les artefacts produits par les différentes
 activités des différentes vues sont donc d'autant plus nombreux. Ces artefacts
 adressent les préoccupations de différentes parties-prenantes.
 
 La revue de la littérature relative à l'EA, nous a permis de catégoriser ces
-parties-prenantes en identifiant une rôle par vue d'architecture. L'identification
-de ces rôles obéit au principe même de l'EA. Chacun de ces rôles a pour
-mission de construire une vision holistique au regard de ses propres
-préoccupations. C'est
-donc pour cette raison que nous identifions un architecte par vue~:
+parties-prenantes en identifiant un rôle par vue d'architecture. Chacun de ces
+rôles a pour mission de construire une vision holistique au regard de ses
+propres préoccupations. C'est donc pour cette raison que nous identifions un
+architecte par vue~:
 
 \begin{description}
-
     \item[l'architecte métier]
-
     Le rôle de l'architecte métier consiste à documenter, analyser et concevoir
     des processus métier permettant à l'entreprise de réaliser sa stratégie.
     Il orchestre les processus métier et les flux d'information en cohérence
     avec la stratégie pour aboutir à l'architecture métier de l'entreprise~;
 
     \item[l'architecte fonctionnel]
-
     Le rôle de l'architecte fonctionnel consiste à documenter, analyse et
     concevoir les blocs fonctionnels qui réalisent les processus de
     le vue métier. Il orchestre ces blocs fonctionnels et les flux d'informations
@@ -377,47 +336,41 @@ donc pour cette raison que nous identifions un architecte par vue~:
     de l'entreprise~;
 
     \item[l'architecture applicatif]
-
     Le rôle de l'architecte applicatif consiste à documenter, analyser
     et concevoir les applications permettant d'implémenter les blocs
     de la vue fonctionnelle. Il doit assurer une bonne orchestration de ces
     applications et des informations échangées pour aboutir à l'architecture
     applicative de l'entreprise.
-
 \end{description}
 
-Les architectes sont essentiellement tenus de documenter,
-d'analyser et de concevoir des architectures selon leurs propres perspectives,
-en assurant les critères de \emph{cohérence interne} à chacune des vues mais
-en respectant aussi les critères de \emph{cohérence externe} avec les autres
-vues. Cependant, la nature informelle des artefacts impliqués dans les différentes
-activités d’architecture rend difficile le maintien de cette cohérence.
+Les architectes sont essentiellement tenus de documenter, d'analyser et de
+concevoir des architectures selon leurs propres perspectives, en assurant les
+critères de \emph{cohérence interne} à chacune des vues mais en respectant
+aussi les critères de \emph{cohérence externe} avec les autres vues. Cependant,
+la nature informelle des artefacts impliqués dans les différentes activités
+d’architecture rend difficile le maintien de cette cohérence.
 
-Comme exposé dans la problématique (chapitre~\ref{ch:problematique}), les entreprises
-évoluent dans un contexte en continuelle mouvance les obligeant à adapter
-constamment leurs stratégies. En conséquence, l'architecture doit satisfaire,
-en plus des contraintes de cohérence, les contraintes de souplesse et de réactivité.
-Là encore, la nature informelle des artefacts d’architecture ne permet pas
-de satisfaire aux contraintes de souplesse et de réactivité.
+Comme exposé dans la problématique (chapitre~\ref{ch:problematique}), les
+entreprises doivent constamment faire évoluer leurs stratégies. En conséquence,
+l'architecture doit satisfaire, en plus des contraintes de cohérence, des
+contraintes de souplesse et de réactivité. Mais souvent, la nature informelle
+des artefacts d’architecture ne permet pas de satisfaire aux contraintes de
+souplesse et de réactivité.
 
+Dans le cadre d'une démarche IDM, ce type d'artefacts est qualifié de purement
+contemplatif. L'IDM traite la question des modèles purement contemplatifs dans
+le contexte particulier du génie logiciel, en proposant une approche
+unificatrice par les modèles~\cite{jezequel2006genie}. Une revue comparative
+des littératures relevant de l'IDM et des pratiques courantes de l'EA, nous
+amène à envisager l'IDM comme cadre méthodologique et technologique pour l'EA.
+Dans la partie suivante, nous faisons donc le parallèle entre les deux
+disciplines afin de justifier le recours à une démarche IDM  pour traiter les
+limites  des pratiques actuelles d'EA.
 
-Dans le cadre d'une démarche IDM, ce type d'artefacts est qualifié
-de purement contemplatif. L'IDM traite la question des modèles purement
-contemplatifs dans le contexte particulier du génie logiciel, en proposant
-une approche unificatrice par les modèles~\cite{jezequel2006genie}.
-Une revue comparative des littératures relevant de l'IDM et des pratiques courantes
-de l'EA, nous amène à envisager l'IDM comme cadre méthodologique
-et technologique pour l'EA. Dans la partie suivante,
-nous faisons donc le parallèle entre les deux disciplines afin de
-justifier le recours à une démarche IDM  pour traiter les limites  des
-pratiques actuelles d'EA.
+\subsection{L'Ingénierie Dirigée par les Modèles~:\\ un cadre méthodologique et technologique}
 
-
-
-    \subsection{L'Ingénierie Dirigée par les Modèles~:\\ un cadre méthodologique et technologique}
-
-    La problématique que traite les présents travaux (voir chapitre~\ref{ch:problematique})
-    est résumée dans la question suivante~:
+    La problématique que traite les présents travaux (voir
+    chapitre~\ref{ch:problematique}) est résumée dans la question suivante~:
 
     %\begin{framed}
     {\bfseries Quels méthodes, modèles et outils adopter pour simuler une architecture d'entreprise afin de la valider?}
@@ -563,16 +516,6 @@ de la documentation à laquelle nous avons eu accès et les entretiens menées a
 experts et praticiens du domaine.
 
 
-
-
-
-
-
-
-
-
-
-
 \section{Analyse du Domaine}
 %La découverte des Smart Grids a été menée de plusieurs manières. Hypothèse forte
 % Le parallèle entre une entreprise et un projet Smart Grid cycle de vie les
@@ -599,17 +542,17 @@ Le projet ADDRESS regroupe 25 partenaires dans 11 pays. L'objectif visé est
 d'améliorer l'efficacité, la sécurité et la qualité de leur alimentation en
 électricité dans un contexte de forte croissante de la participation des
 énergies renouvelables à la production d'électricité. Pour cela, des
-technologies sont développées des pour gérer la consommation d'électricité des
+technologies sont développées pour gérer la consommation d'électricité des
 clients résidentiels et professionnels.
 
 Le projet PREMIO vise à optimiser la gestion globale du réseau électrique de la
 région Provence-Alpes-Côte d'Azur (PACA) en intégrant les TIC et en
 expérimentant~:
 \begin{itemize}
-    \item la production locale de l'énergie~;
-    \item l'effacement~: il s'agit de baisser ou couper la consommation des utilisateurs
-sans dégrader en le confort~;
-    \item stockage/déstockage de la chaleur ou du froid.
+	\item la production locale de l'énergie~;
+	\item l'effacement~: il s'agit de baisser ou couper la consommation des utilisateurs
+    sans en dégrader le confort~;
+	\item stockage/déstockage de la chaleur ou du froid.
 \end{itemize}
 
 L'étude de la documentations des deux projets a été utile à la compréhension des
@@ -617,7 +560,7 @@ enjeux Smart Grids et à l'exploration des pratiques de spécification de ce typ
 de grand projet impliquant plusieurs partenaires. Les deux spécifications se
 présentent sous la forme de contenu textuel agrémenté de diagrammes de cas
 d'utilisation et de diagrammes de séquences UML. La spécification reste
-cependant essentiellement textuelle avec quelques dessins d'architecture donnant
+cependant essentiellement textuelle avec quelques dessins d'architecture, donnant
 lieu à une représentation purement contemplative. En outre, aucun lien de
 traçabilité entre l'architecture proposée dans la spécification et son
 implémentation réelle n'est explicité.
@@ -636,10 +579,10 @@ GRID4EU\footnote{http://www.grid4eu.eu/} qui rassemble six démonstrateurs Smart
 Grid différents. Les \textit{use case} ainsi normalisés, sont ensuite mis en
 correspondance avec le cadre d'architecture \gls{sgam}. La normalisation des use
 case dans le cadre de GRID4EU, a été faite après l'implémentation des six
-démonstrateurs pour comparer les retours d'expériences. Nous retenons, en
+démonstrateurs pour comparer les retours d'expérience. Nous retenons, en
 particulier, le démonstrateur de la société nationale d'électricité italienne
 (\gls{enel}) et son use case portant sur la régulation de tension des réseaux de
-distribution présentant une forte pénétration de DER. C'est le cas d'application
+distribution présentant une forte pénétration de {\color{red}{DER}}. C'est le cas d'application
 de la norme et du cadre \gls{sgam} le plus fourni et abouti du projet GRID4EU.
 L'analyse des documents de normalisation et des spécifications de projets
 européens appliquant ces normes est à l'origine de plusieurs constatations.
@@ -655,7 +598,7 @@ Grid Plan}. Pour tirer les liens de traçabilité entre deux vues, il faut donc
 les superposer en même temps sur le \textit{Smart Grid Plan}. La normalisation
 de \textit{Use Case} Smart Grid préconise l'utilisation du langage UML mais une
 grande partie des \textit{Use Cases} est spécifiée sous la forme de texte
-agrémenté de quelques diagrammes d'activité ou de séquence sont utilisés.
+accompagné de quelques diagrammes d'activité ou de séquence.
 
 \begin{figure}[!ht]
     \begin{center}
@@ -668,24 +611,24 @@ GRID4EU sur le \textit{Smart Grid Plan}} \label{fig:enel_sgplan}
 D'autre part, il existe un grand déséquilibre entre (1) la spécification des
 différents démonstrateurs (2) le soin apporté à la description d'une vue au sein
 d'un même démonstrateur. En effet, certaines équipes détaillent leur cas
-d'utilisation plus que d'autres (les équipes n'aime pas les nouvelles méthodes /
-cadres de travail ref frameworks). De plus, cet exercice ayant été mené par des
-équipes à profiles fortement techniques, les vues composant et communication du
+d'utilisation plus que d'autres {\color{red}{(les équipes n'aime pas les nouvelles méthodes /
+cadres de travail ref frameworks)}}. De plus, cet exercice ayant été mené par des
+équipes dont le profil est fortement technique, les vues composant et communication du
 SGAM sont souvent plus fournies que la vue métier par exemple.
 
 Bien que le démonstrateur d'\gls{enel} soit le plus en avance en terme de
 normalisation de \textit{Use Case}, l'analyse des spécifications de la
-régulation de tension sur un réseau électrique n'a pas été suffisante à
-l'appréhension cette problématique sans connaissances préalable sur le
+régulation de tension sur un réseau électrique n'a pas été suffisante {\color{red}{à
+l'appréhension de cette problématique}} sans connaissances préalable sur le
 fonctionnement des réseaux de distribution. Pour cette raison, et afin de
 collecter plus d'informations sur le sujet, les spécifications des projets
 auxquels a participé le département \gls{mire} et qui abordent la régulation de
-tension ont été analysés.
+tension, ont été analysés.
 
 
 \subsubsection{Projets de recherches et développement}
 
-Le contexte de cette thèse CIFRE a favorisé les échanges avec les experts et les
+Le contexte de cette thèse {\color{red}{CIFRE}} a favorisé les échanges avec les experts et les
 ingénieurs-chercheurs de EDF R\&D en général, et du département \gls{mire} en
 particulier. Nous avons ainsi eu accès aux documents de spécification relatifs à
 un projet de régulation de tension de réseau de distribution. Ces documents sont
@@ -694,7 +637,7 @@ charges viennent illustrer les grands principes de la régulation de tension
 mise en place. Le projet R\&D a abouti à l'implémentation d'une maquette de
 simulation développée sous
 Simulink\footnote{http://fr.mathworks.com/products/simulink/}. Les algorithmes
-de régulation sont directement écrit en C++.
+de régulation sont écrits en {\color{red}{C++}}.
 
 Outre la compréhension des principes de la régulation de tension, l'étude de
 terrain a pour objectif de mener une étude sociologique des pratiques
@@ -702,43 +645,43 @@ d'architecture au niveau des projets Smart Grids. Quelques entretiens ont été
 menés avec le développeur C++ et des experts de la régulation de tension. Les
 experts techniques interrogés utilisent leurs propres langages de modélisation
 (automates programmables) et d'implémentation (C++). Ils sont de plus peu
-sensibles aux problématiques soulevées par l'EA. En effet, ils n'avait pas
+sensibles aux problématiques soulevées par l'EA. En effet, ils n'avaient pas
 connaissance du \gls{sgam} ni de la normalisation de \textit{Use Case} pour la
-régulation de tension des réseaux de distribution. %Ceci peut être expliqué en
-partie par le fait qu'ils %traitent des problématiques électrotechniques
-pointues.
+régulation de tension des réseaux de distribution.
+%Ceci peut être expliqué en partie par le fait qu'ils traitent des
+%problématiques électrotechniques pointues.
 
 Partant de ce constat et de l'émergence des problématiques liées au véhicule
 électrique, notre étude terrain se porte alors sur le projet de la gestion
-d'une flotte de véhicule électrique. Ce projet est en effet transverse à
-l'ensemble de l'entreprise et touches plusieurs processus métier de
+d'une flotte de véhicules électriques. Ce projet est en effet transverse {\color{red}{à
+l'ensemble de l'entreprise et ==> puisqu'il}} touche plusieurs processus métier de
 l'entreprise. D'une part, la flotte de véhicules est indispensable à la tournée
-des agents EDF. D'autres part, leurs recharges impliquent un changement de
-paradigme sans précédent sur le fonctionnement des réseaux électriques comme
+des agents EDF. D'autre part, leurs recharges impliquent un changement de
+paradigme sans précédent dans le fonctionnement des réseaux électriques, comme
 expliqué dans le chapitre \ref{ch:problematique}.
 
-Cependant, la recharge des véhicules électriques relève encore une fois du
-domaine purement électrotechnique. Le cas métier de la gestion d'une flotte de
+{\color{red}{Cependant}}, la recharge des véhicules électriques relève encore une fois du
+domaine purement électrotechnique. {\color{red}{tu repetes ce que tu as dit 2 phrases avant}}Le cas métier de la gestion d'une flotte de
 véhicules électrique a l'avantage de toucher l'ensemble de l'entreprise~: du
 gestionnaire de la flotte, à l'agent qui utilise le véhicules pour sa tournée,
-en passant même par le responsable des tournées. De plus, même s'il s'agit d'un
-projet de R\&D, celui-ci a abouti à une implémentation testée sur une petite
+en passant même par le responsable des tournées. De plus, {\color{red}{même s'il s'agit d'un
+projet de R\&D}}, celui-ci a abouti à une implémentation testée sur une petite
 agence de La Poste, contrairement à au projet R\&D pour la régulation de
 tension qui se limite à la simulation.
 
 Les documents de spécification du projet de gestion d'une flotte de véhicules
-sont pour l'essentiel textuels. Cependant, des \textit{slides} de présentation
+sont pour l'essentiel textuels. Cependant, des \textit{slides} {\color{red}{annexes}} de présentation
 détaillent (1)~les blocs fonctionnels principaux et leur décompositions en
 fonctions (2)~les flux d'information entre ces blocs (3)~les équipes chargées
 de les implémenter. Cette présentation illustre l'importance pour les équipes
-de projet d'établir des liens claires, d'une part entre les aspects «~donnée~»
-et «~trainement~», et d'autre part entre la vue fonctionnelle et la vue
+de projet d'établir des liens clairs, d'une part entre les aspects «~donnée~»
+et «~traitement~», et d'autre part entre la vue fonctionnelle et la vue
 applicative.
 
 Cependant, le support de présentation n'étant pas auto-portant, un entretien
 avec la chef de projet et avec d'autres membres de l'équipe a été nécessaire
 pour connaitre les objectifs métier du projet car ces derniers ne sont pas
-explicités sur les supports de présentation. Il s'avèrent que l'objectif métier
+explicités sur les supports de présentation. Il s'avère que l'objectif métier
 était d'obtenir le meilleur retour sur investissement
 (ROI\footnote{\textit{Return On Investment}}) possible de l'intégration de
 véhicules électriques dans la flotte de l'entreprise.
@@ -751,7 +694,7 @@ une voiture thermique qui leur est attribuée sur l'année de manière à ce qu'
 puissent garder leurs équipements de travail dans le véhicule. Or avec les
 contraintes d'autonomie associées à l'usage de véhicules électriques,
 l'affectation d'un véhicule à un agent dépend de la distance de sa tournée,
-l'obligeant ainsi à constamment déplacer son matériel et altérant ses
+l'obligeant ainsi à constamment déplacer son matériel et détériorant ses
 conditions de travail.
 
 \subsection{Identification des concepts}
@@ -995,16 +938,6 @@ conditions de travail.
     La figure~\ref{fig:vue_aspect} illustre la partie du métamodèle dédiée à la représentation globale d'une architecture
     d'entreprise. Comme nous  
 
-\begin{figure}[!ht]
-    \begin{center}
-    \includegraphics[trim= 0cm 14cm 0cm 0cm, width=1\textwidth]{figures/4_demarche/ea3m.pdf}
-    \end{center}
-    \caption{Partie du métamodèle concernant la struture globale d'une architecture d'entreprise} \label{fig:ea3m}
-\end{figure}
-
-
-
-
 
 L'aspect «~\textit{information}~» permet d'avoir un
 modèle explicite des données utilisées dans chacune des vues métier,
@@ -1036,17 +969,17 @@ les modules applicatifs. \end{itemize}
 \end{figure}
 
 De plus, nous modélisons le comportement de chaque vue dans l'aspect
-«~\textit{processus}~». Ainsi nous retrouvons~:
+«~\textit{processus}~».{\color{red}{??}} Ainsi nous retrouvons~:
 
 \begin{itemize}
     \item \textbf{L'aspect processus du point de vue métier}
 
  Cet aspect correspond aux processus métier de l'entreprise, décrits en
 utilisant les concepts métier, sans référence aux détails d'implémentation. Nous
-préconisons l'utilisation de formalismes standard pour la modélisation de
-processus métier qui soient exécutables, tels que les diagrammes d'activité fUML
-ou les diagrammes BPMN dans une perspective de simulation. Des langages
-spécifiques à un domaine (DSML) peuvent également être utilisés~;
+préconisons l'utilisation de formalismes standards pour la modélisation de
+processus métier qui soient exécutables, tels que les diagrammes d'activité \gls{fuml} 
+ou les diagrammes \gls{bpmn} dans une perspective de simulation. Des langages
+spécifiques à un domaine (\gls{dsml}) peuvent également être utilisés~;
 
     \item \textbf{L'aspect processus d'un point de vue fonctionnel}
 
@@ -1060,7 +993,7 @@ interne. Dans chaque bloc fonctionnel, on retrouve les opérations correspondant
 
     \item \textbf{L'aspect processus du point de vue applicatif}
 
- Cet aspect décrit les modules logiciels qui implantent les blocs
+Cet aspect décrit les modules logiciels qui {\color{red}{implantent}} les blocs
 fonctionnels ainsi que leur orchestration en processus applicatifs. Dans un
 premier temps, il est conseillé de dresser un inventaire de l'existant
 applicatif et d'en extraire les modules capables de réaliser les opérations des
@@ -1069,7 +1002,7 @@ répondre au besoin des nouveaux processus métier, l'architecte technique fait
 le choix des nouveaux composants applicatifs à mettre en place. En plus
 d'identifier les composants applicatifs existants ou à développer, l'architecte
 applicatif spécifie leurs interconnexions tels que échange de messages,
-synchronisation de données, transfert de fichiers périodique.
+synchronisation de données, transfert de fichiers périodique. {\color{red}{etc.?}}
 
 \end{itemize}
 
@@ -1080,33 +1013,19 @@ une traçabilité d'une entre les processus modélisés et les objectifs qu'ils 
 censés remplir. D'autre part, il permet de décliner les objectifs métier en
 objectifs applicatifs, et les objectifs applicatifs en objectifs fonctionnels.
 Comme nos travaux adoptent l'école de pensée «~Architecture du Système
-Entreprise~», nous souhaitons évaluer non seulement la composante SI mais
-l'ensemble de l'entreprise dont la stratégie. L'aspect objectif est un moyen de
+Entreprise~», nous souhaitons évaluer non seulement la composante SI mais également
+l'ensemble de l'entreprise {\color{red}{dont la stratégie}}. L'aspect objectif est un moyen de
 modéliser explicitement la stratégie de l'entreprise, traduite en un ensemble
-cohérent d'objectifs métier et ce pour évaluer la capacité des processus mis en
+cohérent d'objectifs métier {\color{red}{et ce pour évaluer la capacité des processus mis en
 place à y répondre et pour évaluer la stratégie elle-même par rapport à la
-réalité de l'entreprise.
-
-
-
+réalité de l'entreprise.}}
 
     \subsubsection{Vue Intégration}
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
 \section[Le framework ExecuteEA]{Le \emph{framework} \emph{ExecuteEA}}
+\label{sec:executeea}
 
     \subsection{Approche conceptuelle}
     Nous étendons
@@ -1165,25 +1084,25 @@ par Kurpjuweit et Winter \cite{kurpjuweit2007viewpoint}.
         \subsubsection{Analyse du comportement : simulation dirigée par les processus
 métier}
 
-Pour simuler le comportement d'une entreprise nous nous appuyant sur les modèles
+Pour simuler le comportement d'une entreprise nous nous appuyons sur les modèles
 d'architecture d'entreprise préalablement définis par les différentes parties
-prenantes. L'EA permettent de capturer l'essentiel des composants d'une
-entreprise sous forme d'abstraction. Une approche par points de vue guide la
+prenantes. L'EA permet de capturer l'essentiel des composants d'une
+entreprise {\color{red}{sous forme d'abstraction}}. Une approche par points de vue guide la
 décomposition d'une entreprise en vues pertinentes pour les différents acteurs.
 Ces vues apportent une aide supplémentaire à la définition du périmètre des
 modèles de simulation. La vue intégration permet en particulier de définir les
 liens entres les différentes vues, donc entre les différents modèles de
 simulation et de garantir la cohérence et donc la pertinence de la simulation.
 Comme les modèles de simulation sont directement dérivés de l'architecture
-d'entreprise telle qu'elle est définie par les parties prenantes, elle est
-d'autant plus facile à appréhender à comprendre. Ces derniers peuvent aussi
+d'entreprise telle qu'elle est définie par les parties prenantes, {\color{red}{elle}} est
+d'autant plus facile {\color{red}{à appréhender à comprendre}}. Ces derniers peuvent aussi
 aisément communiquer et échanger autour des résultats de la simulation.
 
 Les modèles d'entreprise doivent offrir un niveau d'abstraction suffisant à la
 compréhension, l'analyse et la communication. Les modèles doivent donc permettre
-d'abstraire les détails techniques et les nombreuses interconnexions tout en
+d'abstraire les détails techniques et les nombreuses interconnexions {\color{red}{entre quoi et quoi?}} tout en
 garantissant la traçabilité et la cohérence de l'ensemble de l'architecture.
-Notre approche consiste donc de mettre en lumière les composants et les
+Notre approche consiste donc à mettre en lumière les composants et les
 relations qui sont critiques pour le comportement de l'ensemble de
 l'architecture. En effet, modéliser l'architecture d'une entreprise revient à la
 modélisation de systèmes complexes. Herbert Simon \cite{simon1990prediction}
@@ -1194,9 +1113,9 @@ la manière la plus effective d'adresser des systèmes complexes.
 La simulation des processus métier est souvent réduite à de la simple animation
 visuelle de diagrammes pour vérifier l'orchestration des taches métier. Nous
 proposons de piloter la simulation du comportement de l'architecture par le
-processus métier. Dans ce cas, le calcul d'une valeur ne se fait pas au niveau
+processus métier. {\color{red}{Dans ce cas}}, le calcul d'une valeur ne se fait pas au niveau
 de la tache métier mais du module applicatif qui l'implémente. Le processus
-métier est modélisé sous forme de diagrammes d'activité fUML. Dans ce cas les
+métier est modélisé sous forme de diagrammes d'activité fUML. {\color{red}{Dans ce cas}} les
 simulations du comportement de l'architecture d'entreprise est pilotée par les
 processus métier qui sont alors responsable d'orchestrer l'ensemble des modèles
 comme l'illustre la figure \ref{fig:Simulation_Approche}. La simulation est
