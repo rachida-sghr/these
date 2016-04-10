@@ -64,6 +64,9 @@
 \input{glossaire}
 \makeglossaries
 
+% quote French 
+\newcommand{\q}[1]{«~#1~»}
+
 \begin{document}
     % ===========================================
     % Partial TOCs
@@ -108,6 +111,10 @@
     % \section*{Remerciements}
     \setcounter{tocdepth}{3}
     \tableofcontents
+    \clearpage
+    \listoffigures
+    \listoftables
+    \clearpage
     \mainmatter
 
     \setcounter{tocdepth}{2}
@@ -116,9 +123,9 @@
     \include{2_etat_de_l_art_EA}
     \include{3_etat_de_l_art_IDM}
     \part[Contribution — EA2M : une approche unificatrice par les modèles]{Contribution — EA2M \\ une approche unificatrice \\par les modèles}
-	\include{4_proposition}
-	\include{5_implementation}
-	\include{6_methodologie}
+    \include{4_proposition}
+    \include{5_implementation}
+    \include{6_methodologie}
     
     \appendix
     \include{annexe1}

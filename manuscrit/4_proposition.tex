@@ -1,5 +1,5 @@
 %!TEX  root = main.tex
-\chapter{Le \emph{framework} \emph{ExcuteEA} }
+\chapter{Le \emph{framework} \emph{ExecuteEA} }
 \label{ch:proposition}
 
 \PartialToc
@@ -135,7 +135,7 @@ l'architecture d'entreprise comme expliqué dans la section suivante.
 L'analyse de la structure et du comportement de l'entreprise permet d'acquérir
 une connaissance plus approfondie de l'ensemble de l'architecture. L'analyse des
 composants de l'entreprise est limitée par la manière dont ces composants sont
-représentés, c'est à dire sous la forme de documentation. Comme ce type de
+représentés, c'est-à-dire sous la forme de documentation. Comme ce type de
 représentation ne permet pas l'automatisation de l'analyse, dans la pratique,
 les choix d'architecture reposent entièrement sur le bon sens, l'expérience et
 l'expertise de l'architecte d'entreprise. Comme pour la documentation, l'analyse
@@ -698,8 +698,9 @@ l'obligeant ainsi à constamment déplacer son matériel et détériorant ses
 conditions de travail.
 
 \subsection{Identification des concepts}
+    \label{sec:conceptualisation}
 
-    Un métamodèle est un modèle du langage de modélisation qui sert à décrire les modèle.
+    Un métamodèle est un modèle du langage de modélisation qui sert à décrire les modèles.
     Or l'activité de modélisation est guidée par l’intention du modélisateur.
     Par conséquent, il convient de définir clairement nos intentions de modélisation
     avant de caractériser les concepts retenus pour le métamodèle EA2M.
@@ -867,13 +868,14 @@ conditions de travail.
     à l'esprit la possibilité de l'utiliser dans différents contextes et pas seulement pour les Smart Grids.
 
     \subsection{Éléments de base et cohérence \emph{intra-vue}}
+    \label{sec:intravue}
 
     L'identification des concepts met en évidence les éléments de base nécessaires à la modélisation d'une
-    architecture d'entreprise~: Information, Action et Objectif. Ces trois entités élémentaires permettent de décrire
-    le contenu de chacune des vues d’architecture (métier, fonctionnelle etapplicative).
+    architecture d'entreprise~: «~Information~», «~Action~» et «~Objectif~». Ces trois entités élémentaires permettent de décrire
+    le contenu de chacune des vues d’architecture (métier, fonctionnelle et applicative).
     La figure~\ref{fig:core_concepts} illustre, sous la forme d'un diagramme de 
     classes, la partie\footnote{Nous fournissons des sous-parties du métamodèle pour des raisons de
-    lisibilité} la partie du métamodèle EA2M dédiée à la représentation de ces éléments.
+    lisibilité} du métamodèle EA2M dédiée à la représentation de ces éléments.
 
     \begin{figure}[!ht]
     \begin{center}
@@ -885,58 +887,97 @@ conditions de travail.
 
     EA2M n'a pas pour objectif la modélisation extensive des artefacts d'architecture mais se focalise sur
     l'abstraction des artefacts d'architecture à leur plus petit dénominateur commun pour pouvoir raisonner non plus
-    sur la sémantique des éléments mais sur leurs cohérences en termes de relations. Par exemple, l'architecte métier 
-    peut décrire des procédures composées de processus, eux-mêmes composés d'activité. L'action peut aussi bien
-    être utilisée pour décrire des procédures, des processus, des activités du moment que ce sont des entités ayant
-    des comportements. Il suffit de se placer à la bonne échelle mais le concept d'action reste valable. Certains auteurs
-    évoquent des systèmes à structure fractale les systèmes obéissant à ce principe.
+    sur la sémantique des éléments mais sur leur cohérence en termes de relations d'interdépendance. Par exemple, l'architecte métier 
+    peut décrire des procédures composées de processus, eux-mêmes composés d'activités Le concept d'action peut aussi bien
+    être utilisé pour décrire des procédures, des processus, des activités du moment qu'il s'agisse d'un élément d'architecture muni
+    de comportement. Il suffit de se placer à la bonne échelle mais le concept d'action reste valable. Certains auteurs
+    qualifient les systèmes obéissant à ce principe de systèmes à structure fractale~\cite{arsanjani2004service}.
 
     L'intérêt du métamodèle est de décrire la structure d'une architecture tout en maintenant une cohérence interne
     à chaque vue. Comme expliqué dans la section précédente, cette cohérence passe par la modélisation explicite
     de chaque entité afin de créer des liens de traçabilité indépendamment de l’exécution des processus.
     Par exemple, le fait de modéliser toutes les informations indépendamment des actions et de créer ensuite 
     des liens de traçabilité entre chaque action et les informations qu'elles utilisent permet de vérifier la compatibilité
-    entre l'action et l'information qu'elle utilise avant même d'exécuter le processus. Ainsi, si une action déclenche une autre
-    action, il faut l'information à la sortie de la première sont compatible avec ce que attend l'action déclenchée 
-    comme information en entrée. Les liens de traçabilité «~déclenche~» et «~utilise~» permette ainsi de garantir
+    entre l'action et les informations impliquées, avant même d'exécuter le processus. Ainsi, si une action déclenche une autre
+    action, il faut que l'information à la sortie de la première action soit compatible avec l'entrée de l'action déclenchée.
+    En ce sens, les liens de traçabilité «~déclenche~» et «~utilise~»  garantissent
     une bonne orchestration des processus.
 
-    Relier chaque action aux objectifs qu'elle «~remplit~» permet d'atteindre efficacement ces objectifs et de suivre l’évolution
+    La relation «~remplit~» permet de relier chaque action à ses objectifs et donne ainsi la possibilité 
+    de suivre efficacement l’évolution
     de l'architecture au regard des objectifs définis. L'exploitation des liens de traçabilité entre actions et objectifs
-    permet (1) détecter les actions redondantes en termes d'objectif (2) déterminer les actions affectée par un changement
-    d'objectif et par transition (via les liens entre action information) et action les informations à reconsidérées suite à ce
-    changement (2) inversement, identifier les objectifs atteint par une évolution d'une action ou l'altération d'une information.
+    permet de (1) détecter les actions redondantes en termes d'objectif (2) déterminer les actions (et par transitivité 
+    les informations) impactées par un changement d'objectif (3) et inversement, identifier les objectifs atteint
+    par une évolution d'une action ou l'altération d'une information.
 
-    La figure représente une  partie du métamodèle où sont représentés les concepts identifiés dans la parties précédentes
-    pour chacune des vues d'architecture. Les éléments de base que sont Action, Information et Objectif permettent
-    d’abstraire ces concepts à savoir~:
+    La figure~\ref{fig:core_concepts_vue} illustre la partie du métamodèle consacrée 
+    à la déclinaison des éléments de base (Action, Information, Objectif) en concepts spécialisés
+    pour chacune des vues d'architecture (métier, fonctionnelle et applicative).
+    Ces concepts ont d'abord été identifiés lors de l'analyse du domaine (voir section~\ref{sec:conceptualisation}), ainsi~:
     \begin{itemize}
-    \item Concept, Type et Format héritent de Information~;
-    \item Tâche, Fonction et Module héritent de Action~;
-    \item Objectif\_Métier, Objectif\_Fonctionnel et Objectif\_Applicatif héritent de Objectif.
+    \item \q{Concept}, \q{Type} et \q{Format} héritent de \q{Information}~;
+    \item \q{Tâche}, \q{Fonction} et \q{Module} héritent de \q{Action}~;
+    \item \q{Objectif\_Métier}, \q{Objectif\_Fonctionnel} et \q{Objectif\_Applicatif} héritent de \q{Objectif}.
     \end{itemize}
+
+    D'une part, les éléments de base du métamodèle nous ont amené à identifier la notion
+    d'\textbf{aspect} d'une vue. Un aspect d'une vue est un sous-ensemble d'une vue dédié à la modélisation d'informations, d'actions
+    ou encore d'objectifs.
+    D'autre part, l'identification de relations entre les éléments de base nous a conduit à introduire une nouvelle vue~:
+    la vue \textbf{intégration}. La vue intégration est dédiée à la modélisation des liens de traçabilité entre les éléments de base
+    –~information, action et objectif~— à l'intérieur d'une même vue. 
+
+    En ce sens, la vue intégration explicite les liens de \textbf{cohérence intra-vue},
+    autrement dit, les liens de cohérence entre les aspects d'une même vue.
+    Les notions de vue et d'aspect relèvent de la structure globale d'une architecture d'entreprise que
+    nous détaillons dans la partie suivante.
 
     \begin{figure}[!ht]
         \begin{center}
     \includegraphics[trim= 0cm 20cm 0cm 0cm, width=1\textwidth]{figures/4_demarche/core_concept_vues.pdf}
         \end{center}
         \caption{Partie du métamodèle concernant la déclinaison des entités de base sur les vues métier, fonctionnelle et applicative} 
-        \label{fig:core_concepts}
+        \label{fig:core_concepts_vue}
     \end{figure}
 
-    Ces éléments de base et leurs liens de cohérence nous ont amené à identifier la notions d'\textbf{aspect} d'une vue
-    et d'introduire une nouvelle vue qui est la vue \textbf{intégration}.
-    Un aspect représente une partie d'une vue dédiée à la modélisation d'informations ou de processus
-    ou encore d'objectifs. 
-    La vue intégration est dédiée à la modélisation des liens de traçabilité entre les éléments de base –~information,
-    action, objectif~— à l'intérieur d'une même vue~: la vue intégration modélise ainsi la \textbf{cohérence intra-vue}
-    ou encore les liens de cohérence entre les aspects d'une même vue.
-    Les notions de vue et d'aspect relève de la structure globale de l'architecture que nous présentons dans la partie suivante.
+Dans la partie précédente, nous présentons les éléments constitutifs à chaque vue et leurs liens de cohérence.
 
-    \subsection{Structure globale du métamodèle}
 
-    La figure~\ref{fig:vue_aspect} illustre la partie du métamodèle dédiée à la représentation globale d'une architecture
-    d'entreprise. Comme nous  
+    \subsection{Structure globale et cohérence \emph{inter-vue}}
+
+    La figure~\ref{fig:vue_aspect} illustre la partie du métamodèle dédiée à la représentation de la structure globale d'une architecture
+    d'entreprise. Dans le métamodèle une vue peut être spécialisée en vue \q{Métier}, \q{Fonctionnelle} et \q{Applicative}. 
+    Dans cette thèse, nous avons
+    uniquement abordé ces trois vues tout en gardant à l'esprit la nécessité d'étendre le métamodèle la vue technique à laquelle mécanisme
+    d'héritage se prête bien. Chaque vue est composée de trois aspect : \q{Information}, \q{Processus} et \q{Objectif}. 
+
+L'aspect \q{Information} permet d'avoir un
+modèle explicite des données utilisées dans chacune des vues~:
+
+\begin{itemize} 
+
+\item \textbf{aspect information du point de vue métier}
+
+Cet aspect établit le modèle de données métier en regroupant les
+concepts métier manipulés par le processus métier. Ce modèle est peu sujet au
+changement, sauf évolution importante des pratiques métier~;
+% Il est aussi à
+% l'origine du découpage en bloc par entité métier de la vue fonctionnelle~;
+
+\item \textbf{aspect information du point de vue fonctionnel}
+
+Cet aspect établit le modèle de données fonctionnelles en regroupant les types des
+données utilisées par les blocs fonctionnels nécessaires à la réalisation de
+processus métier~;
+% Elle décrit leurs caractéristiques et leurs relations sous
+% forme de diagrammes de classes par exemple
+
+\item \textbf{aspect information du point de vue applicatif}
+
+Cet aspect établit le modèle de données applicatives en regroupant les formats de données
+compatibles avec les modules applicatifs.
+
+\end{itemize}
 
 \begin{figure}[!ht]
     \begin{center}
@@ -945,135 +986,170 @@ conditions de travail.
     \caption{Partie du métamodèle concernant la struture globale d'une architecture d'entreprise} \label{fig:ea3m}
 \end{figure}
 
-L'aspect «~\textit{information}~» permet d'avoir un
-modèle explicite des données utilisées dans chacune des vues métier,
-fonctionnelle et applicative : \begin{itemize} \item \textbf{L'aspect
-information du point de vue métier}
-
- Cet aspect établit le modèle de données métier qui décrit les objets ou
-concepts métier manipulés par le processus métier. Ce modèle est peu sujet au
-changement, sauf évolution importante des pratiques métier. Il est aussi à
-l'origine du découpage en bloc par entité métier de la vue fonctionnelle~; \item
-\textbf{L'aspect information du point de vue fonctionnel}
-
-Cet aspect établit le modèle de données fonctionnelles qui donne le type des
-données utilisées par les blocs fonctionnels nécessaires à la réalisation de
-processus métier. Elle décrit leurs caractéristiques et leurs relations sous
-forme de diagrammes de classes par exemple~;
-
-    \item \textbf{L'aspect information du point de vue applicatif}
-
-Cet aspect établit le modèle de données applicatives qui dépend fortement
-des applications choisies : il décrit les formats de données compatibles avec
-les modules applicatifs. \end{itemize}
-
-\begin{figure}[!ht]
-    \begin{center}
-    \includegraphics[trim= 0cm 3cm 0cm 0cm, width=1\textwidth]{figures/4_demarche/vue_aspect.pdf}
-    \end{center}
-    \caption{Points de vue et aspects utilisés} \label{fig:vue_aspect}
-\end{figure}
 
 De plus, nous modélisons le comportement de chaque vue dans l'aspect
-«~\textit{processus}~». Ainsi nous retrouvons~:
+\q{Processus} où un processus est constitué d'un enchaînement d'actions~:
 
 \begin{itemize}
-    \item \textbf{L'aspect processus du point de vue métier}
 
- Cet aspect correspond aux processus métier de l'entreprise, décrits en
-utilisant les concepts métier, sans référence aux détails d'implémentation. Nous
-préconisons l'utilisation de formalismes standards pour la modélisation de
-processus métier qui soient exécutables, tels que les diagrammes d'activité \gls{fuml} 
-ou les diagrammes \gls{bpmn} dans une perspective de simulation. Des langages
-spécifiques à un domaine (\gls{dsml}) peuvent également être utilisés~;
+    \item \textbf{aspect processus du point de vue métier}
 
-    \item \textbf{L'aspect processus d'un point de vue fonctionnel}
+Cet aspect correspond aux processus métier de l'entreprise, décrits en termes
+d’enchaînement de \q{Tâches} sans faire référence aux détails d'implémentation~;
 
- Cet aspect décrit les fonctions qui réalisent les processus métier ainsi que
-leur orchestration en tant que processus fonctionnels. Ces fonctions sont
-regroupées en blocs. Chaque objet métier identifié dans l'aspect Information de
-la vue métier correspond à un unique bloc fonctionnel. Ceci garantit la
-construction de blocs fonctionnels fortement décorrélés, avec une forte cohésion
-interne. Dans chaque bloc fonctionnel, on retrouve les opérations correspondant
-à une tâche donnée du processus qui impacte l'objet métier impliqué~;
+    \item \textbf{aspect processus d'un point de vue fonctionnel}
 
-    \item \textbf{L'aspect processus du point de vue applicatif}
+Cet aspect correspond au processus fonctionnels de l'entreprise, décrit en termes
+d'enchaînement de \q{Fonctions}~;
+% qui réalisent les processus métier ainsi que
+% leur orchestration en tant que processus fonctionnels. Ces fonctions sont
+% regroupées en blocs. Chaque objet métier identifié dans l'aspect Information de
+% la vue métier correspond à un unique bloc fonctionnel. Ceci garantit la
+% construction de blocs fonctionnels fortement décorrélés, avec une forte cohésion
+% interne. Dans chaque bloc fonctionnel, on retrouve les opérations correspondant
+% à une tâche donnée du processus qui impacte l'objet métier impliqué~;
 
-Cet aspect décrit les modules logiciels qui implémentent les blocs
-fonctionnels ainsi que leur orchestration en processus applicatifs. Dans un
-premier temps, il est conseillé de dresser un inventaire de l'existant
-applicatif et d'en extraire les modules capables de réaliser les opérations des
-blocs fonctionnels. Ensuite, si aucune application ou module existant ne peut
-répondre au besoin des nouveaux processus métier, l'architecte technique fait
-le choix des nouveaux composants applicatifs à mettre en place. En plus
-d'identifier les composants applicatifs existants ou à développer, l'architecte
-applicatif spécifie leurs interconnexions tels que échange de messages,
-synchronisation de données, transfert de fichiers périodique.
+    \item \textbf{aspect processus du point de vue applicatif}
+
+Cet aspect correspond au processus applicatifs de l'entreprise, décrit en termes
+d'enchaînement de \q{Modules}.
+% Cet aspect décrit les modules logiciels qui implémentent les blocs
+% fonctionnels ainsi que leur orchestration en processus applicatifs. Dans un
+% premier temps, il est conseillé de dresser un inventaire de l'existant
+% applicatif et d'en extraire les modules capables de réaliser les opérations des
+% blocs fonctionnels. Ensuite, si aucune application ou module existant ne peut
+% répondre au besoin des nouveaux processus métier, l'architecte technique fait
+% le choix des nouveaux composants applicatifs à mettre en place. En plus
+% d'identifier les composants applicatifs existants ou à développer, l'architecte
+% applicatif spécifie leurs interconnexions tels que échange de messages,
+% synchronisation de données, transfert de fichiers périodique.
 
 \end{itemize}
 
-Nous étendons chacune des vues par l'aspect «~\textit{objectif}~». Cet aspect
-correspond au «~\textit{pourquoi}~» du cadre Zachman qui spécifie les
-motivations de l'architecture. D'une part, modéliser cet aspect permet de garder
-une traçabilité d'une entre les processus modélisés et les objectifs qu'ils sont
-censés remplir. D'autre part, il permet de décliner les objectifs métier en
-objectifs applicatifs, et les objectifs applicatifs en objectifs fonctionnels.
-Comme nos travaux adoptent l'école de pensée «~Architecture du Système
-Entreprise~», nous souhaitons évaluer non seulement la composante SI mais également
-l'ensemble de l'entreprise. L'aspect objectif est un moyen de
-modéliser explicitement la stratégie de l'entreprise, traduite en un ensemble
-cohérent d'objectifs métier et ce pour évaluer la capacité des processus mis en
-place à y répondre et pour évaluer la stratégie elle-même par rapport à la
-réalité de l'entreprise.
+De plus, nous étendons chacune des vues par l'aspect \q{Objectif}~: 
+\begin{itemize}
 
-    \subsubsection{Vue Intégration}
-    L'alignement et la cohérence sont des problématiques centrales en EA
-\cite{kaisler_enterprise_2005}. Notre contribution essentielle est de dédier un
-point de vue spécifique pour adresser ce type de problématique~:~le
-\textbf{point de vue intégration} illustré par la figure
-\ref{fig:vue_integration}. Ce point de vue définit un \textit{mapping}
-d'alignement en spécifiant (1)~les entités à aligner, (2)~les liens de cohérence
-entre ces éléments et (3) les transformations de modèles nécessaires au
-raffinement des ces entités. Les transformations de modèles facilitent et
-automatisent les passages d'une vue à l'autre. Ce point de vue permet une
-intégration «~IntraVue~» et «~InterVues~» (entres les aspects d'une seule vue).
-La figure \ref{fig:metamodele_framework} donne un métamodèle de notre framework
-en explicitant les concepts abordés et leurs relations.
+    \item \textbf{aspect objectif du point de vue métier}
 
-\begin{figure}[!ht]
- \begin{center}
- \includegraphics[trim= 3cm 3cm 0cm 0cm, width=1\textwidth]{figures/4_demarche/vue_integration.pdf}
- \end{center}
- \caption{Framework proposé avec la vue Intégration} \label{fig:vue_integration}
+Cet aspect regroupe les motivations métier pilotant les processus métier et modélisés
+par la classe  \q{Objectif\_métier}~;
+
+    \item \textbf{aspect objectif du point de vue fonctionnelle}
+
+Cet aspect regroupe les motivations fonctionnelles pilotant les processus fonctionnels
+et modélisés par la classe  \q{Objectif\_fonctionnel}~;
+
+    \item \textbf{aspect objectif du point de vue applicative}
+
+Cet aspect regroupe les motivations applicatives pilotant les processus applicatifs
+et modélisés par la classe  \q{Objectif\_applicatif}.
+
+\end{itemize}
+
+% D'une part, modéliser cet aspect permet de garder
+% une traçabilité d'une entre les processus modélisés et les objectifs qu'ils sont
+% censés remplir. D'autre part, il permet de décliner les objectifs métier en
+% objectifs applicatifs, et les objectifs applicatifs en objectifs fonctionnels.
+% Comme nos travaux adoptent l'école de pensée «~Architecture du Système
+% Entreprise~», nous souhaitons évaluer non seulement la composante SI mais également
+% l'ensemble de l'entreprise. L'aspect objectif est un moyen de
+% modéliser explicitement la stratégie de l'entreprise, traduite en un ensemble
+% cohérent d'objectifs métier et ce pour évaluer la capacité des processus mis en
+% place à y répondre et pour évaluer la stratégie elle-même par rapport à la
+% réalité de l'entreprise.
+
+La préoccupation majeure de l'EA réside dans l'alignement métier/IT \cite{kaisler_enterprise_2005},
+c'est-à-dire l'alignement d'un même aspect entre deux vues d'architecture différentes.
+Nous proposons est d'y dédier une vue spécifique~: la vue intégration.
+Ainsi, en plus d'expliciter les liens de cohérence à l'intérieure d'une même vue
+à travers la classe \q{IntraVue} abordée dans la section
+~\ref{sec:intravue}, la vue intégration permet de modéliser les liens de traçabilité
+entre des éléments relatifs à un même aspect et appartenant à des vues différentes en spécifiant les relations de
+raffinement à travers la classe \q{InterVues} du métamodèle.
+ 
+ La figure~\ref{fig:metamodele_vue_integration} illustre la partie du métamodèle dédiée à la vue intégration.
+ En plus des liens de cohérence intra-vue, nous y modélisons les liens de cohérence
+ inter-vues à travers la relation \q{raffine}. Ainsi, une tâche est raffinée par une ou
+ plusieurs fonctions qui la réalisent, elles-mêmes raffinées par un ou plusieurs modules applicatifs
+ qui les implémentent. De même, un objectif métier est raffiné par un ou plusieurs objectifs fonctionnels,
+ eux-mêmes raffinés par un ou plusieurs objectifs applicatifs. De manière analogue, un concept métier est raffiné
+ par un ou plusieurs types fonctionnels, eux-mêmes raffinés par un ou plusieurs formats applicatifs.
+
+\begin{figure}[!ht] \begin{center}
+    \includegraphics[trim= 0cm 18cm 0cm 0cm, width=1\textwidth]{figures/4_demarche/metamodele_vue_integration.pdf}
+    \end{center}
+    \caption{Métamodèle de la vue intégration}
+    \label{fig:metamodele_vue_integration}
 \end{figure}
 
-L'intégration inter-vues décrit les relations entre les vues (sauf la vue
-intégration). La vue intégration est donc transverse à toutes les autres vues et
-permet de modéliser explicitement les notions de raffinement à travers la classe
-«~InterVues~» (voir figure \ref{fig:metamodele_framework}), tant pour les
-aspects \emph{processus} et \textit{information} que sur les aspects
-\emph{objectif}.
+% \begin{figure}[!ht]
+%  \begin{center}
+%  \includegraphics[trim= 3cm 3cm 0cm 0cm, width=1\textwidth]{figures/4_demarche/vue_integration.pdf}
+%  \end{center}
+%  \caption{Framework proposé avec la vue Intégration} \label{fig:vue_integration}
+% \end{figure}
 
-\begin{figure}[!ht]
- \begin{center}
- \includegraphics[trim= 0cm 13cm 0cm 2cm, width=1\textwidth]{figures/4_demarche/metamodele_framework.pdf} \end{center}
- \caption{Métamodèle du framework proposé}
- \label{fig:metamodele_framework}
-\end{figure}
 
-Nous donnons le métamodèle de la vue intégration dans la figure
-\ref{fig:metamodele_vue_integration}. Cette vue permet des vérifications
-horizontales à l'intérieur de chacune des vues. En effet, l'association
-«~utilise~» assure donc la compatibilité des données échangées entre les tâches
-d'un processus métier, les fonctions d'un bloc fonctionnel ou entre les modules
-d'une application (voir figure \ref{fig:metamodele_vue_integration}).
-L'association «~rempli par~» hérite aussi de la classe «~IntraVue~» et associe
-explicitement une entité à l'objectif qui lui est assigné. De cette manière, il
-est possible de tracer l'implémentation effective d'une stratégie métier à
-travers l'ensemble de l'entreprise, des entités métier à l'IT.
+Qu'il s’agisse d'une cohérence intra-vue ou inter-vues, la vue intégration définit un \textit{mapping} en spécifiant
+(1)~les entités à aligner, (2)~les liens de cohérence entre ces éléments et (3) des transformations de modèle
+associées à ces liens. Nous identifions plusieurs cas de figures où ces transformations de modèle s'avèrent commodes
+dans le contexte de l'EA dans la section \ref{sec:executeea}. Parmi ces cas de figure nous citons, notamment,
+l'automatisent du passage d'une vue à l'autre en utilisant une transformation de modèle pour générer le code
+d'un module de la vue applicative à partir d'un modèle de fonction de la vue fonctionnel.
 
-La définition d'un métamodèle précis pour le framework permet de plus de
-contrôler la conformité des modèles d'architecture. Ainsi, une entité du modèle
+\section[Le framework ExecuteEA]{Le \emph{framework} \emph{ExecuteEA}}
+\label{sec:executeea}
+    
+
+    Une approche par points de vue est indispensable à l’appréhension des systèmes complexes car elle permet de séparer
+    les préoccupations des parties-prenantes dans des vue distinctes traduisant leurs propres perspectives.
+    De nombreux \emph{frameworks} d'EA adoptent de ce fait une approche par points de vue. Cependant, les différentes préoccupations
+    sont souvent traitées de manière séquentielle et plus ou moins indépendantes comme l'attestent
+    S.~Kurpjuweit et R.~Winter~\cite{kurpjuweit2007viewpoint}.
+
+    Nous proposons donc un \emph{framewok} d'EA permettant de traiter
+    les différentes vues d'architecture de manière intégrée de manière à ce que l'architecture d'entreprise accompagne l'entreprise
+    sur toute sa trajectoire.  Le métamodèle EA2M représente la pierre angulaire de ce \emph{framework}.
+    En effet, la formalisation d'un métamodèle d'EA permet d'unifier les différentes activités d'architecture —~documentation, analyse et conception~— en les inscrivant dans le cadre méthodologique et technologique offert par l'IDM.
+
+    La vision unificatrice de l'IDM a pour \emph{leitmotiv} l'usage systématique de modèles productifs~\cite{2005unification}, c'est-à-dire
+    de modèles \textbf{exécutables} \emph{versus} les modèles purement contemplatifs habituellement utilisés pour mener 
+    pour les différentes activités d'EA~\cite{kulkarni2013modelling}. Nous avons donc choisi la dénomination \emph{Execute Enterprise Architecture} (\emph{ExecuteEA}) pour le \emph{framework} que nous présentons dans cette partie à définir.
+
+
+    % L'IDM prône en effet le recours systématique aux modèles productifs sur toute la chaine de production d'u 
+    % Dans ces travaux de thèse, nous adoptons l'école de pensée \emph{Enterprise System Architecting} telle que définie
+    % par Lapalme~\cite{lapalme2012three} et présenté dans le chapitre~\ref{ch:EA} traitant de l'état de l'art du domaine de l'EA.
+    % De nombreux travaux ont démontré la capacité de l'IDM à traiter la complexité inhérente aux systèmes logicielles dont notamment
+    % ceux de R. France et et B. Rumpe~\cite{france2007model}.
+
+
+   \subsection{Approche conceptuelle}
+
+
+
+
+
+% \begin{figure}[!ht]
+%  \begin{center}
+%  \includegraphics[trim= 0cm 13cm 0cm 2cm, width=1\textwidth]{figures/4_demarche/metamodele_framework.pdf} \end{center}
+%  \caption{Métamodèle du framework proposé}
+%  \label{fig:metamodele_framework}
+% \end{figure}
+
+% Nous donnons le métamodèle de la vue intégration dans la figure
+% \ref{fig:metamodele_vue_integration}. Cette vue permet des vérifications
+% horizontales à l'intérieur de chacune des vues. En effet, l'association
+% «~utilise~» assure donc la compatibilité des données échangées entre les tâches
+% d'un processus métier, les fonctions d'un bloc fonctionnel ou entre les modules
+% d'une application (voir figure \ref{fig:metamodele_vue_integration}).
+% L'association «~rempli par~» hérite aussi de la classe «~IntraVue~» et associe
+% explicitement une entité à l'objectif qui lui est assigné. De cette manière, il
+% est possible de tracer l'implémentation effective d'une stratégie métier à
+% travers l'ensemble de l'entreprise, des entités métier à l'IT.
+
+La formalisation d'un métamodèle pour l'EA permet de plus de
+contrôler la conformité des modèles d'architecture. Une entité du modèle
 (telle qu'une fonction, une tâche du processus métier, un objectif, etc.)
 appartient toujours à deux vues~:~une vue intégration en plus d'une autre vue
 parmi les vues métier, fonctionnelle, applicative et technique. Autre exemple,
@@ -1101,19 +1177,10 @@ l'art actuel des langages de transformation de modèle privilégie l'usage des
 transformations de modèle entre la vue fonctionnelle et et la vue applicative.
 
 
-\begin{figure}[!ht] \begin{center}
-\includegraphics[trim= 0cm 18cm 0cm 0cm, width=1\textwidth]{figures/4_demarche/metamodele_vue_integration.pdf}
-\end{center}
-\caption{Métamodèle de la vue intégration}
-\label{fig:metamodele_vue_integration}
-\end{figure}
 
-\section[Le framework ExecuteEA]{Le \emph{framework} \emph{ExecuteEA}}
-\label{sec:executeea}
 
-    \subsection{Approche conceptuelle}
-    Nous étendons
-cette vision centrée sur les SI à l'ensemble de l'entreprise en adoptant l'école
+ 
+Nous étendons cette vision centrée sur les SI à l'ensemble de l'entreprise en adoptant l'école
 de pensée «~intégrative~» comme décrite par la taxonomie de Lapalme (voir
 section \ref{Lapalme}, page \pageref{Lapalme} de l'état de l'art).
 
@@ -1321,6 +1388,18 @@ métier déjà implémentées dans le SI.
 
 
 
+\begin{figure}[!ht]
+    \begin{center}
+    \includegraphics[trim= 0cm 3cm 0cm 0cm, width=1\textwidth]{figures/4_demarche/vue_aspect.pdf}
+    \end{center}
+    \caption{Points de vue et aspects utilisés} \label{fig:vue_aspect}
+\end{figure}
+
+Nous
+préconisons l'utilisation de formalismes standards pour la modélisation de
+processus métier qui soient exécutables, tels que les diagrammes d'activité \gls{fuml} 
+ou les diagrammes \gls{bpmn} dans une perspective de simulation. Des langages
+spécifiques à un domaine (\gls{dsml}) peuvent également être utilisés~;
 
 
 
