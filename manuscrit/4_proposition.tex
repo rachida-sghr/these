@@ -4,31 +4,13 @@
 
 \PartialToc
 
-Créer des modèles d'architecture d'entreprise permettant d'analyser par
-simulation implique de suivre un processus précis. L'objectif de nos travaux
-est de définir le processus de modélisation et de simulation à adopter, les
-rôles impliqués, les artefacts conceptuels requis, ainsi que les outils et les
-langages adéquats pour mener des analyses de structure et de comportement.
 
-Notre contribution est double. Tout d'abord, nous proposons une démarche de
-modélisation et d'analyse qui s'appuie sur un cadre d'architecture multi-vues.
-Nous dotons ce cadre d'architecture d'une vue supplémentaire qui est la vue
-\textit{intégration}. Cette vue a pour but d'adresser les problématiques de
-cohérence et d'alignement. Ensuite, nous mettons à profit les langages et
-standards de l'IDM permettant de modéliser et de simuler les architectures
-d'entreprise.
-
-% Approche IDM et technologies associées pour l'EA Nécessite une analyse du
-% domaine -> pratique de l'EA en général et SG en particulier
-
-% Dans ce chapitre nous exposons d'abord le bilan de l'état de l'art
-
-% Dans ce chapitre, nous exposons d'abord la démarche IDM adoptée :
-% - analyse du domaine (rétro-ingénierie, analyse de la documentation existante et entretien avec les experts) qui aboutit à l'identification des concepts du métamodèle ExecuteEA
-% - le méta-modèle
-% - une approche de modélisation pour l'EA
-% -> analyse structure
-% -> analyse comportement
+Dans ce chapitre, nous exposons d'abord la démarche IDM adoptée :
+- analyse du domaine (rétro-ingénierie, analyse de la documentation existante et entretien avec les experts) qui aboutit à l'identification des concepts du métamodèle ExecuteEA
+- le méta-modèle
+- une approche de modélisation pour l'EA
+-> analyse structure
+-> analyse comportement
 
 \section[Bilan des pratiques actuelles d'EA et adoption d'une démarche IDM]{Bilan des pratiques actuelles d'Architecture d'Entreprise et adoption d'une démarche d'Ingénierie Dirigée par les Modèles}
 
@@ -295,6 +277,7 @@ l'entreprise.
 
 \subsubsection{Des représentations informelles, hétérogènes et incompatibles avec
 la constante évolution de l'entreprise}
+    \label{sec:roles}
 
 Qu'il s'agisse de la documentation et de la communication, de l'analyse et de
 le compréhension ou de la conception et de l'implémentation, l'EA est limitée
@@ -936,7 +919,7 @@ conditions de travail.
         \begin{center}
     \includegraphics[trim= 0cm 20cm 0cm 0cm, width=1\textwidth]{figures/4_demarche/core_concept_vues.pdf}
         \end{center}
-        \caption{Partie du métamodèle concernant la déclinaison des entités de base sur les vues métier, fonctionnelle et applicative} 
+        \caption{Partie du métamodèle concernant la déclinaison des entités de base\\sur les vues métier, fonctionnelle et applicative} 
         \label{fig:core_concepts_vue}
     \end{figure}
 
@@ -983,7 +966,7 @@ compatibles avec les modules applicatifs.
     \begin{center}
     \includegraphics[trim= 0cm 14cm 0cm 0cm, width=1\textwidth]{figures/4_demarche/ea3m.pdf}
     \end{center}
-    \caption{Partie du métamodèle concernant la struture globale d'une architecture d'entreprise} \label{fig:ea3m}
+    \caption{Partie du métamodèle concernant la struture globale\\d'une architecture d'entreprise} \label{fig:ea3m}
 \end{figure}
 
 
@@ -1082,13 +1065,6 @@ raffinement à travers la classe \q{InterVues} du métamodèle.
     \label{fig:metamodele_vue_integration}
 \end{figure}
 
-% \begin{figure}[!ht]
-%  \begin{center}
-%  \includegraphics[trim= 3cm 3cm 0cm 0cm, width=1\textwidth]{figures/4_demarche/vue_integration.pdf}
-%  \end{center}
-%  \caption{Framework proposé avec la vue Intégration} \label{fig:vue_integration}
-% \end{figure}
-
 
 Qu'il s’agisse d'une cohérence intra-vue ou inter-vues, la vue intégration définit un \textit{mapping} en spécifiant
 (1)~les entités à aligner, (2)~les liens de cohérence entre ces éléments et (3) des transformations de modèle
@@ -1110,11 +1086,16 @@ d'un module de la vue applicative à partir d'un modèle de fonction de la vue f
     Nous proposons donc un \emph{framewok} d'EA permettant de traiter
     les différentes vues d'architecture de manière intégrée de manière à ce que l'architecture d'entreprise accompagne l'entreprise
     sur toute sa trajectoire.  Le métamodèle EA2M représente la pierre angulaire de ce \emph{framework}.
-    En effet, la formalisation d'un métamodèle d'EA permet d'unifier les différentes activités d'architecture —~documentation, analyse et conception~— en les inscrivant dans le cadre méthodologique et technologique offert par l'IDM.
+    Nous recourons à la méta-modélisation pour unifier les différentes activités d'architecture —~documentation, analyse et conception~— en les inscrivant dans le cadre méthodologique et technologique offert par l'IDM.
 
     La vision unificatrice de l'IDM a pour \emph{leitmotiv} l'usage systématique de modèles productifs~\cite{2005unification}, c'est-à-dire
     de modèles \textbf{exécutables} \emph{versus} les modèles purement contemplatifs habituellement utilisés pour mener 
     pour les différentes activités d'EA~\cite{kulkarni2013modelling}. Nous avons donc choisi la dénomination \emph{Execute Enterprise Architecture} (\emph{ExecuteEA}) pour le \emph{framework} que nous présentons dans cette partie à définir.
+
+    Le \emph{framework ExecuteEA} repose sur trois piliers~: (1)~une approche unificatrice pour la modélisation d'architecture d'entreprise,
+    (2)~un cadre structurant orienté points de vue et (3)~l'identification d'un ensemble de langages et de techniques issus de l'IDM
+    et adaptés à l'analyse d'architecture d'entreprise.
+
 
 
     % L'IDM prône en effet le recours systématique aux modèles productifs sur toute la chaine de production d'u 
@@ -1126,6 +1107,98 @@ d'un module de la vue applicative à partir d'un modèle de fonction de la vue f
 
    \subsection{Approche conceptuelle}
 
+Parmi les différentes activités d'EA, nous avons choisi de focaliser nos travaux de thèse sur l'activité
+d'analyse et ce pour plusieurs raisons.
+
+D'abord, l'analyse fait partie des activités les moins traitées en EA~\cite{chen2008architectures} \cite{barn2013enterprise},
+quelle qu'en soit l'école de pensée comme relaté dans l'état 
+de l'art concernant l'EA présenté au chapitre~\ref{ch:EA}. Cet état de fait est en partie du
+aux limitations des modèles contemplatifs qui font légion en EA. C'est donc pour l'analyse que les modèles
+exécutables sont le plus valorisés et indispensables.
+
+Ensuite, comme l'illustre la figure~\ref{fig:activite_ea} l'analyse joue un rôle centrale dans une démarche d'EA.
+Le recours les modèles d'analyse peuvent directement servir à documenter l'EA. Il s'agit de modèles qui recourent
+directement aux concepts du domaine de l'EA et qui ne nécessitent donc pas de changer de niveau d'abstraction.
+En IDM, ces modèles sont qualifiés de \emph{problem-level abstration models} \cite{france2007model}.
+
+Enfin, l'analyse de modèles d'architecture est fortement liée à l'activité de conception. Le recours aux modèles
+exécutables pour la conception d'architecture d'entreprise permet de mener des analyses directement sur ces
+même modèles. Dès lors que ces modèles sont validés à l'issue de les activités d'analyse et de conception,
+il devient possible de les utiliser à pour la documentation (en mettant
+automatiquement à jour les anciens modèles d'architecture) et pour l'implémentation (voir figure~\ref{fig:activite_ea}. L'implémentation peut 
+alors se faire par transformation de modèles, en transformant les modèles d'architecture vers la plate-forme cible.
+
+\begin{figure}[!ht] \begin{center}
+    \includegraphics[width=1\textwidth]{figures/4_demarche/activite_ea.pdf}
+    \end{center}
+    \caption{Évolution des modèles d'architecture\\et rôle central de l'activité d'analyse en EA}
+    \label{fig:activite_ea}
+\end{figure}
+
+
+Nous entendons analyser deux aspects distincts mais corrélés d'une architecture
+d'entreprise~: la structure et le comportement de la dite architecture.
+L'analyse de la structure repose essentiellement sur la formalisation du métamodèle EA2M et a pour
+objectif l'intégration des modèles provenant des différentes vues d'architecture pour garantir la cohérence
+globale de l'architecture. L'analyse du comportement de l'architecture repose quant à elle
+essentiellement sur la simulation des modèles issus de l'analyse de la structure.
+Nous le détaillons les activités l'analyse de la structure et du comportement dans la section~\ref{sec:analyse}.
+
+L'approche que nous proposons est illustrée par la figure~\ref{fig:approche_conceptuelle}. Nous proposons un
+processus de modélisation et d'analyse précis en identifiant quatre rôles participant à ce processus~: l'architecte métier,
+l'architecte fonctionnel, l'architecte applicatif et enfin l'architecte d'entreprise. Les trois premiers rôles ont déjà été présentés
+dans la section~\ref{sec:roles}. 
+
+\begin{figure}[!ht]
+ \begin{center}
+ \includegraphics[trim= 0cm 2.5cm 0cm 0cm, width=1\textwidth]{figures/4_demarche/approche_conceptuelle.pdf} \end{center}
+ \caption{Approche conceptuelle du \protect\emph{famework ExecuteEA}}
+ \label{fig:approche_conceptuelle}
+\end{figure}
+
+Le processus commence par la modélisation de la vue métier par l'architecture
+métier. L'architecte fonctionnel traduit la vue métier en vue fonctionnelle 
+en collaborant avec l'architecte
+métier. L'architecte applicatif traduit la vue fonctionnelle en une vue applicative
+tout en collaborant avec l'architecte fonctionnel et par extension avec l'architecte
+métier. Le rôle de l'architecte d'entreprise consiste alors à orchestrer ces
+collaborations.
+
+L'architecture ainsi modélisée est soumise à une analyse
+structurelle menée par l'architecte d'entreprise en étroite collaboration avec
+les architectes des différentes vue. L'architecte d'entreprise est alors
+responsable de la vue intégration qui a pour mission de vérifier la cohérence
+globales des modèles d'architecture. Ainsi intégrés, les modèles sont soumis à
+une analyse comportementale via la simulation.
+L'approche proposée suit un processus itératif. À l'issue de la simulation, l'ensemble des
+architectes valident ou modifient leurs modèles selon les résultats de la simulation et ainsi de
+suite jusqu'à obtenir une architecture satisfaisante pour l'ensemble des parties-prenantes.
+
+L'approche proposée s'inscrit en outre dans un cadre d'architecture qui se repose sur le métamodèle
+EA2M. Ce cadre est illustré par la figure~\ref{fig:vue_integration}.
+
+
+\begin{figure}[!ht]
+ \begin{center}
+ \includegraphics[trim= 0cm 2cm 0cm 0cm, width=1\textwidth]{figures/4_demarche/vue_integration.pdf}
+ \end{center}
+ \caption{Framework proposé avec la vue Intégration}
+ \label{fig:vue_integration}
+\end{figure}
+
+% Créer des modèles d'architecture d'entreprise qui sont appropriés à l'analyse des 
+% modèles d'architecture implique de suivre un processus précis. 
+% L'objectif de nos travaux est de définir le processus de modélisation approprié, les
+% rôles impliqués, les artefacts conceptuels requis, ainsi que les outils et les
+% langages adéquats pour mener des analyses de structure et de comportement.
+
+% Notre contribution est double. Tout d'abord, nous proposons un frune démarche de
+% modélisation et d'analyse qui s'appuie sur un cadre d'architecture multi-vues.
+% Nous dotons ce cadre d'architecture d'une vue supplémentaire qui est la vue
+% \textit{intégration}. Cette vue a pour but d'adresser les problématiques de
+% cohérence et d'alignement. Ensuite, nous mettons à profit les langages et
+% standards de l'IDM permettant de modéliser et de simuler les architectures
+% d'entreprise.
 
 
 
@@ -1180,31 +1253,20 @@ transformations de modèle entre la vue fonctionnelle et et la vue applicative.
 
 
  
-Nous étendons cette vision centrée sur les SI à l'ensemble de l'entreprise en adoptant l'école
-de pensée «~intégrative~» comme décrite par la taxonomie de Lapalme (voir
-section \ref{Lapalme}, page \pageref{Lapalme} de l'état de l'art).
+% Nous étendons cette vision centrée sur les SI à l'ensemble de l'entreprise en adoptant l'école
+% de pensée «~intégrative~» comme décrite par la taxonomie de Lapalme (voir
+% section \ref{Lapalme}, page \pageref{Lapalme} de l'état de l'art).
 
-Nous considérons donc que la documentation et la communication, l'analyse et la
-compréhension et enfin la conception et l'implémentation concernent tout le système entreprise et
-pas seulement sa composante SI. Par exemple, contrairement à une EA centrée sur
-les SI, les processus métier sont modélisés et évalués tout autant que
-l'architecture applicative. La figure \ref{fig:approche_conceptuelle} illustre
-notre approche conceptuelle. Celle-ci fait intervenir plusieurs types d'acteurs
-intervenant à plusieurs niveaux de l'entreprise~: \begin{itemize} \item un
-analyste métier qui conçoit la vue métier à travers la modélisation et
-l'évaluation des processus métier mettant en œuvre la stratégie de
-l'entreprise~; \item un architecte fonctionnel qui traduit les processus métier
-en termes de fonctions logiques~; \item un architecte applicatif qui traduit la
-vue fonctionnelle en un ensemble structuré d'applications implémentant les
-différentes fonctions~; \item un architecte d'entreprise dont la mission est de
-mettre en cohérence l'ensemble des vues. \end{itemize}
+% Nous considérons donc que la documentation et la communication, l'analyse et la
+% compréhension et enfin la conception et l'implémentation concernent tout le système entreprise et
+% pas seulement sa composante SI. Par exemple, contrairement à une EA centrée sur
+% les SI, les processus métier sont modélisés et évalués tout autant que
+% l'architecture applicative. La figure \ref{fig:approche_conceptuelle} illustre
+% notre approche conceptuelle. Celle-ci fait intervenir plusieurs types d'acteurs
+% intervenant à plusieurs niveaux de l'entreprise~: \item un architecte d'entreprise dont la mission est de
+% mettre en cohérence l'ensemble des vues.
 
-\begin{figure}[!ht]
- \begin{center}
- \includegraphics[trim= 0cm 3.5cm 0cm 0cm, width=1\textwidth]{figures/4_demarche/approche_conceptuelle.pdf} \end{center}
- \caption{Approche conceptuelle pour l'analyse d'une architecture d'entreprise}
- \label{fig:approche_conceptuelle}
-\end{figure}
+
 
 L'analyste métier, l'architecte fonctionnel et l'architecte applicatif
 collaborent entre eux et avec l'architecture d'entreprise pendant tout le
@@ -1231,6 +1293,7 @@ par Kurpjuweit et Winter \cite{kurpjuweit2007viewpoint}.
 
 
     \subsection{Analyse de l'architecture d'entreprise}
+    \label{sec:analyse}
 
         \subsubsection{Analyse du comportement : simulation dirigée par les processus
 métier}
