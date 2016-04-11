@@ -1076,21 +1076,24 @@ d'un module de la vue applicative à partir d'un modèle de fonction de la vue f
 \section[Le framework ExecuteEA]{Le \emph{framework} \emph{ExecuteEA}}
 \label{sec:executeea}
     
+    % framework = approche conceptuelle + structure logique (pour organiser et mettre en cohérence les modèles d'architecture  + outils et langages
 
     Une approche par points de vue est indispensable à l’appréhension des systèmes complexes car elle permet de séparer
-    les préoccupations des parties-prenantes dans des vue distinctes traduisant leurs propres perspectives.
+    les préoccupations des parties-prenantesdans des vue distinctes. Chaque vue traduit donc la perspective d'une partie-prenante.
     De nombreux \emph{frameworks} d'EA adoptent de ce fait une approche par points de vue. Cependant, les différentes préoccupations
-    sont souvent traitées de manière séquentielle et plus ou moins indépendantes comme l'attestent
+    sont souvent traitées de manière séquentielle et plus ou moins indépendante des autres vues comme l'attestent
     S.~Kurpjuweit et R.~Winter~\cite{kurpjuweit2007viewpoint}.
 
     Nous proposons donc un \emph{framewok} d'EA permettant de traiter
-    les différentes vues d'architecture de manière intégrée de manière à ce que l'architecture d'entreprise accompagne l'entreprise
+    les différentes vues d'architecture de manière intégrée tout en permettant à l'architecture d'entreprise d'accompagner l'entreprise
     sur toute sa trajectoire.  Le métamodèle EA2M représente la pierre angulaire de ce \emph{framework}.
-    Nous recourons à la méta-modélisation pour unifier les différentes activités d'architecture —~documentation, analyse et conception~— en les inscrivant dans le cadre méthodologique et technologique offert par l'IDM.
+    Nous recourons en effet à la méta-modélisation pour unifier les différentes activités
+    d'architecture —~documentation, analyse et conception~—
+    en les inscrivant dans le cadre méthodologique et technologique offert par l'IDM.
 
     La vision unificatrice de l'IDM a pour \emph{leitmotiv} l'usage systématique de modèles productifs~\cite{2005unification}, c'est-à-dire
     de modèles \textbf{exécutables} \emph{versus} les modèles purement contemplatifs habituellement utilisés pour mener 
-    pour les différentes activités d'EA~\cite{kulkarni2013modelling}. Nous avons donc choisi la dénomination \emph{Execute Enterprise Architecture} (\emph{ExecuteEA}) pour le \emph{framework} que nous présentons dans cette partie à définir.
+    pour les différentes activités d'EA~\cite{kulkarni2013modelling}. Nous avons donc choisi la dénomination \emph{Execute Enterprise Architecture} (\emph{ExecuteEA}) pour le \emph{framework} que nous présentons dans cette section.
 
     Le \emph{framework ExecuteEA} repose sur trois piliers~: (1)~une approche unificatrice pour la modélisation d'architecture d'entreprise,
     (2)~un cadre structurant orienté points de vue et (3)~l'identification d'un ensemble de langages et de techniques issus de l'IDM
@@ -1105,7 +1108,7 @@ d'un module de la vue applicative à partir d'un modèle de fonction de la vue f
     % ceux de R. France et et B. Rumpe~\cite{france2007model}.
 
 
-   \subsection{Approche conceptuelle}
+   \subsection{Approche conceptuelle et cadre structurant}
 
 Parmi les différentes activités d'EA, nous avons choisi de focaliser nos travaux de thèse sur l'activité
 d'analyse et ce pour plusieurs raisons.
@@ -1113,20 +1116,14 @@ d'analyse et ce pour plusieurs raisons.
 D'abord, l'analyse fait partie des activités les moins traitées en EA~\cite{chen2008architectures} \cite{barn2013enterprise},
 quelle qu'en soit l'école de pensée comme relaté dans l'état 
 de l'art concernant l'EA présenté au chapitre~\ref{ch:EA}. Cet état de fait est en partie du
-aux limitations des modèles contemplatifs qui font légion en EA. C'est donc pour l'analyse que les modèles
+aux limitations des modèles contemplatifs qui font légion en EA. C'est pendant l'activité l'analyse que les modèles
 exécutables sont le plus valorisés et indispensables.
 
-Ensuite, comme l'illustre la figure~\ref{fig:activite_ea} l'analyse joue un rôle centrale dans une démarche d'EA.
-Le recours les modèles d'analyse peuvent directement servir à documenter l'EA. Il s'agit de modèles qui recourent
-directement aux concepts du domaine de l'EA et qui ne nécessitent donc pas de changer de niveau d'abstraction.
+Ensuite, comme l'illustre la figure~\ref{fig:activite_ea} l'analyse joue un rôle central dans une démarche d'EA.
+Les modèles issus de l'analyse peuvent directement servir à documenter l'EA (\q{modèles EA validés} dans la figure~\ref{fig:activite_ea}).
+Il s'agit de modèles qui recourent directement aux concepts du domaine de l'EA 
+et qui ne nécessitent donc pas de changer de niveau d'abstraction pour être appréhendés par les parties-prenants.
 En IDM, ces modèles sont qualifiés de \emph{problem-level abstration models} \cite{france2007model}.
-
-Enfin, l'analyse de modèles d'architecture est fortement liée à l'activité de conception. Le recours aux modèles
-exécutables pour la conception d'architecture d'entreprise permet de mener des analyses directement sur ces
-même modèles. Dès lors que ces modèles sont validés à l'issue de les activités d'analyse et de conception,
-il devient possible de les utiliser à pour la documentation (en mettant
-automatiquement à jour les anciens modèles d'architecture) et pour l'implémentation (voir figure~\ref{fig:activite_ea}. L'implémentation peut 
-alors se faire par transformation de modèles, en transformant les modèles d'architecture vers la plate-forme cible.
 
 \begin{figure}[!ht] \begin{center}
     \includegraphics[width=1\textwidth]{figures/4_demarche/activite_ea.pdf}
@@ -1135,19 +1132,20 @@ alors se faire par transformation de modèles, en transformant les modèles d'ar
     \label{fig:activite_ea}
 \end{figure}
 
+Enfin, l'analyse de modèles d'architecture est fortement liée à l'activité de conception. Le recours aux modèles
+exécutables pour la conception d'architecture d'entreprise permet de mener des analyses directement sur ces
+même modèles (\q{modèles EA à améliorer} et \q{modèles EA à valider} dans la figure~\ref{fig:activite_ea}). Dès lors que ces modèles sont validés à l'issue des activités d'analyse et de conception,
+il devient possible de les utiliser à pour la documentation (en mettant
+automatiquement à jour les anciens modèles d'architecture) et pour l'implémentation. L'implémentation peut 
+alors se faire par transformation de modèles, en transformant les \q{modèles EA validés} vers la plate-forme cible.
 
 Nous entendons analyser deux aspects distincts mais corrélés d'une architecture
 d'entreprise~: la structure et le comportement de la dite architecture.
-L'analyse de la structure repose essentiellement sur la formalisation du métamodèle EA2M et a pour
-objectif l'intégration des modèles provenant des différentes vues d'architecture pour garantir la cohérence
-globale de l'architecture. L'analyse du comportement de l'architecture repose quant à elle
+L'analyse de la structure repose essentiellement sur la formalisation du métamodèle EA2M et vise à 
+intégrer des modèles provenant des différentes vues d'architecture afin de garantir la cohérence
+de l'ensemble de l'architecture. L'analyse du comportement de l'architecture repose quant à elle
 essentiellement sur la simulation des modèles issus de l'analyse de la structure.
-Nous le détaillons les activités l'analyse de la structure et du comportement dans la section~\ref{sec:analyse}.
-
-L'approche que nous proposons est illustrée par la figure~\ref{fig:approche_conceptuelle}. Nous proposons un
-processus de modélisation et d'analyse précis en identifiant quatre rôles participant à ce processus~: l'architecte métier,
-l'architecte fonctionnel, l'architecte applicatif et enfin l'architecte d'entreprise. Les trois premiers rôles ont déjà été présentés
-dans la section~\ref{sec:roles}. 
+%Nous détaillons les activités l'analyse de la structure et du comportement dans la section~\ref{sec:analyse}.
 
 \begin{figure}[!ht]
  \begin{center}
@@ -1156,17 +1154,26 @@ dans la section~\ref{sec:roles}.
  \label{fig:approche_conceptuelle}
 \end{figure}
 
+Le \emph{framework ExecuteEA} englobe une approche conceptuelle et un cadre structurant les différentes activités d'EA, dont
+notamment  l'analyse. Nous commençons par présenter l'approche conceptuelle illustrée par la figure~\ref{fig:approche_conceptuelle}.
+L'approche consiste à définir un processus précis en identifiant
+quatre rôles participant à ce processus~: l'architecte métier,
+l'architecte fonctionnel, l'architecte applicatif et enfin l'architecte d'entreprise. Les trois premiers rôles ont déjà été présentés
+dans la section~\ref{sec:roles}. 
+
+
+
 Le processus commence par la modélisation de la vue métier par l'architecture
-métier. L'architecte fonctionnel traduit la vue métier en vue fonctionnelle 
+métier. L'architecte fonctionnel traduit la vue métier en une vue fonctionnelle 
 en collaborant avec l'architecte
 métier. L'architecte applicatif traduit la vue fonctionnelle en une vue applicative
 tout en collaborant avec l'architecte fonctionnel et par extension avec l'architecte
-métier. Le rôle de l'architecte d'entreprise consiste alors à orchestrer ces
+métier. Le rôle de l'architecte d'entreprise consiste alors à orchestrer l'ensemble de ces
 collaborations.
 
 L'architecture ainsi modélisée est soumise à une analyse
 structurelle menée par l'architecte d'entreprise en étroite collaboration avec
-les architectes des différentes vue. L'architecte d'entreprise est alors
+les architectes des différentes vues. L'architecte d'entreprise est alors
 responsable de la vue intégration qui a pour mission de vérifier la cohérence
 globales des modèles d'architecture. Ainsi intégrés, les modèles sont soumis à
 une analyse comportementale via la simulation.
@@ -1174,17 +1181,24 @@ L'approche proposée suit un processus itératif. À l'issue de la simulation, l
 architectes valident ou modifient leurs modèles selon les résultats de la simulation et ainsi de
 suite jusqu'à obtenir une architecture satisfaisante pour l'ensemble des parties-prenantes.
 
-L'approche proposée s'inscrit en outre dans un cadre d'architecture qui se repose sur le métamodèle
-EA2M. Ce cadre est illustré par la figure~\ref{fig:vue_integration}.
-
-
 \begin{figure}[!ht]
  \begin{center}
  \includegraphics[trim= 0cm 2cm 0cm 0cm, width=1\textwidth]{figures/4_demarche/vue_integration.pdf}
  \end{center}
- \caption{Framework proposé avec la vue Intégration}
+ \caption{Cadre structurant de \protect\emph{ExecuteEA}}
  \label{fig:vue_integration}
 \end{figure}
+
+L'approche proposée s'inscrit en outre dans un cadre structurant qui reprend les concepts identifiés dans le métamodèle
+EA2M. Ce cadre est illustré par la figure~\ref{fig:vue_integration}. Ce cadre structure et organise les différents modèles
+créés par les architectes~: métier, fonctionnel et applicatif. Chaque vue est en effet composant de trois aspects~: information,
+processus et objectif. Notre contribution principale consiste à doter ce cadre d'une vue intégration transverse à toutes les autres vues.
+Cette vue reflète la perspective de l'architecte d'entreprise qui a pour mission de garantir la cohérence globale de l'architecture
+et s'assure de l'alignement métier/IT. La vue intégration permet donc à l’architecte d'entreprise
+d'expliciter les liens de cohérence intra-vue (\emph{via} les liens \q{remplit} et \q{utilise}) et inter-vues (via les liens de \q{raffinement}).
+
+
+
 
 % Créer des modèles d'architecture d'entreprise qui sont appropriés à l'analyse des 
 % modèles d'architecture implique de suivre un processus précis. 
@@ -1221,22 +1235,103 @@ EA2M. Ce cadre est illustré par la figure~\ref{fig:vue_integration}.
 % est possible de tracer l'implémentation effective d'une stratégie métier à
 % travers l'ensemble de l'entreprise, des entités métier à l'IT.
 
+
+
+
+% Nous considérons donc que la documentation et la communication, l'analyse et la
+% compréhension et enfin la conception et l'implémentation concernent tout le système entreprise et
+% pas seulement sa composante SI. Par exemple, contrairement à une EA centrée sur
+% les SI, les processus métier sont modélisés et évalués tout autant que
+% l'architecture applicative. 
+
+
+
+% L'analyste métier, l'architecte fonctionnel et l'architecte applicatif
+% collaborent entre eux et avec l'architecture d'entreprise pendant tout le
+% processus de modélisation. Par la suite, l'activité d'intégration incombe à
+% l'architecte d'entreprise, détenteur de la vision globale. Mais l'intégration
+% des vues implique de rebouclage avec les autres acteurs (analyste métier,
+% architecte fonctionnel et architecte applicatif) pour garantir l'alignement
+% business/IT. Les étapes de modélisation et d'intégration de notre approche
+% répondent donc aux objectifs de conception et de communication tels que définis
+% par Kurpjuweit et Winter \cite{kurpjuweit2007viewpoint}.
+
+
+
+
+    \subsection{Analyse de l'architecture d'entreprise}
+    \label{sec:analyse}
+Le cadre structurant et l'approche conceptuelle du \emph{framework ExecuteEA} permettent de mieux articuler entre elles les activités d'analyse de la structure et du comportement. L'analyse automatisée de ces modèles facilite leur appréhension par l'acteur qui
+mène ces analyses (en l'occurrence l'architecte d'entreprise). Dans cette section, nous expliquons comment le recours aux modèles exécutables tel que préconisé par l'IDM permet de réaliser ces analyses.
+
+    \subsubsection{Analyse de la structure}
+
+
+L'analyse structurelle d'une architecture d'entreprise a plusieurs visée. Il peut s'agir de (1) la
+vérification de la cohérence de l'ensemble de l'architecture (2) anticiper les changements en
+comprenant le fonctionnement de cette structure en mesurant par exemple l'impact du
+changement \cite{de2005change} sur la structure de l'architecture. Le métamodèle EA2M
+rend possible cette analyse en exploitant la relation de conformité qui lie un modèle à son
+métamodèle telle que présentée dans l'état de l'art concernant les relations de base de l'IDM
+au chapitre~\ref{ch:IDM}. 
+
 La formalisation d'un métamodèle pour l'EA permet de plus de
-contrôler la conformité des modèles d'architecture. Une entité du modèle
-(telle qu'une fonction, une tâche du processus métier, un objectif, etc.)
-appartient toujours à deux vues~:~une vue intégration en plus d'une autre vue
-parmi les vues métier, fonctionnelle, applicative et technique. Autre exemple,
-tous les objectifs de la vue métier doivent avoir des liens de cohérence inter-
-vues avec les objectifs de la vue fonctionnelle et de même pour ces dernier
-avec les objectif de la vue applicative et ainsi de suite. De même pour les
-autres entités des aspects information et processus. Une fois le modèle
+contrôler la conformité des modèles d'architecture. En effet, le métamodèle
+contraint les modèles d'architecture et offre la possibilité de vérifier
+que l'ensemble des modèles respectes bien les contraintes exprimées par le
+métamodèle.
+Dans le cadre de EA2M, ces contraintes sont exprimés à travers les liens
+de cohérence. Par exemple, toutes les entités de base (action, objectif et information)
+doivent toujours appartenir à deux vues~: la vue intégration en plus d'une autre vue
+parmi les vues métier, fonctionnelle, applicative et technique. Cette contrainte permet de vérifier
+que toutes les entités de l'architecture sont bien répertoriées dans la vue intégration.
+
+Autre exemple de contraintes exprimées dans le métamodèle EA2M~: tous les objectifs de la vue métier
+doivent avoir des liens de cohérence inter-vues avec les objectifs de la vue fonctionnelle, et de même pour ces dernier
+avec les objectifs de la vue applicative. Cette contrainte permet de vérifier que tous les objectifs exprimés par le métier sont bien pris
+en compte par les applications de l'entreprise. Cette cohérence inter-vues est renforcée par une autre contrainte intra-vue
+exprimée dans le métamodèle EA2M. Chaque action doit disposer d'un lien de traçabilité vers l'objectif qu'elle remplit.
+Le croisement  de ces deux contraintes, exprimées au niveau du métamodèle, permet de vérifier que les modèles disposent
+bien des liens de traçabilité nécessaire à la vérification de l'alignement métier/IT.
+
+L'exploitation des contraintes exprimées sur
+les liens de traçabilité de la vue intégration  permet de vérifier par exemple 
+que toutes tâches métier sont bien reliées à aux fonctions
+qui les réalisent et que ces fonctions sont bien reliées aux modules applicatifs qui les implémentent.
+L'analyse de cohérence permettra de vérifier que tous éléments de base de types action de le modèles
+disposent bien de liens de traçabilité et de les ajouter si nécessaire. Le même principe s'applique sur les
+liens de traçabilité entre informations appartenant à différents auquel cas l'analyse permettra de vérifier que tous
+les concepts métier disposent bien de liens vers leurs types dans la vue fonctionnelle, et vers leur format
+dans la vue applicative.
+
+L'analyse de la cohérence permet de plus d'identifier les transformations de modèle utiles à l'intégration de l'architecture.
+Les transformations de modèles présentent en effet plusieurs atouts dans le contexte de l'IDM en général
+et de l'EA en particulier. Supposons par exemple qu'il s'avère que
+l'orchestration de deux modules est impossible à cause d'une incompatibilité de format
+à l'issue qu'à l'issue de l'analyse de la cohérence de la structure. Dans ce cas, il est possible de créer une transformation
+de modèle et de l'associer au lien de cohérence intra-vue déclenche dans la vue intégration. La figure~\ref{fig:transfo_coherence}
+illustre ce principe dans le cas général d'une action et d'une information.
+
+\begin{figure}[!ht]
+ \begin{center}
+ \includegraphics[trim= 0cm 5.5cm 0cm 0cm, width=1\textwidth]{figures/4_demarche/transfo_coherence.pdf}
+ \end{center}
+ \caption{Identification d'une transformation de modèles\\pour garantir une cohérence intra-vue}
+ \label{fig:transfo_coherence}
+\end{figure}
+
+Les transformations de modèle est un moyen de renforcer l'alignement métier/IT en automatisant le passage d'une vue
+à l'autre. Avec les technologies IDM actuelles, il est possible par exemple de transformer une fonction en un code pour
+le module applicatif qui l'implémente. Le passage de la vue métier à la vue fonctionnelle demeure quant à lui essentiellement
+manuel. L'analyse de la cohérence vise à identifier, dans la vue intégration, ce type de transformation de modèle quand il est envisageable
+et les entités du modèle qu'il concerne. 
+
+Une fois le modèle
 d'architecture créé, il est possible de vérifier sa conformité au métamodèle et
 de s'assurer que la cohérence entre les différentes entités de modèles est bien
 maintenue.
 
-La vue intégration permet en outre de vérifier qu'une application implémente
-bien tous les blocs fonctionnels nécessaires au déroulement d'un processus
-métier. Cette vue donne ainsi accès aux informations de traçabilité qui
+Cette vue donne ainsi accès aux informations de traçabilité qui
 permettent de déterminer l'impact d'une modification ou d'une défaillance d'un
 module applicatif sur les processus métier. Elle permet aussi de vérifier que
 les formats applicatifs permettent d'encoder les types de données fonctionnelles
@@ -1251,34 +1346,48 @@ transformations de modèle entre la vue fonctionnelle et et la vue applicative.
 
 
 
+ll est indispensable s'assurer de la cohérence
+entres les modèles des différentes vues avant d'initier une analyse
+d'impact du changement qui soit pertinente pour les parties-prenantes, en particulier
+pour l'architecte d'entreprise.
 
- 
-% Nous étendons cette vision centrée sur les SI à l'ensemble de l'entreprise en adoptant l'école
-% de pensée «~intégrative~» comme décrite par la taxonomie de Lapalme (voir
-% section \ref{Lapalme}, page \pageref{Lapalme} de l'état de l'art).
+% Notre contribution consiste à définir la manière dont les langages et techniques
+% de l'IDM peuvent être utilisés pour mener une analyse structurelle des modèles
+% d'entreprise. Le cadre d'EA que nous proposons permet d'acquérir une vision
+% globale et cohérente de l'ensemble des artefacts qui la composent. La taille de
+% plus en plus importantes des entreprises actuelle fait que la complexité de
+% l'entreprise en tant que système se retrouve dans les modèles d'architecture qui
+% le représentent.
 
-% Nous considérons donc que la documentation et la communication, l'analyse et la
-% compréhension et enfin la conception et l'implémentation concernent tout le système entreprise et
-% pas seulement sa composante SI. Par exemple, contrairement à une EA centrée sur
-% les SI, les processus métier sont modélisés et évalués tout autant que
-% l'architecture applicative. La figure \ref{fig:approche_conceptuelle} illustre
-% notre approche conceptuelle. Celle-ci fait intervenir plusieurs types d'acteurs
-% intervenant à plusieurs niveaux de l'entreprise~: \item un architecte d'entreprise dont la mission est de
-% mettre en cohérence l'ensemble des vues.
+Un intérêt typique de l'analyse de la structure est la mesure de l'impact du changement. L'analyse de l'impact du
+changement consiste à dévoiler les effets de bord d'un changement apporté à un
+élément de l'architecture.
 
+Les langages de modélisation doivent donc permettre de représenter
+convenablement les différents composants de l'entreprise en plus d'offrir la
+possibilité d'analyser la structure des modèles créés dans l'objectif de mieux
+comprendre le système réel, qui est dans ce cas l'entreprise. Nous proposons
+donc de tirer profit des méthodes IDM telle la méta-modélisation et de les
+associer à des langages capables d'exprimer et d'exécuter des contraintes et des
+requêtes sur les modèles tels que OCLinEcore ou QVT. Grâce à ce type de langage
+il est possible de~:
 
+\begin{enumerate}
+    \item modéliser des règles de structure supplémentaires qui précisent d'avantage méta-modèle d'architecture. Une fois
+que le modèle d'architecture est conforme à ce métamodèle, il est possible de
+vérifier qu'il respecte bien toutes les contraintes exprimées au niveau du
+métamodèle~;
+    \item analyser l'impact du changement pour évaluer par exemple
+l'impact de l'indisponibilité d'un module applicatif sur l'architecture
+globale. En mettant à profit les liens de cohérence de la vue intégration, il
+est alors possible de déterminer quels sont les processus métier ou
+fonctionnels touchés par cette défaillance applicative. De même, il est
+possible d'identifier les modules applicatifs existants pouvant participer à la
+réalisation d'un nouveau métier si ces processus fait intervenir des taches
+métier déjà implémentées dans le SI.
+    \end{enumerate}
 
-L'analyste métier, l'architecte fonctionnel et l'architecte applicatif
-collaborent entre eux et avec l'architecture d'entreprise pendant tout le
-processus de modélisation. Par la suite, l'activité d'intégration incombe à
-l'architecte d'entreprise, détenteur de la vision globale. Mais l'intégration
-des vues implique de rebouclage avec les autres acteurs (analyste métier,
-architecte fonctionnel et architecte applicatif) pour garantir l'alignement
-business/IT. Les étapes de modélisation et d'intégration de notre approche
-répondent donc aux objectifs de conception et de communication tels que définis
-par Kurpjuweit et Winter \cite{kurpjuweit2007viewpoint}.
-
-Comme relaté dans l'état de l'art, l'analyse fait partie des activités les moins
+    Comme relaté dans l'état de l'art, l'analyse fait partie des activités les moins
 courantes de l'EA quelle qu'en soit l'école de pensée
 \cite{chen2008architectures} \cite{barn2013enterprise}. Et même lorsqu'une
 architecture d'entreprise est analysée très peu d'approches recourent à la
@@ -1288,12 +1397,8 @@ pour évaluer le comportement d'un système et/ou évaluer plusieurs stratégies
 concernant son fonctionnement \cite{shannon1975systems}. Notre approche
 préconise de simuler les modèles issus de activités de modélisation et
 d'intégration afin de les valider ou les critiquer par l'ensemble des acteurs
-impliqués dans l'EA. Nous couvrons ainsi l'objectif d'analyse tel que préconisé
-par Kurpjuweit et Winter \cite{kurpjuweit2007viewpoint}.
+impliqués dans l'EA.
 
-
-    \subsection{Analyse de l'architecture d'entreprise}
-    \label{sec:analyse}
 
         \subsubsection{Analyse du comportement : simulation dirigée par les processus
 métier}
@@ -1378,53 +1483,7 @@ modèles de représentation et leur exécution.
     \label{fig:IDM_EA}
 \end{table}
 
-        \subsubsection{Analyse de la structure}
-Tout comme l'analyse du comportement,
-l'analyse de la structure de l'architecture d'entreprise est étroitement lié à
-l'impératif de cohérence. Il est indispensable s'assurer de la cohérence
-entres les modèles des différentes vues avant d'initier une analyse
-structurelle qui soit pertinente pour les parties prenantes et en particulier
-pour l'architecte d'entreprise.
-
-Notre contribution consiste à définir la manière dont les langages et techniques
-de l'IDM peuvent être utilisés pour mener une analyse structurelle des modèles
-d'entreprise. Le cadre d'EA que nous proposons permet d'acquérir une vision
-globale et cohérente de l'ensemble des artefacts qui la composent. La taille de
-plus en plus importantes des entreprises actuelle fait que la complexité de
-l'entreprise en tant que système se retrouve dans les modèles d'architecture qui
-le représentent.
-
-L'analyse automatisée de ces modèles facilite leur appréhension par l'acteur qui
-mène ces analyses (en l'occurrence l'architecte d'entreprise). Elle permet de
-révéler la structure de l'entreprise et le fonctionnement de cette structure. Un
-intérêt typique de l'analyse de la structure est la mesure de l'impact du
-changement \cite{de2005change} sur l'architecture. L'analyse de l'impact du
-changement consiste à dévoiler les effets de bord d'un changement apporté à un
-élément de l'architecture.
-
-Les langages de modélisation doivent donc permettre de représenter
-convenablement les différents composants de l'entreprise en plus d'offrir la
-possibilité d'analyser la structure des modèles créés dans l'objectif de mieux
-comprendre le système réel, qui est dans ce cas l'entreprise. Nous proposons
-donc de tirer profit des méthodes IDM telle la méta-modélisation et de les
-associer à des langages capables d'exprimer et d'exécuter des contraintes et des
-requêtes sur les modèles tels que OCLinEcore ou QVT. Grâce à ce type de langage
-il est possible de~:
-
-\begin{enumerate}
-    \item modéliser des règles de structure supplémentaires qui précisent d'avantage méta-modèle d'architecture. Une fois
-que le modèle d'architecture est conforme à ce métamodèle, il est possible de
-vérifier qu'il respecte bien toutes les contraintes exprimées au niveau du
-métamodèle~;
-    \item analyser l'impact du changement pour évaluer par exemple
-l'impact de l'indisponibilité d'un module applicatif sur l'architecture
-globale. En mettant à profit les liens de cohérence de la vue intégration, il
-est alors possible de déterminer quels sont les processus métier ou
-fonctionnels touchés par cette défaillance applicative. De même, il est
-possible d'identifier les modules applicatifs existants pouvant participer à la
-réalisation d'un nouveau métier si ces processus fait intervenir des taches
-métier déjà implémentées dans le SI.
-    \end{enumerate}
+        
 
 
 
@@ -1442,27 +1501,19 @@ métier déjà implémentées dans le SI.
 
 
 
-\section{Un cadre d'architecture dirigé par les modèles exécutables}
 
+% \begin{figure}[!ht]
+%     \begin{center}
+%     \includegraphics[trim= 0cm 3cm 0cm 0cm, width=1\textwidth]{figures/4_demarche/vue_aspect.pdf}
+%     \end{center}
+%     \caption{Points de vue et aspects utilisés} \label{fig:vue_aspect}
+% \end{figure}
 
-
-\subsection{Intégration d'une architecture d'entreprise}
-
-
-
-
-\begin{figure}[!ht]
-    \begin{center}
-    \includegraphics[trim= 0cm 3cm 0cm 0cm, width=1\textwidth]{figures/4_demarche/vue_aspect.pdf}
-    \end{center}
-    \caption{Points de vue et aspects utilisés} \label{fig:vue_aspect}
-\end{figure}
-
-Nous
-préconisons l'utilisation de formalismes standards pour la modélisation de
-processus métier qui soient exécutables, tels que les diagrammes d'activité \gls{fuml} 
-ou les diagrammes \gls{bpmn} dans une perspective de simulation. Des langages
-spécifiques à un domaine (\gls{dsml}) peuvent également être utilisés~;
+% Nous
+% préconisons l'utilisation de formalismes standards pour la modélisation de
+% processus métier qui soient exécutables, tels que les diagrammes d'activité \gls{fuml} 
+% ou les diagrammes \gls{bpmn} dans une perspective de simulation. Des langages
+% spécifiques à un domaine (\gls{dsml}) peuvent également être utilisés~;
 
 
 
