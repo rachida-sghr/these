@@ -1269,9 +1269,8 @@ mène ces analyses (en l'occurrence l'architecte d'entreprise). Dans cette secti
 
 L'analyse structurelle d'une architecture d'entreprise a plusieurs visée. Il peut s'agir de (1) la
 vérification de la cohérence de l'ensemble de l'architecture (2) anticiper les changements en
-comprenant le fonctionnement de cette structure en mesurant par exemple l'impact du
-changement \cite{de2005change} sur la structure de l'architecture. Le métamodèle EA2M
-rend possible cette analyse en exploitant la relation de conformité qui lie un modèle à son
+en mesurant par exemple l'impact du changement \cite{de2005change} sur la structure de l'architecture.
+Le métamodèle EA2M rend possible cette analyse en exploitant la relation de conformité qui lie un modèle à son
 métamodèle telle que présentée dans l'état de l'art concernant les relations de base de l'IDM
 au chapitre~\ref{ch:IDM}. 
 
@@ -1314,22 +1313,23 @@ illustre ce principe dans le cas général d'une action et d'une information.
 
 \begin{figure}[!ht]
  \begin{center}
- \includegraphics[trim= 0cm 5.5cm 0cm 0cm, width=1\textwidth]{figures/4_demarche/transfo_coherence.pdf}
+ \includegraphics[trim= 0cm 7.5cm 0cm 0cm, width=1\textwidth]{figures/4_demarche/transfo_coherence.pdf}
  \end{center}
  \caption{Identification d'une transformation de modèles\\pour garantir une cohérence intra-vue}
  \label{fig:transfo_coherence}
 \end{figure}
 
-Les transformations de modèle est un moyen de renforcer l'alignement métier/IT en automatisant le passage d'une vue
+La transformation de modèle est un moyen de renforcer l'alignement métier/IT en automatisant le passage d'une vue
 à l'autre. Avec les technologies IDM actuelles, il est possible par exemple de transformer une fonction en un code pour
 le module applicatif qui l'implémente. Le passage de la vue métier à la vue fonctionnelle demeure quant à lui essentiellement
-manuel. L'analyse de la cohérence vise à identifier, dans la vue intégration, ce type de transformation de modèle quand il est envisageable
-et les entités du modèle qu'il concerne. 
+manuel. L'analyse de la cohérence vise à identifier, dans la vue intégration, ce type de transformation de modèle
+et les entités du modèle qu'il concerne.
+Les transformation de modèle constituent une solution pour capitaliser le savoir faire métier au niveau des modèles et le rendre
+plus indépendant de la plate-forme d'implémentation. Ainsi, il est possible de raisonner au niveau fonctionnel, en modifiant une fonction par exemple, et de réutiliser une transformation de modèle préalablement créée pour re-générer le code du module applicatif cible.
 
-Une fois le modèle
-d'architecture créé, il est possible de vérifier sa conformité au métamodèle et
-de s'assurer que la cohérence entre les différentes entités de modèles est bien
-maintenue.
+La vue d'intégration offre ainsi la possibilité d'analyser la cohérence de l'architecture d'entreprise
+à travers la méta-modélisation, la relation de conformité de l'IDM et les transformations de modèle.
+À l'issue de l'analyse de la cohérence de la structure, l'architecture est 
 
 Cette vue donne ainsi accès aux informations de traçabilité qui
 permettent de déterminer l'impact d'une modification ou d'une défaillance d'un
@@ -1345,11 +1345,35 @@ l'art actuel des langages de transformation de modèle privilégie l'usage des
 transformations de modèle entre la vue fonctionnelle et et la vue applicative.
 
 
-
 ll est indispensable s'assurer de la cohérence
 entres les modèles des différentes vues avant d'initier une analyse
 d'impact du changement qui soit pertinente pour les parties-prenantes, en particulier
-pour l'architecte d'entreprise.
+pour l'architecte d'entreprise. L'analyse de l'impact du
+changement consiste à dévoiler les effets de bord d'un changement apporté à un
+élément de l'architecture.
+
+Dans le contexte du \q{framework ExecuteEA}, l'analyse d'impact exploite les
+liens de traçabilité pour identifier les éléments du modèle impacté par une modification 
+apportés à une entité du modèle d'architecture. I
+L'analyse d'impact évalue par exemple la conséquence de l'indisponibilité d'un module applicatif sur l'architecture
+globale~: en mettant à profit les liens de cohérence de la vue intégration, il
+est alors possible de déterminer quels sont les processus métier ou
+fonctionnels touchés par cette défaillance applicative. De la même manière, il devient
+possible d'identifier les modules applicatifs existants pouvant participer à la
+réalisation d'un nouveau métier si ces processus fait intervenir des taches
+métier déjà implémentées dans le SI.
+
+Nous proposons donc d'analyser les impacts d'exprimer des requêtes sur les modèles
+d'architecture et d'étudier le résultat de ces requêtes.Nous proposons
+donc de tirer profit des méthodes IDM telle la méta-modélisation et de les
+associer à des langages capables d'exprimer et d'exécuter des requêtes sur les modèles d'architecture
+tels que OCLinEcore ou QVT.
+
+
+L'automatisation de l'analyse d'impact est particulièrement cruciale pour les grandes entreprises qui ont à gérer
+un patrimoine applicatif important et un nombre de processus métier conséquent.
+Il s'agit là d'une analyse statique, le raisonnement concerne uniquement l'aspect structurel. Nous abordons l'analyse
+du comportement de la structure dans la suite de ce chapitre.
 
 % Notre contribution consiste à définir la manière dont les langages et techniques
 % de l'IDM peuvent être utilisés pour mener une analyse structurelle des modèles
@@ -1359,35 +1383,29 @@ pour l'architecte d'entreprise.
 % l'entreprise en tant que système se retrouve dans les modèles d'architecture qui
 % le représentent.
 
-Un intérêt typique de l'analyse de la structure est la mesure de l'impact du changement. L'analyse de l'impact du
-changement consiste à dévoiler les effets de bord d'un changement apporté à un
-élément de l'architecture.
 
-Les langages de modélisation doivent donc permettre de représenter
-convenablement les différents composants de l'entreprise en plus d'offrir la
-possibilité d'analyser la structure des modèles créés dans l'objectif de mieux
-comprendre le système réel, qui est dans ce cas l'entreprise. Nous proposons
-donc de tirer profit des méthodes IDM telle la méta-modélisation et de les
-associer à des langages capables d'exprimer et d'exécuter des contraintes et des
-requêtes sur les modèles tels que OCLinEcore ou QVT. Grâce à ce type de langage
-il est possible de~:
 
-\begin{enumerate}
-    \item modéliser des règles de structure supplémentaires qui précisent d'avantage méta-modèle d'architecture. Une fois
-que le modèle d'architecture est conforme à ce métamodèle, il est possible de
-vérifier qu'il respecte bien toutes les contraintes exprimées au niveau du
-métamodèle~;
-    \item analyser l'impact du changement pour évaluer par exemple
-l'impact de l'indisponibilité d'un module applicatif sur l'architecture
-globale. En mettant à profit les liens de cohérence de la vue intégration, il
-est alors possible de déterminer quels sont les processus métier ou
-fonctionnels touchés par cette défaillance applicative. De même, il est
-possible d'identifier les modules applicatifs existants pouvant participer à la
-réalisation d'un nouveau métier si ces processus fait intervenir des taches
-métier déjà implémentées dans le SI.
-    \end{enumerate}
+% Les langages de modélisation doivent donc permettre de représenter
+% convenablement les différents composants de l'entreprise en plus d'offrir la
+% possibilité d'analyser la structure des modèles créés dans l'objectif de mieux
+% comprendre le système réel, qui est dans ce cas l'entreprise.  Grâce à ce type de langage
+% il est possible de~:
 
-    Comme relaté dans l'état de l'art, l'analyse fait partie des activités les moins
+% \begin{enumerate}
+%     \item modéliser des règles de structure supplémentaires qui précisent d'avantage méta-modèle d'architecture. Une fois
+% que le modèle d'architecture est conforme à ce métamodèle, il est possible de
+% vérifier qu'il respecte bien toutes les contraintes exprimées au niveau du
+% métamodèle~;
+%     \item 
+%     \end{enumerate}
+
+
+
+
+        \subsubsection{Analyse du comportement : simulation dirigée par les processus
+métier}
+
+Comme relaté dans l'état de l'art, l'analyse fait partie des activités les moins
 courantes de l'EA quelle qu'en soit l'école de pensée
 \cite{chen2008architectures} \cite{barn2013enterprise}. Et même lorsqu'une
 architecture d'entreprise est analysée très peu d'approches recourent à la
@@ -1398,10 +1416,6 @@ concernant son fonctionnement \cite{shannon1975systems}. Notre approche
 préconise de simuler les modèles issus de activités de modélisation et
 d'intégration afin de les valider ou les critiquer par l'ensemble des acteurs
 impliqués dans l'EA.
-
-
-        \subsubsection{Analyse du comportement : simulation dirigée par les processus
-métier}
 
 Pour simuler le comportement d'une entreprise nous nous appuyons sur les modèles
 d'architecture d'entreprise préalablement définis par les différentes parties
@@ -1437,7 +1451,9 @@ de la tache métier mais du module applicatif qui l'implémente. Le processus
 métier est modélisé sous forme de diagrammes d'activité fUML. Dans ce cas les
 simulations du comportement de l'architecture d'entreprise est pilotée par les
 processus métier qui sont alors responsable d'orchestrer l'ensemble des modèles
-comme l'illustre la figure \ref{fig:Simulation_Approche}. La simulation est
+comme l'illustre la figure \ref{fig:Simulation_Approche}. 
+
+La simulation est
 lancée après l'intégration de l'architecture à travers la création de lien de
 cohérences intra-vue et inter-vues. Ces liens sont par la suite utilisés pour
 mettre en œuvre la simulation. D'une part, la \textit{Tâche~A} de la figure
@@ -1450,7 +1466,7 @@ attendues par la \textit{Tâche~B}, de même entre la \textit{Fonction~A} et la
 
 \begin{figure}[!ht]
     \begin{center}
-        \includegraphics[trim= 0cm 3cm 0cm 0cm, width=1\textwidth]{figures/4_demarche/approche_simulation.pdf}
+        \includegraphics[trim= 0cm 1cm 0cm 0cm, width=1\textwidth]{figures/4_demarche/approche_simulation.pdf}
     \end{center}
     \caption{Simulation de l'architecture dirigée par les processus}
     \label{fig:Simulation_Approche}
