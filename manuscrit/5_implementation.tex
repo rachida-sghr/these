@@ -1,5 +1,5 @@
 %!TEX  root = main.tex
-\chapter{Implémentation et Validation}
+\chapter{Prototypage du \emph{framework ExecuteEA}}
 \label{ch:implem}
 
 \PartialToc
@@ -13,8 +13,112 @@
 %Requête OCLinEcore pour mener l'analyse du comportement
 %Transformation de modèles 
 
+\section{Environnement retenu : la plate-forme Eclipse}
 
-\section{Modèles d'architecture d'entreprise pour le cas métier de la gestion d'une flotte de véhicule électrqiue}
+Notre choix s'est orienté vers la plate-forme Eclipse et ce pour plusieurs raisons.
+
+Tout d'abord, il s'agit d'une plate-forme open-source dont l'utilisation est particulièrement répandue dans la communauté IDM.
+En effet, la plate-forme Eclipse abrite le projet \gls{emf}\footnote{http://www.eclipse.org/modeling/emf/} qui a pour objectif de doter Eclipse d'outils orientés IDM. 
+
+Ensuite, \gls{emf} s'appuit sur les standards du domaine. Par exemple, le méta-métamodèle Ecore, pilier central de \gls{emf}, se base sur le standard \gls{mof}\footnote{http://www.omg.org/mof/} . Aure exemple, le langage de contraintes OCLinEcore se base sur le standard \gls{ocl}.
+OCL et MOF sont des standard de l'OMG.
+
+Puis, \gls{emf} se décompose en sous-projets orientés vers différents aspects de l'IDM tels que la méta-modélisation, la transformation de modèle, les éditeurs graphiques de modèles, les langages spécifiques au domaine. \gls{emf} offre ainsi un environnement personnalisable pour mettre en œuvre une approche IDM.
+
+Enfin, il s'agit de la plate-forme retenu par le projet Pomme du département MIRE, dans lequel s'inscrit nos travaux de thèse. Le projet Pomme vise à réaliser un outil pour la co-simulation des trois domaines qui compose un Smart Grid~: SI, infrastructure électrique, infrastructure de télécommunication. 
+
+Pour ces travaux de thèse, nous avons donc retenu~:
+
+\begin{itemize}
+    \item Ecore pour la méta-modélisation~;
+
+    \item OCLinEcore pour l'expression de contraintes et de requêtes sur le métamodèle~;
+
+    \item Le langage Acceleo pour les transformations de modèle~;
+
+    \item Le plugin Papyrus\footnote{https://eclipse.org/papyrus/} pour la simulation des modèles d'architecture. Papyrus est compatible avec le standard fUML et permet donc d'exécuter les diagrammes de classes et d'activité. 
+
+\end{itemize}
+
+
+\section{Réalisation et difficultés rencontrées}
+
+    \subsection{Implémentation du métamodèle EA2M avec EMF}
+
+    Le métamodèle EA2M est le pilier central du \emph{framework ExecuteEA}. Nous l'avons implémenté à l'aide de \gls{emf}.
+    Il est donc conforme au méta-métamodèle Ecore. 
+    EMF génère automatiquement un éditeur de modèle à partir d'un métamodèle conforme à Ecore. Cet éditeur permet de créer des modèles d'architecture d'entreprise conformes au métamodèle EA2M ainsi implémenté. La figure~\ref{fig:editeur_modele1} et la figure~\ref{fig:editeur_modele2} sont une capture d'écran de l'éditeur de modèles générée automatiquement à partir du métamodèle EA2M. L'utilisateur a le choix de créer une vue métier, fonctionnelle,
+    applicative ou intégration et pour chacune des vues il peut choisir de créer un aspect objectif, processus ou information.
+
+
+    \begin{figure}[!htbp]
+     \begin{center}
+      \includegraphics[width=0.8\textwidth]{figures/5_implementation/editeur_modele1.png}
+     \end{center}
+     \caption{Edition de modèles d'architecture d'entreprise avec ExecuteEA\\création de vues}
+     \label{fig:editeur_modele1}
+    \end{figure}
+
+    \begin{figure}[!htbp]
+     \begin{center}
+      \includegraphics[width=0.8\textwidth]{figures/5_implementation/editeur_modele2.png}
+     \end{center}
+     \caption{Edition de modèles d'architecture d'entreprise avec ExecuteEA\\création d'aspects}
+     \label{fig:editeur_modele2}
+    \end{figure}
+
+    La figure~\ref{fig:modeleEA} représente une capture d'écran d'un modèle d'architecture d'entreprise créé avec l'éditeur de modèle ExecuteEA.
+
+    \begin{figure}[!htbp]
+     \begin{center}
+      \includegraphics[trim=0cm 3cm 0cm 0cm, width=0.8\textwidth]{figures/5_implementation/modele_ea.pdf}
+     \end{center}
+     \caption{Modèle d'architecture d'entreprise créé avec l'éditeur ExecuteEA}
+     \label{fig:modeleEA}
+    \end{figure}
+
+    La difficulté majeure rencontrée en implémentant le métamodèle EA2M a été de trouver le bon équilibre entre deux impératifs~: (1) implémenter le métamodèle en utilisant des concepts et des relations qui font sens d'un point de vue EA, en se gardant la possibilité de l'étendre facilement, notamment, par d'autres aspects ou d'autres vues, (2) tout en créant un éditeur suffisamment contraignant pour créer des modèles d'architecture corrects. Par exemple, utiliser uniquement le mécanisme de multiplicités entre la classe abstraite \q{Vue} et la classe \q{Architecture} ne contraint pas le modélisateur à ne pas créer plusieurs fois le même type de vue pour une seule architecture. Un modèle avec deux vues métier serait par conséquent conforme au métamodèle mais ne serait pas pertinent d'un point de vue EA. 
+
+    Nous avons donc exprimé des contraintes avec OCLinEcore pour ne créer que des modèles pertinents tout en gardant un métamodèle pertinent d'un point de vue purement EA.  Une contrainte est une expression à valeur booléenne qui sert à préciser ou restreindre n'importe quel élément du métamodèle.
+
+    La figure~\ref{fig:contraintes_ocl_architecture} illustre le métamodèle EA2M, implémenté à l'aide d'\gls{emf}, sous une forme textuelle\footnote{EMF est doté d'une éditeur graphique qui permet de créer des métamodèles de manière graphique (par \emph{drag and drop}) sous la forme d'un diagramme de classe et de générer le même métamodèle sous une forme textuelle.}. Il s'agit donc de la classe \q{Architecture} à la quelle on a ajouté des contraintes de type \q{invariant} pour qu'elle ne contiennent pas de vue du même type. 
+
+    \begin{figure}[!htbp]
+     \begin{center}
+      \includegraphics[width=0.8\textwidth]{figures/5_implementation/ocl_in_ecore_vue.png}
+     \end{center}
+     \caption{Contraintes OCLinEcore attachées à la classe \protect\q{Architecture} }
+     \label{fig:contraintes_ocl_architecture}
+    \end{figure}
+
+    \subsection{Exécution des modèles d’architecture avec Papyrus}
+
+    Papyrus est un atelier de modélisation orienté IDM doté d'un moteur d'exécution de diagrammes fUML conformément aux spécifications de l'OMG.
+    Nous l'avons utilisé pour simuler l'architecture. Comme présenté dans le chapitre~\ref{ch:proposition}, nous proposons de simuler
+    l'ensemble de l'architecture en la pilotant par les modèles. 
+    La difficulté majeure rencontrée à cette étape de l'implémentation a été de réussir à exécuter des comportements difficile à modéliser avec un diagramme UML\footnote{typiquement, l'optimisation d'une affectation de véhicules électriques à des tournées d'agents qui intervient dans le cas d'études présenté dans la suite de ce chapitre}. Le principe de simulation pilotée par les processus métier, tel que présenté dans la figure~\ref{fig:Simulation_Approche} (page~\pageref{fig:Simulation_Approche}), exige de plus de faire appel aux modules de la vue applicative. 
+    
+    Le standard fUML a pérvu l'exécution de comportements spécifiques. Il dédie à cet affet une action spécialisée~: l'\emph{OpaqueAction}.Papyrus s'appuit sur le moteur d'exécution Moka pour simuler les diagramme fUML. Moka est conforme à la sémantique d'exécution spécifiée par l'OMG pour fUML. Cependant, la sémantique d'exécution de l'\emph{OpaqueAction} n'a pas encore été spécifiée. Le standard fUML est en effet relativement récent\footnote{La première version de fUML a été publiée par l'OMG en févier 2011} et n'a pas encore été entièrement spécifié. Le moteur d'exécution Moka ne prend pas en charge l'exécution de l'\emph{OpaqueAction}
+
+    Cependant, Paryrus donne la possibilité d'étendre le moteur d'exécution Moka et en attribuant le comportement souhaité à \emph{OpaqueAction} et en l'exécutant comme les autres actions pendant la simulation d'un diagramme d'activité. Cette extension n'a cependant pas été facile à implémenter. En effet, les tutoriaux 
+
+
+
+
+    \subsection{Analyse de la structure}
+    Nous avons 
+    \subsection{Comportement}
+    implémentation de la opaque action
+    (stagiaire)
+
+\section{Cas d'étude : la gestion d'une flotte de véhicules électrqiues}
+
+    \subsection{Analyse de la structure}
+
+
+    \subsection{Analyse du comportement}
+    -> simulation 
+
 Nous éprouvons notre démarche au cas métier de la gestion d'une flotte de véhicules électriques. Nous construisons les modèles adéquats pour les vues métier, fonctionnelle et applicative en adoptant des langages exécutables. La cohérence est modélisée dans la vue intégration. L'architecture globale du cas métier est illustrée dans la \ref{fig:architecture_generale_usecase}.
 
 
