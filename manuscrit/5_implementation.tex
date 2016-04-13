@@ -498,8 +498,6 @@ figure~\ref{fig:acceleo_papyrus}.
 \end{figure}
 
 
-
-
 \section{Simulation et analyse du comportement}
 
 Grâce aux langages exécutables, l'analyse du comportement des modèles
@@ -521,37 +519,60 @@ applicatif.
 Comme expliqué dans la section~\ref{sec:opaque_action_papyrus}, Papyrus offre la
 possibilité d'étendre la sémantique d'exécution de fUML à travers les
 \emph{Opaque Action}. Celles-ci permettent d'invoquer des modules d'applications
-extérieures au moment de l'exécution du diagramme d'activité fUML. Un stagiaire
-a développé cette extension en collaboration avec l'équipe Triskel pour les
-besoins de ce cas métier. Cette extension permet d'invoquer directement le
-module MiniZinc pendant l’exécution du processus métier pour optimiser
+extérieures au moment de l'exécution du diagramme d'activité fUML.
+Développée pour les besoins du cas d'étude, cette extension rend possible l'invocation directe
+du module MiniZinc pendant l’exécution du processus métier pour optimiser
 l'affectation des véhicules aux tournées. Rappelons que le module MiniZinc est
 obtenu par transformation de modèle à partir de la vue fonctionnelle.
 
 La simulation prend la forme d'une animation de diagramme. La figure
-\ref{fig:simu_capture_ecran} est une capture d'écran montrant une simulation en
-court d'exécution. Papyrus permet aussi de mettre des «~breakpoints~» sur
+\ref{fig:simu_capture_ecran} est une capture d'écran montrant la simulation du processus métier
+en cours d'exécution. Papyrus offre la possibilité de mettre des \emph{breakpoints} sur
 certaines activités et de paramétrer le pas de temps pour contrôler le
 déroulement du processus.
 
 \begin{figure}[!htbp]
  \begin{center}
-  \includegraphics[angle=90, width=1\textwidth]{figures/5_implementation/simu_capture_ecran.png}
+  \includegraphics[angle=90, width=1\textwidth]{figures/5_implementation/simu_capture_ecran.pdf}
  \end{center}
  \caption{Simulation de l'architecture sous Papyrus}
  \label{fig:simu_capture_ecran}
 \end{figure}
 
-La simulation retourne comme résultat les affectations des véhicles aux tournées. Ce résultat est affiché dans la console comme l'illustre la figure \ref{fig:resultat_simu}. La simulation a pour objectif de voir si l'utilisation des véhicules électrique est rentable en comparant la distance parcourue par le véhicule électrique et la distance minimale permettant de le rentabiliser. Dans ce cas, il est par exemple envisageable de reconfigurer les tournées de manière à ce que plus de véhicules électriques soient affectés. En effet, notre démarche a pour but l'analyse fonctionnelle. La validation s'appuie sur les indicateurs dérivés de l'aspect objectif et sur l'avis des experts. Des analyses statistiques peuvent être conduites mais elles ne rentrent pas dans le périmètre de nos travaux.
-
+La simulation retourne comme résultat les affectations des véhicules aux
+tournées. Ce résultat est affiché dans la console fUML comme l'illustre la
+figure \ref{fig:resultat_simu}. La simulation a pour objectif de voir si
+l'utilisation des véhicules électrique est rentable en comparant la distance
+parcourue par le véhicule électrique et la distance minimale permettant de le
+rentabiliser. Dans ce cas, il est par exemple envisageable de reconfigurer les
+tournées de manière à ce que plus de véhicules électriques soient affectés. En
+effet, notre démarche a pour but l'analyse fonctionnelle. La validation s'appuie
+sur les indicateurs dérivés de l'aspect objectif et sur l'avis des experts. Des
+analyses statistiques peuvent être conduites mais elles ne rentrent pas dans le
+périmètre de nos travaux.
 
 \begin{figure}[!htbp]
  \begin{center}
-  \includegraphics[width=1\textwidth]{figures/5_implementation/resultat_simu.png}
+  \includegraphics[width=0.6\textwidth]{figures/5_implementation/resultat_simu.png}
  \end{center}
- \caption{Résultat retournée par la simulation l'architecture sous Papyrus}
+ \caption{Résultat retourné par la simulation du cas d'étude dans Papyrus}
  \label{fig:resultat_simu}
 \end{figure} 
+
+Comme exposé dans l'état de l'art, l'approche ExecuteEA s'inscrit dans l'école
+de pensée \emph{Enterprise System Architecting}~: par l'analyse du comportement
+de l'architecture, nous souhaitons non seulement vérifier l'alignement de l'IT à
+la stratégie de l'entreprise mais aussi donner la possibilité au métier
+d'évaluer sa propre stratégie en fonction de sa déclinaison au niveau de l'IT.
+Dans le contexte de la gestion d'une flotte de véhicules électriques, la
+simulation peut aboutir à la non adéquation du type de tournées avec l'impératif
+de rentabiliser l'investissement dans une flotte de véhicules électriques à
+cause de la distance des tournées. En pareil cas, les architectes —~métier,
+fonctionnel et applicatif~— en étroite collaboration avec l'architecte
+d'entreprise peuvent envisager de faire évoluer l'application qui optimise les tournées quotidiennes 
+crées à partir des bons de travaux pour en écourter la distance.
+
+
 
 
 %\section{analyse de la structure}
@@ -561,18 +582,20 @@ La simulation retourne comme résultat les affectations des véhicles aux tourn�
 %Un nouveau process faisant intervenir d'ancienne tâche, quelle ancienne appli réutilisée
 %Détecter les problèmes d'interop' entre modules
  
-\lstinputlisting{figures/5_implementation/affectations.mzn}
+%\lstinputlisting{figures/5_implementation/affectations.mzn}
 
-\section{Dicussion}
+\section{Discussion}
 
     \subsection{Positionnement}
+
+        \subsubsection{Par rapport aux autres approches selon la classification de Buckl}
+
+        faire le repère 
+
+        \subsubsection{Par rapport aux autres cadres d'architecture}
 par rapport à ToGAF
-ZAchman
-
-approches d'analyses
-
-vue par vue à quoi sert même théoriquement
-chaque élément modélisé la formulation de la problématique
+Conformité à ZAchman mais on va plus loin en formalisant un métamodèle
+On ne veut pas le détails mais la vue holistique, les liens etc.
 La revue de la littérature ainsi que
 l'analyse des pratiques courante d'EA Plusieurs raisons
 motivent l'utilisation de ces points de vue. D'abord, la vue métier et la vue
@@ -593,5 +616,14 @@ pour chacune des autres vues comme recommandé par le cadre Zachman (Le quoi de
 la dimension horizontale).
 
     \subsection{Limites de l'approches}
+    passage à l'échelle
+    vue technique
+    Vue intégration est indépendante des modèles des autres vues
 
 \section{Perspectives}
+
+    \subsection{Model Typing}
+
+    \subsection{Vue technique}
+    
+    \subsection{As is - To be}
