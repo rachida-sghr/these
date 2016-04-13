@@ -127,6 +127,7 @@ Pour ces travaux de thèse, nous avons donc retenu~:
     \end{figure}
 
     \subsection{Exécution des modèles d’architecture avec Papyrus}
+    \label{sec:opaque_action_papyrus}
 
     Papyrus est un atelier de modélisation orienté IDM doté d'un moteur
     d'exécution de diagrammes fUML conformément aux spécifications de l'OMG.
@@ -431,35 +432,111 @@ kilomètres électriques, c'est à dire affecter aussi souvent que possible un
 véhicule électrique aux tournées. Ainsi, le module MiniZinc prend en compte cet
 objectif en résolvant les contraintes tout en maximisant la distance électrique.
 
+
+
 \subsection{Intégration et analyse de la structure}
 
-Nous modélisons la vue intégration en spécifiant les liens de cohérence  intra-vue et et inter-vues. Les contraintes que ces liens doivent respecter sont spécifiés dans le métamodèle du cadre d'architecture présenté dans la démarche. La figure \ref{fig:integration_gestion_flotte} offre une vue partielle des modèles d'intégration. Nous y modélisons à titre d'illustration les liens de cohérence intravue entre la fonction d'affection, ses inputs et output et son objectifs fonctionnel. Nous faisons de même pour le module d'optimisation Minizinc, ses inputs et outputs ainsi que l'objectif applicatif qu'il remplit. Le même principe d'intégration «~horizontale~», c'est à dire entre les aspects d'une même vue, est appliqué à tous les autres éléments de la vue métier, fonctionnelle et applicative. Nous mettons l'ensemble des modèles de la vue intégration en annexe de ce manuscrit. 
+L'approche conceptuelle que nous proposons pour le \emph{framework ExecuteEA},
+illustrée par la figure~\ref{fig:approche_conceptuelle} à la
+page~\pageref{fig:approche_conceptuelle}, met l'accent sur le rôle intégrateur
+de l'architecte d'entreprise~: il doit s'assurer de la cohérence intra-vue et
+inter-vues de l'architecture globale tout en collaborant avec les architectes
+métier, fonctionnel et applicatif.
 
-De la même manière, nous modélisons les liens de cohérence inter-vues. Par exemple, le lien «~inputs~» exprime qu'un type de données est compatible avec la fonction qui l'utilise et qu'un format est compatible avec le module applicatif qui l'utilise en entrée. Pour garantir une bonne orchestration des processus, il faut que le «~outputs~» d'une tâche (respectivement une fonction, un module applicatif) soit compatible avec le «~inputs~» de la tâche suivante (respectivement une fonction, un module applicatif).
-
-Les éventuelles transformation de modèles sont aussi identifiées dans la vue intégration. Pour le cas métier de la gestion de flotte de véhicules, nous utilisons une transformation de modèle pour générer les contraintes pour le module de calcul d'affectation MiniZinc de la vue applicative à partir des contraintes OCL exprimées dans la fonction affectation de la vue fonctionnelle. La transformation est écrite dans le langage de transformation Acceleo (Annexe Acceleo). En plus de transformer les contraintes décrite dans l'aspect métier, cette transformation de modèle permet aussi de transformer les instances des types fonctionnels en instances dans le format dzn utilisé par le module MiniZinc comme l'illustre la figure \ref{fig:integration_gestion_flotte}. 
+L'intégration de l'architecture passe par la modélisation de la vue intégration,
+c'est-à-dire par la spécification des liens de cohérence  intra-vue et et inter-
+vues conformément au métamodèle EA2M. Nous avons donc modélisé ces liens pour
+l'ensemble des vues métier, fonctionnelle et applicative. Néanmoins, la figure
+\ref{fig:integration_gestion_flotte} ne présente qu'une partie modèles
+d'intégration pour des raisons de lisibilité. Nous y modélisons à titre
+d'illustration les liens de cohérence intra-vue entre la fonction d'affection,
+ses inputs et output en termes de types fonctionnels, ainsi que son objectif
+fonctionnel. Nous faisons de même pour le module d'optimisation MiniZinc, ses
+inputs et outputs ainsi que l'objectif applicatif qu'il remplit. Le même
+principe d'intégration intra-vue, c'est à dire entre les aspects d'une même vue,
+est applicable à tous les autres éléments de la vue métier, fonctionnelle et
+applicative.
 
 \begin{figure}[!htbp]
  \begin{center}
-  \includegraphics[trim= 0cm 16cm 0cm 0cm, width=1\textwidth]{figures/5_implementation/integration_affection_gestion.pdf}
+  \includegraphics[trim= 0cm 0cm 0cm 0cm, width=1\textwidth]{figures/5_implementation/integration_affectation.pdf}
  \end{center}
- \caption{Une vue partielle des modèles d'intégration de la vue fonctionnelle et de la vue applicative}
+ \caption{Une vue partielle des modèles d'intégration \\de la vue fonctionnelle et de la vue applicative}
  \label{fig:integration_gestion_flotte}
 \end{figure}
 
-\section{Simulation et analyse du comportement}
+De la même manière, nous modélisons les liens de cohérence inter-vues. Par
+exemple, le lien \q{consomme} exprime qu'un type de données est compatible avec
+la fonction qui l'utilise et qu'un format est compatible avec le module
+applicatif qui l'utilise en entrée. Pour garantir une bonne orchestration des
+processus, il faut que le \q{produit} d'une tâche (respectivement une fonction,
+un module applicatif) soit compatible avec le ce que produit la tâche suivante
+(respectivement une fonction, un module applicatif).
 
-Analyse du comportement des modèles d'architecture se fait directement dans les langages de modélisation. Comme nous l'expliquons dans notre démarche, la simulation de l'ensemble de l'architecture est pilotée par l'exécution du processus métier. La simulation du processus métier se traduit par l'exécution du diagramme d'activité fUML. Nous utilisons Papyrus comme outil de modélisation et de simulation du processus métier de gestion de flotte de véhicule. En effet, Papyrus implémente la sémantique d'exécution fUML telle qu'elle est spécifiée par l'OMG. 
-
-Notre démarche préconise de modéliser les détails des taches dans les vues inférieure afin de respecter le niveau d'abstraction requis par chaque point de vue et ainsi de ne pas altérer la compréhension des parties prenantes de la vue qui leur destinée. Par exemple, l'analyse métier n'aura ainsi pas à discuter du détails des applications implémentant les taches métier avec l'architecte applicatif.
-
-Papyrus offre la possibilité d'étendre la sémantique d'exécution de fUML à travers les \emph{Opaque Action}\footnote{}. Celles-ci permettent d'invoquer des modules d'applications extérieures au moment de l'exécution du diagramme d'activité fUML. Un stagiaire a développé cette extension en collaboration avec l'équipe Triskel. L'extension permet d'invoquer directement le module MiniZinc pour optimiser l'affectation des véhicules aux tournées.
-
-La simulation prend la forme d'une animation de diagramme. La figure \ref{fig:simu_capture_ecran} est une capture d'écran montrant une simulation en court d'exécution. Papyrus permet aussi de mettre des «~breakpoints~» sur certaines activités et de paramétrer le pas de temps pour contrôler le déroulement du processus.
+L'intégration passe aussi par l'identification des éventuelles transformation de
+modèles. Rappelons ici que les transformations ont pour objectif d'améliorer
+l'alignement métier/IT en automatisant le passage d'une vue à une autre. Pour le
+cas métier de la gestion de flotte de véhicules, nous utilisons une
+transformation de modèle pour générer les contraintes pour le module de calcul
+d'affectation MiniZinc de la vue applicative à partir des contraintes OCL
+exprimées dans la fonction affectation de la vue fonctionnelle. La
+transformation est écrite dans le langage de transformation Acceleo. En plus de
+transformer les contraintes décrite dans l'aspect métier, cette transformation
+de modèle permet aussi de transformer les instances des types fonctionnels en
+instances dans le format \q{.dzn} utilisé par le module MiniZinc comme
+l'illustre la figure \ref{fig:integration_gestion_flotte}. La génération de code
+pour le module MiniZinc peut être lancée à partir de la vue fonctionnelle que
+nous avons précédemment modélisée dans Papyrus comme l'illustre la
+figure~\ref{fig:acceleo_papyrus}.
 
 \begin{figure}[!htbp]
  \begin{center}
-  \includegraphics[width=1\textwidth]{figures/5_implementation/simu_capture_ecran.png}
+  \includegraphics[width=0.7\textwidth]{figures/5_implementation/acceleo_papyrus.png}
+ \end{center}
+ \caption{Génération du code pour le module MiniZinc\\à partir de la vue fonctionnelle dans Papyrus}
+ \label{fig:acceleo_papyrus}
+\end{figure}
+
+
+
+
+\section{Simulation et analyse du comportement}
+
+Grâce aux langages exécutables, l'analyse du comportement des modèles
+d'architecture se fait directement dans les langages de modélisation utilisés
+pour les vues. Avec le \emph{framework} ExecuteEA, nous proposons de simuler de
+l'ensemble de l'architecture en la pilotant par l'exécution du processus métier.
+La simulation du processus métier se traduit par l'exécution du diagramme
+d'activité fUML à l'aide du moteur d'exécution Moka intégré à Papyrus. Un des
+avantages de l'outil Papyrus est de permettre la modélisation \emph{et} la
+simulation de l'architecture dans un même environnement.
+
+Notre approche préconise de modéliser les détails des taches dans les vues
+inférieure afin de respecter le niveau d'abstraction requis par chaque point de
+vue et ainsi de ne pas altérer la compréhension des parties prenantes de la vue
+qui leur destinée. Par exemple, l'analyse métier n'aura ainsi pas à discuter du
+détails des applications implémentant les tâches métier avec l'architecte
+applicatif.
+
+Comme expliqué dans la section~\ref{sec:opaque_action_papyrus}, Papyrus offre la
+possibilité d'étendre la sémantique d'exécution de fUML à travers les
+\emph{Opaque Action}. Celles-ci permettent d'invoquer des modules d'applications
+extérieures au moment de l'exécution du diagramme d'activité fUML. Un stagiaire
+a développé cette extension en collaboration avec l'équipe Triskel pour les
+besoins de ce cas métier. Cette extension permet d'invoquer directement le
+module MiniZinc pendant l’exécution du processus métier pour optimiser
+l'affectation des véhicules aux tournées. Rappelons que le module MiniZinc est
+obtenu par transformation de modèle à partir de la vue fonctionnelle.
+
+La simulation prend la forme d'une animation de diagramme. La figure
+\ref{fig:simu_capture_ecran} est une capture d'écran montrant une simulation en
+court d'exécution. Papyrus permet aussi de mettre des «~breakpoints~» sur
+certaines activités et de paramétrer le pas de temps pour contrôler le
+déroulement du processus.
+
+\begin{figure}[!htbp]
+ \begin{center}
+  \includegraphics[angle=90, width=1\textwidth]{figures/5_implementation/simu_capture_ecran.png}
  \end{center}
  \caption{Simulation de l'architecture sous Papyrus}
  \label{fig:simu_capture_ecran}
