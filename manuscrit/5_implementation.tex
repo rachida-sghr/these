@@ -1,5 +1,5 @@
 %!TEX  root = main.tex
-\chapter{Prototypage du \emph{framework ExecuteEA}}
+\chapter{Prototypage et validation du \emph{framework ExecuteEA}}
 \label{ch:implem}
 
 \PartialToc
@@ -81,7 +81,8 @@ Pour ces travaux de thèse, nous avons donc retenu~:
      \label{fig:editeur_modele2}
     \end{figure}
 
-    La figure~\ref{fig:modeleEA} représente une capture d'écran d'un modèle d'architecture d'entreprise créé avec l'éditeur de modèle ExecuteEA.
+    La figure~\ref{fig:modeleEA} représente une capture d'écran d'un modèle d'architecture
+    d'entreprise créé avec l'éditeur de modèle ExecuteEA.
 
     \begin{figure}[!htbp]
      \begin{center}
@@ -146,7 +147,7 @@ Pour ces travaux de thèse, nous avons donc retenu~:
     
     Le standard fUML a prévu l'exécution de comportements spécifiques difficiles
     à modéliser avec  des diagrammes d'activité. Il dédie à cet effet une
-    action\footnote{Dans la spécification UML et fUML, une action est une étape
+    action\footnote{Dans les spécifications d'UML et de fUML, une action est une étape
     unitaire à l'intérieur d'une activité. Une activité est donc composée de
     plusieurs actions.} spécialisée~: l'\emph{OpaqueAction}. Papyrus s'appuie
     sur le moteur d'exécution Moka pour simuler les diagramme fUML. Moka est
@@ -498,7 +499,7 @@ figure~\ref{fig:acceleo_papyrus}.
 \end{figure}
 
 
-\section{Simulation et analyse du comportement}
+\subsection{Simulation et analyse du comportement}
 
 Grâce aux langages exécutables, l'analyse du comportement des modèles
 d'architecture se fait directement dans les langages de modélisation utilisés
@@ -584,46 +585,56 @@ crées à partir des bons de travaux pour en écourter la distance.
  
 %\lstinputlisting{figures/5_implementation/affectations.mzn}
 
-\section{Discussion}
+\section[Discussion et perspectives]{Discussion et perspectives pour le prototypage\\
+            et la validation du \emph{framework} ExecuteEA}
 
-    \subsection{Positionnement}
+    Le développement du prototype et son application au cas métier
+    de la gestion d'une flotte de véhicules électriques concrétise l'ensemble des
+    propositions autour du \emph{framework} ExecuteEA et du métamodèle EA2M
+    et fournit un outil d'analyse de la structure et du comportement
+    d'une architecture d'entreprise.
 
-        \subsubsection{Par rapport aux autres approches selon la classification de Buckl}
+    Bien que nous n'avons modélisé et simulé qu'un seul processus métier, la mise
+    en œuvre du \emph{framework} ExecuteEA a permis de valider les apports de l'IDM
+    en tant que cadre technologique et méthodologique aux différentes activités d'EA.
+    La première limite de cet implémentation est donc le passage à l'échelle. C'est en effet dans le
+    traitement d'une grande quantité d'artefacts utiles à l'EA, dont la gestion dépend souvent du 
+    savoir-faire de l'architecte d'entreprise uniquement
+    sans assistance informatique particulière, que notre  proche prouve sa valeur.
 
-        faire le repère 
+    Une premier passage à l'échelle serait donc de d'élargir le cas métier en incluant par exemple
+    le processus de calcul de tournées journalières à partir de bons de travaux, le processus
+    de recharge de la batterie et ses impacts sur le réseau électrique, le processus d'entretien des
+    voitures, le processus de réservation de voitures par d'autres agents non impliqués dans les tournées,
+    etc. 
 
-        \subsubsection{Par rapport aux autres cadres d'architecture}
-par rapport à ToGAF
-Conformité à ZAchman mais on va plus loin en formalisant un métamodèle
-On ne veut pas le détails mais la vue holistique, les liens etc.
-La revue de la littérature ainsi que
-l'analyse des pratiques courante d'EA Plusieurs raisons
-motivent l'utilisation de ces points de vue. D'abord, la vue métier et la vue
-applicative sont incontournables pour n'importe quel cadre d'architecture.
-Ensuite, selon les cadres d'architecture, la vue fonctionnelle est modélisée de
-deux manière~:~ elle est soit intégrée à la vue applicative sous forme de
-services (Archimate, TOGAF, RM-ODP), soit modélisée à part entière dans une vue
-dédiée (Club Urba, \gls{sgam}, Zachman). Nous prenons le parti de modéliser
-explicitement les fonctions dans une vue dédiée. En effet, passer directement
-de la vue du métier à la vue applicative peut être en quelque sorte brutal pour
-l'architecte métier mais aussi pour l'architecte applicatif. La vue fonctionnelle
-permet une transition progressive de la logique métier vers l'architecture
-logicielle.
+    Lors de la simulation du processus métier, nous avons implémenté la
+    tâche de l'affectation de véhicules aux tournées. Cette implémentation a consisté à modéliser
+    la fonction qui réalise cette tâche sous la forme de contraintes OCL puis à obtenir par transformation
+    de modèle le code pour le module MiniZinc de la vue applicative. 
+    Ces développements valident le principe
+    de simulation que nous proposons (cf. figure~\ref{fig:Simulation_Approche} page~\pageref{fig:Simulation_Approche}).
+    Il serait donc intéressant de l'étende au reste des tâches métier du processus en utilisant cette fois des diagrammes
+    d'activité fUML pour modéliser et simuler leur comportement.
 
-Nous ne modélisons pas les informations dans une vue dédiée contrairement aux
-cadre RM-ODP ou \gls{sgam}. Nous explicitons les informations en tant qu'aspect
-pour chacune des autres vues comme recommandé par le cadre Zachman (Le quoi de
-la dimension horizontale).
+    De manière générale, bien qu'il ne s'agisse que d'un prototype, l'implémentation de la vue intégration avec EMF
+    a permis de mettre en lumière les avantages que présente la méta-modélisation pour l'analyse structurelle
+    des modèles d'architecture, notamment grâce à la relation de conformité qui lie un modèle à son métamodèle.
+    La méta-modélisation avec Ecore est d'autant plus pertinente avec le recours aux contraintes OCLinEcore
+    permettant de préciser d'avantage le métamodèle EA2M. Ces mêmes contraintes peuvent aussi servir à
+    exprimer des requêtes sur le modèles. À titre d'exemple, nous sommes en train de développer des requêtes
+    permettant de retrouver toutes les tâches (respectivement
+    fonctions et modules) utilisant un certain concept (respectivement type et format). Une multitude de requêtes de ce
+    type gagnent à être développées pour faciliter l'analyse structurelle de l'architecture.
 
-    \subsection{Limites de l'approches}
-    passage à l'échelle
-    vue technique
-    Vue intégration est indépendante des modèles des autres vues
+    Enfin, la question de l'adoption des langages de modélisation par les différents parties-prenantes (architectes
+    d'entreprise, métier, fonctionnel, applicatif) est cruciale. Bien que l'utilisation de UML comme
+    langage de modélisation n'est pas évident de prime abord par des personnes à profile non technique,
+    les spécifications des use case Smart Grids recourent de plus en plus à UML au sein de la \gls{cei}.
+    Les entretiens menés avec les différents experts d'EA et du réseau électrique révèlent cependant la frilosité
+    de certaines personne à adopter UML pour décrire leurs spécifications dans leur intégralité. Néanmoins, ces
+    personnes recourent de plus en plus à certains diagrammes comme les diagrammes d'activités pour décrire
+    leurs processus. Dans ce contexte, le choix de fUML et de OCL nous semble être \q{raisonnable}.  
 
-\section{Perspectives}
+    % De manière nous avons mis l'accent sur la simulation est pas assez sur l'analyse de la structure. 
 
-    \subsection{Model Typing}
-
-    \subsection{Vue technique}
-    
-    \subsection{As is - To be}

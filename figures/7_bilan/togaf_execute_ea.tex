@@ -1,0 +1,36 @@
+\begin{tikzpicture}[
+    mynode/.style={inner sep=0pt, circle,draw,font=\footnotesize,minimum size=2.3cm,align=center}]
+    \node at (0,0) [mynode] (center) {Gestion des\\ exigences} ;
+    \foreach \i in {0,...,7} {
+        \ifthenelse{\i=0}{\def\mytext{\textbf{A}\\ Vision}}{}
+        \ifthenelse{\i=1}{\def\mytext{\textbf{B}\\ Architecture\\ métier}}{}
+        \ifthenelse{\i=2}{\def\mytext{\textbf{C}\\ Architectures SI}}{}
+        \ifthenelse{\i=3}{\def\mytext{\textbf{D}\\ Architectures\\ techniques}}{}
+        \ifthenelse{\i=4}{\def\mytext{\textbf{E}\\ Opportunités \\ et solutions}}{}
+        \ifthenelse{\i=5}{\def\mytext{\textbf{F}\\ Plan de\\ migration}}{}
+        \ifthenelse{\i=6}{\def\mytext{\textbf{G}\\ Gouvernance}{}}
+        \ifthenelse{\i=7}{\def\mytext{\textbf{H}\\ Gestion du\\ changement\\ d'architecture}}{}
+        \node at (90+-45*\i:4cm) [mynode] (\i) {\mytext} ;
+    }
+    \node at (0, 7.3cm) [mynode] (preliminaires) {Préliminaires} ;
+
+    \draw[angle 60-angle 60] (preliminaires) -- (0);
+
+    \draw[-angle 60] (0) -- (1);
+    \draw[-angle 60] (1) -- (2);
+    \draw[-angle 60] (2) -- (3);
+    \draw[-angle 60] (3) -- (4);
+    \draw[-angle 60] (4) -- (5);
+    \draw[-angle 60] (5) -- (6);
+    \draw[-angle 60] (6) -- (7);
+    \draw[-angle 60] (7) -- (0);
+
+    \draw[angle 60-angle 60] (center) -- (0);
+    \draw[angle 60-angle 60] (center) -- (1);
+    \draw[angle 60-angle 60] (center) -- (2);
+    \draw[angle 60-angle 60] (center) -- (3);
+    \draw[angle 60-angle 60] (center) -- (4);
+    \draw[angle 60-angle 60] (center) -- (5);
+    \draw[angle 60-angle 60] (center) -- (6);
+    \draw[angle 60-angle 60] (center) -- (7);
+\end{tikzpicture}
