@@ -1,16 +1,18 @@
 \begin{tikzpicture}[
-    mynode/.style={inner sep=0pt, circle,draw,font=\footnotesize,minimum size=2.3cm,align=center}]
-    \node at (0,0) [mynode] (center) {Gestion des\\ exigences} ;
+    mynode/.style={inner sep=0pt, circle,draw,font=\footnotesize,minimum size=2.3cm,align=center},
+    mycolorednode/.style={inner sep=0pt, circle,draw,font=\footnotesize,minimum size=2.3cm,align=center,fill=gray!60}]
+    \node at (0,0) [mycolorednode] (center) {Intégration\\et Simulation} ;
     \foreach \i in {0,...,7} {
-        \ifthenelse{\i=0}{\def\mytext{\textbf{A}\\ Vision}}{}
-        \ifthenelse{\i=1}{\def\mytext{\textbf{B}\\ Architecture\\ métier}}{}
-        \ifthenelse{\i=2}{\def\mytext{\textbf{C}\\ Architectures SI}}{}
+        \def\nodestyle{mynode}
+        \ifthenelse{\i=0}{\def\mytext{\textbf{A}\\ Vision}\def\nodestyle{mycolorednode}}{}
+        \ifthenelse{\i=1}{\def\mytext{\textbf{B}\\ Architecture\\ métier}\def\nodestyle{mycolorednode}}{}
+        \ifthenelse{\i=2}{\def\mytext{\textbf{C}\\ Architectures SI}\def\nodestyle{mycolorednode}}{}
         \ifthenelse{\i=3}{\def\mytext{\textbf{D}\\ Architectures\\ techniques}}{}
         \ifthenelse{\i=4}{\def\mytext{\textbf{E}\\ Opportunités \\ et solutions}}{}
         \ifthenelse{\i=5}{\def\mytext{\textbf{F}\\ Plan de\\ migration}}{}
         \ifthenelse{\i=6}{\def\mytext{\textbf{G}\\ Gouvernance}{}}
         \ifthenelse{\i=7}{\def\mytext{\textbf{H}\\ Gestion du\\ changement\\ d'architecture}}{}
-        \node at (90+-45*\i:4cm) [mynode] (\i) {\mytext} ;
+        \node at (90+-45*\i:4cm) [\nodestyle] (\i) {\mytext} ;
     }
     \node at (0, 7.3cm) [mynode] (preliminaires) {Préliminaires} ;
 

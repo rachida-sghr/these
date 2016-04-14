@@ -17,10 +17,17 @@
 \begin{tikzpicture}[overlay,remember picture]
     \def\mytablecolwidth{3.9}  % ~ column width (found manually)
     \def\mytableleftof{-0.21}  % ~ first column offset (found manually)
-    \newcommand\drawcolsep[2]{%
-    \draw[#2] let \p3=(tabletop), \p4=(tablebottom) in ($(\x3,\y3)+(\mytableleftof+#1*\mytablecolwidth,0.45)$) -- ($(\x3,\y4)+(\mytableleftof+#1*\mytablecolwidth,-0.22)$);}
-    \drawcolsep{0}{}
-    \drawcolsep{1}{dotted}
-    \drawcolsep{2}{dotted}
-    \drawcolsep{3}{}
+    \newcommand\drawcolsep[3]{%
+        \pgfmathsetmacro{\addone}{#1+1}
+        \path let \p3=(tabletop), \p4=(tablebottom) in coordinate (tl) at ($(\x3,\y3)+(\mytableleftof+ #1*\mytablecolwidth,0.45)$)
+                                                       coordinate (bl) at ($(\x3,\y4)+(\mytableleftof+ #1*\mytablecolwidth,-0.22)$)
+                                                       coordinate (tr) at ($(\x3,\y3)+(\mytableleftof+ \addone*\mytablecolwidth,0.45)$)
+                                                       coordinate (br) at ($(\x3,\y4)+(\mytableleftof+ \addone*\mytablecolwidth,-0.22)$);
+        \draw[#2] (tl) -- (bl);
+        \ifthenelse{\NOT\equal{#3}{none}}{\fill[fill=#3,opacity=0.3] (tl) -- (bl) -- (br) -- (tr) -- cycle ;}{}
+        }
+    \drawcolsep{0}{thin,black!60}{green!70!black!40}
+    \drawcolsep{1}{dotted}{yellow!70!black!50}
+    \drawcolsep{2}{dotted}{blue!90!black!30}
+    \drawcolsep{3}{thin,black!60}{none}
 \end{tikzpicture}
