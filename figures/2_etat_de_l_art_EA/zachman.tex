@@ -6,15 +6,16 @@
 % to draw them. Alignment is pretty much custom. I just hope this is gonna work
 % with no adjusment when putting this in the main document.
 \setlength{\mytablewidth}{\textwidth}
-\setlength{\myfirstcolwidth}{\dimexpr0.25\mytablewidth-2\tabcolsep\relax}
-\setlength{\mycolwidth}{\dimexpr0.16\mytablewidth-2\tabcolsep\relax}
+\setlength{\myfirstcolwidth}{\dimexpr0.2\mytablewidth-2\tabcolsep\relax}
+\setlength{\mycolwidth}{\dimexpr0.17\mytablewidth-2\tabcolsep\relax}
+\newcommand\mycell[1]{{\tiny{#1}}}
 
 \begin{adjustbox}{width=\mytablewidth,center}
     \scriptsize
-    \begin{tabulary}{\mytablewidth}{m{\myfirstcolwidth}m{\mycolwidth}m{\mycolwidth}m{\mycolwidth}m{\mycolwidth}m{\mycolwidth}}
+    \noindent\begin{tabulary}{\mytablewidth}{m{\myfirstcolwidth}m{\mycolwidth}m{\mycolwidth}m{\mycolwidth}m{\mycolwidth}m{\mycolwidth}}
 
         % \cmidrule[\heavyrulewidth]{2-6}
-        \mrows{2}\tikzmark{zachmantopleft} \
+        \multirow{2}{*}{}\tikzmark{zachmantopleft} \
         & \centbf{Données} \
         & \centbf{Fonctions} \
         & \centbf{Personnel} \
@@ -23,71 +24,49 @@
         \tabularnewline
         & \centit{Quoi} \
         & \centit{Comment} \
-        & \centit{Qui} \
         & \centit{Quand} \
+        & \centit{Qui} \
         & \centit{Pourquoi} \
         \tabularnewline\midrule
 
-        \tikzmark{zachmanlefttop}\textbf{Portée} \
-        & \mrows{2} \
-        & \mrows{2} \
-        & \mrows{2} \
-        & \mrows{2} \
-        & \mrows{2} \
-        \tabularnewline
-
-        \textit{Planificateur} &&&&& \
+        \tikzmark{zachmanlefttop}\textbf{Portée}\newline\textit{Planificateur} \
+        & {\tiny{Liste de choses importantes pour l'entreprise}} \
+        & {\tiny{Processus realises par l'entreprise}} \
+        & {\tiny{List des unites organisationnelles}} \
+        & {\tiny{Cycles d'affaires}} \
+        & {\tiny{Strategies/objectifs de l'entreprise}} \
         \tabularnewline\midrule
 
-        \textbf{Modèle métier} \
-        & \mrows{2} \
-        & \mrows{2} \
-        & \mrows{2} \
-        & \mrows{2} \
-        & \mrows{2} \
-        \tabularnewline
-        % \textering(Conceptual) &&&&&& \
-        % \tabularnewline
-        \textit{Propriétaire} &&&&& \
+        \textbf{Modèle métier}\newline\textit{Propriétaire} \
+        & \mycell{Modèle semantique \color{red}{ou Diagramme des relations d'entité?}}  \
+        & \mycell{Modèle de processus d'activité (Diagramme du Flux de Données physiques)}  \
+        & \mycell{\color{red}{workflow model (Organigramme, avec des rôles ; sous-ensembles de compétence ; questions de sécurité.)}} \
+        & \mycell{\color{red}{master schedule}} \
+        & \mycell{Business plan} \
         \tabularnewline\midrule
 
-        \textbf{Modèle système} \
-        & \mrows{2} \
-        & \mrows{2} \
-        & \mrows{2} \
-        & \mrows{2} \
-        & \mrows{2} \
-        \tabularnewline
-        \textit{Concepteur} &&&&& \
+        \textbf{Modèle système}\newline\textit{Concepteur}  \
+        & \mycell{Modèle de données (entités fusionnées, entièrement normalisées)}  \
+        & \mycell{Architecture d'application}  \
+        & \mycell{Architecture d'interface humaine (rôles, données, accès)} \
+        & \mycell{Diagramme de dépendance, histoire de la vie de l'entité (structure de processus)} \
+        & \mycell{Modèle de principe économique} \
         \tabularnewline\midrule
 
-        \textbf{Modèle} \
-        & \mrows{2} \
-        & \mrows{2} \
-        & \mrows{2} \
-        & \mrows{2} \
-        & \mrows{2} \
-        \tabularnewline
-        \textbf{Technologique} \
-        & \mrows{2} \
-        & \mrows{2} \
-        & \mrows{2} \
-        & \mrows{2} \
-        & \mrows{2} \
-        \tabularnewline
-        \textit{Réalisateur} &&&&& \
+        \textbf{Modèle}\newline\textbf{Technologique}\newline\textit{Réalisateur} \
+        & \mycell{Architecture de données (tables et colonnes) ; carte des données légales}  \
+        & \mycell{Conception de système : diagramme de structure, pseudo-code}  \
+        & \mycell{Interface utilisateur (comment le système se comportera) ; conception de la sécurité} \
+        & \mycell{Diagramme «~flux de contrôle~» (structure de contrôle)} \
+        & \mycell{Conception du principe économique} \
         \tabularnewline\midrule
 
-        \tikzmark{zachmanleftbottom}\textbf{Modèle détaillé} \
-        & \mrows{2} \
-        & \mrows{2} \
-        & \mrows{2} \
-        & \mrows{2} \
-        & \mrows{2} \
-        \tabularnewline
-        % \textering(Out of context) &&&&&& \
-        % \tabularnewline
-        \textit{Sous-traitant} &&&&& \
+        \tikzmark{zachmanleftbottom}\textbf{Modèle détaillé}\newline\textit{Sous-traitant} \
+        & \mycell{Conception de données (dénormalisé), conception physique de stockage}  \
+        & \mycell{Conception détaillée de programme}  \
+        & \mycell{Écrans, architecture de sécurité (qui peut voir quoi ?)} \
+        & \mycell{Définitions de synchronisation} \
+        & \mycell{Spécifications de règle dans la logique de programme} \
         \tabularnewline\bottomrule
     \end{tabulary}
     \begin{tikzpicture}[overlay,remember picture]
@@ -98,15 +77,15 @@
         % left vertical arrow
         \draw[<->] let \p3=(zachmanlefttop), \p4=(zachmanleftbottom) in ($(\x3,\y3)+(-0.3,0.3)$) -- node[label={[label distance=-2ex, text depth=3ex, label position=above, rotate=90]above:Perspectives (lignes)}] {} ($(\x3,\y4)+(-0.3,-0.45)$);
 
-        % HACK: draw vertical column separators
-        \def\zachmancolwidth{2.41}  % ~ column width (found manually)
-        \def\zachmanleftoffset{3.55}  % ~ first column offset (found manually)
-        \newcommand\drawcolsep[1]{%
-            \draw[dotted] let \p3=(zachmanlefttop), \p4=(zachmanleftbottom) in ($(\x3,\y3)+(\zachmanleftoffset+#1*\zachmancolwidth,0.24)$) -- ($(\x3,\y4)+(\zachmanleftoffset+#1*\zachmancolwidth,-0.59)$);}
-        \drawcolsep{0}
-        \drawcolsep{1}
-        \drawcolsep{2}
-        \drawcolsep{3}
-        \drawcolsep{4}
+%         % HACK: draw vertical column separators
+%         \def\zachmancolwidth{2.41}  % ~ column width (found manually)
+%         \def\zachmanleftoffset{3.55}  % ~ first column offset (found manually)
+%         \newcommand\drawcolsep[1]{%
+%             \draw[dotted] let \p3=(zachmanlefttop), \p4=(zachmanleftbottom) in ($(\x3,\y3)+(\zachmanleftoffset+#1*\zachmancolwidth,0.24)$) -- ($(\x3,\y4)+(\zachmanleftoffset+#1*\zachmancolwidth,-0.59)$);}
+%         \drawcolsep{0}
+%         \drawcolsep{1}
+%         \drawcolsep{2}
+%         \drawcolsep{3}
+%         \drawcolsep{4}
     \end{tikzpicture}
 \end{adjustbox}
