@@ -2,14 +2,14 @@
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage[french]{babel}
-\usepackage[left=3cm,right=3cm,bottom=3.5cm,footskip=1.5cm,headheight=15pt,twoside]{geometry}
+\usepackage[left=3cm,right=3cm,headheight=15pt,twoside]{geometry}
 
 % custom headers/footers
 \usepackage{fancyhdr}
 \pagestyle{fancy}
 \fancyhead[ro,re,c]{}
-\fancyhead[le]{\begin{minipage}[b]{\textwidth}\raggedleft\small\bfseries\slshape\nouppercase\leftmark\mbox{}\\\end{minipage}}
-\fancyhead[lo]{\begin{minipage}[b]{\textwidth}\raggedright\small\bfseries\slshape\nouppercase\rightmark\mbox{}\\\end{minipage}}
+\fancyhead[le]{\begin{minipage}[b]{\textwidth}\raggedleft\small\bfseries\slshape\nouppercase\leftmark\\\end{minipage}}
+\fancyhead[lo]{\begin{minipage}[b]{\textwidth}\raggedright\small\bfseries\slshape\nouppercase\rightmark\\\end{minipage}}
 \fancyfoot[r,c]{}
 \fancyfoot[le]{\raggedright\small\thepage}
 \fancyfoot[lo]{\raggedleft\small\thepage}
@@ -70,7 +70,8 @@
 % quote French 
 \newcommand{\q}[1]{«~#1~»}
 
-\begin{document}    
+
+\begin{document}
     % ===========================================
     % Partial TOCs
     % ===========================================
@@ -109,7 +110,6 @@
     % ===========================================
     % Content
     % ===========================================
-    \include{0_couverture}
     % \include{title}
     \cleardoublepage
     % \section*{Remerciements}
