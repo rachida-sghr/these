@@ -8,8 +8,8 @@
 \usepackage{fancyhdr}
 \pagestyle{fancy}
 \fancyhead[ro,re,c]{}
-\fancyhead[le]{\begin{minipage}[b]{\textwidth}\raggedleft\small\bfseries\slshape\nouppercase\leftmark\\\end{minipage}}
-\fancyhead[lo]{\begin{minipage}[b]{\textwidth}\raggedright\small\bfseries\slshape\nouppercase\rightmark\\\end{minipage}}
+\fancyhead[le]{\begin{minipage}[b]{\textwidth}\raggedleft\small\bfseries\slshape\nouppercase\leftmark\mbox{}\\\end{minipage}}
+\fancyhead[lo]{\begin{minipage}[b]{\textwidth}\raggedright\small\bfseries\slshape\nouppercase\rightmark\mbox{}\\\end{minipage}}
 \fancyfoot[r,c]{}
 \fancyfoot[le]{\raggedright\small\thepage}
 \fancyfoot[lo]{\raggedleft\small\thepage}
@@ -70,7 +70,7 @@
 % quote French 
 \newcommand{\q}[1]{«~#1~»}
 
-\begin{document}
+\begin{document}    
     % ===========================================
     % Partial TOCs
     % ===========================================
@@ -109,6 +109,7 @@
     % ===========================================
     % Content
     % ===========================================
+    \include{0_couverture}
     % \include{title}
     \cleardoublepage
     % \section*{Remerciements}
