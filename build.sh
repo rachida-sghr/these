@@ -10,6 +10,7 @@ function prepare_build_dir() {
     cd ${BUILD_DIR}
     ln -s ../figures figures 
     ln -s ../manuscrit/includes includes
+    ln -s ../manuscrit/logo logo
     cd ..
 }
 
