@@ -1,21 +1,20 @@
 %!TEX  root = main.tex
-\chapter{Motivations et problématique}
+\chapter{Introduction}
 \label{ch:problematique}
 
-\PartialToc
 
 \section{Contexte industriel}
 
-Dans cette partie, nous introduisons le concept de Smart Grid avant d'exposer
-les raisons de l'avènement de ce nouveau paradigme des réseaux électriques.
-
+Les travaux de cette thèse s'inscrivent dans le contexte industriel des Smart Grids.
+Dès lors, nous commençons ce manuscrit par la présentation de ce paradigme émergent et
+des défis qu'il représente pour les entreprises fournissant et distribuant de l'électricité.
 
 \subsection{Qu'est ce qu'un Smart Grid ?}
 
 Le terme «~Smart Grid~» est une appellation générale désignant les technologies 
 «~intelligentes~» qui «~augmentent~»\footnote{À la manière de «~l'augmentation 
 de l'humain~» qui désigne l'amélioration technique des performances humaines, 
-aussi bien physiques, intellectuelles qu'émotionnelles \cite{le2013humain}.} 
+aussi bien physiques, intellectuelles qu'émotionnelles\cite{le2013humain}.} 
 les réseaux électriques actuels en améliorant leurs performances. 
 
 Cette «~augmentation~» peut servir différents objectifs dépendant des limites du 
@@ -27,14 +26,19 @@ En Europe, les exigences de régulation et les volontés politiques des états
 membres en matière d'écologie favorisent l'intégration des énergies 
 renouvelables et la participation active des consommateurs. Les Smart Grids 
 européens sont donc synonymes de producteurs d'énergie renouvelables et de 
-compteurs intelligents. Pour l'\gls{etp}, les Smart Grids sont ainsi «~des 
-réseaux électriques qui intègrent de manière intelligente les comportements et 
-les actions de tous les acteurs connectés — les producteurs, les consommateurs 
-et ceux qui consomment et produisent en même temps — pour garantir une 
-fourniture d'électricité efficiente, durable, économique et sûre.~» \cite{ETP}.
+compteurs intelligents. Dès lors, la définition que donne \gls{etp} des
+Smart Grids est la suivante~:
+\\\
+ \begin{definition}
+Les Smart Grids sont des réseaux électriques qui intègrent de manière 
+intelligente les comportements et 
+les actions de tous les acteurs connectés —~les producteurs, les consommateurs 
+et ceux qui consomment et produisent en même temps~— pour garantir une 
+fourniture d'électricité efficiente, durable, économique et sûre~\cite{ETP}.
+ \end{definition}
 
 Les Smart Grids américains mettent, quant à eux, l'accent sur la modernisation 
-des réseaux de transport d'énergie souvent très mal entretenus. Les États Unis 
+des réseaux de transport d'énergie souvent très mal entretenus. Les États-Unis 
 doivent en effet faire face un nombre de coupures de courant qui ne cesse 
 d'augmenter, passant de 76 pannes en 2007 à plus de 300 en 2011 \cite{detroit}. 
 Ces pannes sont aussi fréquentes qu'importantes. En 2003, un \textit{blackout} 
@@ -49,32 +53,34 @@ de trois facteurs \cite{outages}:
     \item des conditions climatiques de plus en plus extrêmes.
 \end{itemize}
 
-Aux États Unis, moderniser le réseau électrique en investissant dans les Smart 
+Aux États-Unis, moderniser le réseau électrique en investissant dans les Smart 
 Grids est ainsi essentiellement guidé par un impératif de fiabilité. Pour 
-définir les Smart Grids, le département de l'énergie américain (\textit{United 
+qualifier les Smart Grids, le département de l'énergie américain (\textit{United 
 States Department of Energy}) dresse une liste d'exigences mettant en avant la 
-sûreté des réseaux électriques \cite{USDE}. Selon cette définition, un Smart Grid 
-doit ainsi répondre aux exigences suivantes~:
+sûreté des réseaux électriques \cite{USDE} et en donne alors la définition suivante~:
+\\\
+\begin{definition}
+Un Smart Grid est un réseau électrique qui répond aux exigences suivantes~:
+    \begin{itemize}
+        \item auto-réparation en cas d'événements perturbateurs~;
+        \item participation active des consommateurs~; 
+        \item résilience face aux attaques physiques et cybernétiques~;
+        \item fourniture électricité de qualité face aux besoins du 21\up{ème}
+              siècle~;
+        \item intégration de moyens de production et de stockage d'électricité~;
+        \item exploitation optimisée des infrastructures et conduite efficace des 
+    réseaux électriques.
+    \end{itemize}
+\end{definition}
 
-\begin{itemize}
-    \item auto-réparation en cas d'événements perturbateurs~;
-    \item permettre la participation active des consommateurs~; 
-    \item résilience face aux attaques physiques et cybernétiques~;
-    \item fournir une électricité de qualité face aux besoins du 21\up{ème}
-          siècle~;
-    \item intégration de moyens de production et de stockage d'électricité~;
-    \item exploitation optimisée des infrastructures et conduite efficace des 
-réseaux électriques.
-\end{itemize} 
-
-À partir de ces deux définitions, nous constatons que l'obsolescence du système 
-électrique (dans le cas des États Unis) et les impératifs régulatoires et 
-écologiques (dans le cas de l'Europe) font de la mise à niveau des réseaux 
+À partir de ces deux définitions, nous constatons que les impératifs régulatoires et 
+écologiques (dans le cas de l'Europe) et l'obsolescence du système 
+électrique (dans le cas des États-Unis) font de la mise à niveau des réseaux 
 électriques un enjeu crucial. Cette mise à niveau passe d'abord par le 
 déploiement des \gls{tic} et donc par l'implémentation des Smart Grids, plutôt 
 que par le remplacement massif des infrastructures électriques existantes. 
 
-Envisager uniquement le renforcement et de remplacement massif des 
+Envisager uniquement le renforcement et le remplacement massif des 
 infrastructures électriques du  réseau 
 n'est en effet pas une solution optimale et semble difficilement réalisable 
 compte tenu de la croissance démographique constante des zones urbaines et du 
@@ -108,11 +114,11 @@ Cette même directive fixe à 20\% la réduction des émissions de gaz à effet 
 serre par rapport à leur niveau en 1990 et à 20\% l'augmentation de l'efficacité 
 énergétique. Or les pics de consommation en période de pointe sont coûteux et 
 émetteurs de CO\textsubscript{2}. Ces pics apparaissent typiquement en fin de journée d'un 
-jour de semaine lorsque les gens allument leurs télévisions, plaques électriques 
+jour de semaine lorsque les consommateurs allument leurs télévisions, plaques électriques 
 et autres outils électroménagers en rentrant chez eux.  En effet, pour maintenir 
 l'équilibre entre l'offre et la demande d'électricité en cas de pics de 
 consommation, les producteurs recourent à des centrales à charbon, à fioul et à 
-gaz comme l'illustre la figure~\ref{fig:courbeCharge}.
+gaz comme l'illustre la figure~\ref{fig:courbeCharge}. 
 
 
 \begin{figure}[!ht]
@@ -124,7 +130,7 @@ française du lundi 15 février 2016 (source RTE\protect\footnote{ Réseau Trans
  \label{fig:courbeCharge}
 \end{figure}
 
-Ces pics s'intensifient significativement avec l'émergence de nouveaux usages de 
+Seulement, ces pics s'intensifient significativement avec l'émergence de nouveaux usages de 
 consommation d'énergie dont, notamment, la mobilité électrique. En France, les 
 pouvoirs publics estiment à deux millions le nombre de véhicules électriques en 
 circulation en 2020. L'impact de ces véhicules sur l'équilibre entre l'offre et 
@@ -137,6 +143,11 @@ puissance à~:
     \item un quartier urbain si la recharge s'effectue en 3~min (recharge rapide).
 \end{itemize}
 
+Dès lors, pour des raisons environnementales législatives mais aussi financières, ces pics doivent être écrêtés.
+Les gestionnaires de réseaux électriques voient dans le déploiement des
+technologies Smart Grids un moyen d'y parvenir.
+
+
 
 
 \subsection{Architecture des Smart Grids : \\
@@ -145,11 +156,11 @@ vers des réseaux électriques flexibles et communicants}
 Pour faire face aux mutations du contexte énergétique, les gestionnaires de 
 réseaux électriques ne peuvent plus compter uniquement sur la conduite 
 prévisionnelle du réseau électrique (peu réactive face à l'intermittence des 
-énergies renouvelables par exemple) ni envisager le redimensionnement du réseau 
+énergies renouvelables par exemple), ni envisager le redimensionnement du réseau 
 (onéreux et non optimal). 
 
 La solution réside dans l'automatisation de la conduite des réseaux électriques, 
-grâce a l'acquisition et l'exploitation en temps réel d'informations sur l'état 
+grâce à l'acquisition et l'exploitation en temps réel d'informations sur l'état 
 des réseaux. Cela passe par le déploiement d'un réseau informatique au niveau 
 des infrastructures électriques, et la mise en place dans le \gls{si} d'outils 
 pour l'exploiter.
@@ -170,14 +181,14 @@ du pic de consommation de la fin de journée d'un jour en semaine. Grâce aux
 distributeur d'électricité, s'appuyant sur des points de contrôle distants et 
 des compteurs intelligents installés chez les clients pour envoyer et recevoir 
 des informations et des consignes, peut alors adresser des demandes 
-d'effacement aux consommateurs moyennant des incitations tarifaires. Il peut 
-s'agir d'une coupure du chauffage pendant 15~min à 30~min d'un foyer ou d'un 
+d'\q{effacement} aux consommateurs moyennant des incitations tarifaires. L'effacement peut
+prendre, par exemple, la forme d'une coupure du chauffage pendant 15~min à 30~min d'un foyer ou d'un 
 bureau bien isolé. Sans incidence sur le confort des consommateurs, ces 
 demandes d'effacement aident à lisser la courbe de charge aux heures de pointe 
 tout en évitant de mobiliser des centrales de production. 
 
 Nés de la convergence des réseaux électriques et des \gls{tic}, les Smart Grids 
-se composent de trois couches que nous retrouvons dans la figure~\ref{fig:archismartGrids}~:
+se composent ainsi de trois couches que nous retrouvons dans la figure~\ref{fig:archismartGrids}~:
 
 \begin{enumerate}
     \item le premier niveau correspond à l'infrastructure et aux équipements 
@@ -208,7 +219,7 @@ se composent de trois couches que nous retrouvons dans la figure~\ref{fig:archis
 %de l'électricité et qu'il puisse même choisir d'injecter sa propre propre 
 %production d'énergie sur le réseau.
 
-\section{Problématique industrielle}
+\subsection{Alignement du Système d'Information\\à une stratégie orientée Smart Grids}
 %la nécessaire évolution des Systèmes d'Information pour la mise en œuvre d'une stratégie orientée Smart Grids
 
 %Un Smart Grid est un réseau électrique intelligent permettant d'optimiser la 
@@ -223,9 +234,9 @@ les
 réseaux électriques à distance. 
 Cette automatisation de la gestion des réseaux est une solution pour les adapter 
 rapidement face aux contraintes qu'introduit l'intégration des énergies 
-renouvelables et des nouveaux usages \cite{cre}. Les \gls{si} sont donc au cœur 
+renouvelables et des nouveaux usages\cite{cre}. Les \gls{si} sont donc au cœur 
 des 
-enjeux Smart Grids.  
+enjeux des Smart Grids.  
 
 L'implémentation des Smart Grids va ainsi de pair avec la mise à niveau des 
 \gls{si} des gestionnaires du réseau électrique. En effet, ces \gls{si} doivent 
@@ -281,7 +292,7 @@ clés pour l'implémentation des Smart Grids~:
     les systèmes de mesure en temps réel, l'analyse et le contrôle à distance~;
 
     \item \textbf{fournir les informations et la connectivité nécessaires} en
-    developpant une infrastructure \gls{tic} pour répondre aux besoins 
+    développant une infrastructure \gls{tic} pour répondre aux besoins 
     d'informatisation du réseau électrique. Ce dernier point est une condition 
     \textit{sine qua non} de la réalisation des quatre précédents.
 \end{itemize}
@@ -289,7 +300,7 @@ clés pour l'implémentation des Smart Grids~:
 Compte tenu de ces thèmes clés, les gestionnaires de réseaux envisagent des 
 stratégies impliquant l'adoption de technologies Smart Grids. 
 La mise en œuvre effective de ces stratégies demande l'automatisation des 
-actions sur le réseau et du traitement des données, ce qui entraine donc le 
+actions sur le réseau et du traitement des données, ce qui entraîne donc le 
 déploiement de nouveaux \gls{si}. Afin d'appréhender ces paradigmes naissants, 
 des 
 scénarios métier sont élaborés mais il est indispensable de les éprouver et de 
@@ -327,7 +338,7 @@ simulateurs de réseaux de télécommunication (OPNET, NS-3, OMNeT ++, etc.) ont
 déjà validé l'apport de la simulation dans leurs domaines respectifs. Toutefois, 
 les \gls{si} sont souvent relégués à de simples modèles de calcul de consignes 
 souvent 
-développés en Matlab ou en C++ \cite{palensky2014simulating}. 
+développés en Matlab ou en C++\cite{palensky2014simulating}. 
 
 Dans ce contexte, la problématique industrielle dans laquelle  s'inscrivent nos 
 travaux de recherche est donc la suivante~: 
@@ -345,11 +356,17 @@ Les technologies Smart Grids illustrent le défi que représente l'évolution de
 \gls{tic} et l'intégration des énergies renouvelables pour les gestionnaires de 
 réseaux électriques. Jeremy Rifkin annonce même «~une troisième révolution 
 industrielle, fondée sur le couplage des technologies de l’Internet et des 
-énergies nouvelles~» \cite{rifkin2012troisieme}. 
+énergies nouvelles~»~\cite{rifkin2012troisieme}. Dans ce contexte, nous identifions
+trois axes de recherche~: (1) l'adaptation au changement, (2) l'alignement stratégique et
+(3) la simulation de systèmes dynamiques et complexes.
 
-Mais à l'ère numérique, l'adaptation au changement relève des préoccupations de 
+
+
+\subsection{Adaptation au changment}
+
+À l'ère numérique, l'adaptation au changement relève des préoccupations de 
 toute entreprise s'appuyant sur les \gls{tic} pour mener ses 
-activités. Le très haut niveau de concurrence que connait le secteur des 
+activités. Le très haut niveau de concurrence que connaît le secteur des 
 technologies de l'information stimule l'innovation. Or ces technologies sont de 
 plus en plus le moteur qui fait progresser les  métiers de l'entreprise. Être 
 capable de s'adapter continuellement à l'évolution rapide et 
@@ -368,6 +385,8 @@ outil indispensable à la construction d'artefacts respectant les qualités
 attendues de l'objet final. En précurseur, Zachman \cite{zachman1997enterprise} 
 recommande d'appliquer les principes d'architecture à l'entreprise pour faire 
 face aux changements dictés par l'innovation technologique.
+
+\subsection{Alignement stratégique}
 
 Les \gls{si} sont en première ligne dès qu'il s'agit de l'évolution des 
 \gls{tic}. Nos 
@@ -392,17 +411,17 @@ communiquer avec les bornes de recharge.
 Évaluer l'adoption de nouvelles technologies de l'information oblige à prendre 
 en compte l'entreprise dans son ensemble afin de garantir une cohérence entre 
 la stratégie d'évolution adoptée et les \gls{si} qui implémentent cette 
-stratégie. Parce que l'alignement entre la stratégie métier et le \gls{si} est 
+stratégie. L'alignement entre la stratégie métier et le \gls{si} étant
 au cœur de l'\gls{ea}\footnote{L'acronyme EA (\textit{Enterprise Architecture}) 
-est souvent utilisé même dans la communauté francophone.} 
-\cite{zachman1997enterprise}, nous
+est souvent utilisé même dans la communauté francophone.}
+~\cite{zachman1997enterprise}, nous
 adoptons l'\gls{ea} pour évaluer l'impact des technologies Smart Grids sur les
 gestionnaires des réseaux électriques. Il est en effet indispensable de
 concevoir une architecture cible pour avoir  «~une vision générale de comment
-une entreprise va mettre en œuvre sa stratégie~» \cite{ross2006enterprise}.
+une entreprise va mettre en œuvre sa stratégie~»~\cite{ross2006enterprise}.
 
 L'\gls{ea} participe à l'alignement des composants d'une entreprise en offrant 
-une vision globale et transverse \cite{zachman1987framework}. Dans le contexte 
+une vision globale et transverse~\cite{zachman1987framework}. Dans le contexte 
 des 
 Smart Grids par exemple, elle permet d'aligner efficacement les intérêts des 
 acteurs impliqués dans leur implémentation tels que les experts métier, les 
@@ -410,11 +429,11 @@ conseillers stratégiques, les experts environnementaux ou encore les experts en
 normalisation.
 
 L'exécution effective d'une stratégie est cependant confrontée à des barrières 
-de communication au sein de l'entreprise \cite{vcater2010factors}. Le recours à 
+de communication au sein de l'entreprise~\cite{vcater2010factors}. Le recours à 
 l'\gls{ea} est d'autant plus justifié qu'elle représente un outil pour la 
 transmission des objectifs stratégiques à tous les niveaux hiérarchiques de 
 l'organisation en 
-question \cite{kappelman2008enterprise}. 
+question~\cite{kappelman2008enterprise}. 
 
 Pour toutes ces raisons, nous souhaitons mettre à profit les principes 
 d'\gls{ea} pour évaluer l'impact de l'adoption des technologies Smart Grids sur 
@@ -427,14 +446,16 @@ stratégie adoptée et les \gls{si} qui les implémentent.
 
 %\subsection{Le recours à la simulation}
 
-Les Smart Grids correspondent à des systèmes dynamiques et complexes 
-\cite{monti_power_2010} étant donné le grand nombre de parties prenantes qui 
+\subsection{La simulation de systèmes dynamiques et complexes}
+
+Les Smart Grids correspondent à des systèmes dynamiques et complexes
+~\cite{monti_power_2010} étant donné le grand nombre de parties prenantes qui 
 interagissent eux (tels que les producteurs d'énergie renouvelable ou les 
 consommateurs actifs sur le réseau), tout en ayant des comportements autonomes 
 et des objectifs différents. Les \gls{si} pilotant les  Smart Grids 
 correspondent par conséquent à des systèmes dynamiques aux comportements 
 complexes. Borshchev et 
-Filippov\cite{borshchev2004system} affirment que le seul moyen d'adresser cette 
+Filippov~\cite{borshchev2004system} affirment que le seul moyen d'adresser cette 
 complexité est de simuler ces systèmes. La simulation est une technique connue 
 pour valider ou critiquer la conception d'un système dès les premières étapes 
 de son cycle de développement. Les acteurs impliqués dans le déploiement des 
@@ -443,12 +464,14 @@ directe des modèles créés pour valider ou critiquer leur choix d'implémentat
 
 Néanmoins, les approches d'\gls{ea} se focalisent le plus souvent sur des 
 aspects statiques et structurels tels que les interconnexions entre les 
-différentes applications métier \cite{buckl2008towards}. De plus, les modèles 
-issus de ces 
-approches sont ne sont pas exécutables et sont conçus en 
-priorité pour la documentation et la communication entre parties prenantes 
-\cite{kulkarni2013modelling}. Notre problématique de recherche se résume de ce 
-fait dans la question suivante :
+différentes applications métier~\cite{buckl2008towards}. De plus, les modèles 
+issus de ces approches sont ne sont pas exécutables et sont conçus en 
+priorité pour la documentation et la communication entre parties-prenantes
+~\cite{kulkarni2013modelling}. 
+
+
+
+Notre problématique de recherche se résume de ce fait dans la question suivante :
 
 \vspace*{1em}
 \begin{framed}
@@ -456,6 +479,68 @@ fait dans la question suivante :
 architecture d'entreprise afin de la valider?}
 \end{framed}
 
+Dans le cadre de ces travaux de thèse, nous nous somme saisis de cette problématique
+de modélisation et de simulation d'architectures d'entreprise et nous avons souhaité mettre à
+contribution les méthodes et technologies de l'\gls{idm} pour apporter une aide supplémentaire
+à l'analyse et à la validation de ces architectures.
+
+
+\section{Organisation du document}
+
+Ce document est composé de deux parties principales. La première partie dresse un état de l'art
+de l'EA et de l'\gls{idm}. La seconde présente
+l'ensemble de nos contributions dont principalement un \emph{framework} baptisé ExecuteEA
+s'appuyant sur la combinaison et l'intégration de plusieurs techniques de l'\gls{idm} pour faciliter
+l'analyse d'architectures d'entreprise. Enfin, une dernière partie résume l'ensemble de nos contributions
+et dresse les perspectives de ce travail. 
+
+\textbf{Partie 1~: \q{État de l'art}}
+
+    \begin{description}
+
+        \item[Le chapitre 2] 
+
+        \q{Architecture d'Entreprise}
+
+        \item[Le chapitre 3] 
+
+        \q{Ingénieurie Dirigée par les Modèles}
+
+    \end{description}
+
+\textbf{Partie 2~: \q{Une approche unificatrice par les modèles}}
+
+    \begin{description}
+
+        \item[Le chapitre 4] \q{lExecuteEA}
+
+        \item[Le chapitre 5] \q{Implémentation et validation}
+
+        \item[Le chapitre 6] \q{Délimitation de l'objet de recherche}
+
+    \end{description}
+
+\textbf{Partie 2~: \q{Conclusion et perspectives}}
+
+    \begin{description}
+
+        \item[Le chapitre 7] \q{Résumé des contribution et perspectives}
+
+    \end{description}
+
+
+
+\section{Le projet POMME}
+
+Une partie du travail présenté dans ce mémoire a été effectué dans le cadre du projet
+POMME (Plate-formes Orientées Métiers de Multi-simulations Électriques) 
+réalisé dans le département MIRE (Mesure et Systèmes d'Information des Réseaux Électriques) 
+de la direction R\&D d'EDF (Électricité De France). L'objectif de ce projet est de coupler la simulation de SI, celle d'un
+réseau de télécommunication et celle d'un réseau électrique, de manière à simuler de bout en bout l'ensemble d'un Smart Grid.
+
+Nous avons participé à ce projet en fournissant des méthodes, modèles et outils
+permettant de simuler un SI et plus globalement une architecture
+d'entreprise, que nous présentons dans la deuxième partie de ce mémoire. 
 
 
 

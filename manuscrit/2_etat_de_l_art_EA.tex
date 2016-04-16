@@ -4,21 +4,43 @@
 
 \PartialToc
 
+\vspace*{2em}
+L'émergence des Smart Grids suscitent de profonds changements
+non seulement au niveau réseaux électriques et les
+SI qui les pilotent mais pour l'ensemble de l'entreprise qui fournit et distribue de l'électricité~:
+sa stratégie de développement, ses processus métier, etc. L'EA a pour objectif d'accompagner
+ce type de changements en capturant les différents composants de l'entreprise et leurs relations. C'est à ce
+titre que notre état de l'art traite de l'EA.
+
+Ce chapitre présente ainsi les notions fondamentales de l'EA dans la section~\ref{sec:notions_EA} avant 
+de présenter les principes guidant la conception d'une architecture d'entreprise
+dans la section~\ref{sec:conception_EA}. L'objectif de ces travaux de thèse étant de valider
+les évolutions envisagées pour une architecture d'entreprise avant leur implémentation, nous
+considérons, dans la section~\ref{sec:analyse_EA}, les approches
+d'analyses existantes.
+
+
+
+
 \section{Notions fondamentales de l'Architecture d'Entreprise}
+\label{sec:notions_EA}
 
-Comme précédemment exposé dans notre problématique de recherche (cf. chapitre 
-\ref{ch:problematique}), nos travaux se sont d'abord portés sur la modélisation 
-et la simulation du SI des Smart Grids. Cependant, le SI est sensé répondre de 
-manière pertinente aux besoins de l'entreprise et implémenter efficacement sa 
-stratégie. Avant toute simulation, nous devons donc de facto prendre en compte 
-la stratégie de l'entreprise et ses objectifs métier et la mettre en cohérence 
-avec le SI qui l'implémente.
+% Comme précédemment exposé dans notre problématique de recherche (cf. chapitre 
+% \ref{ch:problematique}), nos travaux se sont d'abord portés sur la modélisation 
+% et la simulation du SI des Smart Grids. Cependant, le SI est sensé répondre de 
+% manière pertinente aux besoins de l'entreprise et implémenter efficacement sa 
+% stratégie. Avant toute simulation, nous devons donc de facto prendre en compte 
+% la stratégie de l'entreprise et ses objectifs métier et la mettre en cohérence 
+% avec le SI qui l'implémente.
 
-L'alignement métier/SI est au cœur de l'EA, une discipline à part entière qui 
-traite le SI en le corrélant au reste de l'entreprise. En effet, l'EA offre une 
-vision globale des composants de l'entreprise tels que les processus métier, les 
-parties prenantes, les informations, les fonctions, les applications 
-informatiques, les infrastructures techniques. 
+
+
+
+% L'alignement métier/SI est au cœur de l'EA, une discipline à part entière qui 
+% traite le SI en le corrélant au reste de l'entreprise. En effet, l'EA offre une 
+% vision globale des composants de l'entreprise tels que les processus métier, les 
+% parties prenantes, les informations, les fonctions, les applications 
+% informatiques, les infrastructures techniques. 
  
 \subsection{Terminologie}
 
@@ -28,10 +50,14 @@ par définir les termes de SI et d'EA.
 \subsubsection{Système d'Information}
 \label{sec:reix}
 
-Selon Robert Reix, le SI est «~un ensemble organisé de ressources : matériel, 
+Une définition communément admise du SI est donnée par Robert Reix~\cite{reix1995systemes}:
+\\
+\begin{definition}
+Le SI est un ensemble organisé de ressources : matériel, 
 logiciel, personnel, données, procédures permettant d'acquérir, de traiter, de 
 stocker des informations (sous forme de donnée, textes, images, sons, etc.) dans 
-et entre des organisations~» \cite{reix1995systemes}.
+et entre des organisations
+\end{definition}
 
 Nous adoptons cette définition car elle a l'avantage de ne pas réduire le SI 
 d'une organisation à son système informatique. Le système informatique est 
@@ -49,11 +75,16 @@ de gestion ou encore le savoir-faire métier.
 
 \subsubsection{Architecture d'Entreprise}
 
-Selon Zachman, une architecture d'entreprise est «~un ensemble pertinent 
+Il existe une multitude de définitions de la notion  l'architecture d'entreprise. Nous
+rapportons ici celle donnée par Zachman~\cite{zachman1997enterprise}, fondateur de l'EA. 
+\\
+\begin{definition}
+Une architecture d'entreprise est un ensemble pertinent 
 d'artefacts de conception ou de représentations descriptives pour décrire une 
 entreprise de manière à ce cette entreprise soit créée en respectant certaines 
 exigences et à ce qu'elle soit facilement maintenue tout au long de son cycle de 
-vie~» \cite{zachman1997enterprise}. 
+vie. 
+\end{definition}
 
 Zachman voit ainsi dans l'architecture un gage de qualité et de maintenabilité. 
 L'EA revient à appliquer à l'entreprise les principes de l'architecture telle 
@@ -63,12 +94,12 @@ chambre sans plan d'architecture général peut en effet mener à un résultat p
 probant. De même, le développement préalable d'une organisation sans 
 architecture de référence risque de mener à une duplication de ses ressources et 
 altère par conséquent son efficacité, sa cohérence interne rend fastidieuse 
-toute entreprise de changement \cite{zachman1997enterprise} 
+toute entreprise de changement~\cite{zachman1997enterprise} 
 \cite{bernard2012introduction}. 
 
 Il est important de noter que le terme architecture d'entreprise peut prêter à 
 confusion car il est à la fois utilisé pour désigner (1) l'activité de 
-conception d'une architecture i.e. la description des éléments composant 
+conception d'une architecture i.e., la description des éléments composant 
 l'organisation en question et leurs relations mais aussi (2) l'ensemble des 
 artefacts résultant de cette activité. Pour éviter toute confusion, nous 
 désignons l'activité de conception par l'acronyme EA et le résultat de cette 
@@ -260,6 +291,7 @@ l'information nécessaire à l'optimisation des processus métier et à
 l'alignement effectif entre l'IT et la stratégie adoptée. 
 
 \section{Conception d'une architecture d'entreprise}
+\label{sec:conception_EA}
 
 L'EA peut faciliter le processus de prise de décision si elle aboutit à une
 vision à la fois globale et adaptée aux décideurs. Dans la section suivante, nous
@@ -494,6 +526,7 @@ technique en passant par les fonctions et les applications
 Les cadres d'architecture sont certes indispensables pour aboutir à une représentation pertinente des composants de l'entreprise mais ne suffisent pas à appréhender la complexité du système entreprise. Pour cela, il est primordiale de disposer d'outils et de méthodes appropriés à l'analyse des modèles d'entreprise obtenus. La section suivante offre un tour d'horizon de l'activité d'analyse en EA. 
 
 \section{Analyse en Architecture d'Entreprise}
+\label{sec:analyse_EA}
 
 La valeur ajoutée de l'EA réside dans sa capacité à adresser le changement en
 offrant une vue holistique de l'entreprise. En effet, l'efficacité de
