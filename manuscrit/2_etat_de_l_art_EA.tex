@@ -175,12 +175,17 @@ une pléiade de définitions émanant aussi bien du milieu académique que du
 milieu industriel donnant ainsi lieu à plusieurs écoles de pensée. Ce manque de
 consensus est du à la nature intrinsèque de l'activité d'EA~:~celle-ci est
 régie par un ensemble de préceptes et de bonnes pratiques que l'architecte
-reste libre d'adapter au contexte de l'entreprise. 
-
+reste libre d'adapter au contexte de l'entreprise.
 Il est toutefois possible d'identifier un thème commun à toutes les définitions
-proposées~:~l'architecture d'entreprise décrit les composants interdépendants
-d'une organisation et guide leurs évolutions \cite{lapalme2012three}. En
-revanche, le \textit{périmètre} de cette description ainsi que les
+proposées~ \cite{lapalme2012three}: 
+\\
+\begin{definition}
+L'architecture d'entreprise décrit les composants interdépendants
+d'une organisation et guide leurs évolutions. 
+\end{definition}
+
+
+En revanche, le \textit{périmètre} de cette description ainsi que les
 \textit{préoccupations} adressées diffèrent d'une définition à l'autre.
 
 S'agissant du \textit{périmètre}, le terme «~entreprise~» peut couvrir
@@ -272,7 +277,7 @@ succès international de cette entreprise repose surtout sur l'autonomie de ses
 mis en place mais ce n'est pas le cas de tous ses clients. Les très grands
 clients reçoivent en effet de nombreux bons de commande et plusieurs factures
 des différentes filiales de \textit{Johnson\&Johnson} et doivent donc les
-traiter séparément.  Un jour, ces clients exigent de ne recevoir qu'une seule
+traiter séparément.  Ces clients exigent un jour de ne recevoir qu'une seule
 facture. Or \textit{Johnson\&Johnson} n'en est pas capable. Ni ses processus
 métier, ni sa structure organisationnelle et encore moins son IT ne lui permet
 d'accéder à la demande de ses clients. Ceci est un cas d'école typique que
@@ -303,7 +308,7 @@ prise de décision et les acteurs qu'il implique.
 Quelle qu'en soit l'école, l'EA reste une tâche complexe
 \cite{steen2004supporting} car elle implique un grand nombre de parties
 prenantes. Chaque partie prenante a des préoccupations et des systèmes de
-notation propres et relatives à son domaine d'expertise et aux responsabilités lui
+notation propres et relatifs à son domaine d'expertise et aux responsabilités lui
 incombant.
 
 L'EA doit capturer une grande variété de composants difficiles à représenter
@@ -440,7 +445,7 @@ l'architecture.
 
 \subsubsection{RM-ODP}
 \gls{rmodp} est un standard ISO/ITU \footnote{International Organization for Standardization/International Telecommunication Union} qui définit un cadre d'architecture pour la spécification des systèmes distribués ouverts.
-Il se réfère au paradigme de l'Orienté objet et identifie cinq points de vue~:
+Il se réfère au paradigme de l'Orienté Objet et identifie cinq points de vue~:
 \begin{itemize}
 \item le point de vue Entreprise, qui décrit les activités métier du système~;
 \item le point de vue Information, qui définit l'information traitée par le système et la
@@ -484,7 +489,7 @@ ci-après.
     \item[Point de vue métier]:~ce point de vue reflète la vision métier de
     l'entreprise. On y retrouve ses objectifs ainsi que ses processus. Ces
     derniers sont représentés selon la structure organisationnelle de
-    l'entreprise en termes d'acteurs internes et externes~;
+    l'entreprise en termes d'acteurs internes et externes.
 
     \item[Point de vue fonctionnel]:~ce point de vue organise l'entreprise en
     blocs fonctionnels implémentant les processus de la vue métier. Cette
@@ -492,15 +497,15 @@ ci-après.
     et une forte décorrélation entre blocs dans un souci de modularité et
     d'évolutivité. À l'échelle d'une entreprise, cette structuration devient
     vite complexe à cause du caractère étendu, transverse et interdépendant des
-    processus métier impactés~;
+    processus métier impactés.
 
     \item[Point de vue applicatif]:~ce point de vue structure l'entreprise en
     blocs applicatifs. Chaque bloc implémente un ou plusieurs blocs
     fonctionnels. Il est aussi important de spécifier les échanges entre blocs
     applicatifs. Comme pour la vue fonctionnelle, la vue applicative des très
-    grandes entreprises souffre souvent du syndrome du plat à spaghetti~:~les
+    grandes entreprises souffre souvent du syndrome du plat de spaghetti~:~les
     nombreuses applications fortement couplées deviennent difficiles et
-    chères à maintenir~;
+    coûteuse à maintenir.
 
     \item[Point de vue technique]:~ce point de vue correspond à
     l'infrastructure technique nécessaire à l'exécution des blocs applicatifs.
@@ -514,8 +519,7 @@ des concepts tels que les macros processus, les blocs fonctionnels ou encore
 les blocs applicatifs. Les informations sont modélisées soit implicitement et
 de manière diffuse à l'intérieur des vues (\gls{togaf}), soit séparément dans une vue
 dédiée et décorrélée des autres vues (\gls{rmodp}, \gls{sgam}). Une troisième
-méthode consiste à les modéliser sous forme d'aspect pour chaque vue (Zachman,
-Archimate).
+méthode consiste à les modéliser sous forme d'aspect pour chaque vue (Zachman).
 
 De plus, ces cadres d'architecture organisent hiérarchiquement les différentes vues en
 appliquant \emph{« IT follows business »} comme principe : commencer par la
@@ -523,7 +527,7 @@ vue métier et la dériver progressivement jusqu'à l'infrastructure
 technique en passant par les fonctions et les applications
 \cite{winter2006essential}. 
 
-Les cadres d'architecture sont certes indispensables pour aboutir à une représentation pertinente des composants de l'entreprise mais ne suffisent pas à appréhender la complexité du système entreprise. Pour cela, il est primordiale de disposer d'outils et de méthodes appropriés à l'analyse des modèles d'entreprise obtenus. La section suivante offre un tour d'horizon de l'activité d'analyse en EA. 
+Les cadres d'architecture sont certes indispensables pour aboutir à une représentation pertinente des composants de l'entreprise mais ne suffisent pas à appréhender la complexité du système entreprise. Pour cela, il est primordial de disposer d'outils et de méthodes appropriés à l'analyse des modèles d'entreprise obtenus. La section suivante offre un tour d'horizon de l'activité d'analyse en EA. 
 
 \section{Analyse en Architecture d'Entreprise}
 \label{sec:analyse_EA}
@@ -559,7 +563,7 @@ interprétables par une machine. Ce sont des modèles purement «~contemplatifs~
 Cette terminologie est introduite par Bézivin \cite{bezivin_towards_2001} en qualifiant les modèles de spécification utilisés pendant les premières phases de conception en génie
 logiciel. 
 
-Aussi, l'EA s'intéresse-elle d'avantage aux aspects structuraux de
+Aussi, l'EA s'intéresse-elle davantage aux aspects structuraux de
 l'entreprise. Pour cette raison, les modèles utilisés, bien qu'offrant
 l'abstraction nécessaire pour adresser la complexité de l'entreprise, sont le
 plus souvent statiques. Ce genre de modèles ne permet pas d'appréhender les
@@ -576,9 +580,12 @@ architecture adéquate.
 
 L'architecture créée est donc correcte par définition et dépend essentiellement
 des capacités de l'architecte et de son expertise. Certains travaux proposent de
-rendre l'EA moins dépendante de l'expertise de la personne en charge en traduisant les représentations d'architecture en ontologies \cite{sunkle_analyzing_2013}. Les ontologies étant exécutables, permettent en effet de bénéficier des capacités d'analyse des raisonneurs disponibles .
+rendre l'EA moins dépendante de l'expertise de la personne en charge 
+en traduisant les représentations d'architecture en ontologies~\cite{sunkle_analyzing_2013}.
+Les ontologies étant exécutables, permettent en effet de bénéficier des capacités d'analyse des raisonneurs disponibles.
 
-Certaines méthodes d'EA sont accompagnées de langages de modélisation comme le langage Archimate pour TOGAF. Dans leur quête de généricité, ces langages deviennent rapidement
+Certaines méthodes d'EA sont accompagnées de langages de modélisation comme le langage Archimate\footnote{http://www.opengroup.org/archimate} pour TOGAF.
+Dans leur quête de généricité, ces langages deviennent rapidement
 très larges et difficiles à manipuler. Les modèles produits sont d'autant plus
 difficiles à gérer qu'ils ne sont pas manipulables par une machine. L'activité
 d'analyse en EA, bien que cruciale, est donc compromise par toutes ces
@@ -586,13 +593,15 @@ limitations. Et bien que des modèles et des techniques destinés à l'analyse d
 architectures d'entreprise existent, le recours aux modèles exécutables
 reste encore marginal dans le domaine de l'EA \cite{kulkarni2013modelling}.
 
-Parmi ces travaux nous citons le langage LEAP \cite{clark2011leap}. Léger, 
+Parmi ces travaux nous citons le langage LEAP~\cite{clark2011leap}. Léger, 
 générique et exécutable, LEAP est destiné à l'analyse des modèles issus de l'EA 
-pour valider l'alignement des modèles métier et IT 
+pour valider l'alignement des modèles métier et IT.
 
 Les deux sections suivantes présentent deux schémas de classification des
 approches d'analyse en EA. Le premier est proposé par Lankhorst
-\cite{lankhorst2013enterprise} et et le deuxième par Buckl et al. \cite{buckl2009classifying}. Ces schémas de classification nous permettent de (1) comparer entre elles les différentes approches d'analyse recensées dans cet état de l'art et (2) positionner nos travaux.
+\cite{lankhorst2013enterprise} et et le deuxième par Buckl et al. \cite{buckl2009classifying}.
+Ces schémas de classification nous permettent de (1)~comparer entre
+elles les différentes approches d'analyse recensées dans cet état de l'art et (2)~positionner nos travaux.
 
 
 \subsection{Classification des approches d'analyse selon Lankhorst}
@@ -620,7 +629,7 @@ entre deux types d'analyse.
 \end{figure}
 
 La deuxième dimension identifie deux techniques pouvant être employées pour 
-l'analyse fonctionnelle ou quantitative~:
+l'analyse fonctionnelle ou quantitative.
 
 \begin{description}
 
@@ -642,7 +651,9 @@ l'analyse fonctionnelle ou quantitative~:
 Le schéma de classification de Lankhorst \cite{lankhorst2013enterprise} offre un premier aperçu des différentes approches d'analyse d'architecture cependant il ne révèle pas toutes les variantes et les subtilités d'une démarche d'analyse en EA. Nous considérons donc les travaux de Buckl et al. \cite{buckl2009classifying} qui définissent un système de classification plus détaillé. Ce système classification peut même être considéré comme un cadre d'analyse d'architectures.
 
 Buckl et al. \cite{buckl2009classifying} font intervenir cinq dimensions pour catégoriser
-les approches d'analyse d'architecture d'entreprise. Ces dimensions sont illustrées par la figure~\ref{fig:classBuckl}.
+les approches d'analyse d'architecture d'entreprise~: le sujet d'analyse, la référence temporelle,
+la technique d'analyse, les préoccupations de l'analyse, l'autoréférentialité.
+Ces dimensions sont illustrées par la figure~\ref{fig:classBuckl}.
 
 \begin{figure}[!ht]
 	\input{figures/2_etat_de_l_art_EA/classification_approches}
@@ -758,12 +769,13 @@ cet objectif \cite{barn2013enterprise} car :
 \item les processus métier, les technologiques, les structures organisationnelles
 ainsi que l'environnement sont en constante évolution. Les changements sont si
 rapides et nombreux qu'un réel alignement relève du vœux pieux
-\cite{lankhorst2013enterprise}. L'alignement métier/IT correspond plutôt un
+\cite{lankhorst2013enterprise}. L'alignement métier/IT correspond plutôt à un
 idéal kantien vers lequel l'entreprise doit tendre à défaut de le réaliser
 complètement~;
 
-\item l'architecture en tant que discipline tient d'avantage de l'art que de la science. En effet, l'architecte d'entreprise analyse souvent de la documentation (tels que des tableurs Excel ou des
-illustrations Power Point) même si quelques logiciels permettent désormais de
+\item l'architecture en tant que discipline tient davantage de l'art que de la science.
+En effet, l'architecte d'entreprise analyse souvent de la documentation (tels que des tableurs Excel ou des
+illustrations Power point) même si quelques logiciels permettent désormais de
 visualiser ces modèles. Cette tâche devient rapidement ardue dès qu'il s'agit
 de grandes entreprises dont l'important patrimoine applicatif s'apparente à un
 plat de spaghetti.
@@ -786,42 +798,50 @@ changement ou encore les relations et dépendances entre les opérations métier
 et les applications informatiques de l'entreprise. Cependant, les architectes
 d'entreprise sont peu familiarisés avec les ontologies. Les modèles
 d'architecture sont donc traduits en ontologies, risquant de faire
-apparaître un gap sémantique entre les modèles utilisés pour la représentation
+apparaître un écart sémantique entre les modèles utilisés pour la représentation
 de l'architecture et les ontologies utilisées pour mener l'analyse.
 	
 La diversité des acteurs impliqués dans l'EA comme l'architecte d'entreprise,
 le manager ou encore l'ingénieur IT engendre une hétérogénéité au niveau des
 modèles utilisés. \cite{bruneliere2013support} proposent de créer un mapping
 entre des modèles hétérogènes (tels que des tableurs Excel, de la documentation
-ou des bases de données). Pour cde faire, ils recourent à des modèles manipulables par machine et mettent à profit les techniques de tissages de modèles issus de l'IDM. Ces
+ou des bases de données). Pour ce faire, ils recourent à des modèles manipulables par machine et mettent à profit les techniques issus de l'IDM. Ces
 travaux adressent l'hétérogénéité des modèles et offrent une vue intégrée
-de l'architecture de l'entreprise en l'adaptant aux acteurs concernés. Mais elle ne permet pas de mener des analyses concernant l'impact du changement par exemple. 
+de l'architecture de l'entreprise en l'adaptant aux acteurs concernés. Mais ces 
+travaux ne permettent pas de mener des analyses concernant l'impact du changement par exemple. 
 
 	
 \subsection{Analyse du comportement}
 
 Le comportement de l'architecture d'entreprise est peu abordé dans la littérature,
 en partie à cause de la nature statique des cadres d'EA. Cependant, l'analyse du
-comportement de l'entreprise peut offrir nombre d'avantages. Dans cette partie, nous
-commençons par exposer les finalités de l'analyse du comportement des
-architecture d'entreprise avant de présenter les travaux qui traitent de cette problémtique
+comportement de l'entreprise peut offrir nombre d'avantages. La simulation est un moyen
+reconnu pour analyser le comportement d'une système. Dans cette partie, nous
+commençons par exposer les finalités de l'analyse par simulation du comportement des
+architectures d'entreprise avant de présenter les travaux qui traitent de cette problématique
 et leurs limites.
 
 
 \subsubsection{Finalités}
 
-Pour Shannon \cite{shannon1975systems}, la simulation est «~un processus
+Shannon~\cite{shannon1975systems} donne la définition suivante du processus de simulation.
+\\
+\begin{definition}
+ La simulation est un processus
 consistant à modéliser un système réel et à mener des expérimentations sur le
 modèle obtenu dans le but de comprendre le comportement du système et/ou
-d'évaluer différentes stratégies concernant son fonctionnement~».  Quel qu'en
+d'évaluer différentes stratégies concernant son fonctionnement.  
+\end{definition}
+
+Quel qu'en
 soit le domaine d'application, la simulation est un moyen d'apprécier les choix
-des concepteurs sur le comportement du système modélisé. Elle peut se traduire par
+des concepteurs sur le comportement du système modélisé. Elle peut se traduire
 par l'animation d'un modèle (représentant notre perception du système,
 qu'il soit existant ou à construire) et l'étude du comportement de ce modèle en
 fonction des variables en entrée. 
 
 La simulation des architectures d'entreprise permet de modifier localement des stratégies
-et d'observer l'impact de ces modification sur le comportement globale du système \cite{buckl2008towards}. La simulation des architectures d'entreprise est d'autant plus cruciale dans le contexte des Smart Grids. Ces derniers sont en constante et rapide transformation~:~évolution des cadres législatifs, apparition de nouveaux partenaires, hétérogénéité des interactions avec les clients finaux (les compteurs intelligents, Internet, les téléphones ou encore les tablettes). 
+et d'observer l'impact de ces modification sur le comportement global du système \cite{buckl2008towards}. La simulation des architectures d'entreprise est d'autant plus cruciale dans le contexte des Smart Grids. Ces derniers sont en constante et rapide transformation~:~évolution des cadres législatifs, apparition de nouveaux partenaires, hétérogénéité des interactions avec les clients finaux (les compteurs intelligents, Internet, les téléphones ou encore les tablettes). 
 
 Ainsi, le recours à la simulation dès les premières phases du cycle de vie des
 architectures d'entreprise dans le contexte des Smart Grids augmente leur évolutivité en apportant une aide supplémentaire à leur validation. La simulation des modèles facilite leur exploration par les experts métier et lève les ambiguïtés engendrées par les
@@ -841,7 +861,7 @@ recourent à la simulation comme outil d'analyse d'une architecture
 d'entreprise.
 
 Le nombre limité d'approches utilisant la simulation pour l'analyse
-d'architecture d'entreprise est du au fait que l'EA est initialement conçue
+d'architecture d'entreprise est dû au fait que l'EA est initialement conçue
 comme une description statique des composants essentiels de l'entreprise et de
 leurs interconnexions \cite{hoffman2013enterprise}. Les cadres d'EA standards
 ne prennent pas en compte les informations nécessaires pour analyser les
@@ -850,7 +870,7 @@ aspects structuraux tels que les liens entre les processus et les applications
 métier. Il en résulte que les outils d'EA n'adressent souvent que les aspects
 statiques de l'entreprise car ils se basent sur les mêmes cadres d'architecture.
 
-Buckl et al. \cite{buckl2009classifying} classifient les approches d'analyse d'architecture existantes selon leur propre système de classification illustré par la figure \ref{fig:classBuckl}. Nous tirons le même constat que pointe l'état de l'art de l'analyse en EA de \cite{manzur2015xarchimate}. 
+Buckl et al. \cite{buckl2009classifying} classifient les approches d'analyse d'architecture existantes selon leur propre système de classification illustré par la figure \ref{fig:classBuckl}. Nous dressons le même constat que pointe l'état de l'art de l'analyse en EA de \cite{manzur2015xarchimate}. 
 
 Dans le présent état de l'art, nous nous intéressons donc aux travaux qui analysent la
 dimension dynamique d'une architecture d'entreprise. Parmi ces approches,
@@ -859,13 +879,13 @@ Ludwig et al. \cite{ludwig2011organizational} et Manzur et al. \cite{manzur2015x
 l'importance de simuler le comportement d'une architecture d'entreprise. 
 
 Glazner \cite{glazner2011enterprise} propose une approche de simulation hybride pour
-évaluer le comportement d'une entrepris en combinant une simulation à
+évaluer le comportement d'une entreprise en combinant une simulation à
 événements discrets et une simulation multi-agents.
-Il met à profit les capacité d'abstraction de l'EA pour adresser la complexité d'un système telle que l'entreprise et s'en sert
+Il met à profit les capacités d'abstraction de l'EA pour adresser la complexité d'un système telle que l'entreprise et s'en sert
 comme socle pour structurer les modèles de simulation. Les
 techniques et les langages utilisés pour la simulation sont décorrélés des
-langages de représentation utilisés par les architectes d'entreprise entrainant
-ainsi un gap sémantique entre l'aspect statique de l'entreprise (les composants
+langages de représentation utilisés par les architectes d'entreprise entraînant
+ainsi un écart sémantique entre l'aspect statique de l'entreprise (les composants
 de l'entreprise et leurs relations) et son aspect dynamique (le comportement
 des composants). 
 
@@ -879,13 +899,40 @@ modèles organisationnels lors de l'exécution. Ces travaux n'adressent cependan
 que la vue métier et une partie de la vue fonctionnelle d'une architecture
 d'entreprise.
 
-Manzur et al. \cite{manzur2015xarchimate} proposent une plateforme de simulation qui s'appuie sur deux métamodèles différents~: un premier métamodèle, correspondant au
+Manzur et al. \cite{manzur2015xarchimate} proposent une plate-forme de simulation qui s'appuie sur deux métamodèles différents~: un premier métamodèle, correspondant au
 langage Archimate, pour spécifier les composants structurels de l'architecture
 et un deuxième métamodèle complémentaire pour spécifier les comportements des
 composants structurels. Les modèles sont ensuite simulés afin d'observer le
 comportement de l'architecture et de l'évaluer selon les indicateurs établis.
 Cependant cette approche évalue uniquement les aspects non fonctionnels d'une
 architecture d'entreprise.
+
+
+\section{Conclusion}
+Dans ce chapitre nous avons mis en évidence le rôle central de l'EA dans l'acquisition
+d'une vue holistique de l'ensemble des artefacts qui compose une entreprise. Nous avons présenté
+les principes fondamentaux de l'EA ainsi que son évolution depuis ses origines profondément
+ancrées dans l'architecture IT jusqu'à ses formes les plus actuelles qui traitent de l'ensemble de l'entreprise
+en temps que système irréductible. 
+
+Au cours de ce chapitre, nous nous sommes attachés à mettre en valeur les avantages de l'EA, autant liés
+aux aspects purement IT de l'entreprise qu'à ces aspects métier et stratégiques, dont notamment la mise à
+disposition de l'information nécessaire à l'optimisation des processus métier et l'alignement effectif entre la stratégie
+adoptée par l'entreprise et son IT. 
+
+Nous avons ensuite présenté différents cadres employés pour la conception d'architectures d'entreprise. Ces cadres
+adoptent une approche par point de vues. Une telle approche
+permet en effet de séparer les préoccupations des parties prenantes dans des vues différentes et de mieux
+appréhender la complexité du système entreprise. Nous avons identifié quatre points de vue principaux~: métier, fonctionnel,
+applicatif et technique.
+ 
+Enfin, nous avons introduit les différentes techniques d'analyse d'entreprise existantes en détaillant l'analyse de la structure
+et l'analyse du comportement d'une architecture d'entreprise. Nous avons mis en lumière les limitations, en termes d'analyse d'architecture,
+de  l'utilisation de modèles de représentation purement contemplatifs pour l'EA. 
+Dans la chapitre suivant nous présentons l'IDM et proposons un état de l'art des techniques qui lui sont associées permettant
+de palier aux limitations des modèles d'EA purement contemplatifs. 
+
+
 
 %La modélisation c'est pour abstraire
 %Pour simuler on a besoin de détails 
