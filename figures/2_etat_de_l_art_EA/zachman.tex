@@ -8,11 +8,12 @@
 \setlength{\mytablewidth}{\textwidth}
 \setlength{\myfirstcolwidth}{\dimexpr0.2\mytablewidth-2\tabcolsep\relax}
 \setlength{\mycolwidth}{\dimexpr0.17\mytablewidth-2\tabcolsep\relax}
+\newcolumntype{C}[1]{>{\centering\arraybackslash}m{#1}}
 \newcommand\mycell[1]{{\tiny{#1}}}
 
 \begin{adjustbox}{width=\mytablewidth,center}
     \scriptsize
-    \noindent\begin{tabulary}{\mytablewidth}{m{\myfirstcolwidth}m{\mycolwidth}m{\mycolwidth}m{\mycolwidth}m{\mycolwidth}m{\mycolwidth}}
+    \noindent\begin{tabulary}{\mytablewidth}{m{\myfirstcolwidth}C{\mycolwidth}C{\mycolwidth}C{\mycolwidth}C{\mycolwidth}C{\mycolwidth}}
 
         % \cmidrule[\heavyrulewidth]{2-6}
         \multirow{2}{*}{}\tikzmark{zachmantopleft} \
@@ -30,43 +31,43 @@
         \tabularnewline\midrule
 
         \tikzmark{zachmanlefttop}\textbf{Exécutif}\newline\textit{Planification} \
-        & {\tiny{Identification\newline des données}} \
-        & {\tiny{Identification\newline des processus}} \
-        & {\tiny{Identification\newline des responsabilités}} \
-        & {\tiny{Identification\newline des échéances}} \
-        & {\tiny{Identification\newline des motivations}} \
+        & \tikzmark{tl1}{\tiny{Identification des données}} \
+        & \tikzmark{tl2}{\tiny{Identification des processus}} \
+        & {\tiny{Identification des responsabilités}} \
+        & {\tiny{Identification des échéances}} \
+        & \tikzmark{tl3}{\tiny{Identification des motivations}} \
         \tabularnewline\midrule
 
         \textbf{Management}\newline\textit{Définition} \
-        & {\tiny{Définition\newline des données}} \
-        & {\tiny{Définition\newline des processus}} \
-        & {\tiny{Définition\newline des responsabilités}} \
-        & {\tiny{Définition\newline des échéances}} \
-        & {\tiny{Définition\newline des motivations}} \
+        & {\tiny{Définition des données}} \
+        & {\tiny{Définition des processus}} \
+        & {\tiny{Définition des responsabilités}} \
+        & {\tiny{Définition des échéances}} \
+        & {\tiny{Définition des motivations}} \
         \tabularnewline\midrule
 
         \textbf{Architecte}\newline\textit{Conception}  \
-        & {\tiny{Conception\newline des données}} \
-        & {\tiny{Conception\newline des processus}} \
-        & {\tiny{Conception\newline des responsabilités}} \
-        & {\tiny{Conception\newline des échéances}} \
-        & {\tiny{Conception\newline des motivations}} \
+        & {\tiny{Conception des données}} \
+        & {\tiny{Conception des processus}} \
+        & {\tiny{Conception des responsabilités}} \
+        & {\tiny{Conception des échéances}} \
+        & {\tiny{Conception des motivations}} \
         \tabularnewline\midrule
 
         \textbf{Ingénieur}\newline\textit{Spécification} \
-        & {\tiny{Spécification\newline des données}} \
-        & {\tiny{Spécification\newline des processus}} \
-        & {\tiny{Spécification\newline des responsabilités}} \
-        & {\tiny{Spécification\newline des échéances}} \
-        & {\tiny{Spécification\newline des motivations}} \
+        & {\tiny{Spécification des données}} \
+        & {\tiny{Spécification des processus}} \
+        & {\tiny{Spécification des responsabilités}} \
+        & {\tiny{Spécification des échéances}} \
+        & {\tiny{Spécification des motivations}} \
         \tabularnewline\midrule
 
         \tikzmark{zachmanleftbottom}\textbf{Technicien}\newline\textit{Implémentation} \
-        & {\tiny{Implémentation\newline des données}} \
-        & {\tiny{Implémentation\newline des processus}} \
+        & {\tiny{Implémentation\newline des données}\tikzmark{br1}} \
+        & {\tiny{Implémentation\newline des processus}\tikzmark{br2}} \
         & {\tiny{Implémentation\newline des responsabilités}} \
         & {\tiny{Implémentation\newline des échéances}} \
-        & {\tiny{Implémentation\newline des motivations}} \
+        & {\tiny{Implémentation\newline des motivations}\tikzmark{br3}} \
         \tabularnewline\bottomrule
     \end{tabulary}
     \begin{tikzpicture}[overlay,remember picture]
@@ -77,7 +78,9 @@
         % left vertical arrow
         \draw[<->] let \p3=(zachmanlefttop), \p4=(zachmanleftbottom) in ($(\x3,\y3)+(-0.3,0.3)$) -- node[label={[label distance=-2ex, text depth=3ex, label position=above, rotate=90]above:Perspectives (lignes)}] {} ($(\x3,\y4)+(-0.3,-0.45)$);
 
-%         % HACK: draw vertical column separators
+        \draw[fill=gray,opacity=0.2,rounded corners=1pt] let \p1=(tl1), \p2=(br1) in ($(\x1, \y1)+(-0.1,-0.1)$) rectangle ($(\x2, \y2)+(0.4,0.2)$);
+        \draw[fill=gray,opacity=0.2,rounded corners=1pt] let \p1=(tl2), \p2=(br2) in ($(\x1, \y1)+(-0.1,-0.1)$) rectangle ($(\x2, \y2)+(0.3,0.2)$);
+        \draw[fill=gray,opacity=0.2,rounded corners=1pt] let \p1=(tl3), \p2=(br3) in ($(\x1, \y1)+(-0.1,-0.1)$) rectangle ($(\x2, \y2)+(0.25,0.2)$);
 %         \def\zachmancolwidth{2.41}  % ~ column width (found manually)
 %         \def\zachmanleftoffset{3.55}  % ~ first column offset (found manually)
 %         \newcommand\drawcolsep[1]{%
