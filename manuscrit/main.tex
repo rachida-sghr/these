@@ -14,8 +14,6 @@
 \fancyfoot[le]{\raggedright\small\thepage}
 \fancyfoot[lo]{\raggedleft\small\thepage}
 
-%interligne
-%\linespread{1.4}
 % a loader *avant* hyperref: http://tex.stackexchange.com/a/79551/32098
 \usepackage{titletoc}
 \usepackage[toctitles]{titlesec}
@@ -42,10 +40,6 @@
 \input{includes/listings}
 % packages et commandes pour les figures
 \input{includes/figures}
-
-% centrer les legendes
-%\usepackage[justification=centering]{caption}
-
 
 \usepackage{enumitem}
 % puces avec frenchb (http://tex.stackexchange.com/a/123669/32098)
@@ -106,7 +100,8 @@
         \vspace*{1pc}\vbox{\textbf{Sommaire}}\vspace*{0.5pc}
         \hrule\vspace*{0.5pc}
         \startcontents[chapters]
-        \printcontents[chapters]{p}{1}{}\vspace*{0.5pc}\hrule}
+        \printcontents[chapters]{p}{1}{}\vspace*{0.5pc}\hrule\vspace*{1em}%
+    }
     % ===========================================
     % Content
     % ===========================================
