@@ -4,15 +4,25 @@
 
 \PartialToc
 
+Dans la partie précédente nous avons présenté le domaine de l'EA en nous focalisons
+sur la revue de la littérature relative à l'analyse du comportement et de la structure d'une architecture d'entreprise. 
+Nous avons aussi présenté le domaine de l'IDM en mettant en lumière les techniques
+mises en œuvre pour rendre les modèles utilisés sur tout le cycle de vie d'un système logiciel productifs, notamment
+la méta-modélisation et les transformations de modèle.
 
-Dans ce chapitre, nous exposons d'abord la démarche IDM adoptée :
-- analyse du domaine (rétro-ingénierie, analyse de la documentation existante et entretien avec les experts) qui aboutit à l'identification des concepts du métamodèle ExecuteEA
-- le méta-modèle
-- une approche de modélisation pour l'EA
--> analyse structure
--> analyse comportement
+Dans ce chapitre, nous examinons tout d'abord les pratiques actuellles d'EA, dans la section~\ref{sec:bilan_ea},
+en nous appuyant sur une étude de la doucmentation de projets dédiés aux Smart Grids
+corroborant la revue de la littéreture présentée dans la première partie de ce mémoire.
+Forts de ce bilan, nous justifions le recours à une démarche IDM aboutissant à l'identification des concepts
+relatifs au domaine de l'EA (section~\ref{sec:analyse_domaine}), et nécessaire à la création d'un métamodèle pour l'EA que nous
+baptisant EAT-ME (section~\ref{sec:ea2m}). Ce métamodèle est la pierre angulaire du \emph{framework} ExecuteEA que nous
+destinons à l'analyse de la structure et du comportement d'une architecture d'entreprise (section~\ref{sec:executeea}). 
+
+% - analyse du domaine (rétro-ingénierie, analyse de la documentation existante et entretien avec les experts) qui aboutit à l'identification des concepts du métamodèle ExecuteEA
+
 
 \section[Bilan des pratiques actuelles d'EA et adoption d'une démarche IDM]{Bilan des pratiques actuelles d'Architecture d'Entreprise et adoption d'une démarche d'Ingénierie Dirigée par les Modèles}
+\label{sec:bilan_ea}
 
 \subsection{Analyse des pratiques actuelles en Architecture d'Entreprise}
 
@@ -499,16 +509,19 @@ de la documentation à laquelle nous avons eu accès et les entretiens menées a
 experts et praticiens du domaine.
 
 
-\section{Analyse du Domaine}
+\section{Analyse du domaine}
+\label{sec:analyse_domaine}
 %La découverte des Smart Grids a été menée de plusieurs manières. Hypothèse forte
 % Le parallèle entre une entreprise et un projet Smart Grid cycle de vie les
 %spec co = EA forte mais légitime
 
 %Avant d'aboutir à, Hypothèse : L'entreprise comme un projet - Fractal Entreprise
 %= petit projet Structure fractale
+
     \subsection{L'Architecture d'Entreprise pour les Smart Grids}
-    \subsubsection{Démonstrateurs européens}
-    \label{sec:DemonstrateursSG}
+
+        \subsubsection{Démonstrateurs européens}
+        \label{sec:DemonstrateursSG}
 
 Tout d'abord, nous avons étudié les spécifications des démonstrateurs Smart Grid
 européens et en particulier celles de ADDRESS et PREMIO. Le choix de ces deux
@@ -844,6 +857,7 @@ conditions de travail.
     métamodèle EA2M pour \emph{Enterprise Architecture MetaModel}.
 
 \section{Le métamodèle EA2M}
+\label{sec:ea2m}
     La conception du métamodèle EA3M a été menée de manière itérative. En partant de quelques concepts
     et en enrichissant le métamodèle à chaque itération. Des versions successives de ce métamodèle
     ont fait l'objet de publications (\cite{seghiri2015simulation} et \cite{seghiri2016executable}).
@@ -1485,13 +1499,6 @@ domaine. C'est le cas de fUML, BPMN et OCL. La figure \ref{fig:IDM_EA} fait la
 correspondance entre les langages et la possibilité de les utiliser selon les
 vues.
 
-
-Ces langages permettent une exécution directe des modèles créés. Contrairement à
-d'autres méthodes de simulation de processus métier qui utilisent l'IDM pour
-isoler la définition du processus de son exécution. Ces méthodes font ensuite
-appel aux transformations de modèle pour automatiser la conversion entre les
-modèles de représentation et leur exécution.
-
 \begin{table}[!ht]
     \begin{center}
         \input{figures/4_demarche/langages_vues}
@@ -1500,7 +1507,34 @@ modèles de représentation et leur exécution.
     \label{fig:IDM_EA}
 \end{table}
 
-        
+
+Ces langages permettent une exécution directe des modèles créés. Contrairement à
+d'autres méthodes de simulation de processus métier qui utilisent l'IDM pour
+isoler la définition du processus de son exécution. Ces méthodes font ensuite
+appel aux transformations de modèle pour automatiser la conversion entre les
+modèles de représentation et leur exécution.
+
+\section{Conclusion}
+
+Dans ce chapitre, nous avons présenté un \emph{framework} offrant un cadre structurant et unificateur 
+pour les différentes activités d'EA. Ce \emph{framework}, appelé ExecuteEA, permet d'automatiser
+l'analyse structurelle et comportementale d'une architecture d'entreprise. 
+
+L'analyse structurelle
+s'appuie sur l'exploitation des liens de traçabilité du métamodèle EAT-ME. Ce métamodèle
+explicite en effet des liens de cohérence intra-vue et inter-vues reliant les différents composants
+d'une architecture d'entreprise. 
+
+Nous avons proposé, pour l'analyse comportementale, une approche
+de simulation d'architecture dirigée par les processus métier. La simulation est rendue possible par
+le recours aux transformations de modèle et aux langages de modélisation exécutable.
+
+La définition du métamodèle EAT-ME a nécessité une analyse du domaine de l'EA en générale, et dans le
+contexte des Smart Grids en particulier, conformément à la démarche préconisée par l'IDM.  
+
+Dans le chapitre suivant, nus décrivons une implémentation du \emph{framework} ExecuteEA que nous
+éprouvons au cas métier d'une gestion de flotte de véhicules électriques.
+
 
 
 
