@@ -2,17 +2,16 @@
 % Arrows: http://tex.stackexchange.com/a/60627/32098
 % Rotating tikz label: http://tex.stackexchange.com/a/115565/32098
 
-% HACK (and an ugly one) since booktabs breaks vertical separators, we use tikz
-% to draw them. Alignment is pretty much custom. I just hope this is gonna work
-% with no adjusment when putting this in the main document.
 \setlength{\mytablewidth}{\textwidth}
-\setlength{\myfirstcolwidth}{\dimexpr0.21\mytablewidth-2\tabcolsep\relax}
-\setlength{\mycolwidth}{\dimexpr0.14\mytablewidth-2\tabcolsep\relax}
-\setlength{\mylastcolwidth}{\dimexpr0.06\mytablewidth-2\tabcolsep\relax}
+\setlength{\myfirstcolwidth}{\dimexpr0.19\mytablewidth-2\tabcolsep\relax}
+\setlength{\mycolwidth}{\dimexpr0.18\mytablewidth-2\tabcolsep\relax}
+\setlength{\mylastcolwidth}{\dimexpr0.05\mytablewidth-2\tabcolsep\relax}
+\newcolumntype{C}[1]{>{\centering\arraybackslash}m{#1}}
+\newcommand\mycell[1]{{\tiny{#1}}}
 
 \begin{adjustbox}{width=\mytablewidth,center}
     \scriptsize
-    \begin{tabulary}{\mytablewidth}{m{\myfirstcolwidth}m{\mycolwidth}m{\mycolwidth}m{\mycolwidth}m{\mycolwidth}m{\mycolwidth}m{\mylastcolwidth}}
+    \begin{tabulary}{\mytablewidth}{m{\myfirstcolwidth}C{\mycolwidth}C{\mycolwidth}C{\mycolwidth}C{\mycolwidth}C{\mycolwidth}m{\mylastcolwidth}}
         % \cmidrule[\heavyrulewidth]{2-6}
         \mrows{2}{}\tikzmark{zachmantopleft} \
         & \centbf{Données} \
@@ -21,7 +20,6 @@
         & \centbf{Temps} \
         & \centbf{Motivation}\tikzmark{zachmantopright} \
         & \
-
         \tabularnewline
         & \centit{Quoi} \
         & \centit{Comment} \
@@ -31,69 +29,57 @@
         & \
         \tabularnewline\cmidrule[\lightrulewidth]{1-6}
 
-        \tikzmark{zachmanlefttop}\textbf{Portée} \
-        & \mrows{2}{} \
-        & \mrows{2}{} \
-        & \mrows{2}{} \
-        & \mrows{2}{} \
-        & \mrows{2}{} \
-        & \mrows{2}{} \
+        \tikzmark{zachmanlefttop}\textbf{Exécutif}
+        & {\tiny{Identification}} \
+        & {\tiny{Identification}} \
+        & {\tiny{Identification}} \
+        & {\tiny{Identification}} \
+        & {\tiny{Identification}} \
+        & \
         \tabularnewline
-        % \centering(Contextual) &&&&&& \
-        % \tabularnewline
-        \textit{Planificateur} &&&&&& \multibrace{4}{\mycolwidth}{\gls{cim}} \
+        \textit{Planification} \
+        & {\tiny{des données}} \
+        & {\tiny{des processus}} \
+        & {\tiny{des responsabilités}} \
+        & {\tiny{des échéances}} \
+        & {\tiny{des motivations}} \
+        & \multibrace{4}{\mycolwidth}{\gls{cim}} \
         \tabularnewline\cmidrule[\lightrulewidth]{1-6}
 
-        \textbf{Modèle metier} \
-        & \mrows{2}{} \
-        & \mrows{2}{} \
-        & \mrows{2}{} \
-        & \mrows{2}{} \
-        & \mrows{2}{} \
-        & \mrows{2}{} \
-        \tabularnewline
-        \textit{Propriétaire} &&&&&& \
+        \textbf{Management}\newline\textit{Définition} \
+        & {\tiny{Définition des données}} \
+        & {\tiny{Définition des processus}} \
+        & {\tiny{Définition des responsabilités}} \
+        & {\tiny{Définition des échéances}} \
+        & {\tiny{Définition des motivations}} \
+        & \
         \tabularnewline\cmidrule[\lightrulewidth]{1-6}
 
-        \textbf{Modèle système} \
-        & \mrows{2}{} \
-        & \mrows{2}{} \
-        & \mrows{2}{} \
-        & \mrows{2}{} \
-        & \mrows{2}{} \
+        \textbf{Architecte}\newline\textit{Conception}  \
+        & {\tiny{Conception des données}} \
+        & {\tiny{Conception des processus}} \
+        & {\tiny{Conception des responsabilités}} \
+        & {\tiny{Conception des échéances}} \
+        & {\tiny{Conception des motivations}} \
         & \multibrace{2}{\mycolwidth}{\gls{pim}} \
-        \tabularnewline
-        \textit{Concepteur} &&&&&& \
         \tabularnewline\cmidrule[\lightrulewidth]{1-6}
 
-        \textbf{Modèle} \
-        & \mrows{2}{} \
-        & \mrows{2}{} \
-        & \mrows{2}{} \
-        & \mrows{2}{} \
-        & \mrows{2}{} \
-        & \multibrace{3}{\mycolwidth}{\gls{psm}} \
-        \tabularnewline
-        \textbf{Technologique} \
-        & \mrows{2}{} \
-        & \mrows{2}{} \
-        & \mrows{2}{} \
-        & \mrows{2}{} \
-        & \mrows{2}{} \
-        & \mrows{2}{} \
-        \tabularnewline
-        \textit{Réalisateur} &&&&&& \
+        \textbf{Ingénieur}\newline\textit{Spécification} \
+        & {\tiny{Spécification des données}} \
+        & {\tiny{Spécification des processus}} \
+        & {\tiny{Spécification des responsabilités}} \
+        & {\tiny{Spécification des échéances}} \
+        & {\tiny{Spécification des motivations}} \
+        & \multibrace{2}{\mycolwidth}{\gls{psm}} \
         \tabularnewline\cmidrule[\lightrulewidth]{1-6}
 
-        \tikzmark{zachmanleftbottom}\textbf{Modèle détaillé} \
-        & \mrows{2}{} \
-        & \mrows{2}{} \
-        & \mrows{2}{} \
-        & \mrows{2}{} \
-        & \mrows{2}{} \
+        \tikzmark{zachmanleftbottom}\textbf{Technicien}\newline\textit{Implémentation} \
+        & {\tiny{Implémentation\newline des données}} \
+        & {\tiny{Implémentation\newline des processus}} \
+        & {\tiny{Implémentation\newline des responsabilités}} \
+        & {\tiny{Implémentation\newline des échéances}} \
+        & {\tiny{Implémentation\newline des motivations}} \
         & \multibrace{2}{\mycolwidth}{Code} \
-        \tabularnewline
-        \textit{Sous-traitant} &&&&&& \
         \tabularnewline\cmidrule[\heavyrulewidth]{1-6}
     \end{tabulary}
     \begin{tikzpicture}[overlay,remember picture]
@@ -103,16 +89,5 @@
 
         % left vertical arrow
         \draw[<->] let \p3=(zachmanlefttop), \p4=(zachmanleftbottom) in ($(\x3,\y3)+(-0.3,0.3)$) -- node[label={[label distance=-2ex, text depth=3ex, label position=above, rotate=90]above:Perspectives (lignes)}] {} ($(\x3,\y4)+(-0.3,-0.5)$);
-
-        % HACK: draw vertical column separators
-        \def\zachmancolwidth{2.12}  % ~ column width (found manually)
-        \def\zachmanleftoffset{2.95}  % ~ first column offset (found manually)
-        \newcommand\drawcolsep[1]{%
-            \draw[dotted] let \p3=(zachmanlefttop), \p4=(zachmanleftbottom) in ($(\x3,\y3)+(\zachmanleftoffset+#1*\zachmancolwidth,0.24)$) -- ($(\x3,\y4)+(\zachmanleftoffset+#1*\zachmancolwidth,-0.59)$);}
-        \drawcolsep{0}
-        \drawcolsep{1}
-        \drawcolsep{2}
-        \drawcolsep{3}
-        \drawcolsep{4}
     \end{tikzpicture}
 \end{adjustbox}
