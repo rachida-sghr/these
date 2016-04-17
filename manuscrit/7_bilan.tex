@@ -24,11 +24,17 @@ et à l'analyse d'une architecture d'entreprise.
 L'analyse de la structure visa à s'assurer de la cohérence globale d'une architecture d'entreprise. Nous avons
 proposé pour cela de rajouter aux points de vue traditionnellement utilisé en EA (tels que les points de vue métier, fonctionnel et
 applicatif) un point de vue Intégration. Ce point de vue permet de modéliser les liens de cohérence inter-vues (entre les autres vues)
-et les liens de cohérence intra-vue (entres les entités d'une même vue). 
+et les liens de cohérence intra-vue (entres les entités d'une même vue).
 
+De plus, le développement d'un prototype et son application au cas métier
+de la gestion d'une flotte de véhicules électriques concrétise l'ensemble des
+propositions autour du \emph{framework} ExecuteEA et du métamodèle EAT-ME
+et fournit un outil d'analyse de la structure et du comportement
+d'une architecture d'entreprise.
 
-
-
+Enfin, la dernière contribution de ces travaux est relative à la délimitation de l'objet d'étude.
+Cette délimitation a été, en soi, à l'origine d'une démarche de recherche à part en entière.
+Nous avons ainsi pu jeter les bases des travaux ayant abouti à la défintion du \emph{framework} ExecuteEA.
 
 \section{Perspectives}
 
@@ -51,30 +57,34 @@ d'une architecture d'entreprise actuelle à une architecture d'entreprise cible.
 
     \subsection{Model Typing}
 
- Describes the system’s functional elements, their responsibilities,
-interfaces, and primary interactions. A Functional view is the cornerstone of
-most ADs and is often the first part of the description that stakeholders try
-to read. It drives the shape of other system structures such as the information
-structure, concurrency structure, deployment structure, and so on. It also has a 
-significant impact on the system’s quality properties such as its ability to
-change, its ability to be secured, and its runtime performance.) 
+% \textit{Model Typing} est une technique de l'IDM appliqué au développement
+% logiciel permettant de contrôler les types de modèles d'entrée des
+% transformations de modèle à leur exécution. Nous proposons d'appliquer les
+% principes du \textit{Model Typing} aux modèles d'EA et aux transformations de
+% modèle qui leurs sont associées. Par exemple, un processus métier utilise en
+% entrée et en sortie des modèles représentant des concepts métier. Un processus
+% peut donc être considéré comme une transformation de modèle. Ainsi, le
+% \textit{Model Typing} peut être utilisé pour l'intégration horizontale (i.e.
+% cohérence et orchestration des processus d'une même vue).
 
-\subsubsection{Le Model Typing pour la cohérence inter- et intra-vue}
-
-\textit{Model Typing} est une technique de l'IDM appliqué au développement
-logiciel permettant de contrôler les types de modèles d'entrée des
-transformations de modèle à leur exécution. Nous proposons d'appliquer les
-principes du \textit{Model Typing} aux modèles d'EA et aux transformations de
-modèle qui leurs sont associées. Par exemple, un processus métier utilise en
-entrée et en sortie des modèles représentant des concepts métier. Un processus
-peut donc être considéré comme une transformation de modèle. Ainsi, le
-\textit{Model Typing} peut être utilisé pour l'intégration horizontale (i.e.
-cohérence et orchestration des processus d'une même vue).
-
+Une démarche IDM implique une multitude de modèles produits et manipulés par différentes transformations de modèles. Le maintien de la cohérence entre modèles et transformation de modèles fait l'objet de recherche active dans une discipline comme l'IDM. \cite{steel2007model} propose de typer les modèles en entrée des transformations en utilisant le Model Typing. Celui-ci permet de contrôler les modèles manipulés par les transformations. Autrement dit, une transformation ne prend en entrée qu'un certain type de modèle. Ainsi, tous les modèles conformes à ce type peuvent être manipulés par la transformation en question. Ceci a, de plus, l'avantage d'augmenter la réutilisabilité des transformations écrites en mettant en évidence les caractéristiques communes des modèles. Cette technique de typage est en outre outillée et intégrée dans le langage de méta-modélisation Kermeta\footnote{www.kermeta.org} qui est basé sur EMOF\footnote{Ecore Meta Object Facility} dans un environnement Eclipse. Il nous paraît donc intéressant de mettre en œuvre le Model Typing pour la vue intégration.
 
 
     \subsection{Vue technique}
-    lien vers les Smart Grids
-    
-    \subsection{As is - To be}
+
+    Dans ces travaux nous avons traité les vue métier, fonctionnelle et applicative. Il souhaiterions aussi
+    intégrer la vue techinique au \emph{framework} ExecuteEA afin d'obtenir une analyse de la totalité de
+    l'architecture d'entreprise. Cette vue correspond à l'infrastructure technique du SI
+    (matériel informatique et réseaux télécom) et permettra donc de faire le lien directe avec les équipements
+    du réseau électrique.
+
+    \subsection{Migration de l'archtecture actuelle vers une architecture cible}
+
+    Le \emph{framework} ExecuteEA peut être utilisé pour crée des modèles d'architecture d'entreprise exécutables
+    pour analyser les composant d'une entreprise dans son état courant ou cible de manière séparée. 
+    Cependant, pour retracer le cycle de vie d'une architecture d'entreprise et la localisation d'une architecture d'entreprise à
+    travers ce cycle de vie nous avons besoin d'un \emph{framwrok} retraçant son évolution. Des recherches en ce sens sont en cours
+    mais uniquement au niveau du SI d'une entreprise~\cite{metrailler_evolis_2014}. Dès lors, il nous semble intéressant d'enrichir le
+    \emph{framework} ExecuteEA pour tenir compte de l'évolution d'une architecture d'entreprise à travers son cycle de vie.
+
 

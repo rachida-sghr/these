@@ -4,52 +4,50 @@
 
 \PartialToc
 
-% La méthodologie de recherche permet non seulement de comprendre la mise en place 
-% d'une démarche de recherche mais aussi les résultats l'étude. Le but de ce 
-% chapitre est d'éclaire le 
-% cheminement des travaux de recherche pour comprendre la construction de la 
-% démarche adoptée. 
 
-Une démarche classique de recherche commence par la formulation d'une question 
-de départ. La question qui a initié nos travaux est la suivante~: «~Comment 
-simuler afin de les valider les SI des Smart Grids ?~».  Comme en témoigne notre 
+Une démarche de recherche classique commence par la formulation d'une question 
+de départ. La question qui a initié nos travaux est la suivante~: «~comment 
+simuler afin de les valider les SI des Smart Grids?~».  Comme en témoigne notre 
 l'état de l'art, cette question fait l'objet de très peu de travaux (section 
-\ref{approche_simu_existante}). Une phase recherche exploratoire préalable a donc été nécessaire 
-pour mettre en évidence les caractéristiques de notre object de recherche en adoptant une approche inductive.
+\ref{approche_simu_existante}). Une phase exploratoire préalable a donc été nécessaire 
+pour mettre en évidence les caractéristiques de notre objet d'étude. À cet effet,
+une démarche de recherche inductive a été jugée pertinente.
+
+Nous exposons cette démarche en la justifiant cette démarche dans la section~\ref{sec:demarche_objet_etude}?
+Puis, nous reprenons les étapes de cette phase exploratoire 
+par ordre chronologique~: exploration de la vue métier dans la section~\ref{sec:exploration_metier}, puis celle de la vue 
+applicative dans la section~\ref{sec:investig_appli} et en fin celle de la vue fonctionnelle dans 
+la section~\ref{sec:exploration_fonctionnelle}.
+Cependant, nous ne cherchons pas à donner l'impression que notre plan de recherche a été 
+entièrement établi avant de le mettre en œuvre. Au contraire, nous l'avons 
+construit au fur et à mesure de nos interactions avec le terrain d'étude. 
+
 % expliquer ce que c'est une approche inductive.
 
-Cette phase exploratoire a été préalable et indipensable à la définition du cadre d'architecture 
-\textit{ExcuteEA}. 
-% La construction de ce cadre d'architecture et sa mise à 
-% l'épreuve ont fait l'objet d'une recherche explicative en adoptant une démarche déductive. 
-% expliquer ce que c'est une approche déductive
+% Cette phase exploratoire a été préalable et indipensable à la définition du cadre d'architecture 
+% \textit{ExcuteEA}. 
+
 
 % L'intérêt de cette partie est de traiter la question de la cohérence entre nos 
 % objectifs de recherche et la démarche que nous adoptons pour y répondre. 
 
-Dans ce capitre, nous présentons la démarche entreprise pour délimiter 
-notre objet d'étude. Nous reprenons les étapes de cette recherche exploratoire 
-par ordre chronologique~: exploration de la vue métier, puis de la vue 
-applicative et en fin de la vue fonctionnelle. Cependant, 
-nous ne cherchons pas à donner l'impression que notre plan de recherche a été 
-entièrement établi avant de le mettre en œuvre. Au contraire, nous l'avons 
-construit au fur et à mesure de nos interactions avec le terrain d'étude. 
+
 
 
 \section{Démarche engagée}
+\label{sec:demarche_objet_etude}
 		
-Dans ces travaux de thèse, une attention singulière est apportée à la délimitation de l'objet d'étude. 
+Dans ces travaux de thèse, une attention particulière est apportée à la délimitation de l'objet d'étude. 
 Cette délimitation est souvent le résultat de l'observation du terrain d'étude~: 
 l'entreprise et son SI d'une manière générale et l'entreprise et son SI dans le 
 cas particulier des Smart Grids. L'entreprise et son SI forment un système 
 complexe dont l'observation n'est pas triviale. La délimitation de l'objet 
-d'étude a donc été en soi à l'origine d'une démarche de recherche.
-	
-	Une démarche inductive a été jugée pertinente pour délimiter notre objet de recherche. D'une part, une démarche inductive est utile pour formuler des hypothèses ou soulever des questions et pour aborder 
-un problème qui a été peu étudié comme c'est le cas de la simulation des SI des Smart Grids. 
-Elle aboutit à des propositions générales à partir de cas particuliers~: c'est 
-une démarche par exploration. 
-	Cette démarche est donc adaptée pour~: 
+d'étude a donc été, en soi, à l'origine d'une démarche de recherche.
+
+Nous avons adoptée pour cela une démarche de recherche inductive et ce pour plusieurs raisons.
+D'une part, une démarche inductive est pertinente pour formuler des hypothèses ou soulever des questions,
+et pour aborder un sujet qui a été peu étudié comme c'est le cas de la simulation du SI des Smart Grids.	
+Cette démarche est donc adaptée pour~: 
 	\begin{enumerate}
 	\item délimiter l'objet de l'étude, c'est à dire identifier ce qui rentre dans le 
 contexte de la simulation des SI et ce qui ne l'est pas~;
@@ -62,7 +60,7 @@ l'observation et l'expérience sont la source de la connaissance du monde réel 
 du concret \cite{madeleine2001methodes}. Nous cherchons en effet à comprendre 
 notre objet d'étude empiriquement. Le recours à cette démarche est d'autant plus 
 justifié par la nature socio-technique du SI. En définissant le SI, Robert Reix 
-met en évidence sa composante sociale (\ref{ch:EA}). 
+met en évidence sa composante sociale (voir chapitre \ref{ch:EA}). 
 	
 	%Une étude ethnographique est Notre démarche inductive est donc doublée d'.
 
@@ -125,6 +123,7 @@ d'un SI d'entreprise ?~». Cependant, nous avons veillé à garder une capacité
 d'ouverture aux idées nouvelles. Nous présentons
 	
 		\section{Investigations menées pour la vue métier}
+		\label{sec:exploration_metier}
 			La première étape d'observation a débuté avec un stage de fin d'étude de six 
 mois que nous avons effectué au sein du département \gls{mire}. L'objectif du 
 stage a consisté à explorer le sujet «~Simulation du SI des Smart Grids~» afin 
@@ -219,8 +218,8 @@ travaux présentés dans cette thèse.
 				\subsection{Conclusion}
 			Cette première application du protocole d'investigation a conforté nos hypothèses initiales à savoir que la simulation est peu abordée dans le contexte des SI mais qu'elle est pertinente pour valider/critiquer les scénarios de cas métier Smart Grid avant leur implémentation.
 
-			\section{Investigations menées pour la vue applicative} 
-			\label{sec:investig_appli}
+	\section{Investigations menées pour la vue applicative} 
+	\label{sec:investig_appli}
 				La vue applicative tient une place de choix dans les SI des entreprises. Pour des SI fortement informatisé, il arrive même souvent que le SI soit réduit aux applications informatiques et à l'infrastructure qui les supportent. Cette constatation est encore plus avérée dans le cas des Smart Grids dont le principe est le déploiement de TIC sur le réseau électrique pour automatiser son pilotage. Le choix chronologique de poursuivre les investigations en abordant la vue métier découle de cette constatation.		
 			
 				\subsection{Observation}
@@ -260,6 +259,8 @@ travaux présentés dans cette thèse.
 		Cette deuxième application du protocole d'investigation pour la vue applicative a permis de confirmer nos hypothèses concernant la problématique de l'hétérogénéité des modèles de simulation mais surtout de réduire notre périmètre de recherches. En effet, l'hétérogénéité est traitée par un projet du département \gls{mire}, auquel nos travaux ont été intégrés. L'implémentation du cas métier de la régulation de tension à travers le prototype Ptolemy, et le retours qu'en ont fait les personnes interrogées, nous a en outre permis d'affiner le cas métier de la régulation de tension. Sa réutilisation pour les investigations menées pour la vue fonctionnelle en a été d'autant plus facilitée.   
 	
 		\section{Investigations menées pour la vue fonctionnelle} 
+		\label{sec:exploration_fonctionnelle}
+
 		La vue fonctionnelle est une vue charnière entre le métier et les applications qui les implémente. En effet, elle décompose chacune tâche métier en fonctions. Les investigations menées sur la vue fonctionnelle sont essentiels dans la mesure où cette vue permet de maintenir le lien entre le métier et l'IT. 
 			\subsection{Observation}
 		Pour cette dernière phase d'observation, nous avons mené des entretiens avec des personnes du domaine SI et des personnes du domaine du réseau électrique. Nos observations ont permis de constater que les ingénieurs-chercheurs du département \gls{mire} qui conçoivent des applications pour les réseaux électriques, utilisent leurs propres systèmes de notations et ne sont que très peu familiers avec les concepts du domaine SI telle que la vue fonctionnelle. Il s'est avéré en effet, qu'une distinction entre SI de gestion et SI industriel est faite au sein du département. Les applications qui automatisent la conduite du réseau relèvent des SI industriels. Les SI de gestion, ou SI transverses, correspondent à des SI intégrant des actions humaines dans leurs processus ou gérant des activités liées aux personnes.
@@ -270,6 +271,7 @@ travaux présentés dans cette thèse.
 		\end{itemize}	 
 			\subsection{Prototypage}
 		Les hypothèses formulées à l'issue de l'observation impliquent le prototypage nécessite la mise au point préalable d'un cas métier. D'une part, les investigations pour la vue métier ont permis de validé la pertinence de la simulation d'un SI de gestion. En effet, le pilotage d'une batterie installée chez un client implique l'intervention systématique de ce dernier à travers son consentement/refus à stocker ou injecter l'énergie de sa batterie en fonction de la compensation tarifaire perçue. Il a été donc plus judicieux de s'orienter vers un SI industriel pour cette dernière application du protocole  d'investigation. D'autre part, la deuxième hypothèse portant sur la compréhension du langage de modélisation su SI par les partie prenante a orienté le prototypage vers la création d'un \gls{dsml}. La création d'un \gls{dsml} nécessite cependant de connaitre au préalable son domaine d'application, qui est ici le cas métier Smart Grid traité. 
+
 		Le cas métier retenu est la régulation de tension d'un réseau électrique présentant une forte pénétration de \gls{der}. En effet, les ingénieurs-chercheurs du département \gls{mire} considèrent qu'il relève du domaine des SI industriel. Son implémentation pour la vue applicative a permis en outre de l'affiner. 
 		Ainsi, le prototypage a consisté à développer un \gls{dsml} pour la vue fonctionnelle selon une démarche IDM. Après l'analyse du processus fonctionnel de la régulation de tension, nous avons développé un métamodèle. Dans ce métamodèle, illustré par la figure~\ref{fig:meta_dsml}, les concepts essentiels d'un processus fonctionnel de régulation de tension ont été définis en respectant les termes utilisés par les experts du réseau électrique~:
 		
@@ -277,15 +279,29 @@ travaux présentés dans cette thèse.
 		
 \item Événement (\textit{Event})
 
-Ce sont les événements qui peuvent apparaitre sur le réseau de distribution. Il s'agit de la contrainte haute (la tension sur le réseau dépasse la tension réglementaire U\textsubscript{Max}), de la contrainte basse (la tension sur les réseau dépasse la tension réglementaire U\textsubscript{Min}) et contrainte à la fois haute et basse~;
+Ce sont les événements qui peuvent apparaitre sur le réseau de distribution. Il
+s'agit de la contrainte haute (la tension sur le réseau dépasse la tension
+réglementaire U\textsubscript{Max}), de la contrainte basse (la tension sur les
+réseau dépasse la tension réglementaire U\textsubscript{Min}) et contrainte à la
+fois haute et basse~;
 
-\item Action de régulation (\textit{RegulationAction})
+\item Action de régulation (textit{RegulationAction})
 
-Ce sont les leviers à actionner pour adresser une contrainte : élever le niveau de tension via le régleur en charge (\textit{IncreasePad}), baisser le niveau de tension via le régleur en charge (\textit{DecreasePad}), ou en effaçant un DER (\textit{DeleteDER})~;
+Ce sont les leviers à actionner pour adresser une contrainte : élever le niveau
+de tension via le régleur en charge (\textit{IncreasePad}), baisser le niveau de
+tension via le régleur en charge (\textit{DecreasePad}), ou en effaçant un DER
+(\textit{DeleteDER})~;
 
 \item Contrainte à respecter (\textit{Constraint})
 
-Le processus fonctionnel de régulation de tension est limité par des contraintes liée aux équipements du réseau. Le régleur en charge abaisse (respectivement élève) la tension sans dépasser une marge basse (LowMargin) (respectivement une marge haute(\textit{HighMargin})). Il n'est de plus pas possible de mettre le régleur en charge en butée haute ou basse (\textit{LowerStop, UpperStop}). En effet, quand le régleur en charge abaisse ou élève la tension, il change de plot. Le nombre de plot étant limité, il est interdit d'utiliser les plots extrêmes par mesure de sécurité~;
+Le processus fonctionnel de régulation de tension est limité par des contraintes
+liée aux équipements du réseau. Le régleur en charge abaisse (respectivement
+élève) la tension sans dépasser une marge basse (LowMargin) (respectivement une
+marge haute(\textit{HighMargin})). Il n'est de plus pas possible de mettre le
+régleur en charge en butée haute ou basse (\textit{LowerStop, UpperStop}). En
+effet, quand le régleur en charge abaisse ou élève la tension, il change de
+plot. Le nombre de plot étant limité, il est interdit d'utiliser les plots
+extrêmes par mesure de sécurité~;
 
 \item Structure de contrôle (\textit{ControlStructure})
 
@@ -301,11 +317,22 @@ Pour ce prototype, nous avons uniquement implémenté le \textit{If}.
  \label{fig:meta_dsml}
 \end{figure} 
 
-Une syntaxe concrète et une sémantique d'exécution ont aussi été conçues pour ce \gls{dsml}. Le DSML a ensuite été implémenté par un stagiaire dans l'environnement Eclipse. L'utilisation d'Eclipse est largement répondue dans la communauté de l'IDM. la fondation Eclipse héberge le projet \textit{Eclipse Modeling }qui propose des langages et outils dédiées au développement de \gls{dsml}. La sémantique d'exécution a été implémentée avec Kermeta. Kermeta offre la possibilité de définir de spécifier la sémantique d'exécution directement au niveau du métamodèle à l'aide un langage d'action. 
+Une syntaxe concrète et une sémantique d'exécution ont aussi été conçues pour ce
+\gls{dsml}. Le DSML a ensuite été implémenté par un stagiaire dans
+l'environnement Eclipse. L'utilisation d'Eclipse est largement répondue dans la
+communauté de l'IDM. la fondation Eclipse héberge le projet \textit{Eclipse
+Modeling }qui propose des langages et outils dédiées au développement de
+\gls{dsml}. La sémantique d'exécution a été implémentée avec Kermeta. Kermeta
+offre la possibilité de définir de spécifier la sémantique d'exécution
+directement au niveau du métamodèle à l'aide un langage d'action.
 
 		
-			\subsection{Validation}
-Le prototype ainsi implémenté permet de créer et de simuler des processus fonctionnel pour la régulation de tension. La figure\ref{fig:proto_dsml} est une capture d'écran représentant le prototype. La partie droite correspond à la palette de création de processus de régulation où se trouvent les concepts du métamodèle sous leur forme graphique. La partie gauche correspond à un exemple de processus modélisé avec cette palette. 
+            \subsection{Validation} Le prototype ainsi implémenté permet de
+créer et de simuler des processus fonctionnel pour la régulation de tension. La
+figure\ref{fig:proto_dsml} est une capture d'écran représentant le prototype. La
+partie droite correspond à la palette de création de processus de régulation où
+se trouvent les concepts du métamodèle sous leur forme graphique. La partie
+gauche correspond à un exemple de processus modélisé avec cette palette.
 
 \begin{figure}[!ht]
  \begin{center}
@@ -315,38 +342,67 @@ Le prototype ainsi implémenté permet de créer et de simuler des processus fon
  \label{fig:proto_dsml}
 \end{figure} 
 
-Le prototype a été soumis à des personnes appartenant aux profiles identifiés dans l'observation, c'est à dire des personnes du domaine SI et des personnes du domaine du réseau électrique. Les personnes du domaine SI sont principalement des architectes SI. Leur retour a été positif. Ils ont trouvé dans le DSML développé un moyen de modéliser des processus pour le métier et d'échanger avec les personnes du domaine électrique qui ne maitrisent pas toujours les langages traditionnellement utilisés dans le domaine SI comme UML. Le retour des personnes du domaine du réseau électrique n'a pas été aussi enthousiaste que celui des personnes du domaine SI. Il s'agit d'abord d'un problème de sémantique. En effet, il n'ont pas vu d'intérêt à modéliser des « fonctions » de conduite de réseau avec un nouveau DSML. Le terme « fonction » est associé au domaine purement électrique et non SI. Or ces fonctions sont habituellement modélisées avec les automates programmables ou encore le langage Matlab. Ces langages sont éprouvés pour le domaine du réseau électrique mais ne sont pas adaptés à la vue fonctionnelle du SI. Cette dernière ne met l'accent sur le détail de l'implémentation de la fonction mais plutôt sur l'orchestration des plusieurs fonctions et leur structuration en blocs fonctionnels.
+Le prototype a été soumis à des personnes appartenant aux profiles identifiés
+dans l'observation, c'est à dire des personnes du domaine SI et des personnes du
+domaine du réseau électrique. Les personnes du domaine SI sont principalement
+des architectes SI. Leur retour a été positif. Ils ont trouvé dans le DSML
+développé un moyen de modéliser des processus pour le métier et d'échanger avec
+les personnes du domaine électrique qui ne maitrisent pas toujours les langages
+traditionnellement utilisés dans le domaine SI comme UML. Le retour des
+personnes du domaine du réseau électrique n'a pas été aussi enthousiaste que
+celui des personnes du domaine SI. Il s'agit d'abord d'un problème de
+sémantique. En effet, il n'ont pas vu d'intérêt à modéliser des « fonctions » de
+conduite de réseau avec un nouveau DSML. Le terme « fonction » est associé au
+domaine purement électrique et non SI. Or ces fonctions sont habituellement
+modélisées avec les automates programmables ou encore le langage Matlab. Ces
+langages sont éprouvés pour le domaine du réseau électrique mais ne sont pas
+adaptés à la vue fonctionnelle du SI. Cette dernière ne met l'accent sur le
+détail de l'implémentation de la fonction mais plutôt sur l'orchestration des
+plusieurs fonctions et leur structuration en blocs fonctionnels.
 
-L'analyse du résultat des entretiens menés avec les personnes du domaine SI et les personne du domaine des réseaux électrique a validé partiellement les hypothèses formulées à l'issue de l'observation. Ainsi, en montrant leur intérêt pour le DSML, les personnes du domaine SI ont affirmé l'intérêt de modéliser et de simuler le SI avec des langages compréhensibles par les personnes du métier, en l'occurrence celles du domaine du réseau électrique. 
-En revanche, le retour des personnes du domaine du réseau électrique a, au regard de notre analyse, infirmé l'hypothèse selon laquelle a simulation des SI des Smart Grids est aussi pertinente pour les SI industriels que pour les SI de gestion. En effet, les SI industriels sont déjà l'objet de simulations (avec les automates programmables et Matlab par exemple).
+L'analyse du résultat des entretiens menés avec les personnes du domaine SI et
+les personne du domaine des réseaux électrique a validé partiellement les
+hypothèses formulées à l'issue de l'observation. Ainsi, en montrant leur intérêt
+pour le DSML, les personnes du domaine SI ont affirmé l'intérêt de modéliser et
+de simuler le SI avec des langages compréhensibles par les personnes du métier,
+en l'occurrence celles du domaine du réseau électrique.  En revanche, le retour
+des personnes du domaine du réseau électrique a, au regard de notre analyse,
+infirmé l'hypothèse selon laquelle a simulation des SI des Smart Grids est aussi
+pertinente pour les SI industriels que pour les SI de gestion. En effet, les SI
+industriels sont déjà l'objet de simulations (avec les automates programmables
+et Matlab par exemple).
 
-			\subsection{Conclusion}
-Cette dernière application du protocole d'investigation a cette étude a permis en outre d'identifier deux types de SI pour les Smart Grid. L'étude a confirmé la pertinence de la simulation de SI pour la vue fonctionnelle, mais seulement pour un SI de gestion. Les SI purement informatiques, autrement dit ceux qui ne font pas intervenir de tâche humaine et qui pilotent directement les équipements électriques, ne sont pas concernés par notre recherches. En effet, ils existent déjà des langages dédiée à leur modélisation et simulation (automates programmables et Matlab). Le terme «~SI industriel~» employé pour qualifier ces systèmes a été, à notre sens trompeuse dans le sens où il s'agit plutôt d'une restriction ou d'une spécialisation du terme SI. En effet, selon la définition de Reix (cf. section~\ref{sec:reix}), toute ressource intervenant sur le cycle de vie d'une information au sein d'une organisation fait partie du SI, y compris le personnel. 
+            \subsection{Conclusion} Cette dernière application du protocole
+d'investigation a cette étude a permis en outre d'identifier deux types de SI
+pour les Smart Grid. L'étude a confirmé la pertinence de la simulation de SI
+pour la vue fonctionnelle, mais seulement pour un SI de gestion. Les SI purement
+informatiques, autrement dit ceux qui ne font pas intervenir de tâche humaine et
+qui pilotent directement les équipements électriques, ne sont pas concernés par
+notre recherches. En effet, ils existent déjà des langages dédiée à leur
+modélisation et simulation (automates programmables et Matlab). Le terme «~SI
+industriel~» employé pour qualifier ces systèmes a été, à notre sens trompeuse
+dans le sens où il s'agit plutôt d'une restriction ou d'une spécialisation du
+terme SI. En effet, selon la définition de Reix (cf. section~\ref{sec:reix}),
+toute ressource intervenant sur le cycle de vie d'une information au sein d'une
+organisation fait partie du SI, y compris le personnel.
 	
-	
-		\section{Conclusion}
-Redéfinition de l'objet d'étude
-Reformulation de la question de départ -> ref problématique 
-Le cœur de la problématique 
-Adéquation de la démarche et de l'objectif de la recherche (objet d'étude)
-	
-La question de l'analyse par simulation du SI fait l'objet de 
-Démarche exploratoire / Démarche ethnographique 
-La délimitation du sujet de recherches est en soit à l'origine d'une démarche de 
-recherche à part entière  inductive, se prête mieux au sujet nouveau, faisant 
-l'objet de peu de travaux
-Jeter les bases d'une étude ultérieure
 
 
+\section{Conclusion}
 
-% Étude sociologique -> entretien avec les experts, sur leur avis de nos 
-% prototypes mais aussi 
+Dans ce chapitre, nous avons abordé la question de la délimitation de l'objet d'étude.
+Cette délimitation a été, en soi, à l'origine d'une démarche de recherche à part en entière.
+Nous avons adopté une démarche inductive en définition un protocole d'investigation que nous
+avons appliqué à chacune des vues métier, fonctionnelle et applicative.
+Nous avons ainsi pu jeter les bases des travaux précédemment présentés dans ce mémoire et 
+mettre en évidence certaines caractéristiques de notre objet d'étude à savoir~:
+(1)~la simulation du SI est pertinente pour valider/critiquer les scénarios des cas métier développés pour
+les Smart Grids avant leur implémentation (2)~nos travaux seront plus pertinents pour les SI de
+gestion que pour les SI industriels pour lesquels il existe déjà des méthodes et langages de simulation dédiés
+(3)~la simulation est d'autant plus cruciale SI pour le en traitant dans sa globalité et en explicitant les interactions
+entre ses macro-composants. 
 
-% Plusieurs démarches d'investigation 
-% prototypage et entretien 
-% ou SI transverse et SI spécialisé ? SI purement logiciel / SI socio-technique 
-% (interaction humaine) 
-% Une différence d'échelle 
+
 		 
 
 

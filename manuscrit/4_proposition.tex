@@ -15,7 +15,7 @@ en nous appuyant sur une étude de la doucmentation de projets dédiés aux Smar
 corroborant la revue de la littéreture présentée dans la première partie de ce mémoire.
 Forts de ce bilan, nous justifions le recours à une démarche IDM aboutissant à l'identification des concepts
 relatifs au domaine de l'EA (section~\ref{sec:analyse_domaine}), et nécessaire à la création d'un métamodèle pour l'EA que nous
-baptisant EAT-ME (section~\ref{sec:ea2m}). Ce métamodèle est la pierre angulaire du \emph{framework} ExecuteEA que nous
+baptisant EAT-ME (section~\ref{sec:EAT-ME}). Ce métamodèle est la pierre angulaire du \emph{framework} ExecuteEA que nous
 destinons à l'analyse de la structure et du comportement d'une architecture d'entreprise (section~\ref{sec:executeea}). 
 
 % - analyse du domaine (rétro-ingénierie, analyse de la documentation existante et entretien avec les experts) qui aboutit à l'identification des concepts du métamodèle ExecuteEA
@@ -453,7 +453,7 @@ limites  des pratiques actuelles d'EA.
 
     Nous détaillerons plus en détails les possibilités d'utilisation des méthodes et technique de l'IDM
     dans la suite de ce chapitre. Mais nous présentons d'abord la démarche IDM mise en
-    œuvre pour la création du métamodèle EA2M.
+    œuvre pour la création du métamodèle EAT-ME.
 
     \subsubsection{Démarche mise en œuvre}
 
@@ -467,14 +467,14 @@ limites  des pratiques actuelles d'EA.
     figure~\ref{fig:demarche_idem} est une représentation de la démarche IDM
     mise en œuvre pour mener les travaux de cette thèse.
 
-    Il est important de préciser que la définition du métamodèle EA2M s'est faite de manière
+    Il est important de préciser que la définition du métamodèle EAT-ME s'est faite de manière
     itérative~: commencer par quelques concepts en précisant leurs relations,
     créer des modèles conformes à ce métamodèle, tester le modèle obtenu par rapport
     aux attentes du domaine, enrichir à nouveau le métamodèle et ainsi de suite.
 
     L'IDM permet par transformation de modèle de générer de code des applications
     finales. Nous avons donc utilisé les transformations de modèle pour éprouver la pertinence du métamodèle
-    EA2M sur un système informatique au fil des itérations.
+    EAT-ME sur un système informatique au fil des itérations.
 
 
     \begin{figure}[!ht]
@@ -700,14 +700,14 @@ conditions de travail.
     Un métamodèle est un modèle du langage de modélisation qui sert à décrire les modèles.
     Or l'activité de modélisation est guidée par l’intention du modélisateur.
     Par conséquent, il convient de définir clairement nos intentions de modélisation
-    avant de caractériser les concepts retenus pour le métamodèle EA2M.
+    avant de caractériser les concepts retenus pour le métamodèle EAT-ME.
 
     D'abord, nous cherchons à caractériser les concepts essentiels et indispensable à la
     modélisation d'une vue d'architecture en mettant en évidence les caractéristiques communes
     aux artefacts utilisés par les praticiens. En effet, le métamodèle est un moyen d'unifier
     l'ensemble des artefacts employée dans les diverses activités d'EA.
 
-    Ensuite, l’objectif de EA2M est de permettre de vérifier la cohérence internes à une vue mais
+    Ensuite, l’objectif de EAT-ME est de permettre de vérifier la cohérence internes à une vue mais
     aussi la cohérence entre deux vues d'architecture. Il est donc indispensable de représenter
     ces liens de cohérences dans le métamodèle. Nous expliquons dans la suite l'importance
     d'expliciter ces liens pour l'analyse de la structure et du comportement de l'architecture
@@ -854,10 +854,10 @@ conditions de travail.
     la vérification de la cohérence de l'ensemble de l'architecture.
 
     Les concepts identifiés, directement issus l'analyse du domaine de l'EA, ont servi à la conception du
-    métamodèle EA2M pour \emph{Enterprise Architecture MetaModel}.
+    métamodèle EAT-ME pour \emph{Enterprise ArchiTecture MEtamodel}.
 
-\section{Le métamodèle EA2M}
-\label{sec:ea2m}
+\section{Le métamodèle EAT-ME}
+\label{sec:EAT-ME}
     La conception du métamodèle EA3M a été menée de manière itérative. En partant de quelques concepts
     et en enrichissant le métamodèle à chaque itération. Des versions successives de ce métamodèle
     ont fait l'objet de publications (\cite{seghiri2015simulation} et \cite{seghiri2016executable}).
@@ -873,7 +873,7 @@ conditions de travail.
     le contenu de chacune des vues d’architecture (métier, fonctionnelle et applicative).
     La figure~\ref{fig:core_concepts} illustre, sous la forme d'un diagramme de 
     classes, la partie\footnote{Nous fournissons des sous-parties du métamodèle pour des raisons de
-    lisibilité} du métamodèle EA2M dédiée à la représentation de ces éléments.
+    lisibilité} du métamodèle EAT-ME dédiée à la représentation de ces éléments.
 
     \begin{figure}[!ht]
     \begin{center}
@@ -883,7 +883,7 @@ conditions de travail.
     \label{fig:core_concepts}
     \end{figure}
 
-    EA2M n'a pas pour objectif la modélisation extensive des artefacts d'architecture mais se focalise sur
+    EAT-ME n'a pas pour objectif la modélisation extensive des artefacts d'architecture mais se focalise sur
     l'abstraction des artefacts d'architecture à leur plus petit dénominateur commun pour pouvoir raisonner non plus
     sur la sémantique des éléments mais sur leur cohérence en termes de relations d'interdépendance. Par exemple, l'architecte métier 
     peut décrire des procédures composées de processus, eux-mêmes composés d'activités Le concept d'action peut aussi bien
@@ -1101,7 +1101,7 @@ d'un module de la vue applicative à partir d'un modèle de fonction de la vue f
 
     Nous proposons donc un \emph{framewok} d'EA permettant de traiter
     les différentes vues d'architecture de manière intégrée tout en permettant à l'architecture d'entreprise d'accompagner l'entreprise
-    sur toute sa trajectoire.  Le métamodèle EA2M représente la pierre angulaire de ce \emph{framework}.
+    sur toute sa trajectoire.  Le métamodèle EAT-ME représente la pierre angulaire de ce \emph{framework}.
     Nous recourons en effet à la méta-modélisation pour unifier les différentes activités
     d'architecture —~documentation, analyse et conception~—
     en les inscrivant dans le cadre méthodologique et technologique offert par l'IDM.
@@ -1156,7 +1156,7 @@ alors se faire par transformation de modèles, en transformant les \q{modèles E
 
 Nous entendons analyser deux aspects distincts mais corrélés d'une architecture
 d'entreprise~: la structure et le comportement de la dite architecture.
-L'analyse de la structure repose essentiellement sur la formalisation du métamodèle EA2M et vise à 
+L'analyse de la structure repose essentiellement sur la formalisation du métamodèle EAT-ME et vise à 
 intégrer des modèles provenant des différentes vues d'architecture afin de garantir la cohérence
 de l'ensemble de l'architecture. L'analyse du comportement de l'architecture repose quant à elle
 essentiellement sur la simulation des modèles issus de l'analyse de la structure.
@@ -1205,7 +1205,7 @@ suite jusqu'à obtenir une architecture satisfaisante pour l'ensemble des partie
 \end{figure}
 
 L'approche proposée s'inscrit en outre dans un cadre structurant qui reprend les concepts identifiés dans le métamodèle
-EA2M. Ce cadre est illustré par la figure~\ref{fig:cadre_structurant}. Ce cadre structure et organise les différents modèles
+EAT-ME. Ce cadre est illustré par la figure~\ref{fig:cadre_structurant}. Ce cadre structure et organise les différents modèles
 créés par les architectes~: métier, fonctionnel et applicatif. Chaque vue est en effet composant de trois aspects~: information,
 processus et objectif. Notre contribution principale consiste à doter ce cadre d'une vue intégration transverse à toutes les autres vues.
 Cette vue reflète la perspective de l'architecte d'entreprise qui a pour mission de garantir la cohérence globale de l'architecture
@@ -1285,7 +1285,7 @@ mène ces analyses (en l'occurrence l'architecte d'entreprise). Dans cette secti
 L'analyse structurelle d'une architecture d'entreprise a plusieurs visée. Il peut s'agir de (1) la
 vérification de la cohérence de l'ensemble de l'architecture (2) anticiper les changements en
 en mesurant par exemple l'impact du changement \cite{de2005change} sur la structure de l'architecture.
-Le métamodèle EA2M rend possible cette analyse en exploitant la relation de conformité qui lie un modèle à son
+Le métamodèle EAT-ME rend possible cette analyse en exploitant la relation de conformité qui lie un modèle à son
 métamodèle telle que présentée dans l'état de l'art concernant les relations de base de l'IDM
 au chapitre~\ref{ch:IDM}. 
 
@@ -1294,17 +1294,17 @@ contrôler la conformité des modèles d'architecture. En effet, le métamodèle
 contraint les modèles d'architecture et offre la possibilité de vérifier
 que l'ensemble des modèles respectes bien les contraintes exprimées par le
 métamodèle.
-Dans le cadre de EA2M, ces contraintes sont exprimés à travers les liens
+Dans le cadre de EAT-ME, ces contraintes sont exprimés à travers les liens
 de cohérence. Par exemple, toutes les entités de base (action, objectif et information)
 doivent toujours appartenir à deux vues~: la vue intégration en plus d'une autre vue
 parmi les vues métier, fonctionnelle, applicative et technique. Cette contrainte permet de vérifier
 que toutes les entités de l'architecture sont bien répertoriées dans la vue intégration.
 
-Autre exemple de contraintes exprimées dans le métamodèle EA2M~: tous les objectifs de la vue métier
+Autre exemple de contraintes exprimées dans le métamodèle EAT-ME~: tous les objectifs de la vue métier
 doivent avoir des liens de cohérence inter-vues avec les objectifs de la vue fonctionnelle, et de même pour ces dernier
 avec les objectifs de la vue applicative. Cette contrainte permet de vérifier que tous les objectifs exprimés par le métier sont bien pris
 en compte par les applications de l'entreprise. Cette cohérence inter-vues est renforcée par une autre contrainte intra-vue
-exprimée dans le métamodèle EA2M. Chaque action doit disposer d'un lien de traçabilité vers l'objectif qu'elle remplit.
+exprimée dans le métamodèle EAT-ME. Chaque action doit disposer d'un lien de traçabilité vers l'objectif qu'elle remplit.
 Le croisement  de ces deux contraintes, exprimées au niveau du métamodèle, permet de vérifier que les modèles disposent
 bien des liens de traçabilité nécessaire à la vérification de l'alignement métier/IT.
 

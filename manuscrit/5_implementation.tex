@@ -4,8 +4,27 @@
 
 \PartialToc
 
+Dans le chapitre précédent, nous avons présenté en détails le \emph{framework}
+ExecuteEA et son métamodèle EAT-ME dont l'objectif principale est de fournir
+un cadre cohérent pour l'analyse de la structure et du comportement d'une
+architecture d'entreprise. Le présent chapitre décrit l'implémentation qui concrétise
+les propositions que nous faisons à travers ce \emph{framework}. 
+
+Cette concrétisation prend la forme d'un prototype. Nous expliquons d'abord les
+choix techniques relatif à la plate-forme de développement retenue (section~\ref{sec:Eclipse}).
+Nous détaillons ensuite la réalisation du prototype et nous exposons les difficultés
+rencontrées (section~\ref{sec:realisation_difficultes}). Grâce à ce prototype, nous éprouvons le \emph{ExecuteEA} au cas métier de la gestion
+d'une flotte de véhicule électrique (section~\ref{sec:concretisation_cas_metier}). 
+Puis, nous positionnons ces travaux par rapport aux cadres de classification
+proposés par Buckl~\cite{buckl2009classifying} et par Lakhorst~\cite{lankhorst2013enterprise}
+et par rapport aux autres cadres d'EA (section~\ref{sec:positionnement}).
+Nous concluons ce chapitre en discutant les résultats de l'implémentation du \emph{framework} 
+ExecuteEA et en résumant les réalisations actuelles comme futurs.
+
+
 
 \section{Environnement retenu : la plate-forme Eclipse}
+\label{sec:Eclipse}
 
 Notre choix s'est orienté vers la plate-forme Eclipse et ce pour plusieurs
 raisons.
@@ -50,7 +69,7 @@ Pour ces travaux de thèse, nous avons donc retenu~:
 
 
 \section{Réalisation et difficultés rencontrées}
-
+\label{sec:realisation_difficultes}
     \subsection{Implémentation du métamodèle EA2M avec Eclipse Modeling Framework}
 
     Le métamodèle EA2M est le pilier central du \emph{framework ExecuteEA}. Nous
@@ -184,6 +203,7 @@ Pour ces travaux de thèse, nous avons donc retenu~:
 
 
 \section{Concrétisation de l'approche avec un cas d'étude}
+\label{sec:concretisation_cas_metier}
 
     Les contraintes de temps et de confidentialité ne nous ont pas permis
     d'éprouvé le framework ExecuteEA sur une architecture d'entreprise à taille
@@ -585,12 +605,84 @@ crées à partir des bons de travaux pour en écourter la distance.
  
 %\lstinputlisting{figures/5_implementation/affectations.mzn}
 
+\section{Positionnement des travaux}
+\label{sec:positionnement}
+
+% \subsubsection{Par rapport aux autres cadres d'architecture}
+% par rapport à ToGAF
+
+% Conformité à ZAchman mais on va plus loin en formalisant un métamodèle
+
+% On ne veut pas le détails mais la vue holistique, les liens etc.
+
+% La revue de la littérature ainsi que
+% l'analyse des pratiques courante d'EA Plusieurs raisons
+% motivent l'utilisation de ces points de vue. D'abord, la vue métier et la vue
+% applicative sont incontournables pour n'importe quel cadre d'architecture.
+% Ensuite, selon les cadres d'architecture, la vue fonctionnelle est modélisée de
+% deux manière~:~ elle est soit intégrée à la vue applicative sous forme de
+% services (Archimate, TOGAF, RM-ODP), soit modélisée à part entière dans une vue
+% dédiée (Club Urba, \gls{sgam}, Zachman). Nous prenons le parti de modéliser
+% explicitement les fonctions dans une vue dédiée. En effet, passer directement
+% de la vue du métier à la vue applicative peut être en quelque sorte brutal pour
+% l'architecte métier mais aussi pour l'architecte applicatif. La vue fonctionnelle
+% permet une transition progressive de la logique métier vers l'architecture
+% logicielle.
+
+% Nous ne modélisons pas les informations dans une vue dédiée contrairement aux
+% cadre RM-ODP ou \gls{sgam}. Nous explicitons les informations en tant qu'aspect
+% pour chacune des autres vues comme recommandé par le cadre Zachman (Le quoi de
+% la dimension horizontale).
+
+% \begin{figure}[!ht]
+%     \begin{center}
+%     \vspace*{1cm}
+%     \input{figures/2_etat_de_l_art_EA/zachman}
+%     \end{center}
+%     \caption{Positionnement de ExecteEA par rapport\\ au cadre Zachman}
+%     \label{fig:positionZachman}
+% \end{figure}
+
+
+% \begin{figure}[!ht]
+%     \begin{center}
+%     \input{figures/7_bilan/togaf_execute_ea}
+%     \end{center}
+%     \caption{Positionnement de ExecteEA par rapport\\ au cadre TOGAF}
+%     \label{fig:positionTogaf}
+% \end{figure}
+
+%             \subsubsection{Par rapport aux autres approches selon la classification de Buckl}
+
+% \begin{figure}[!ht]
+%     \input{figures/7_bilan/buckl_positionnement}
+%     \caption{Positionnement de ExecteEA par rapport\\au schéma de classification de
+%     Buckl et al. \protect\cite{buckl2009classifying}}
+%     \label{fig:positionBuckl}
+% \end{figure}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 \section[Discussion et perspectives]{Discussion et perspectives pour le prototypage\\
             et la validation du \emph{framework} ExecuteEA}
+            \label{sec:discussion_prototype}
 
     Le développement du prototype et son application au cas métier
     de la gestion d'une flotte de véhicules électriques concrétise l'ensemble des
-    propositions autour du \emph{framework} ExecuteEA et du métamodèle EA2M
+    propositions autour du \emph{framework} ExecuteEA et du métamodèle EAT-ME
     et fournit un outil d'analyse de la structure et du comportement
     d'une architecture d'entreprise.
 
@@ -636,59 +728,14 @@ crées à partir des bons de travaux pour en écourter la distance.
     personnes recourent de plus en plus à certains diagrammes comme les diagrammes d'activités pour décrire
     leurs processus. Dans ce contexte, le choix de fUML et de OCL nous semble être \q{raisonnable}.
 
-    \section{Positionnement par rapport aux autres \emph{frameworks} d'EA}
-
-\subsubsection{Par rapport aux autres cadres d'architecture}
-par rapport à ToGAF
-
-Conformité à ZAchman mais on va plus loin en formalisant un métamodèle
-
-On ne veut pas le détails mais la vue holistique, les liens etc.
-
-La revue de la littérature ainsi que
-l'analyse des pratiques courante d'EA Plusieurs raisons
-motivent l'utilisation de ces points de vue. D'abord, la vue métier et la vue
-applicative sont incontournables pour n'importe quel cadre d'architecture.
-Ensuite, selon les cadres d'architecture, la vue fonctionnelle est modélisée de
-deux manière~:~ elle est soit intégrée à la vue applicative sous forme de
-services (Archimate, TOGAF, RM-ODP), soit modélisée à part entière dans une vue
-dédiée (Club Urba, \gls{sgam}, Zachman). Nous prenons le parti de modéliser
-explicitement les fonctions dans une vue dédiée. En effet, passer directement
-de la vue du métier à la vue applicative peut être en quelque sorte brutal pour
-l'architecte métier mais aussi pour l'architecte applicatif. La vue fonctionnelle
-permet une transition progressive de la logique métier vers l'architecture
-logicielle.
-
-Nous ne modélisons pas les informations dans une vue dédiée contrairement aux
-cadre RM-ODP ou \gls{sgam}. Nous explicitons les informations en tant qu'aspect
-pour chacune des autres vues comme recommandé par le cadre Zachman (Le quoi de
-la dimension horizontale).
-
-\begin{figure}[!ht]
-    \begin{center}
-    \input{figures/7_bilan/zachman_execute_ea}
-    \end{center}
-    \caption{Positionnement de ExecteEA par rapport\\ au cadre Zachman}
-    \label{fig:positionZachman}
-\end{figure}
+    Dans le chapitre suivant, nous présentons la dernière contribution de ces travaux à savoir
+    une délimitation de l'objet d'étude. La simulation des architectures d'entreprise est une problématique à la
+    fois large et très peu traitée dans la littérature. Nos travaux, de nature prospective, ont donc nécessité
+    une recherche exploratoire pour appréhender notre objet d'étude, dans le contexte particulier des
+    Smart Grids, et pour en définir les contours. 
 
 
-\begin{figure}[!ht]
-    \begin{center}
-    \input{figures/7_bilan/togaf_execute_ea}
-    \end{center}
-    \caption{Positionnement de ExecteEA par rapport\\ au cadre TOGAF}
-    \label{fig:positionTogaf}
-\end{figure}
 
-            \subsubsection{Par rapport aux autres approches selon la classification de Buckl}
-
-\begin{figure}[!ht]
-    \input{figures/7_bilan/buckl_positionnement}
-    \caption{Positionnement de ExecteEA par rapport\\au schéma de classification de
-    Buckl et al. \protect\cite{buckl2009classifying}}
-    \label{fig:positionBuckl}
-\end{figure}
 
 
     % De manière nous avons mis l'accent sur la simulation est pas assez sur l'analyse de la structure. 
