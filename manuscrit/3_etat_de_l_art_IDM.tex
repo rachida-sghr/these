@@ -6,8 +6,8 @@
 
 Dans le chapitre précédent, nous avons vu que les modèles utilisés pour l'EA,
 bien qu'offrant l'abstraction nécessaire pour adresser la complexité de l'entreprise, sont le
-plus souvent purement contemplatifs et ne permettent pas de mener une analyses automatisée et pertinente 
-de la structure et du comportement d'une architectures d'entreprise. L'IDM se fait fort de traiter la problématique
+plus souvent purement contemplatifs et ne permettent pas de mener une analyse automatisée et pertinente 
+de la structure et du comportement d'une architecture d'entreprise. L'IDM se fait fort de traiter la problématique
 des modèles purement contemplatifs dans le contexte du génie logiciel. Dès lors, nous nous intéressons dans ce chapitre 
 aux modèles, méthodes et techniques de l'IDM qui peuvent bénéficier à l'EA.
 
@@ -71,7 +71,7 @@ La notion de modèle est centrale dans l'\gls{idm} car, comme nous venons de l'�
 l'enjeu de cette approche est de rendre les modèles productifs sur tout le cycle 
 de vie du système. Il n'existe pas de définition universelle de la notion de 
 modèle. En nous appuyant sur les définitions données dans les travaux 
-\cite{minsky1967computation} \cite{bezivin2001towards} et 
+\cite{minsky1967computation}~\cite{bezivin2001towards} et 
 \cite{seidewitz2003models}, nous adoptons la définition suivante du terme modèle~:
 \\\
 
@@ -85,13 +85,14 @@ De cette définition découle la première relation fondamentale de l'\gls{idm} 
 le modèle et le système qu'il représente. Celle-ci est nommée 
 \textit{Représente} et notée $\mu$. Bien que la relation 
 \textit{Représente} ne soit pas nouvelle dans l'ingénierie logicielle 
-(Merise, UML), l'\gls{idm} a permis d'en définir les contours \cite{atkinson2003model} 
-\cite{seidewitz2003models} \cite{bezivin2004search}.
+(Merise, UML), l'\gls{idm} a permis d'en définir les contours~\cite{atkinson2003model} 
+\cite{seidewitz2003models}~\cite{bezivin2004search}.
 
 \begin{figure}[!ht]
     %_BUILD_FULL \begin{center}\input{figures/3_etat_de_l_art_IDM/modele_france}\end{center}
-    \includegraphics[trim= 100 635 400 100]{figures/3_etat_de_l_art_IDM/modele_france.pdf} %_BUILD_QUICK
-    \caption{Relation entre système et modèle \protect\cite{favre2006ingenierie}}
+    \centering
+    \includegraphics[trim=100 620 150 100, clip]{figures/3_etat_de_l_art_IDM/modele_france.pdf} %_BUILD_QUICK
+    \caption{Relation entre système et modèle~\protect\cite{favre2006ingenierie}}
     \label{fig:systemModele}
 \end{figure}
 
@@ -109,7 +110,7 @@ L'originalité de l'\gls{idm} ne réside pas dans la relation de représentation
 trouve plutôt son origine dans les méthodes de modélisation telles que Merise. L'apport de l'\gls{idm} est dans l'utilisation systématique de métamodèles pour la description des langages de modélisation. 
 
 Il existe plusieurs définitions de la notion de métamodèle dans la littérature. 
-Cependant la définition suivante est communément admise \cite{bezivin2004rapport}.
+Cependant la définition suivante est communément admise~\cite{bezivin2004rapport}.
 \\\
 
 \begin{definition}
@@ -134,28 +135,29 @@ métamodèle n'est donc pas un modèle d'un modèle.
 
 \begin{figure}[!ht]
     %_BUILD_FULL \begin{center}\input{figures/3_etat_de_l_art_IDM/modele_carte}\end{center}
-    \includegraphics[trim= 100 635 400 100]{figures/3_etat_de_l_art_IDM/modele_carte.pdf} %_BUILD_QUICK
-    \caption{Modèle de modèle selon l'exemple de la cartographie 
-    \protect\cite{favre2006ingenierie}}
+    \centering
+    \includegraphics[trim=100 640 120 100, clip]{figures/3_etat_de_l_art_IDM/modele_carte.pdf} %_BUILD_QUICK
+    \caption{Modèle de modèle selon l'exemple de la cartographie~\protect\cite{favre2006ingenierie}}
     \label{fig:modelofmodel}
 \end{figure}
 
 Par ailleurs, le concept de métamodèle induit la deuxième relation fondamentale 
 de l'\gls{idm} liant un modèle à son métamodèle. Cette relation est nommée 
-\textit{ConformeÀ} et notée $\chi$ \cite{bezivin2004search} 
+\textit{ConformeÀ} et notée $\chi$~\cite{bezivin2004search} 
 \cite{favre2004towards}. La figure \ref{fig:carteFavre} reprend l'exemple de la 
 cartographie. La légende de la carte peut être vue comme le métamodèle de la
 carte de la France car elle spécifie les concepts utilisés pour modéliser la carte
-(département et région) et leur relation (une région comporte des département).
+(département et région) et leurs relations (une région comporte des départements).
 Pour être lisible, la carte doit être conforme à la légende, c'est-à-dire utiliser
 uniquement ces concepts. Cependant, la légende est un cas particulier de métamodèle 
 qui définit la manière dont sont représentés les concepts. 
 
 \begin{figure}[!ht]
     %_BUILD_FULL \begin{center}\input{figures/3_etat_de_l_art_IDM/metamodel_carte}\end{center}
-    \includegraphics[trim= 100 635 400 100]{figures/3_etat_de_l_art_IDM/metamodel_carte.pdf} %_BUILD_QUICK
- \caption{Relations entre système, modèles, métamodèle et langage de 
-modélisation \protect\cite{favre2006ingenierie}}
+    \centering
+    \includegraphics[trim=100 635 150 100, clip]{figures/3_etat_de_l_art_IDM/metamodel_carte.pdf} %_BUILD_QUICK
+ \caption{Relations entre système, modèles, métamodèle \\
+ et langage de modélisation~\protect\cite{favre2006ingenierie}}
  \label{fig:carteFavre}
 \end{figure}
 
@@ -177,15 +179,15 @@ transformation de modèle avant d'en présenter les types et les usages.
 
 \subsection{Définition de la transformation de modèle}
 L'\gls{omg} définit une transformation de modèle comme «~le processus consistant à 
-convertir un modèle en un autre modèle d'un même système~» \cite{omg2011meta}. 
+convertir un modèle en un autre modèle d'un même système~»~\cite{omg2011meta}. 
 
-Kleppe et al. \cite{kleppe2003mda} proposent une définition moins générique en insistant sur l'aspect automatique de ce processus~:~«~une transformation de modèle 
-consiste en la génération automatique d'un modèle source en un modèle cible, 
+Kleppe et al.~\cite{kleppe2003mda} proposent une définition moins générique en insistant sur l'aspect automatique de ce processus~:~«~une transformation de modèle 
+consiste en la transformation automatique d'un modèle source en un modèle cible, 
 selon une description établie de cette transformation~». Cette définition 
 implique qu'une transformation est décrite à un niveau 
 d'abstraction au dessus de celui des modèles~:~au niveau d'un métamodèle auquel elle doit se conformer. 
 
-Mens et Van Gorp \cite{mens2006taxonomy} étendent cette définition en considérant qu'une 
+Mens et Van Gorp~\cite{mens2006taxonomy} étendent cette définition en considérant qu'une 
 transformation est une opération qui peut avoir en entrée un ou plusieurs 
 modèles source et en sortie un ou plusieurs modèles cible~: 
 \\\
@@ -200,7 +202,7 @@ C'est cette dernière définition que nous adoptons dans ce document. Par
 ailleurs, notons que, si les métamodèles source et cible sont différents, la 
 transformation est dite exogène. Si les métamodèles source et cible 
 sont identiques, la transformation est dite endogène. Ces 
-termes sont introduits par Mens et Van Gorp \cite{mens2006taxonomy}.
+termes sont introduits par Mens et Van Gorp~\cite{mens2006taxonomy}.
 
 \subsection{Composants d'une transformation de modèle} 
 La figure \ref{fig:composantTransfo} illustre les composants d'une 
@@ -211,11 +213,11 @@ définition.
 La description de la transformation définit la manière de transformer un ou plusieurs modèles source en un ou plusieurs modèles cible. Elle est créée dans 
 un langage de transformation de modèle. Par exemple, si c'est un langage à base 
 de règles, la description de la transformation consiste en un ensemble de règles 
-de transformation à effectuer sur les modèles cible \cite{kleppe2003mda}. 
+de transformation à effectuer sur les modèles cible~\cite{kleppe2003mda}. 
 
 Un moteur de transformation exécute ou interprète la description. Il applique 
 donc la description aux modèles source pour produire les modèles cible en 
-suivant les étapes ci-dessous \cite{tratt2005model}~:
+suivant les étapes ci-dessous~\cite{tratt2005model}~:
 
 \begin{itemize}
 \item identifier l'élément du ou des modèles source à transformer~;
@@ -227,7 +229,8 @@ modèles cibles aux éléments du ou des modèles source.
 
 \begin{figure}[!ht]
     %_BUILD_FULL \begin{center}\input{figures/3_etat_de_l_art_IDM/composants_transfo}\end{center}
-    \includegraphics[trim= 100 635 400 100]{figures/3_etat_de_l_art_IDM/composants_transfo.pdf} %_BUILD_QUICK
+    \centering
+    \includegraphics[trim=100 655 145 100, clip]{figures/3_etat_de_l_art_IDM/composants_transfo.pdf} %_BUILD_QUICK
     \caption{Composants d'une transformation de modèle}
     \label{fig:composantTransfo}
 \end{figure}
@@ -274,7 +277,7 @@ possibilités offertes par d'autres outils plus adaptés à ses besoins à certa
 
 L'intégration d'outil est une solution pour pallier la divergence syntaxique et 
 sémantique des outils et des langages de modélisation par le biais la 
-transformation de modèle \cite{tratt2005model}. Ce type de transformation permet 
+transformation de modèle~\cite{tratt2005model}. Ce type de transformation permet 
 de naviguer entre deux métamodèles, de synchroniser des modèles qui évoluent 
 séparément sur des outils distincts, d'établir des correspondances entre métamodèles pour 
 maintenir la cohérence des modèles conformes à ces métamodèles. Il sera donc 
@@ -322,7 +325,7 @@ Il est à noter que le modèle issu du tissage de deux modèles $M_{A}$ et $M_{B
 peut être utilisé comme modèle intermédiaire que l'on note $M_{T}$ pour la 
 fusion de $M_{A}$ et $M_{B}$. Dans ce cas, l'opération de fusion consiste à 
 produire un modèle $M_{AB}$ en prenant comme entrée $M_{A}$, $M_{B}$ et $M_{T}$. 
-Cette technique est notamment utilisée par \cite{del2007semi} pour la 
+Cette technique est notamment utilisée par~\cite{del2007semi} pour la 
 composition semi-automatique de modèles.
 
 %\begin{figure}[!ht]
@@ -340,7 +343,7 @@ effet, une transformation de modèle peut mettre à jour le système modélisé.
 ce cas, le modèle cible est une mise à jour du modèle source et la 
 transformation est de type sur-place (modèles source et cible confondus). 
 
-Par exemple, \cite{syriani2011multi} simule un comportement simple d'un jeu de 
+Par exemple,~\cite{syriani2011multi} simule un comportement simple d'un jeu de 
 Pacman en utilisant la transformation de modèle. La transformation spécifie les 
 règles de transition qu'une instance du jeu peut prendre (Pacman et fantôme se 
 trouvant dans la même case, Pacman et pomme se trouvant dans la même case, 
@@ -358,8 +361,8 @@ en utilisant l'intégration d'outils.
 
 La transformation de modèle peut être utilisée pour les activités d'analyse de 
 modèle. Une analyse simple telle que le calcul de métrique de similarité entre 
-deux modèles via la transformation de modèle est donnée dans \cite{del2007semi} 
-avec un modèle de transformation écrit en \gls{atl} \cite{jouault2006transforming}. 
+deux modèles via la transformation de modèle est donnée dans~\cite{del2007semi} 
+avec un modèle de transformation écrit en \gls{atl}~\cite{jouault2006transforming}. 
 
 Des analyses plus complexes sont possibles grâce à l'intégration d'outils 
 d'analyse externes vers lesquels les modèles source sont transformés.
@@ -372,7 +375,7 @@ d'analyse de sûreté de fonctionnement retenu.
 L'optimisation vise à améliorer les propriétés non fonctionnelles des modèles 
 telle que l'évolutivité, la fiabilité, la modularité, etc. L'optimisation est 
 typiquement utilisée sur les modèles d'architecture. Les transformations 
-utilisées pour l'optimisation sont de types endogène car on cherche à affiner 
+utilisées pour l'optimisation sont de type endogène car on cherche à affiner 
 la conception de modèles existants. La réingénierie est un exemple de 
 transformation utilisée pour optimiser les modèles en cherchant à améliorer la 
 maintenabilité, la lisibilité et l'évolutivité des modèles.
@@ -387,12 +390,12 @@ la programmation informatique, la transformation de modèle embrasse un champ d'
 plus large encore.
 
 Nous trouvons dans la littérature plus d'une trentaine d'approches différentes 
-de transformation de modèle \cite{syriani2011multi}. Czarnecki et Helsen 
+de transformation de modèle~\cite{syriani2011multi}. Czarnecki et Helsen 
 proposent une classification de ces approches selon plusieurs critères tels que 
 le paradigme retenu pour définir la transformation, la relation entre les 
 modèles sources et cibles, la directivité de la transformation, le nombre de 
 modèles cible et source, l'orchestration et l'ordonnancement des règles de 
-transformation, etc. \cite{czarnecki2006feature}. \cite{blanc2011mda} définit les trois grandes catégories d'approches suivantes.
+transformation, etc.~\cite{czarnecki2006feature}.~\cite{blanc2011mda} définit les trois grandes catégories d'approches suivantes.
 
 \begin{description}
 
@@ -410,11 +413,11 @@ dans les modèles source. Ce type de transformation est souvent utilisé pour le
 transformations qui génèrent des modèles dont la syntaxe concrète est textuelle.  Cette approche est associée au patron de conception \textit{visitor} qui va traverser la structure interne du modèle source. 
 %Cette approche est utilisée par l'outil Enterprise Architect par exemple. 
 
-\item [Par modélisation]:~Cette approche vise à appliquer les principes de l'\gls{idm} aux transformations de modèle elles-mêmes. Les modèles de transformation sont ainsi pérennes, réutilisables et indépendants des plates-formes d'exécution  \cite{bezivin2006model}. Pour cela, des langages de modélisation dédiés à l'activité de transformation de modèle sont utilisés. Cette approche considère donc la transformation comme 
+\item [Par modélisation]:~Cette approche vise à appliquer les principes de l'\gls{idm} aux transformations de modèle elles-mêmes. Les modèles de transformation sont ainsi pérennes, réutilisables et indépendants des plates-formes d'exécution ~\cite{bezivin2006model}. Pour cela, des langages de modélisation dédiés à l'activité de transformation de modèle sont utilisés. Cette approche considère donc la transformation comme 
 un modèle à part entière conforme à un métamodèle de transformation. La figure 
 \ref{fig:TransfoPrincipe} illustre cette approche en positionnant la transformation par rapport aux niveaux d'abstraction de l'\gls{idm}. Elle corrobore 
 ainsi la vision unificatrice de l'\gls{idm} à travers le paradigme du «~tout est 
-modèle~»\cite{bezivin2005unification}.
+modèle~»~\cite{bezivin2005unification}.
 \end{description}
 
 
@@ -437,7 +440,7 @@ dédiés à la transformation de modèles.
 et des outils pour l'exécution des transformations. 
 %Il permet de réaliser des transformations de type modèle-à-modèle et de type modèle-à-texte.
 
-\gls{atl} est un langage hybride (déclaratif et impératif) à base de contraintes \gls{ocl} \cite{jouault2006transforming}. 
+\gls{atl} est un langage hybride (déclaratif et impératif) à base de contraintes \gls{ocl}~\cite{jouault2006transforming}. 
 %Une règle déclarative, appelée \textit{Matched rule}, permet de décrire 
 %l'implémentation de mapping simples entre les modèles source et cible en 
 %utilisant des patrons source (\textit{InPattern}) mappés avec les éléments 
@@ -456,7 +459,7 @@ et des outils pour l'exécution des transformations.
 %qui demandent de faire spécifiquement appel à elles. \gls{atl} est conforme au 
 %méta-métamodèle \gls{mof} et est doté d'une syntaxe concrète textuelle. Il est intégré 
 %à l'environnement Eclipse. Une transformation prend en entrée un ensemble de 
-%modèles conformes au méta-métamodèle Ecore ou à KM3 \cite{jouault2006km3}.
+%modèles conformes au méta-métamodèle Ecore ou à KM3~\cite{jouault2006km3}.
 
 %\gls{atl} ne prend pas en charge les transformations incrémentales. Il commence par 
 %lire entièrement les modèles source et génère des modèles cible complet. Les 
@@ -470,7 +473,7 @@ utilisant le mode raffinement de modèle.
 %Cependant ce mode présente quelques limitations avec certaines fonctionnalités comme celle des \textit{Lazy rules}.
 
 \subsubsection{QVT}
-\gls{qvt} \cite{kurtev2008state} \cite{omg2011meta} est un standard de l'\gls{omg}. Le métamodèle de \gls{qvt} est conforme au \gls{mof}. Comme \gls{atl}, \gls{qvt} se base sur \gls{ocl} pour accéder aux éléments des modèles.
+\gls{qvt}~\cite{kurtev2008state}~\cite{omg2011meta} est un standard de l'\gls{omg}. Le métamodèle de \gls{qvt} est conforme au \gls{mof}. Comme \gls{atl}, \gls{qvt} se base sur \gls{ocl} pour accéder aux éléments des modèles.
 \gls{qvt} définit deux langages de transformation de type modèle-à-modèle. 
 QVT \textit{Declarative} (QVTd)\footnote{http://projects.eclipse.org/projects/modeling.mmt.qvtd} est un langage déclaratif. QVT \textit{Operational} (QVTo) est un langage impératif\footnote{http://projects.eclipse.org/projects/modeling.mmt.qvt-oml}.
 
@@ -500,7 +503,7 @@ QVT \textit{Declarative} (QVTd)\footnote{http://projects.eclipse.org/projects/mo
 
 \subsubsection{Kermeta}
 Kermeta\footnote{http://www.kermeta.org/} est un langage généraliste de méta-modélisation exécutable et de 
-méta-programmation orientée objet qui peut aussi décrire des transformations de 
+méta-program\-mation orientée objet qui peut aussi décrire des transformations de 
 modèle. Intégré à EMF, il est doté d'un métamodèle conforme au \gls{mof} qu'il étend 
 avec un langage d'action impératif utilisé pour écrire le corps des opérations 
 définies sur les concepts d'une syntaxe abstraite (ce qui revient à doter une 
@@ -523,7 +526,8 @@ Acceleo\footnote{http://www.eclipse.org/acceleo/} est un langage de transformati
 L'\gls{idm} se cantonne souvent au processus de développement logiciel en offrant une aide supplémentaire à l'analyse et la validation des modèles de spécification et en automatisant certaines tâches à travers la génération de code par exemple. Mais des disciplines plus orientées métier telle que l'EA peuvent aussi tirer partie des avantages qu'apporte l'\gls{idm} à l'ingénierie logicielle.
 
 
-\section{L'Ingénierie Dirigée par les Modèles pour l'Architecture d'Entreprise}
+\section[L'Ingénierie Dirigée par les Modèles pour l'Architecture d'Entreprise]%
+        {L'Ingénierie Dirigée par les Modèles \\pour l'Architecture d'Entreprise}
 \label{sec:idm_for_ea}
 
 La méta-modélisation et les transformations de modèle sont des pivots majeurs dans la recherche
@@ -555,12 +559,10 @@ L'\textit{Open Group}\footnote{\url{http://www.opengroup.org/standards?tab=1}} p
 Bien que concis, le métamodèle d'Archimate vise à couvrir la majorité des concepts intervenants dans la création d'une architecture d'entreprise. Archimate utilise trois vues~:~métier, applicative et technique. Pour chacune des vues, trois types d'éléments différents sont spécifiés~:~structure active, comportement et structure passive (voir figure \ref{fig:archimate}). Les structures actives correspondent aux éléments dotés d'un comportement. Il peut s'agir d'un acteur métier, d'un module applicatif ou d'un élément de l'infrastructure technique. Le comportement est défini comme un ensemble d'activités ou de tâches poursuivies par un ou plusieurs éléments de la structure active. Il peut s'agir par exemple d'un processus métier. La structure passive comporte les éléments manipulés par les éléments de la structure active, comme par exemple les objets métier. 
 
 \begin{table}[!ht]
-    \vspace*{0.5em}
-    \begin{center}
-        \input{figures/3_etat_de_l_art_IDM/archimate_core}
-    \end{center}
- \caption{Composants du langage Archimate}
- \label{fig:archimate}
+    \centering
+    \input{figures/3_etat_de_l_art_IDM/archimate_core}
+    \caption{Composants du langage Archimate}
+    \label{fig:archimate}
 \end{table}
 
 Le métamodèle du langage Archimate possède une syntaxe concrète graphique permettant visualiser les modèles. Elle associe par exemple des couleurs différentes aux éléments en fonction de leur type. Les éléments de type structure active sont bleus, ceux de type comportement sont jaunes et enfin ceux de type structure passive sont verts. Mais aucune sémantique standard d'exécution n'est formalisée. Les modèles d'architecture sont ainsi souvent purement contemplatifs et les outils implémentant Archimate n'offrent pas la possibilité d'exécuter ces modèles à des fins d'analyse de structure et de comportement. 
@@ -569,14 +571,14 @@ Le métamodèle du langage Archimate possède une syntaxe concrète graphique pe
 recourant à l'Ingénierie Dirigée par les Modèles}
 \label{sec:ea_with_idm}
 
-L'\gls{idm} a prouvé sa capacité à traiter des systèmes complexes \cite{france2007model}. L'application des techniques de l'\gls{idm} aux approches d'EA font l'objet de quelques rares travaux \cite{bruneliere2013support}. Les travaux de \cite{frankel2003zachman} font figure de précurseurs. Ces derniers décrivent un mapping entre le cadre Zachman et les vues \gls{mda} (figure \ref{fig:mapping-zachman-mda}). Mais le périmètre de ces travaux se réduit à l'architecture IT de l'entreprise plutôt qu'à l'entreprise dans son ensemble.
+L'\gls{idm} a prouvé sa capacité à traiter des systèmes complexes~\cite{france2007model}. L'application des techniques de l'\gls{idm} aux approches d'EA fait l'objet de quelques rares travaux~\cite{bruneliere2013support}. Les travaux de~\cite{frankel2003zachman} font figure de précurseurs. Ces derniers décrivent un mapping entre le cadre Zachman et les vues \gls{mda} (figure \ref{fig:mapping-zachman-mda}). Mais le périmètre de ces travaux se réduit à l'architecture IT de l'entreprise plutôt qu'à l'entreprise dans son ensemble.
 
 \begin{table}[!ht]
-    \vspace*{0.5em}
+    \vspace*{1em}
     \makebox[\linewidth][l]{%
-      \hspace{3mm}\input{figures/3_etat_de_l_art_IDM/zachman_braces}%
+      \hspace*{-5mm}\input{figures/3_etat_de_l_art_IDM/zachman_braces}%
     }
-    \caption{Mapping Zachman/\gls{mda} \protect\cite{frankel2003zachman}}
+    \caption{Mapping Zachman/\gls{mda}~\protect\cite{frankel2003zachman}}
     \label{fig:mapping-zachman-mda}
 \end{table}
 
@@ -586,23 +588,23 @@ L'\gls{idm} a prouvé sa capacité à traiter des systèmes complexes \cite{fran
     \begin{center}
         \input{figures/3_etat_de_l_art_IDM/mdo}
     \end{center}
-    \caption{Architecture d'une organisation dirigée par les modèles\protect\cite{clark_towards_2014}}
+    \caption{Architecture d'une organisation dirigée par les modèles~\protect\cite{clark_towards_2014}}
     \label{fig:mdo}
 \end{figure}
 
 Le modèle de l'organisation correspond à l'ensemble des modèles métier présentant les processus, les objectifs, les acteurs, les ressources. L'organisation fait appel à son IT pour réaliser ses objectifs métier. L'ensemble du système informatique correspond alors à la plateforme opérationnelle de l'entreprise. Comme pour \gls{mda}, le modèle spécifique à une plateforme est dérivé du modèle de l'organisation et sert de pivot pour générer automatiquement la plateforme de l'organisation par transformation de modèles.
 
-Dans leurs travaux, Clark et al. \cite{clark_towards_2014} proposent un cadre théorique et une étude d'opportunité quant à la généralisation du \gls{mda} à l'échelle de l'entreprise. Cependant \gls{mda} reflète la vision particulière de l'\gls{omg} concernant l'\gls{idm}. L'approche \gls{mda} est de ce fait restreinte aux standards de l'\gls{omg}. Les travaux de Clark et al. sont donc limités par l'approche \gls{mda} (celle-ci étant un sous-ensemble de l'\gls{idm}).
+Dans leurs travaux, Clark et al.~\cite{clark_towards_2014} proposent un cadre théorique et une étude d'opportunité quant à la généralisation du \gls{mda} à l'échelle de l'entreprise. Cependant \gls{mda} reflète la vision particulière de l'\gls{omg} concernant l'\gls{idm}. L'approche \gls{mda} est de ce fait restreinte aux standards de l'\gls{omg}. Les travaux de Clark et al. sont donc limités par l'approche \gls{mda} (celle-ci étant un sous-ensemble de l'\gls{idm}).
 
-L'\gls{idm} préconise le recours aux modèles exécutables pendant tout le cycle de vie du système à implémenter. Cependant, à l'échelle d'une entreprise, l'utilisation de ce type de modèles est souvent limitée à l'implémentation des systèmes informatiques, c'est à dire à l'implémentation de la vue applicative et la vue technique d'une architecture d'entreprise. L'usage des modèles en tant artefacts exécutables est peu répandue en EA \cite{kulkarni_modelling_2013}.
+L'\gls{idm} préconise le recours aux modèles exécutables pendant tout le cycle de vie du système à implémenter. Cependant, à l'échelle d'une entreprise, l'utilisation de ce type de modèles est souvent limitée à l'implémentation des systèmes informatiques, c'est à dire à l'implémentation des vues applicative et technique d'une architecture d'entreprise. L'usage des modèles en tant qu'artefacts exécutables est peu répandue en EA~\cite{kulkarni_modelling_2013}.
 
-Parmi les travaux mettant à contribution les techniques de l'\gls{idm} nous citons ceux de Clark et al. \cite{clark2011leap}. Ces derniers proposent un langage concis et exécutable pour modéliser et simuler les différentes vues d'une architecture d'entreprise. Cependant ce langage est principalement textuel. Il offre une visualisation graphique des aspects structuraux d'une organisation sous la forme d'un diagramme de classes. Mais la syntaxe concrète pour la spécification du comportement est essentiellement textuelle. L'adoption de ce langage par les parties prenantes à profil non technique n'est pas évidente. Or l'EA a pour vocation d'offrir un référentiel compréhensible et partagé par toutes les parties prenantes.
+Parmi les travaux mettant à contribution les techniques de l'\gls{idm} nous citons ceux de Clark et al.~\cite{clark2011leap}. Ces derniers proposent un langage concis et exécutable pour modéliser et simuler les différentes vues d'une architecture d'entreprise. Cependant ce langage est principalement textuel. Il offre une visualisation graphique des aspects structuraux d'une organisation sous la forme d'un diagramme de classes. Mais la syntaxe concrète pour la spécification du comportement est essentiellement textuelle. L'adoption de ce langage par les parties prenantes à profil non technique n'est pas évidente. Or l'EA a pour vocation d'offrir un référentiel compréhensible et partagé par toutes les parties prenantes.
 
-Les travaux de Brunelière et al. \cite{bruneliere2013mde} tirent profit des capacités de l'\gls{idm} à automatiser la manipulation des modèles pour offrir une assistance dans la création et la visualisation d'architectures d'entreprise. La plateforme proposée s'appuie sur \gls{togaf} et fournit un support pour la gouvernance et la prise de décision souvent gérées manuellement. Ces travaux se focalisent sur les techniques \gls{idm} permettant \primo\!) de concevoir une cartographie de l'existant par rétro-ingénierie à partir des données disponibles dans le SI, \secundo\!) d'adapter la représentation graphique des modèles au besoin des utilisateurs concernés, \tertio\!) de gérer plusieurs vues d'un même système et automatiser leur manipulation. Brunelière et al. \cite{bruneliere2013mde} démontrent que les techniques de l'\gls{idm} apportent des réponses à certaines limitations liées aux pratiques actuelles d'EA mais ne supportent pas la simulation des modèles obtenus. 
+Les travaux de Brunelière et al.~\cite{bruneliere2013mde} tirent profit des capacités de l'\gls{idm} à automatiser la manipulation des modèles pour offrir une assistance dans la création et la visualisation d'architectures d'entreprise. La plateforme proposée s'appuie sur \gls{togaf} et fournit un support pour la gouvernance et la prise de décision souvent gérées manuellement. Ces travaux se focalisent sur les techniques \gls{idm} permettant \primo\!) de concevoir une cartographie de l'existant par rétro-ingénierie à partir des données disponibles dans le SI, \secundo\!) d'adapter la représentation graphique des modèles au besoin des utilisateurs concernés, \tertio\!) de gérer plusieurs vues d'un même système et d'automatiser leur manipulation. Brunelière et al.~\cite{bruneliere2013mde} démontrent que les techniques de l'\gls{idm} apportent des réponses à certaines limitations liées aux pratiques actuelles d'EA mais ne supportent pas la simulation des modèles obtenus. 
 
-Manzur et al. \cite{manzur2015xarchimate} utilisent les techniques de l'\gls{idm} (en particulier la métamodélisation) pour analyser la composante dynamique des modèles Archimate à travers la simulation de propriétés non fonctionnelles. Dans un premier temps, ils réduisent le métamodèle  d'Archimate en ne retenant que les concepts indispensables à la modélisation des propriétés non fonctionnelles. Comme Archimate est d'abord conçu pour modéliser la structure des architectures d'entreprise, Manzur et al. \cite{manzur2015xarchimate} enrichissent dans un deuxième temps le métamodèle obtenu avec deux autres types de concepts \primo\!) des concepts pour décrire le comportement et \secundo\!) des concepts uniquement liés à l'exécution. 
+Manzur et al.~\cite{manzur2015xarchimate} utilisent les techniques de l'\gls{idm} (en particulier la métamodélisation) pour analyser la composante dynamique des modèles Archimate à travers la simulation de propriétés non fonctionnelles. Dans un premier temps, ils réduisent le métamodèle  d'Archimate en ne retenant que les concepts indispensables à la modélisation des propriétés non fonctionnelles. Comme Archimate est d'abord conçu pour modéliser la structure des architectures d'entreprise, Manzur et al.~enrichissent dans un deuxième temps le métamodèle obtenu avec deux autres types de concepts \primo\!) des concepts pour décrire le comportement et \secundo\!) des concepts uniquement liés à l'exécution. 
 
-Les travaux de Manzur et al. \cite{manzur2015xarchimate} illustrent les avantages de la métamodélisation et la définition d'une sémantique formelle pour l'exécution de modèles d'architecture d'entreprise. Néanmoins, ces travaux ne concernent que les propriétés non fonctionnelles des modèles d'architecture. Ces travaux formalisent aussi bien le métamodèle de la vue métier que ceux des vues applicative et technique. Cependant la simulation des différentes vues se fait séparément. L'approche ne permet donc pas de simuler simultanément l'ensemble de l'architecture. 
+Les travaux de Manzur et al.~\cite{manzur2015xarchimate} illustrent les avantages de la métamodélisation et la définition d'une sémantique formelle pour l'exécution de modèles d'architecture d'entreprise. Néanmoins, ces travaux ne concernent que les propriétés non fonctionnelles des modèles d'architecture. Ces travaux formalisent aussi bien le métamodèle de la vue métier que ceux des vues applicative et technique. Cependant la simulation des différentes vues se fait séparément. L'approche ne permet donc pas de simuler simultanément l'ensemble de l'architecture. 
 
 
 
@@ -611,9 +613,9 @@ Les travaux de Manzur et al. \cite{manzur2015xarchimate} illustrent les avantage
 
 L'automatisation de l'analyse des modèles d'architecture d'entreprise s'avère particulièrement cruciale dans le contexte particulier des Smart Grids~:~évolution des cadres législatifs,  apparition de nouveaux partenaires, hétérogénéité des interactions avec les clients finaux via les compteurs intelligents, les smartphones, les tablettes tactiles, etc. Or l'exécution des modèles est indispensable à l'automatisation de l'analyse de leur structure et de leur comportement. Exécuter des modèles apporte ainsi une aide précieuse à la validation d'une architecture d'entreprise dès les premières phases de son cycle de vie et augmente son agilité et son évolutivité. D'une part, l'exécution des modèles facilite leur exploration  par les experts métier en levant les ambiguïtés engendrées par les modèles purement contemplatifs. D'autre part, exécuter des modèles permet d'évaluer et de comparer des architectures de manière objective en définissant des métriques et des indicateurs d'évaluation. 
 
-L'exécution des modèles est rendue possible par la définition d'une sémantique exécutable du langage dans lequel ces modèles sont exprimés. La sémantique d'un langage correspond au sens que peuvent prendre les concepts manipulés et leurs agencements lorsqu'ils sont instanciés au niveau des modèles \cite{jezequel2012ingenierie}. La définition de la sémantique du langage dépend de l'objectif poursuivi : simulation, génération de code, vérification, compilation, etc. L'expression de la sémantique d'un langage fait l'objet d'intenses recherches en ingénierie des langages, et en particulier sous la thématique des langages formels \cite{kleppe2007language}. 
+L'exécution des modèles est rendue possible par la définition d'une sémantique exécutable du langage dans lequel ces modèles sont exprimés. La sémantique d'un langage correspond au sens que peuvent prendre les concepts manipulés et leurs agencements lorsqu'ils sont instanciés au niveau des modèles~\cite{jezequel2012ingenierie}. La définition de la sémantique du langage dépend de l'objectif poursuivi : simulation, génération de code, vérification, compilation, etc. L'expression de la sémantique d'un langage fait l'objet d'intenses recherches en ingénierie des langages, et en particulier sous la thématique des langages formels~\cite{kleppe2007language}. 
 
-Comme l'atteste le manifeste d'IBM \cite{chesbrough2006research}, les axes principaux de l'\gls{idm} sont \primo\!) les standards ouverts, \secundo\!) l'automatisation et \tertio\!) la représentation directe. Compte tenu de ces axes, pour modéliser les différentes vues d'une architecture d'entreprise, nous préconisons l'utilisation de \textbf{langages standardisés, exécutables et compréhensibles} par les acteurs concernés par la modélisation d'architectures d'entreprise pour les Smart Grids. 
+Comme l'atteste le manifeste d'IBM~\cite{chesbrough2006research}, les axes principaux de l'\gls{idm} sont \primo\!) les standards ouverts, \secundo\!) l'automatisation et \tertio\!) la représentation directe. Compte tenu de ces axes, pour modéliser les différentes vues d'une architecture d'entreprise, nous préconisons l'utilisation de \textbf{langages standardisés, exécutables et compréhensibles} par les acteurs concernés par la modélisation d'architectures d'entreprise pour les Smart Grids. 
 
 Nous identifions plusieurs langages, issus de l'ingénierie des langages et en particulier de l'IDM, pouvant satisfaire ces critères~:
 
@@ -623,7 +625,7 @@ Nous identifions plusieurs langages, issus de l'ingénierie des langages et en p
 
 \item Le standard BPMN\footnote{http://www.omg.org/spec/BPMN/2.0/} (\textit{Business Process Model and Notation}) est un langage de modélisation graphique permettant de décrire tous les aspects d'un processus métier à l'aide d'un seul type de diagramme. Ce formalisme présente l'avantage d'avoir une sémantique d'exécution bien définie permettant le développement d'outils pour la simulation de modèles de processus métier. BPMN est parfaitement adapté à la description de processus métier~;
 
-\item Le standard \gls{ocl}\footnote{http://www.omg.org/spec/OCL/} est un langage textuel standard d'expression de contraintes. Il est adossé à UML pour exprimer les propriétés difficiles à capturer dans des diagrammes UML. L'exécution d'\gls{ocl} se fait à travers la transformation de modèle en ciblant un langage d'expression de contraintes de plus bas niveau qui soit exécutable comme MiniZinc \cite{nethercote2007minizinc}, ou à travers son utilisation au niveau du métamodèle avec OCLinEcore\footnote{wiki.eclipse.org/OCL/OCLinEcore}.
+\item Le standard \gls{ocl}\footnote{http://www.omg.org/spec/OCL/} est un langage textuel standard d'expression de contraintes. Il est adossé à UML pour exprimer les propriétés difficiles à capturer dans des diagrammes UML. L'exécution d'\gls{ocl} se fait à travers la transformation de modèle en ciblant un langage d'expression de contraintes de plus bas niveau qui soit exécutable comme MiniZinc~\cite{nethercote2007minizinc}, ou à travers son utilisation au niveau du métamodèle avec OCLinEcore\footnote{wiki.eclipse.org/OCL/OCLinEcore}.
 
 \end{itemize}
 
@@ -634,15 +636,14 @@ Dans ce chapitre, nous avons tout d'abord présenté les concepts et relations e
 et de conformité (liant un modèle à son métamodèle).
 Nous avons ensuite passé en revue les principes de la transformation de modèle ainsi que quelques approches et langages
 employés pour transformer les modèles. Les transformations de modèle et la méta-modélisation sont au cœur de l'IDM. Ce sont
-les principaux pivot de recherche en IDM pour automatiser la manipulation de modèle et les rendre ainsi productifs. Dès lors,
+les principaux pivots de recherche en IDM pour automatiser la manipulation de modèle et les rendre ainsi productifs. Dès lors,
 nous avons présenté un état de l'art des approches qui recourent à l'IDM pour mener les différentes activités d'EA.
 Enfin, nous avons présenté des critères permettant de sélectionner les langages exécutables issus de l'IDM pouvant bénéficier à l'EA.
 
 Ce chapitre clôt cette première partie consacrée à l'état de l'art de l'EA et de l'IDM. Nous proposons, dans la partie suivante,
 un \emph{framework} pour mener des analyses de comportement et de structure d'architecture d'entreprise dénommé ExecuteEA.
-Ce \emph{framework} s'appuie sur les techniques IDM que nous venons de présenter dont la méta-modélisation, les transformations
+Ce \emph{framework} s'appuie sur les techniques IDM que nous venons de présenter, dont la méta-modélisation, les transformations
 de modèles et les langages de modélisation exécutables.
-s'appuie sur les techniques IDM présentés dans ce chapitre. 
 
 
 
