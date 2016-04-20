@@ -67,7 +67,7 @@ titre, deux observations méritent d'être mentionnées~:
 \subsubsection{L'Architecture d'Entreprise pour la documentation}
 
 L'EA permet de capturer les composants de l'entreprise dans leur état courant
-et leur état voulu. La manière la plus employée pour représenter ces composants
+et leur état cible. La manière la plus employée pour représenter ces composants
 reste la documentation~\cite{barn2013enterprise}. Ces documents couvrent des
 aspects tels que les processus métier, les fonctions, les applications et
 l'infrastructure technique de l'entreprise, ainsi que leurs relations. Pour
@@ -199,15 +199,21 @@ chercher à l'adapter au SI. Appliquée à l'EA, l'approche descendante consiste
 vue inférieure, présumant que la recomposition des éléments de la vue
 inférieure correspondra parfaitement aux éléments de la vue supérieure. Or, des
 travaux de recherche portant sur la complexité des SI actuels soulignent que
-des propriétés dite «~émergentes~» apparaissent quand un grand nombre de
+des propriétés dites «~émergentes~» apparaissent quand un grand nombre de
 systèmes complexes sont fortement interconnectés~\cite{bullock2004complexity},
 comme c'est le cas de l'IT d'une entreprise de la taille d'\gls{edf} par
 exemple.
 
 Une définition de l'\textit{émergence} est donnée en sciences du Design par
-Gero~\cite{gero1992creativity}~: «~une propriété qui est uniquement implicite,
+Gero~\cite{gero1992creativity}~: 
+\\\
+\begin{definition}
+Une propriété qui est uniquement implicite,
 i.e.  qui n'est pas représentée explicitement, est dite émergente si elle peut
-être explicitée~». L'analyse de l'EA, doublée d'une approche ascendante (et non
+être explicitée.
+\end{definition}
+
+L'analyse de l'EA, doublée d'une approche ascendante (et non
 uniquement descendante), peut expliciter les propriétés émergentes de l'IT de
 l'entreprise et les porter au niveau du métier pour en extraire une plus-value
 pour l'entreprise et orienter avantageusement sa stratégie. L'EA est d'autant
@@ -224,22 +230,24 @@ orchestrées par l'architecte d'entreprise.\footnote{c'est l'approche décrite d
 
 \subsubsection{L'Architecture d'Entreprise pour la conception et l'implémentation}
 
-L'EA a pour rôle de décrire l'état courant de l'entreprise (\textit{as-is}),
-l'état désiré (\textit{to-be}) et les étapes pour passer du premier au
-deuxième. L'observation des pratiques actuelles, par la revue de la
+% L'EA a pour rôle de décrire l'état courant de l'entreprise (\textit{as-is}),
+% l'état désirée (\textit{to-be}) et les étapes pour passer du premier au
+% deuxième. 
+
+L'observation des pratiques actuelles, à travers la revue de la
 documentation des projets Smart Grid évoqués dans la
-section~\ref{sec:EA_analyse_limite} et par l'analyse de la
-littérature\footnote{voir chapitre~\ref{ch:EA}}, pointe vers le même constat~:
-le passage du \textit{as-is} au \textit{to-be} se résume à une description de
+section~\ref{sec:EA_analyse_limite} et à travers l'état de l'art présenté
+dans le chapitre~\ref{ch:EA}, pointe vers le même constat~:
+les artefacts de conception utilisées en EA se résument à une description de
 grands principes et à une liste de recommandations générales.
 
-Ces descriptions générales, bien que nécessaires à la construction et au
+Ces descriptions, bien que nécessaires à la construction et au
 partage d'une vision globale de l'entreprise et des grandes étapes, ne sont pas
 suffisantes. Les limites que nous identifions rejoignent les constats de
 l'approche IDM pour le développement logiciel. Il s'agit là encore d'une
 représentation purement contemplative. Celle-ci n'est pas en mesure
 d'accompagner l'entreprise sur toute sa trajectoire en allant jusqu'à
-l'implémentation du système final pour plusieurs raisons.
+l'implémentation du système final, et ce pour plusieurs raisons.
 
 Tout d'abord, les représentations purement contemplatives restent ambiguës et
 sujettes à des interprétations inadéquates. Les parties prenantes utilisent des
@@ -305,33 +313,35 @@ descriptives.
      \label{fig:limites_ea}
 \end{figure}
 
-L'EA englobe ces différentes activités et les décline selon les différentes
-vues d'architecture (voir chapitre~\ref{ch:EA}) comme l'illustre la
-figure~\ref{fig:limites_ea}. Les artefacts produits par les différentes
-activités des différentes vues sont donc d'autant plus nombreux. Ces artefacts
-adressent les préoccupations de différentes parties-prenantes.
+L'EA englobe ces différentes activités et les décline sur les différentes
+vues d'architecture comme l'illustre la
+figure~\ref{fig:limites_ea}. Les artefacts produits au cours des différentes
+activités —~documentation, analyse et conception~— et pour les différentes vues —~métier,
+applicative, technique~—sont donc d'autant plus nombreux. Ces artefacts
+adressent les préoccupations de différentes parties prenantes.
 
 La revue de la littérature relative à l'EA, nous a permis de catégoriser ces
-parties-prenantes en identifiant un rôle par vue d'architecture. Chacun de ces
-rôles a pour mission de construire une vision holistique au regard de ses
+parties prenantes en identifiant un rôle par vue d'architecture~: un architecte
+métier, un architecte fonctionnel, un architecte applicatif. Chaque
+rôles consiste à créer une vision holistique au regard de ses
 propres préoccupations. C'est donc pour cette raison que nous identifions un
 architecte par vue~:
 
 \begin{description}
-    \item[l'architecte métier]
+    \item[un architecte métier]
     Le rôle de l'architecte métier consiste à documenter, analyser et concevoir
     des processus métier permettant à l'entreprise de réaliser sa stratégie.
     Il orchestre les processus métier et les flux d'information en cohérence
     avec la stratégie pour aboutir à l'architecture métier de l'entreprise~;
 
-    \item[l'architecte fonctionnel]
+    \item[un architecte fonctionnel]
     Le rôle de l'architecte fonctionnel consiste à documenter, analyser et
     concevoir les blocs fonctionnels qui réalisent les processus de
     la vue métier. Il orchestre ces blocs fonctionnels et les flux d'informations
     qui circulent entre ces blocs pour aboutir à l'architecture fonctionnelle
     de l'entreprise~;
 
-    \item[l'architecture applicatif]
+    \item[un architecte applicatif]
     Le rôle de l'architecte applicatif consiste à documenter, analyser
     et concevoir les applications permettant d'implémenter les blocs
     de la vue fonctionnelle. Il doit assurer une bonne orchestration de ces
@@ -346,7 +356,7 @@ aussi les critères de \emph{cohérence externe} avec les autres vues. Cependant
 la nature informelle des artefacts impliqués dans les différentes activités
 d’architecture rend difficile le maintien de cette cohérence.
 
-Comme exposé dans la problématique (chapitre~\ref{ch:problematique}), les
+Comme souligné dans la dans l'introduction~\ref{ch:problematique}, les
 entreprises doivent constamment faire évoluer leurs stratégies. En conséquence,
 l'architecture doit satisfaire, en plus des contraintes de cohérence, des
 contraintes de souplesse et de réactivité. Mais souvent, la nature informelle
@@ -357,11 +367,11 @@ Dans le cadre d'une démarche IDM, ce type d'artefacts est qualifié de purement
 contemplatif. L'IDM traite la question des modèles purement contemplatifs dans
 le contexte particulier du génie logiciel, en proposant une approche
 unificatrice par les modèles~\cite{jezequel2006genie}. Une revue comparative
-des littératures relevant de l'IDM et des pratiques courantes de l'EA, nous
-amène à envisager l'IDM comme cadre méthodologique et technologique pour l'EA.
-Dans la partie suivante, nous faisons donc le parallèle entre les deux
-disciplines afin de justifier le recours à une démarche IDM  pour traiter les
-limites  des pratiques actuelles d'EA.
+de la littérature relevant de l'IDM et des pratiques courantes de l'EA nous a
+amené à faire le parallèle entre les deux domaines et
+à envisager l'IDM comme cadre méthodologique et technologique pour l'EA.
+Nous justifions le recours à une démarche IDM  pour traiter les
+limites  des pratiques actuelles dans la section suivante.
 
 \subsection{L'Ingénierie Dirigée par les Modèles~:\\ un cadre méthodologique et technologique}
 
@@ -381,30 +391,30 @@ limites  des pratiques actuelles d'EA.
 
     Le recours à une démarche IDM tire sa légitimité de la mise en
     évidence des caractéristiques communes des deux disciplines que
-    sont le génie logiciel et l'EA. La démarche IDM est certes originellement développée
-    pour le génie logiciel. Cependant, nous identifions un nombre de similarités
-    entre les deux disciplines justifiant l'adéquation d'une démarche IDM pour l'EA.
+    sont le génie logiciel et l'EA. L'IDM est certes originellement développée
+    pour le génie logiciel, mais nous identifions un nombre de similarités
+    entre les deux disciplines justifiant l'adéquation d'une telle démarche pour l'EA.
 
     Premièrement, l'EA tout comme le génie logiciel, cherche à construire
     des systèmes manipulant de l'information. Il s'agit d'un système à
     logiciel prépondérant pour le génie
     logiciel~\cite{jezequel2012ingenierie} et du système entreprise pour l'EA.
     Or les entreprises se mettent de plus en plus à produire et à
-    consommer de l'information~\cite{zachman1997enterprise}, à
-    commencer par les Smart Grids dont le fonctionnent repose sur la
-    mise en réseau, au sens informatique, des équipements électriques. Certains auteurs
+    consommer de l'information \cite{zachman1997enterprise}. Certains auteurs
     évoquent même une nouvelle ère de l'information qui sonnerait
     la fin de l'ère d'industrialisation en inscrivant les entreprises dans une économie
-    de l'information~\cite{toffler1981third}~\cite{webster2014theories}.
+    de l'information~\cite{toffler1981third}~\cite{webster2014theories}. C'est aussi le cas
+    des Smart Grids dont le fonctionnent repose sur la
+    mise en réseau, au sens informatique, des équipements électriques.
 
     Deuxièmement, l'EA et le génie logiciel comportent des activités
-    similaires comme l'expression des besoins et des objectifs, l'analyse,
+    similaires telles que l'expression des besoins et des objectifs, l'analyse,
     la conception, la maintenance, la documentation, l'implémentation ou encore
     la validation. Ces activités restent similaires dans leur nature même
     si elles ne portent pas sur le même système, en l'occurrence l'entreprise et
     le logiciel.
 
-    Troisièmement, en génie logiciel, les partie-prenantes sont
+    Troisièmement, en génie logiciel, les partie prenantes sont
     confrontées aux limites de ces artefacts hétérogènes et de nature informelle (mis à
     part le code) produits aux différentes étapes du cycle de vie du système (documentation,
     spécifications, etc.). Jézéquel et al.~\cite{jezequel2006genie} affirment
@@ -413,22 +423,22 @@ limites  des pratiques actuelles d'EA.
     indépendants les uns des autres~», et que le problème est «~d’être
     capable d'assurer une cohérence entre ces vues, ou au minimum une
     traçabilité entre les éléments des différents artefacts~».
-    Comme exposé dans la partie précédente, le même problème se pose pour l'EA.
+    Comme nous l'avons souligné dans la partie précédente, le même problème se pose pour l'EA.
 
     %Quatrièmement, demande de ractivité et de soupelesse. Stratégie en évolution pour l'EA et spect pouvante pour le génie logiciel
 
     Similarité des domaines et communauté des objectifs légitiment
     donc pleinement le recours à l'IDM comme cadre
-    méthodologique et technologique pour répondre à la problématique de
-    cette thèse.
+    méthodologique et technologique pour répondre à la problématique traitée
+    par les présents travaux.
 
     \subsubsection{Contribution de l'Ingénierie Dirigée par les Modèles\\à l'Architecture d'Entreprise}
 
-    La vision que nous souhaitons transmettre dans cette partie est la suivante~:
+    La vision que nous souhaitons transmettre ici est la suivante~:
     l'Ingénierie Dirigée par les Modèles est un moyen d'unifier les activités
     et les artefacts de l'Architecture d'Entreprise. Ainsi unifiée, l'EA parviendra à réaliser
     pleinement ses objectifs d'alignement effectif et d'accompagnement efficace de
-    l'entreprise tout au long de sa trajectoire.
+    l'entreprise tout au long de son cycle de vie.
 
     L'IDM offre à cet effet un nombre de méthodes et de technologies permettant d’homogénéiser
     les vues d'architecture tout en gardant la possibilité d'utiliser la technologie ou la représentation
@@ -447,12 +457,11 @@ limites  des pratiques actuelles d'EA.
     Le recours intensif aux modèles exécutables dans les activités d'EA
     pour chacune des vues d'architecture permet de créer une architecture d'entreprise
     souple et réactive à l'évolution de la stratégie d'entreprise. Les modèles d'une vue peuvent être automatiquement
-    raffinés en modèles cible pour la vue d'en dessous grâce aux transformations de modèles. Les modèles
+    raffinés en d'autres modèles pour la vue d'en dessous grâce aux transformations de modèles. Les modèles
     exécutables et les transformations de modèles permettront d'automatiser
     les activités d'EA telles que l'analyse de la structure et du comportement
-    ainsi que la mise à jour.
+    ou encore la mise à jour.
 
-%    L'IDM permet toutes ces possibilités par la formalisation d'un métamodèle pour
 
     Nous détaillerons les possibilités d'utilisation des méthodes et techniques de l'IDM
     dans la suite de ce chapitre. Mais nous présentons d'abord la démarche IDM mise en
@@ -462,11 +471,12 @@ limites  des pratiques actuelles d'EA.
 
     S'il n'existe pas de démarche standardisée pour mettre en œuvre
     l'IDM~\cite{barbier13phd}, les différents auteurs conviennent néanmoins de la
-    nécessité  de commencer par analyser le domaine d'application~\cite{jezequel2012ingenierie}.
+    nécessité  de commencer par analyser le domaine d'application~\cite{jezequel2012ingenierie} afin
+    de l'appréhender.
     Dans notre contexte, il s'agit de la découverte des pratiques
     d'EA dans le contexte des Smart Grids. L’appréhension du domaine a
     pour objectif d'identifier les concepts essentiels en EA ainsi que leurs
-    règles d'association afin de concevoir un métamodèle du domaine traité. La
+    règles d'association afin de concevoir un métamodèle pour le domaine traité. La
     figure~\ref{fig:demarche_idem} est une représentation de la démarche IDM
     mise en œuvre pour mener les travaux de cette thèse.
 
@@ -475,9 +485,9 @@ limites  des pratiques actuelles d'EA.
     créer des modèles conformes à ce métamodèle, tester le modèle obtenu par rapport
     aux attentes du domaine, enrichir à nouveau le métamodèle et ainsi de suite.
 
-    L'IDM permet par transformation de modèle de générer du code pour les applications
-    finales. Nous avons donc utilisé les transformations de modèle pour éprouver la pertinence du métamodèle
-    EAT-ME sur un système informatique au fil des itérations.
+    % L'IDM permet par transformation de modèle de générer du code pour les applications
+    % finales. Nous avons donc utilisé les transformations de modèle pour éprouver la pertinence du métamodèle
+    % EAT-ME sur un système informatique au fil des itérations.
 
 
     \begin{figure}[!ht]
@@ -502,14 +512,14 @@ limites  des pratiques actuelles d'EA.
     des membres de groupes de normalisation Smart Grid de la \gls{cei}\footnote{http://www.iec.ch}~;
 
         \item par une revue de la littérature portant sur l'EA de manière générale,
-        écrite par des chercheurs et des praticiens.
+        écrite par des chercheurs en EA et des architectes d'entreprise.
 
     \end{itemize}
 
 La revue de la littérature a été présentée dans le chapitre~\ref{ch:EA}.
 Dans la suite de ce chapitre, nous présentons donc l'analyse du domaine à travers l'étude
-de la documentation à laquelle nous avons eu accès et les entretiens menées avec les différents
-experts et praticiens du domaine.
+de la documentation à laquelle nous avons eu accès et les entretiens menés avec les différents
+experts du domaine.
 
 
 \section{Analyse du domaine}
@@ -526,9 +536,9 @@ experts et praticiens du domaine.
         \subsubsection{Démonstrateurs européens}
         \label{sec:DemonstrateursSG}
 
-Tout d'abord, nous avons étudié les spécifications des démonstrateurs Smart Grid
+Tout d'abord, nous avons étudié les spécifications des démonstrateurs Smart Grids
 européens et en particulier celles de ADDRESS et PREMIO. Le choix de ces deux
-démonstrateurs est expliqué par la participation du département MIRE à ces deux
+démonstrateurs s'explique par la participation du département MIRE à ces deux
 projets, ce qui a facilité l'accès aux documents officiels.
 
 %\footnote{http://www.smartgrids-
@@ -538,8 +548,8 @@ projets, ce qui a facilité l'accès aux documents officiels.
 
 
 Le projet ADDRESS regroupe 25 partenaires dans 11 pays. L'objectif visé est
-d'améliorer l'efficacité, la sécurité et la qualité de leur alimentation en
-électricité dans un contexte de forte croissante de la participation des
+d'améliorer l'efficacité, la sécurité et la qualité de la production et de la consommation
+d'électricité dans un contexte de forte croissante de la participation des
 énergies renouvelables à la production d'électricité. Pour cela, des
 technologies sont développées pour gérer la consommation d'électricité des
 clients résidentiels et professionnels.
@@ -549,7 +559,7 @@ région Provence-Alpes-Côte d'Azur (PACA) en intégrant les TIC et en
 expérimentant~:
 \begin{itemize}
 	\item la production locale de l'énergie~;
-	\item l'effacement~: il s'agit de baisser ou couper la consommation des utilisateurs
+	\item l'effacement~: il s'agit de baisser ou de couper la consommation des utilisateurs
     sans en dégrader le confort~;
 	\item stockage/déstockage de la chaleur ou du froid.
 \end{itemize}
@@ -570,22 +580,21 @@ implémentation réelle n'est explicité.
 La normalisation de \textit{Use Cases} ou de cas d'utilisation consiste à
 imposer un canevas pour la spécification des cas d'utilisation Smart Grid puis à
 faire le mapping entre cette spécification et le cadre d'architecture
-\gls{sgam}. Le \gls{sgam}, spécialisé dans l'architecture des Smart Grids, est
-présenté dans le chapitre~\ref{ch:EA}.
+\gls{sgam}. Le \gls{sgam} est un cadre d'architecture spécialisé dans l'architecture des Smart Grids.
 
 La normalisation de \textit{Use Cases} est utilisée par le projet européen
 GRID4EU\footnote{http://www.grid4eu.eu/} qui rassemble six démonstrateurs Smart
 Grid différents. Les \textit{Use Cases} ainsi normalisés, sont ensuite mis en
 correspondance avec le cadre d'architecture \gls{sgam}. La normalisation des \textit{Use
 Cases} dans le cadre de GRID4EU, a été faite après l'implémentation des six
-démonstrateurs pour comparer les retours d'expérience. Nous retenons, en
+démonstrateurs pour comparer leurs retours d'expérience. Nous avons retenu, en
 particulier, le démonstrateur de la société nationale d'électricité italienne
 (\gls{enel}) et son \textit{Use Case} portant sur la régulation de tension des réseaux de
 distribution présentant une forte pénétration de \gls{der}. C'est le cas d'application
-de la norme et du cadre \gls{sgam} le plus fourni et abouti du projet GRID4EU.
+de la norme et du cadre \gls{sgam} le plus fourni et le plus abouti du projet GRID4EU.
+
 L'analyse des documents de normalisation et des spécifications de projets
 européens appliquant ces normes est à l'origine de plusieurs constatations.
-
 D'une part, dans le \gls{sgam} la traçabilité entre les vues n'est pas directe.
 Elle est au contraire assurée par la superposition des différentes vues
 d'architecture sur le \textit{Smart Grid Plan}. Ce dernier décrit un réseau
@@ -1099,7 +1108,7 @@ d'un module de la vue applicative à partir d'un modèle de fonction de la vue f
     % framework = approche conceptuelle + structure logique (pour organiser et mettre en cohérence les modèles d'architecture  + outils et langages
 
     Une approche par points de vue est indispensable à l’appréhension des systèmes complexes car elle permet de séparer
-    les préoccupations des parties-prenantes dans des vues distinctes. Chaque vue traduit donc la perspective d'une partie-prenante.
+    les préoccupations des parties prenantes dans des vues distinctes. Chaque vue traduit donc la perspective d'une partie-prenante.
     De nombreux \emph{frameworks} d'EA adoptent de ce fait une approche par points de vue. Cependant, les différentes préoccupations
     sont souvent traitées de manière séquentielle et plus ou moins indépendante des autres vues comme l'attestent
     S.~Kurpjuweit et R.~Winter~\cite{kurpjuweit2007viewpoint}.
@@ -1142,7 +1151,7 @@ exécutables sont le plus valorisés et indispensables.
 Ensuite, comme l'illustre la figure~\ref{fig:activite_ea} l'analyse joue un rôle central dans une démarche d'EA.
 Les modèles issus de l'analyse peuvent directement servir à documenter l'EA (\q{modèles EA validés} dans la figure~\ref{fig:activite_ea}).
 Il s'agit de modèles qui recourent directement aux concepts du domaine de l'EA 
-et qui ne nécessitent donc pas de changer de niveau d'abstraction pour être appréhendés par les parties-prenants.
+et qui ne nécessitent donc pas de changer de niveau d'abstraction pour être appréhendés par les parties prenants.
 En IDM, ces modèles sont qualifiés de \emph{problem-level abstration models}~\cite{france2007model}.
 
 \begin{figure}[!ht]
@@ -1200,7 +1209,7 @@ globale des modèles d'architecture. Ainsi intégrés, les modèles sont soumis 
 une analyse comportementale via la simulation.
 L'approche proposée suit un processus itératif. À l'issue de la simulation, l'ensemble des
 architectes valident ou modifient leurs modèles selon les résultats de la simulation, et ainsi de
-suite jusqu'à obtenir une architecture satisfaisante pour l'ensemble des parties-prenantes.
+suite jusqu'à obtenir une architecture satisfaisante pour l'ensemble des parties prenantes.
 
 \begin{figure}[!ht]
  \centering
@@ -1367,7 +1376,7 @@ transformations de modèle entre la vue fonctionnelle et et la vue applicative.
 
 Il est indispensable de s'assurer de la cohérence
 entres les modèles des différentes vues avant d'initier une analyse
-d'impact du changement qui soit pertinente pour les parties-prenantes, en particulier
+d'impact du changement qui soit pertinente pour les parties prenantes, en particulier
 pour l'architecte d'entreprise. L'analyse de l'impact du
 changement consiste à dévoiler les effets de bord d'un changement apporté à un
 élément de l'architecture.
