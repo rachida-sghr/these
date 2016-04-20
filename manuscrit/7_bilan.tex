@@ -21,7 +21,7 @@ conceptuelle pour l'analyse de la structure et du comportement d'une architectur
 avons formalisé le métamodèle (EAT-ME) ainsi qu'un ensemble de langages et de techniques issus de l'IDM et adaptés à la modélisation
 et à l'analyse d'une architecture d'entreprise. 
 
-L'analyse de la structure visa à s'assurer de la cohérence globale d'une architecture d'entreprise. Nous avons
+L'analyse de la structure vise à s'assurer de la cohérence globale d'une architecture d'entreprise. Nous avons
 proposé pour cela de rajouter aux points de vue traditionnellement utilisé en EA (tels que les points de vue métier, fonctionnel et
 applicatif) un point de vue Intégration. Ce point de vue permet de modéliser les liens de cohérence inter-vues (entre les autres vues)
 et les liens de cohérence intra-vue (entres les entités d'une même vue).
@@ -40,14 +40,14 @@ Nous avons ainsi pu jeter les bases des travaux ayant abouti à la défintion du
 
 Les travaux de cette thèse, faisant partie du projet Pomme, sont de nature prospective et visent à fournir 
 des orientations claires sur la manière dont l'IDM, souvent réservée au génie logiciel, peut bénéficier à l'EA.
-Dès lors, bien que convaincu de l'intérêt que représentent le \emph{framework} ExecuteEA et son métamodèle sous-jacent
+Dès lors, bien que convaincue de l'intérêt que représentent le \emph{framework} ExecuteEA et son métamodèle sous-jacent
 EAT-ME pour la concrétisation des apports de l'IDM à l'EA, de nombreuses perspectives restent envisageables.
 
 Ces perspectives sont de trois types. Les unes concernent l'amélioration du \emph{framework} ExecuteEA et 
-et de son métamodèle en apportant des compléments à ce qui a déjà été réalisé comme l'intégration
+de son métamodèle en apportant des compléments à ce qui a déjà été réalisé, comme l'intégration
 du point de vue technique. Les autres correspondent à l'investigation pour l'EA
 de nouvelles méthodes et technologies IDM comme le \emph{Model Typing} par exemple. D'autres, enfin,
-correspondent à des centres d'intérêt nouveaux ayant pour cadre l'EA comme la modélisation du plan de migration
+correspondent à des centres d'intérêt nouveaux ayant pour cadre l'EA, comme la modélisation du plan de migration
 d'une architecture d'entreprise actuelle à une architecture d'entreprise cible.
 
 % la modélisation et la simulation facilitent la conception d'une architecture d'entreprise
@@ -55,7 +55,7 @@ d'une architecture d'entreprise actuelle à une architecture d'entreprise cible.
 % de mener des travaux d'investigation sur comment .
 
 
-    \subsection{Model Typing}
+\subsection{Model Typing}
 
 % \textit{Model Typing} est une technique de l'IDM appliqué au développement
 % logiciel permettant de contrôler les types de modèles d'entrée des
@@ -67,24 +67,22 @@ d'une architecture d'entreprise actuelle à une architecture d'entreprise cible.
 % \textit{Model Typing} peut être utilisé pour l'intégration horizontale (i.e.
 % cohérence et orchestration des processus d'une même vue).
 
-Une démarche IDM implique une multitude de modèles produits et manipulés par différentes transformations de modèles. Le maintien de la cohérence entre modèles et transformation de modèles fait l'objet de recherche active dans une discipline comme l'IDM. \cite{steel2007model} propose de typer les modèles en entrée des transformations en utilisant le Model Typing. Celui-ci permet de contrôler les modèles manipulés par les transformations. Autrement dit, une transformation ne prend en entrée qu'un certain type de modèle. Ainsi, tous les modèles conformes à ce type peuvent être manipulés par la transformation en question. Ceci a, de plus, l'avantage d'augmenter la réutilisabilité des transformations écrites en mettant en évidence les caractéristiques communes des modèles. Cette technique de typage est en outre outillée et intégrée dans le langage de méta-modélisation Kermeta\footnote{www.kermeta.org} qui est basé sur EMOF\footnote{Ecore Meta Object Facility} dans un environnement Eclipse. Il nous paraît donc intéressant de mettre en œuvre le Model Typing pour la vue intégration.
+Une démarche IDM implique une multitude de modèles produits et manipulés par différentes transformations de modèles. Le maintien de la cohérence entre modèles et transformation de modèles fait l'objet d'une recherche active dans une discipline comme l'IDM. \cite{steel2007model} propose de typer les modèles en entrée des transformations en utilisant le Model Typing. Celui-ci permet de contrôler les modèles manipulés par les transformations. Autrement dit, une transformation ne prend en entrée qu'un certain type de modèle. Ainsi, tous les modèles conformes à ce type peuvent être manipulés par la transformation en question. Ceci a, de plus, l'avantage d'augmenter la réutilisabilité des transformations écrites en mettant en évidence les caractéristiques communes des modèles. Cette technique de typage est en outre outillée et intégrée dans le langage de méta-modélisation Kermeta\footnote{www.kermeta.org} qui est basé sur EMOF\footnote{Ecore Meta Object Facility} dans un environnement Eclipse. Il nous paraît donc intéressant de mettre en œuvre le Model Typing pour la vue intégration.
 
 
     \subsection{Vue technique}
 
-    Dans ces travaux nous avons traité les vue métier, fonctionnelle et applicative. Il souhaiterions aussi
+    Dans ces travaux nous avons traité les vue métier, fonctionnelle et applicative. Nous souhaiterions également
     intégrer la vue techinique au \emph{framework} ExecuteEA afin d'obtenir une analyse de la totalité de
     l'architecture d'entreprise. Cette vue correspond à l'infrastructure technique du SI
-    (matériel informatique et réseaux télécom) et permettra donc de faire le lien directe avec les équipements
+    (matériel informatique et réseaux télécom) et permettra donc de faire le lien direct avec les équipements
     du réseau électrique.
 
     \subsection{Migration de l'archtecture actuelle vers une architecture cible}
 
-    Le \emph{framework} ExecuteEA peut être utilisé pour crée des modèles d'architecture d'entreprise exécutables
-    pour analyser les composant d'une entreprise dans son état courant ou cible de manière séparée. 
+    Le \emph{framework} ExecuteEA peut être utilisé pour créer des modèles d'architecture d'entreprise exécutables
+    afin d'analyser les composants d'une entreprise dans son état courant ou cible de manière séparée. 
     Cependant, pour retracer le cycle de vie d'une architecture d'entreprise et la localisation d'une architecture d'entreprise à
-    travers ce cycle de vie nous avons besoin d'un \emph{framwrok} retraçant son évolution. Des recherches en ce sens sont en cours
+    travers ce cycle de vie, nous avons besoin d'un \emph{framwrok} retraçant son évolution. Des recherches en ce sens sont en cours
     mais uniquement au niveau du SI d'une entreprise~\cite{metrailler_evolis_2014}. Dès lors, il nous semble intéressant d'enrichir le
     \emph{framework} ExecuteEA pour tenir compte de l'évolution d'une architecture d'entreprise à travers son cycle de vie.
-
-
