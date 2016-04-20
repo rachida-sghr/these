@@ -16,10 +16,10 @@ une démarche de recherche inductive a été jugée pertinente.
 Nous exposons cette démarche en la justifiant dans la section~\ref{sec:demarche_objet_etude}.
 Puis, nous reprenons les étapes de cette phase exploratoire 
 par ordre chronologique~: exploration de la vue métier dans la section~\ref{sec:exploration_metier}, puis celle de la vue 
-applicative dans la section~\ref{sec:investig_appli} et en fin celle de la vue fonctionnelle dans 
+applicative dans la section~\ref{sec:investig_appli} et enfin celle de la vue fonctionnelle dans 
 la section~\ref{sec:exploration_fonctionnelle}.
-Cependant, nous ne cherchons pas à donner l'impression que notre plan de recherche a été 
-entièrement établi avant de le mettre en œuvre. Au contraire, nous l'avons 
+Notre plan de recherche a été 
+a été 
 construit au fur et à mesure de nos interactions avec le terrain d'étude. 
 
 % expliquer ce que c'est une approche inductive.
@@ -106,7 +106,7 @@ Le raisonnement par induction aboutit à des propositions générales à partir 
 cas singuliers. Nous avons donc commencé par décomposer le terrain d'étude, 
 c'est à dire le SI de l'entreprise. Les bases théoriques de la discipline des SI 
 ont permis de procéder à cette décomposition afin de mettre en évidence ses 
-singularités. Les approches par points de vue sont largement utilisée pour 
+singularités. Les approches par points de vue sont largement utilisées pour 
 traiter la complexité des SI en le décomposant en plusieurs vues~: la vue 
 métier, la vue fonctionnelle, la vue applicative, la vue technique. Chaque vue 
 correspond à la perspective d'un groupe de personnes aux profils différents mais 
@@ -142,18 +142,19 @@ Les hypothèses formulées à l'issue des ces observations sont les suivantes~:
 \begin{itemize}
     \item la simulation de SI est une discipline peu étudiée~;
 	\item la simulation des processus métier est pertinente pour les SI des 
-Smart Grids dans la mesure ou elle permet de valider les scénarios élaborés pour 
+Smart Grids dans la mesure où elle permet de valider les scénarios élaborés pour 
 les démonstrateurs, mais aussi pour les SI tout court~;
 	\item lors de cette simulation, il est nécessaire de maintenir une 
-cohérence entre le processus et les données qu'il manipule~;
+cohérence entre le processus et les données qu'il manipule.
 	%\item les langages de modélisation exécutables présentent des avantages pour la simulation des SI.
 \end{itemize}
 		
 \subsection{Prototypage}
 Le prototypage a nécessité une étude des outils existants proposant de 
 simuler des processus métier, ce qui a permis d'identifier les outils suivants~: 
-Enterprise Architect, Bonita, Amuse et Rhapsody. Il a ensuite fallu évaluer leur capacité de simulation selon une grille d'évaluation. Le critère de 
-sélection principal a été la capacité de l'outil à exécuter des diagrammes 
+Enterprise Architect, Bonita, Amuse et Rhapsody. Il a ensuite fallu évaluer leur capacité de simulation selon une grille d'évaluation.
+Nous nous sommes servis, comme critère de 
+sélection principal, de la capacité de l'outil à exécuter des diagrammes 
 d'activité UML. En effet, c'est dans ce langage que sont représentés les 
 processus métier dans les documents de spécification des démonstrateurs Smart 
 Grid. Le deuxième critère d'évaluation retenu a été la possibilité d'ajout de 
@@ -247,7 +248,7 @@ Ainsi, dans le modèle Ptolemy illustré par la figure ~\ref{fig:simu_ptolemy}, 
 \subsection{Validation}
 Le cas d'application du pilotage d'une charge domestique n'a pas été utilisé pour le prototypage de la vue applicative. Les modèles de la vue applicative nécessitent un niveau de détail plus élevé que les modèles de la vue métier. Or les spécifications des démonstrateurs ADDRESS et PREMIO n'offrent pas le niveau de détail nécessaire. Le \textit{Use Case} normalisé par \gls{enel} (voir section~\ref{sec:ENEL}) pour la régulation de tension sur les réseaux de distribution a été adopté et affiné par les discutions avec les ingénieurs-chercheurs du département \gls{mire} travaillant sur la même thématique. 
 		
-Ils s'agit d'adapter la tension du réseau électrique en fonction de la charge et de la production pour maintenir un niveau de tension acceptable. Deux leviers d'action sont utilisés, les régleurs en charge et les \gls{der}. Les régleurs en charges pilotés à distance agissent sur le niveau de tension au niveau des postes sources. Le pilotage des \gls{der} permet de contrôler la quantité d'énergie qu'ils injectent sur le réseau. Ce cas métier fait intervenir un SI qui calcule les consignes envoyées aux DER et au régleur en charge, et un réseau électrique qui réagit à ces consignes. Il est à noter que le SI est réduit à sa vue purement applicative en ne de modélisant que l'application qui calcule les consignes.
+Ils s'agit d'adapter la tension du réseau électrique en fonction de la charge et de la production pour maintenir un niveau de tension acceptable. Deux leviers d'action sont utilisés, les régleurs en charge et les \gls{der}. Les régleurs en charges pilotés à distance agissent sur le niveau de tension au niveau des postes sources. Le pilotage des \gls{der} permet de contrôler la quantité d'énergie qu'ils injectent sur le réseau. Ce cas métier fait intervenir un SI qui calcule les consignes envoyées aux DER et au régleur en charge, et un réseau électrique qui réagit à ces consignes. Il est à noter que le SI est réduit à sa vue purement applicative en ne modélisant que l'application qui calcule les consignes.
 		
 		Ce cas métier a été modélisé puis simulé avec l'outil Ptolemy de modélisation et de simulation hétérogènes. Le comportement du SI est modélisé avec une machine à états qui calcule des consignes pour le DER et le régleur en charge en fonction du niveau de tension du réseau électrique. Le DER et le régleur en charge régulent la tension du réseau électrique en appliquant ces consignes. Le réseau de distribution est composé d'un DER, d'un consommateur d'électricité et d'un régleur en charge dont les comportements font varier le niveau de tension.
 		
@@ -267,7 +268,7 @@ Pour cette dernière phase d'observation, nous avons mené des entretiens avec d
 Ainsi, les hypothèses formulées suite à ses observations sont les suivantes~:
 \begin{itemize}
     \item la simulation des SI des Smart Grids est aussi pertinente pour les SI industriels que pour les SI de gestion~;
-	\item le langage de modélisation du SI doit être compréhensible par les parties prenantes~;
+	\item le langage de modélisation du SI doit être compréhensible par les parties prenantes.
 \end{itemize}	 
 
 \subsection{Prototypage}
@@ -321,7 +322,7 @@ Une syntaxe concrète et une sémantique d'exécution ont aussi été conçues p
 \gls{dsml}. Le DSML a ensuite été implémenté par un stagiaire dans
 l'environnement Eclipse. L'utilisation d'Eclipse est largement répandue dans la
 communauté de l'IDM. La fondation Eclipse héberge le projet \textit{Eclipse
-Modeling} qui propose des langages et outils dédiées au développement de
+Modeling} qui propose des langages et outils dédiés au développement de
 \gls{dsml}. La sémantique d'exécution a été implémentée avec Kermeta. Kermeta
 offre la possibilité de définir la sémantique d'exécution
 directement au niveau du métamodèle à l'aide un langage d'action.
