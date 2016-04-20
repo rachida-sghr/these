@@ -5,7 +5,7 @@
 \PartialToc
 
 Dans le chapitre précédent, nous avons présenté en détails le \emph{framework}
-ExecuteEA et son métamodèle EAT-ME dont l'objectif principale est de fournir
+ExecuteEA et son métamodèle EAT-ME dont l'objectif principal est de fournir
 un cadre cohérent pour l'analyse de la structure et du comportement d'une
 architecture d'entreprise. Le présent chapitre décrit l'implémentation qui concrétise
 les propositions que nous faisons à travers ce \emph{framework}. 
@@ -13,8 +13,8 @@ les propositions que nous faisons à travers ce \emph{framework}.
 Cette concrétisation prend la forme d'un prototype. Nous expliquons d'abord les
 choix techniques relatif à la plate-forme de développement retenue (section~\ref{sec:Eclipse}).
 Nous détaillons ensuite la réalisation du prototype et nous exposons les difficultés
-rencontrées (section~\ref{sec:realisation_difficultes}). Grâce à ce prototype, nous éprouvons le \emph{ExecuteEA} au cas métier de la gestion
-d'une flotte de véhicule électrique (section~\ref{sec:concretisation_cas_metier}). 
+rencontrées (section~\ref{sec:realisation_difficultes}). Grâce à ce prototype, nous éprouvons le \emph{ExecuteEA} sur le cas métier de la gestion
+d'une flotte de véhicules électriques (section~\ref{sec:concretisation_cas_metier}). 
 Puis, nous positionnons ces travaux par rapport aux cadres de classification
 proposés par Buckl~\cite{buckl2009classifying} et par Lakhorst~\cite{lankhorst2013enterprise}
 et par rapport aux autres cadres d'EA (section~\ref{sec:positionnement}).
@@ -23,7 +23,7 @@ ExecuteEA et en résumant les réalisations actuelles comme futurs.
 
 
 
-\section{Environnement retenu : la plate-forme Eclipse}
+\section{Environnement retenu~: la plate-forme Eclipse}
 \label{sec:Eclipse}
 
 Notre choix s'est orienté vers la plate-forme Eclipse et ce pour plusieurs
@@ -35,11 +35,10 @@ Eclipse abrite le projet
 \gls{emf}\footnote{http://www.eclipse.org/modeling/emf/} qui a pour objectif de
 doter Eclipse d'outils orientés IDM.
 
-Ensuite, \gls{emf} s'appuit sur les standards du domaine. Par exemple, le méta-
-métamodèle Ecore, pilier central de \gls{emf}, se base sur le standard
-\gls{mof}\footnote{http://www.omg.org/mof/} . Aure exemple, le langage de
+Ensuite, \gls{emf} s'appuit sur les standards du domaine. Par exemple, le méta-métamodèle Ecore, pilier central de \gls{emf}, se base sur le standard
+\gls{mof}\footnote{http://www.omg.org/mof/}. Aure exemple, le langage de
 contraintes OCLinEcore se base sur le standard \gls{ocl}. OCL et MOF sont des
-standard de l'OMG.
+standards de l'OMG.
 
 Puis, \gls{emf} se décompose en sous-projets orientés vers différents aspects de
 l'IDM tels que la méta-modélisation, la transformation de modèle, les éditeurs
@@ -47,8 +46,8 @@ graphiques de modèles, les langages spécifiques au domaine. \gls{emf} offre
 ainsi un environnement personnalisable pour mettre en œuvre une approche IDM.
 
 Enfin, il s'agit de la plate-forme retenu par le projet Pomme du département
-MIRE, dans lequel s'inscrit nos travaux de thèse. Le projet Pomme vise à
-réaliser un outil pour la co-simulation des trois domaines qui compose un Smart
+MIRE, dans lequel s'inscrivent nos travaux de thèse. Le projet Pomme vise à
+réaliser un outil pour la co-simulation des trois domaines qui composent un Smart
 Grid~: SI, infrastructure électrique, infrastructure de télécommunication.
 
 Pour ces travaux de thèse, nous avons donc retenu~:
@@ -70,32 +69,30 @@ Pour ces travaux de thèse, nous avons donc retenu~:
 
 \section{Réalisation et difficultés rencontrées}
 \label{sec:realisation_difficultes}
-    \subsection{Implémentation du métamodèle EA2M avec Eclipse Modeling Framework}
+    \subsection{Implémentation du métamodèle EAT-ME \\
+                avec Eclipse Modeling Framework}
 
-    Le métamodèle EA2M est le pilier central du \emph{framework ExecuteEA}. Nous
-    l'avons implémenté à l'aide de \gls{emf}. Il est donc conforme au méta-
-    métamodèle Ecore. EMF génère automatiquement un éditeur de modèle à partir
+    Le métamodèle EAT-ME est le pilier central du \emph{framework ExecuteEA}. Nous
+    l'avons implémenté à l'aide de \gls{emf}. Il est donc conforme au méta-métamodèle Ecore. EMF génère automatiquement un éditeur de modèle à partir
     d'un métamodèle conforme à Ecore. Cet éditeur permet de créer des modèles
-    d'architecture d'entreprise conformes au métamodèle EA2M ainsi implémenté.
+    d'architecture d'entreprise conformes au métamodèle EAT-ME ainsi implémenté.
     La figure~\ref{fig:editeur_modele1} et la figure~\ref{fig:editeur_modele2}
-    sont une capture d'écran de l'éditeur de modèles générée automatiquement à
-    partir du métamodèle EA2M. L'utilisateur a le choix de créer une vue métier,
+    sont une capture d'écran de l'éditeur de modèles généré automatiquement à
+    partir du métamodèle EAT-ME. L'utilisateur a le choix de créer une vue métier,
     fonctionnelle, applicative ou intégration et pour chacune des vues il peut
     choisir de créer un aspect objectif, processus ou information.
 
 
     \begin{figure}[!htbp]
-     \begin{center}
+      \centering
       \includegraphics[width=0.8\textwidth]{figures/5_implementation/editeur_modele1.png}
-     \end{center}
      \caption{Edition de modèles d'architecture d'entreprise avec ExecuteEA\\création de vues}
      \label{fig:editeur_modele1}
     \end{figure}
 
     \begin{figure}[!htbp]
-     \begin{center}
+      \centering
       \includegraphics[width=0.8\textwidth]{figures/5_implementation/editeur_modele2.png}
-     \end{center}
      \caption{Edition de modèles d'architecture d'entreprise avec ExecuteEA\\création d'aspects}
      \label{fig:editeur_modele2}
     \end{figure}
@@ -104,14 +101,13 @@ Pour ces travaux de thèse, nous avons donc retenu~:
     d'entreprise créé avec l'éditeur de modèle ExecuteEA.
 
     \begin{figure}[!htbp]
-     \begin{center}
+      \centering
       \includegraphics[trim=0cm 3cm 0cm 0cm, width=0.8\textwidth]{figures/5_implementation/modele_ea.pdf}
-     \end{center}
      \caption{Modèle d'architecture d'entreprise créé avec l'éditeur ExecuteEA}
      \label{fig:modeleEA}
     \end{figure}
 
-    La difficulté majeure rencontrée en implémentant le métamodèle EA2M a été de
+    La difficulté majeure rencontrée en implémentant le métamodèle EAT-ME a été de
     trouver le bon équilibre entre deux impératifs~: (1) implémenter le
     métamodèle en utilisant des concepts et des relations qui font sens d'un
     point de vue EA, en se gardant la possibilité de l'étendre facilement,
@@ -125,23 +121,22 @@ Pour ces travaux de thèse, nous avons donc retenu~:
     vue EA.
 
     Nous avons donc exprimé des contraintes avec OCLinEcore pour ne créer que
-    des modèles pertinents tout en gardant un métamodèle pertinent d'un point de
+    des modèles corrects tout en gardant un métamodèle pertinent d'un point de
     vue purement EA.  Une contrainte est une expression à valeur booléenne qui
     sert à préciser ou restreindre n'importe quel élément du métamodèle.
 
     La figure~\ref{fig:contraintes_ocl_architecture} illustre le métamodèle
-    EA2M, implémenté à l'aide d'\gls{emf}, sous une forme textuelle\footnote{EMF
-    est doté d'une éditeur graphique qui permet de créer des métamodèles de
+    EAT-ME, implémenté à l'aide d'\gls{emf}, sous une forme textuelle\footnote{EMF
+    est doté d'un éditeur graphique qui permet de créer des métamodèles de
     manière graphique (par \emph{drag and drop}) sous la forme d'un diagramme de
     classe et de générer le même métamodèle sous une forme textuelle.}. Il
     s'agit donc de la classe \q{Architecture} à la quelle on a ajouté des
-    contraintes de type \q{invariant} pour qu'elle ne contiennent pas de vue du
+    contraintes de type \q{invariant} pour qu'elle ne contienne pas plusieurs vues du
     même type.
 
     \begin{figure}[!htbp]
-     \begin{center}
+      \centering
       \includegraphics[width=0.8\textwidth]{figures/5_implementation/ocl_in_ecore_vue.png}
-     \end{center}
      \caption{Contraintes OCLinEcore attachées à la classe \protect\q{Architecture} }
      \label{fig:contraintes_ocl_architecture}
     \end{figure}
@@ -155,7 +150,7 @@ Pour ces travaux de thèse, nous avons donc retenu~:
     chapitre~\ref{ch:proposition}, nous proposons de simuler l'ensemble de
     l'architecture en la pilotant par les modèles.  La difficulté majeure
     rencontrée à cette étape de l'implémentation a été de réussir à exécuter des
-    comportements difficile à modéliser avec un diagramme
+    comportements difficiles à modéliser avec un diagramme
     UML\footnote{Typiquement, l'optimisation d'une affectation de véhicules
     électriques à des tournées d'agents qui intervient dans le cas d'études
     présenté dans la suite de ce chapitre}. Le principe de simulation pilotée
@@ -169,7 +164,7 @@ Pour ces travaux de thèse, nous avons donc retenu~:
     action\footnote{Dans les spécifications d'UML et de fUML, une action est une étape
     unitaire à l'intérieur d'une activité. Une activité est donc composée de
     plusieurs actions.} spécialisée~: l'\emph{OpaqueAction}. Papyrus s'appuie
-    sur le moteur d'exécution Moka pour simuler les diagramme fUML. Moka est
+    sur le moteur d'exécution Moka pour simuler les diagrammes fUML. Moka est
     conforme à la sémantique d'exécution spécifiée par l'OMG pour fUML. Or la
     sémantique d'exécution de l'\emph{OpaqueAction} n'a pas encore été
     spécifiée. Le standard fUML est en effet relativement récent\footnote{La
@@ -178,35 +173,35 @@ Pour ces travaux de thèse, nous avons donc retenu~:
     Moka ne prend pas en charge l'exécution de l'\emph{OpaqueAction}
 
     Cependant, Papyrus donne la possibilité d'étendre le moteur d'exécution Moka
-    et en attribuant le comportement souhaité à \emph{OpaqueAction} et en
+    en attribuant le comportement souhaité à \emph{OpaqueAction} et en
     l'exécutant comme les autres actions au cours d'une simulation de diagramme
     d'activité. Cette extension n'a toutefois pas été facile à implémenter. Les
     tutoriels mis à disposition par l'équipe de développement du module Moka
-    sont utiles pour une utilisation basique mais ne répondent à des besoins
-    d'utilisation pointues telle que l'extension du moteur d'exécution
+    sont utiles pour une utilisation basique mais ne répondent pas à des besoins
+    d'utilisation pointue telle que l'extension du moteur d'exécution
     disponible. À cet effet, nous avons sollicité l'aide de contributeurs au
-    développement du module Moka et nous nous sommes également appuyé sur un
+    développement du module Moka et nous nous sommes également appuyés sur un
     stagiaire en dernière école d'ingénieur. Le comportement de
     l'\emph{OpaqueAction} mis en œuvre dans ces travaux de thèse consiste donc à
     appeler un module extérieur durant l'exécution d'un diagramme d'activité
     fUML et à retourner le résultat fourni par le module à l'action ou
     l'activité suivante.
 
-    Dans la suite de ce chapitre, nous éprouvant le \emph{framework ExecuteEA}
+    Dans la suite de ce chapitre, nous éprouvons le \emph{framework ExecuteEA}
     ainsi doté d'un environnement de modélisation et de simulation de modèles
     d'architecture. La validation est faite à travers le cas d'étude de la
-    gestion d'une flotte de véhicules électrique. Nous avons créé à cet effet
-    (1) les modèles d'architecture d'entreprise requis par les différentes vues
-    et selon les aspects spécifié par \emph{ExecuteEA} en adoptant les langages
+    gestion d'une flotte de véhicules électriques. Nous avons créé à cet effet
+    (1) les modèles d'architecture d'entreprise requis par les différentes vues,
+    selon les aspects spécifiés par \emph{ExecuteEA}, et en adoptant les langages
     prescrit par le \emph{framework}, et (2) les transformations de modèle
-    nécessaires. Nous avons ensuite analyser l'architecture obtenue.
+    nécessaires. Nous avons ensuite analysé l'architecture obtenue.
 
 
 \section{Concrétisation de l'approche avec un cas d'étude}
 \label{sec:concretisation_cas_metier}
 
     Les contraintes de temps et de confidentialité ne nous ont pas permis
-    d'éprouvé le framework ExecuteEA sur une architecture d'entreprise à taille
+    d'éprouver le framework ExecuteEA sur une architecture d'entreprise à taille
     réelle. Pour cette raison, le cas d'étude concerne plutôt un seul processus
     métier faisant intervenir plusieurs tâches et sa déclinaison sur les vues
     fonctionnelle et applicative. Il s'agit de la gestion d'une flotte de
@@ -217,14 +212,14 @@ Pour ces travaux de thèse, nous avons donc retenu~:
     \subsection{Présentation du cas d'étude~:\\la gestion d'une flotte de véhicules électriques}
 
     Les raisons motivant le choix de ce cas d'étude pour éprouver le framework
-    proposé dans ces travaux de thèse ont été discutées dans le
+    proposé dans ces travaux de thèse ont été discutées dans la
     section~\ref{motivations_cas_metier} (voir
     page~\pageref{motivations_cas_metier}).  Dans cette partie, nous nous
     contentons donc simplement de le présenter.
 
     Il s'agit du processus d'affectation de véhicules à des tournées d'agents
     (par exemple, une tournée d'un agent EDF qui relève les compteurs chez les
-    client, ou encore qui fait des réparations le réseau électrique).  La
+    clients, ou encore qui fait des réparations sur le réseau électrique).  La
     mobilité électrique implique un changement de paradigme pour le gestionnaire
     de flotte de l'entreprise. D'une part, le véhicule électrique est limité par
     son autonomie et ne peut donc pas effectuer n'importe quelle tournée.
@@ -235,11 +230,11 @@ Pour ces travaux de thèse, nous avons donc retenu~:
     Dès lors, le processus d'affectation de véhicules aux tournées des agents,
     la gestion de la flotte de véhicules dans son ensemble et donc le SI qui
     l'implante sont fortement impactés par l'arrivée massive des véhicules
-    électriques. Nous proposons de modéliser de cas d'étude selon en mettant en
+    électriques. Nous proposons de modéliser de cas d'étude en mettant en
     œuvre le \emph{framework ExecuteEA}. Nous adoptons donc l'approche
     conceptuelle préconisée par le framework (voir
     figure~\ref{fig:approche_conceptuelle},
-    \pageref{fig:approche_conceptuelle}). Nous commençons donc par modéliser des
+    \pageref{fig:approche_conceptuelle}). Nous commençons donc par modéliser les
     différentes vues d'architecture —~métier, fonctionnelle, applicative et
     intégration~— en respectant le cadre structurant du \emph{framework
     ExecuteEA} (illustré par la figure~\ref{fig:cadre_structurant},
@@ -247,15 +242,14 @@ Pour ces travaux de thèse, nous avons donc retenu~:
     d'analyser la structure et le comportement de l'architecture ainsi obtenue.
 
     \begin{figure}[!htbp]
-     \begin{center}
-      \includegraphics[trim=0cm 3cm 0cm 0cm, width=0.8\textwidth]{figures/5_implementation/processus_metier.pdf}
-     \end{center}
+      \centering
+      \includegraphics[trim=0cm 3cm 0cm 0cm, clip, width=0.8\textwidth]{figures/5_implementation/processus_metier.pdf}
      \caption{Processus d'affectation de véhicules électriques à des tournées}
      \label{fig:processus_metier}
     \end{figure}
 
     Pour ce cas d'étude, l'analyse de la structure exploite les liens de la vue
-    intégration et la conformité du modèles d'architecture au métamodèle EA2M.
+    intégration et la conformité du modèle d'architecture au métamodèle EAT-ME.
     L'analyse du comportement consiste à simuler l'ensemble de l'architecture en
     pilotant la simulation par le processus métier. Cette simulation a pour
     objectif de valider et critiquer  les choix de modélisation et d'anticiper
@@ -273,8 +267,8 @@ Pour ces travaux de thèse, nous avons donc retenu~:
 
     La première étape consiste donc à créer les modèles des vues métier, fonctionnelle
     et applicative en recourant à des langages de modélisation exécutables. Selon les
-    propositions de ces travaux de thèse, l'usage de ces langages automatisent
-    la manipulation des modèles et facilitent leur analyse. La
+    propositions de ces travaux de thèse, l'usage de ces langages automatise
+    la manipulation des modèles et facilite leur analyse. La
     figure~\ref{fig:architecture_generale_usecase} présente l'architecture \emph{in globo}
     du cas métier ainsi modélisé, selon le cadre structurant \emph{ExecuteEA}.
 
@@ -291,9 +285,8 @@ Pour ces travaux de thèse, nous avons donc retenu~:
 
 
 \begin{figure}[!htbp]
- \begin{center}
+  \centering
   \includegraphics[angle=90, width=1\textwidth]{figures/5_implementation/architecture_generale_usecase.pdf}
- \end{center}
  \caption{Architecture globale du cas d'étude \\mettant en œuvre le \protect\emph{framework ExecuteEA}}
  \label{fig:architecture_generale_usecase}
 \end{figure}
@@ -304,7 +297,7 @@ Pour ces travaux de thèse, nous avons donc retenu~:
 Nous utilisons fUML comme langage
 exécutable pour modéliser cette vue. Le processus métier consiste à collecter
 les données relatives aux véhicules (électriques et thermiques) ainsi qu'aux
-tournées à effectuer, de calculer l'énergie nécessaire à chaque tournée et
+tournées à effectuer, à calculer l'énergie nécessaire à chaque tournée et
 l'affectation véhicule/tournée avant de faire valider cette dernière par le
 manager de flotte. Nous modélisons ce processus métier sous forme de diagramme
 d'activité fUML en utilisant l'atelier de modélisation Papyrus. Selon notre cadre
@@ -313,9 +306,8 @@ métier. La figure~\ref{fig:processus_fuml} présente le diagramme d'activité f
 l'aide de Papyrus.
 
 \begin{figure}[!htbp]
- \begin{center}
+  \centering
   \includegraphics[width=1\textwidth]{figures/5_implementation/processus_fuml.png}
- \end{center}
  \caption{Aspect processus de la vue métier modélisé sous la forme d'un diagramme d'activité fUML avec Papyrus}
  \label{fig:processus_fuml}
 \end{figure}
@@ -327,15 +319,14 @@ concepts de Véhicule, Tournée et Affectation. La figure~\ref{fig:information_m
 présente le diagramme de classes fUML modélisé dans Papyrus.
 
 \begin{figure}[!htbp]
- \begin{center}
+  \centering
   \includegraphics[width=1\textwidth]{figures/5_implementation/information_metier.png}
- \end{center}
  \caption{Aspect information de la vue métier modélisé sous la forme d'un diagramme de classes fUML avec Papyrus}
  \label{fig:information_metier}
 \end{figure}
 
 Gérer une flotte de véhicules peut
-avoir plusieurs objectifs métier. Dans notre cas, obtenir le meilleur retour sur
+avoir plusieurs objectifs métier. Dans notre cas, il s'agit d'obtenir le meilleur retour sur
 investissement suite à l'intégration de véhicules électriques dans la flotte de
 véhicules. Nous modélisons l'objectif métier sous la forme d'une classe UML
 représentant l'aspect objectif de la vue métier comme l'illustre la 
@@ -388,21 +379,21 @@ aux tournées
 sous la forme de contraintes \gls{ocl}~: pour affecter un véhicule à une tournée, il
 faut que l'énergie nécessaire à celle-ci soit inférieure à l'autonomie de la
 batterie. Dans notre cas d'application, nous considérons qu'il n'est pas
-possible de recharge le véhicule pendant la tournée de l'agent.
+possible de recharger le véhicule pendant la tournée de l'agent.
 
 Nous modélisons la fonction d'affectation sous la
 forme de deux contraintes et d'une requête en utilisant OCL. La première contrainte OCL signifie
-que si un véhicule électrique est affecté à une tournée alors l'énergie dont il
+que si un véhicule électrique est affecté à une tournée, alors l'énergie dont il
 dispose permet d'assurer la totalité de la tournée. La deuxième contrainte
 signifie que si aucun véhicule électrique n'est capable d'assurer une tournée
 donnée alors c'est un véhicule thermique qui lui est associé. Enfin, la requête
 calcule le nombre total de kilomètres électriques correspondant à la distance
-parcourue par les véhicules électrique après l'affectation. Cette requête permet
+parcourue par les véhicules électriques après l'affectation. Cette requête permet
 d'évaluer l'utilisation  des véhicules électriques dans l'optique d'atteindre
 l'objectif fonctionnel.
 
 Il est possible de modéliser les autres algorithmes de
-traitement (calcul des tournées à partir de bon de travaux, calcul de l'énergie
+traitement (calcul des tournées à partir de bons de travaux, calcul de l'énergie
 nécessaire à une tournée, etc.) à l'aide de diagrammes d'activité exécutables.
 
 
@@ -417,12 +408,11 @@ patrimoine applicatif de l'entreprise dispose déjà d'applications pour la
 gestion de tournées (calcul de tournées optimisé à partir de bons de travaux) et
 la gestion de véhicules (administration, maintenance, etc.). Pour la fonction
 d'allocation, nous faisons le choix d'utiliser MiniZinc pour modéliser les
-contraintes au niveau applicatif \ref{fig:contraintesMiniZinc}.
+contraintes au niveau applicatif (voir figure~\ref{fig:contraintesMiniZinc}).
 
 \begin{figure}[!htbp]
- \begin{center}
+  \centering
   \includegraphics[width=1\textwidth]{figures/5_implementation/module_minizinc.png}
- \end{center}
  \caption{Contraintes du module MiniZinc}
  \label{fig:contraintesMiniZinc}
 \end{figure} 
@@ -447,7 +437,7 @@ Nous modélisons l'objectif applicatif sous la forme d'une classe UML
 représentant l'aspect objectif de la vue applicative comme l'illustre la
 figure~\ref{fig:architecture_generale_usecase}. Un véhicule électrique devient
 rentable par rapport à un véhicule thermique à partir d'un certain nombre de
-kilomètre parcouru. C'est pourquoi l'objectif fonctionnel qui est d'optimiser
+kilomètres parcourus. C'est pourquoi l'objectif fonctionnel qui est d'optimiser
 l'usage de la flotte électrique se traduit par la maximisation du nombre de
 kilomètres électriques, c'est à dire affecter aussi souvent que possible un
 véhicule électrique aux tournées. Ainsi, le module MiniZinc prend en compte cet
@@ -465,23 +455,21 @@ inter-vues de l'architecture globale tout en collaborant avec les architectes
 métier, fonctionnel et applicatif.
 
 L'intégration de l'architecture passe par la modélisation de la vue intégration,
-c'est-à-dire par la spécification des liens de cohérence  intra-vue et et inter-
-vues conformément au métamodèle EA2M. Nous avons donc modélisé ces liens pour
+c'est-à-dire par la spécification des liens de cohérence  intra-vue et et inter-vues conformément au métamodèle EAT-ME. Nous avons donc modélisé ces liens pour
 l'ensemble des vues métier, fonctionnelle et applicative. Néanmoins, la figure
-\ref{fig:integration_gestion_flotte} ne présente qu'une partie modèles
+\ref{fig:integration_gestion_flotte} ne présente qu'une partie du modèle
 d'intégration pour des raisons de lisibilité. Nous y modélisons à titre
 d'illustration les liens de cohérence intra-vue entre la fonction d'affection,
 ses inputs et output en termes de types fonctionnels, ainsi que son objectif
 fonctionnel. Nous faisons de même pour le module d'optimisation MiniZinc, ses
 inputs et outputs ainsi que l'objectif applicatif qu'il remplit. Le même
 principe d'intégration intra-vue, c'est à dire entre les aspects d'une même vue,
-est applicable à tous les autres éléments de la vue métier, fonctionnelle et
+est applicable à tous les autres éléments des vues métier, fonctionnelle et
 applicative.
 
 \begin{figure}[!htbp]
- \begin{center}
-  \includegraphics[trim= 0cm 0cm 0cm 0cm, width=1\textwidth]{figures/5_implementation/integration_affectation.pdf}
- \end{center}
+  \centering
+  \includegraphics[trim= 0cm 0cm 0cm 0cm, clip, width=1\textwidth]{figures/5_implementation/integration_affectation.pdf}
  \caption{Une vue partielle des modèles d'intégration \\de la vue fonctionnelle et de la vue applicative}
  \label{fig:integration_gestion_flotte}
 \end{figure}
@@ -491,18 +479,18 @@ exemple, le lien \q{consomme} exprime qu'un type de données est compatible avec
 la fonction qui l'utilise et qu'un format est compatible avec le module
 applicatif qui l'utilise en entrée. Pour garantir une bonne orchestration des
 processus, il faut que le \q{produit} d'une tâche (respectivement une fonction,
-un module applicatif) soit compatible avec le ce que produit la tâche suivante
-(respectivement une fonction, un module applicatif).
+un module applicatif) soit compatible avec ce que produit la tâche suivante
+(respectivement la fonction, le module applicatif).
 
-L'intégration passe aussi par l'identification des éventuelles transformation de
-modèles. Rappelons ici que les transformations ont pour objectif d'améliorer
+L'intégration passe aussi par l'identification des éventuelles transformations de
+modèle. Rappelons ici que les transformations ont pour objectif d'améliorer
 l'alignement métier/IT en automatisant le passage d'une vue à une autre. Pour le
 cas métier de la gestion de flotte de véhicules, nous utilisons une
 transformation de modèle pour générer les contraintes pour le module de calcul
 d'affectation MiniZinc de la vue applicative à partir des contraintes OCL
 exprimées dans la fonction affectation de la vue fonctionnelle. La
 transformation est écrite dans le langage de transformation Acceleo. En plus de
-transformer les contraintes décrite dans l'aspect métier, cette transformation
+transformer les contraintes décrites dans l'aspect métier, cette transformation
 de modèle permet aussi de transformer les instances des types fonctionnels en
 instances dans le format \q{.dzn} utilisé par le module MiniZinc comme
 l'illustre la figure \ref{fig:integration_gestion_flotte}. La génération de code
@@ -511,9 +499,8 @@ nous avons précédemment modélisée dans Papyrus comme l'illustre la
 figure~\ref{fig:acceleo_papyrus}.
 
 \begin{figure}[!htbp]
- \begin{center}
+  \centering
   \includegraphics[width=0.7\textwidth]{figures/5_implementation/acceleo_papyrus.png}
- \end{center}
  \caption{Génération du code pour le module MiniZinc\\à partir de la vue fonctionnelle dans Papyrus}
  \label{fig:acceleo_papyrus}
 \end{figure}
@@ -523,18 +510,18 @@ figure~\ref{fig:acceleo_papyrus}.
 
 Grâce aux langages exécutables, l'analyse du comportement des modèles
 d'architecture se fait directement dans les langages de modélisation utilisés
-pour les vues. Avec le \emph{framework} ExecuteEA, nous proposons de simuler de
+pour les vues. Avec le \emph{framework} ExecuteEA, nous proposons de simuler
 l'ensemble de l'architecture en la pilotant par l'exécution du processus métier.
 La simulation du processus métier se traduit par l'exécution du diagramme
 d'activité fUML à l'aide du moteur d'exécution Moka intégré à Papyrus. Un des
 avantages de l'outil Papyrus est de permettre la modélisation \emph{et} la
 simulation de l'architecture dans un même environnement.
 
-Notre approche préconise de modéliser les détails des taches dans les vues
-inférieure afin de respecter le niveau d'abstraction requis par chaque point de
+Notre approche préconise de modéliser les détails des tâches dans les vues
+inférieures afin de respecter le niveau d'abstraction requis par chaque point de
 vue et ainsi de ne pas altérer la compréhension des parties prenantes de la vue
-qui leur destinée. Par exemple, l'analyse métier n'aura ainsi pas à discuter du
-détails des applications implémentant les tâches métier avec l'architecte
+qui leur est destinée. Par exemple, l'analyste métier n'aura ainsi pas à discuter du
+détail des applications implémentant les tâches métier avec l'architecte
 applicatif.
 
 Comme expliqué dans la section~\ref{sec:opaque_action_papyrus}, Papyrus offre la
@@ -553,9 +540,8 @@ certaines activités et de paramétrer le pas de temps pour contrôler le
 déroulement du processus.
 
 \begin{figure}[!htbp]
- \begin{center}
+  \centering
   \includegraphics[angle=90, width=1\textwidth]{figures/5_implementation/simu_capture_ecran.pdf}
- \end{center}
  \caption{Simulation de l'architecture sous Papyrus}
  \label{fig:simu_capture_ecran}
 \end{figure}
@@ -563,7 +549,7 @@ déroulement du processus.
 La simulation retourne comme résultat les affectations des véhicules aux
 tournées. Ce résultat est affiché dans la console fUML comme l'illustre la
 figure \ref{fig:resultat_simu}. La simulation a pour objectif de voir si
-l'utilisation des véhicules électrique est rentable en comparant la distance
+l'utilisation des véhicules électriques est rentable en comparant la distance
 parcourue par le véhicule électrique et la distance minimale permettant de le
 rentabiliser. Dans ce cas, il est par exemple envisageable de reconfigurer les
 tournées de manière à ce que plus de véhicules électriques soient affectés. En
@@ -573,9 +559,8 @@ analyses statistiques peuvent être conduites mais elles ne rentrent pas dans le
 périmètre de nos travaux.
 
 \begin{figure}[!htbp]
- \begin{center}
+  \centering
   \includegraphics[width=0.6\textwidth]{figures/5_implementation/resultat_simu.png}
- \end{center}
  \caption{Résultat retourné par la simulation du cas d'étude dans Papyrus}
  \label{fig:resultat_simu}
 \end{figure} 
@@ -591,7 +576,7 @@ de rentabiliser l'investissement dans une flotte de véhicules électriques à
 cause de la distance des tournées. En pareil cas, les architectes —~métier,
 fonctionnel et applicatif~— en étroite collaboration avec l'architecte
 d'entreprise peuvent envisager de faire évoluer l'application qui optimise les tournées quotidiennes 
-crées à partir des bons de travaux pour en écourter la distance.
+créées à partir des bons de travaux pour en écourter la distance.
 
 
 
@@ -686,7 +671,7 @@ crées à partir des bons de travaux pour en écourter la distance.
     et fournit un outil d'analyse de la structure et du comportement
     d'une architecture d'entreprise.
 
-    Bien que nous n'avons modélisé et simulé qu'un seul processus métier, la mise
+    Bien que nous n'ayons modélisé et simulé qu'un seul processus métier, la mise
     en œuvre du \emph{framework} ExecuteEA a permis de valider les apports de l'IDM
     en tant que cadre technologique et méthodologique aux différentes activités d'EA.
     La première limite de cet implémentation est donc le passage à l'échelle. C'est en effet dans le
@@ -694,7 +679,7 @@ crées à partir des bons de travaux pour en écourter la distance.
     savoir-faire de l'architecte d'entreprise uniquement
     sans assistance informatique particulière, que notre  proche prouve sa valeur.
 
-    Une premier passage à l'échelle serait donc de d'élargir le cas métier en incluant par exemple
+    Une premier passage à l'échelle serait donc d'élargir le cas métier en incluant par exemple
     le processus de calcul de tournées journalières à partir de bons de travaux, le processus
     de recharge de la batterie et ses impacts sur le réseau électrique, le processus d'entretien des
     voitures, le processus de réservation de voitures par d'autres agents non impliqués dans les tournées,
@@ -713,18 +698,18 @@ crées à partir des bons de travaux pour en écourter la distance.
     a permis de mettre en lumière les avantages que présente la méta-modélisation pour l'analyse structurelle
     des modèles d'architecture, notamment grâce à la relation de conformité qui lie un modèle à son métamodèle.
     La méta-modélisation avec Ecore est d'autant plus pertinente avec le recours aux contraintes OCLinEcore
-    permettant de préciser d'avantage le métamodèle EA2M. Ces mêmes contraintes peuvent aussi servir à
-    exprimer des requêtes sur le modèles. À titre d'exemple, nous sommes en train de développer des requêtes
+    permettant de préciser d'avantage le métamodèle EAT-ME. Ces mêmes contraintes peuvent aussi servir à
+    exprimer des requêtes sur le modèle. À titre d'exemple, nous sommes en train de développer des requêtes
     permettant de retrouver toutes les tâches (respectivement
     fonctions et modules) utilisant un certain concept (respectivement type et format). Une multitude de requêtes de ce
     type gagnent à être développées pour faciliter l'analyse structurelle de l'architecture.
 
-    Enfin, la question de l'adoption des langages de modélisation par les différents parties-prenantes (architectes
+    Enfin, la question de l'adoption des langages de modélisation par les différentes parties-prenantes (architectes
     d'entreprise, métier, fonctionnel, applicatif) est cruciale. Bien que l'utilisation de UML comme
-    langage de modélisation n'est pas évident de prime abord par des personnes à profile non technique,
-    les spécifications des use case Smart Grids recourent de plus en plus à UML au sein de la \gls{cei}.
+    langage de modélisation ne soit pas évident de prime abord par des personnes à profil non technique,
+    les spécifications des \textit{Use Cases} Smart Grids recourent de plus en plus à UML au sein de la \gls{cei}.
     Les entretiens menés avec les différents experts d'EA et du réseau électrique révèlent cependant la frilosité
-    de certaines personne à adopter UML pour décrire leurs spécifications dans leur intégralité. Néanmoins, ces
+    de certaines personnes à adopter UML pour décrire leurs spécifications dans leur intégralité. Néanmoins, ces
     personnes recourent de plus en plus à certains diagrammes comme les diagrammes d'activités pour décrire
     leurs processus. Dans ce contexte, le choix de fUML et de OCL nous semble être \q{raisonnable}.
 
