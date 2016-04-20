@@ -45,9 +45,9 @@ avons formalisé le métamodèle (EAT-ME) ainsi qu'un ensemble de langages et de
 et à l'analyse d'une architecture d'entreprise. 
 
 L'analyse de la structure vise à s'assurer de la cohérence globale d'une architecture d'entreprise. Nous avons
-proposé pour cela de rajouter aux points de vue traditionnellement utilisé en EA (tels que les points de vue métier, fonctionnel et
-applicatif) un point de vue Intégration. Ce point de vue permet de modéliser les liens de cohérence inter-vues (entre les autres vues)
-et les liens de cohérence intra-vue (entres les entités d'une même vue).
+proposé pour cela de rajouter aux points de vue traditionnellement utilisés en EA (tels que les points de vue métier, fonctionnel et
+applicatif) un point de vue intégration. Ce point de vue permet de modéliser les liens de cohérence inter-vues (entre les autres vues)
+et les liens de cohérence intra-vue (entre les entités d'une même vue).
 
 De plus, le développement d'un prototype et son application au cas métier
 de la gestion d'une flotte de véhicules électriques concrétise l'ensemble des
@@ -89,7 +89,7 @@ d'une architecture d'entreprise actuelle à une architecture d'entreprise cible.
 % \textit{Model Typing} peut être utilisé pour l'intégration horizontale (i.e.
 % cohérence et orchestration des processus d'une même vue).
 
-Une démarche IDM implique une multitude de modèles produits et manipulés par différentes transformations de modèles. Le maintien de la cohérence entre modèles et transformation de modèles fait l'objet d'une recherche active dans une discipline comme l'IDM. \cite{steel2007model} propose de typer les modèles en entrée des transformations en utilisant le Model Typing. Celui-ci permet de contrôler les modèles manipulés par les transformations. Autrement dit, une transformation ne prend en entrée qu'un certain type de modèle. Ainsi, tous les modèles conformes à ce type peuvent être manipulés par la transformation en question. Ceci a, de plus, l'avantage d'augmenter la réutilisabilité des transformations écrites en mettant en évidence les caractéristiques communes des modèles. Cette technique de typage est en outre outillée et intégrée dans le langage de méta-modélisation Kermeta\footnote{www.kermeta.org} qui est basé sur EMOF\footnote{Ecore Meta Object Facility} dans un environnement Eclipse. Il nous paraît donc intéressant de mettre en œuvre le Model Typing pour la vue intégration.
+Une démarche IDM implique une multitude de modèles produits et manipulés par différentes transformations de modèles. Le maintien de la cohérence entre modèles et transformation de modèle fait l'objet d'une recherche active dans une discipline comme l'IDM. \cite{steel2007model} propose de typer les modèles en entrée des transformations en utilisant le Model Typing. Celui-ci permet de contrôler les modèles manipulés par les transformations. Autrement dit, une transformation ne prend en entrée qu'un certain type de modèle. Ainsi, tous les modèles conformes à ce type peuvent être manipulés par la transformation en question. Ceci a, de plus, l'avantage d'augmenter la réutilisabilité des transformations écrites en mettant en évidence les caractéristiques communes des modèles. Cette technique de typage est en outre outillée et intégrée dans le langage de méta-modélisation Kermeta\footnote{www.kermeta.org} qui est basé sur EMOF\footnote{Ecore Meta Object Facility} dans un environnement Eclipse. Il nous paraît donc intéressant de mettre en œuvre le Model Typing pour la vue intégration.
 
 \subsection{Vue technique}
 
@@ -115,7 +115,7 @@ légitimé pour des vues non techniques telles que la vue métier (de nombreux d
 cependant pas largement adopté par les experts métier et les architectes d'entreprise qui se tournent
 le plus souvent vers de la documentation. Nous réfléchissons, pour cette raison, à d'autres
 langages de modélisation exécutables plus spécifiques à ces profiles d'utilisateurs et à leur cœur de métier
-en envisageant la création de DSML pour la vue métier et pour la vue intégration. Les DSML sont de plus promus par l'IDM.
+en envisageant la création de \gls{dsml} pour la vue métier et pour la vue intégration. Les DSML sont de plus promus par l'IDM.
 
 Enfin, nous continuons à nous consacrer à (1) l'intégration du \emph{framework} ExecuteEA
 à la plate-forme de co-simulation des domaines SI, électrotechnique et télécommunication
