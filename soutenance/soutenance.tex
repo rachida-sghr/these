@@ -1,0 +1,553 @@
+\documentclass[9pt]{beamer}
+
+
+\usepackage[latin1]{inputenc}
+\usepackage[francais]{babel}
+
+%justifier le texte
+\usepackage{ragged2e}
+\usepackage{etoolbox}
+\usepackage{lipsum}
+
+\usepackage{chronology}
+
+
+%\usetheme{Warsaw}
+\usetheme{bjeldbak}
+
+
+
+%personaliser le pied de page en ajoutant le titre de la presentation
+\setbeamertemplate{footline}{
+	\hspace*{.5cm}\scriptsize{\insertshorttitle
+\hspace*{50pt} \hfill\insertframenumber/\inserttotalframenumber\hspace*{.5cm}}\\
+
+	\begin{beamercolorbox}[colsep=1.25pt,center]{lower separation line foot}
+	\end{beamercolorbox}
+} 
+
+\graphicspath{images/}
+
+\title{Modélisation et simulation d'une architecture d'entreprise}
+\subtitle{Application aux Smart Grids}
+\author{Rachida Seghiri, EDF R\&D, CentraleSupélec \\
+\vspace{5mm} 
+Directeur de thèse : Frédéric Boulanger, CentraleSupélec \\ Co-encadrante : Claire Lecocq, Télécom SudParis \\ Co-encadrant : Vincent Godefroy, EDF R\&D
+}
+%\institute{INFORSID 2015}
+\date{}
+
+
+\hypersetup{pdfpagemode=FullScreen}
+
+\titlegraphic{\includegraphics[scale=0.2]{images/logos.png}}
+
+%enlever FIGURE devant le nom de la figure
+\usepackage{caption}
+\captionsetup{figurename=}
+
+\begin{document}
+
+	{%
+  		%enlever l entete de la page de titre
+    		\setbeamertemplate{headline}{}
+    		
+		%elever le pied de page 
+		\setbeamertemplate{footline}{
+			\begin{beamercolorbox}[colsep=1.25pt]{lower separation line foot}
+			\end{beamercolorbox}
+		} 
+	
+		\begin{frame}
+ 			 \titlepage
+		\end{frame}
+ 	}
+ 	
+	\addtocounter{framenumber}{-1}
+
+
+
+\section{Introduction}
+
+	\begin{frame}
+	
+		\frametitle{Introduction}
+			
+		\begin{block}{Qu'est-ce qu'un Smart Grid?}
+		\justifying
+\itshape Un Smart Gird est un réseau électrique intelligent qui permet d'\textbf{optimiser} la production, la distribution et la consommation d'électricité grâce à l'\textbf{introduction des technologies de l'information et de la communication} sur le réseau électrique. \\
+\upshape www.smartgrids-cre.fr 
+		\end{block}
+		
+		\begin{center}
+		\includegraphics[scale=0.35]{images/smartgrid.png}
+		\end{center}
+	\end{frame}
+		
+\begin{frame}
+	\frametitle{Problématique inudstrielle}
+	%\vspace{5mm} 
+	\begin{block}{}
+	Arrivée massives des véhicules électriques
+	
+	\begin{center}
+	\includegraphics[trim = 0cm 0cm 0cm 0.7cm, scale=0.38]{images/ve.pdf}
+	\end{center}
+	\end{block}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Problématique inudstrielle}
+	%\vspace{5mm} 
+	\begin{block}{}
+	Arrivée massives des énergies intermittentes
+	
+	\begin{center}
+	\includegraphics[trim = 0cm 0cm 0cm 0.7cm, scale=0.36]{images/enr.pdf}
+	\end{center}
+	\end{block}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Problématique inudstrielle}
+	%\vspace{5mm} 
+	\begin{block}{}
+	Le réseau électrique en 1990
+	
+	\begin{center}
+	\includegraphics[trim = 0cm 0cm 0cm 0.7cm, scale=0.4]{images/sg1.pdf}
+	\end{center}
+	\end{block}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Problématique inudstrielle}
+	%\vspace{5mm} 
+	\begin{block}{}
+	Le réseau électrique aujourd'hui
+	
+	\begin{center}
+	\includegraphics[trim = 0cm 0cm 0cm 0.7cm, scale=0.4]{images/sg2.pdf}
+	\end{center}
+	\end{block}
+\end{frame}
+
+
+ \begin{frame}
+	\frametitle{Problématique inudstrielle}
+	%\vspace{5mm} 
+	\begin{block}{}
+	Le réseau électrique aujourd'hui
+	
+	\begin{center}
+	\includegraphics[trim = 0cm 0cm 0cm 0.7cm, scale=0.4]{images/sg4.pdf}
+	\end{center}
+	\end{block}
+\end{frame}
+
+ \begin{frame}
+	\frametitle{Problématique inudstrielle}
+	%\vspace{5mm} 
+	\begin{block}{}
+	Le réseau électrique aujourd'hui
+	
+	\begin{center}
+	\includegraphics[trim = 0cm 0cm 0cm 0.7cm, scale=0.4]{images/sg5.pdf}
+	\end{center}
+	\end{block}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Problématique inudstrielle}
+	%\vspace{5mm} 
+	\begin{block}{}
+	Le réseau électrique en devenir
+	
+	\begin{center}
+	\includegraphics[trim = 0cm 0cm 0cm 0.7cm, scale=0.4]{images/sg6bis.pdf}
+	\end{center}
+	\end{block}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Problématique inudstrielle}
+	%\vspace{5mm} 
+	\begin{block}{}
+	Le réseau électrique en devenir
+	
+	\begin{center}
+	\includegraphics[trim = 0cm 0cm 0cm 0.7cm, scale=0.4]{images/sg6.pdf}
+	\end{center}
+	\end{block}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Problématique inudstrielle}
+	%\vspace{5mm} 
+	\begin{block}{}
+	Le réseau électrique en devenir
+	
+	\begin{center}
+	\includegraphics[trim = 0cm 0cm 0cm 0.7cm, scale=0.4]{images/sg7.pdf}
+	\end{center}
+	\end{block}
+\end{frame}
+
+
+
+\begin{frame}
+	\frametitle{Problématique inudstrielle}
+	%\vspace{5mm} 
+
+	\begin{block}{}
+	Impacts des Smart Grids
+	
+	\begin{center}
+	\includegraphics[trim = 0cm 8cm 0cm 0cm, scale=0.45]{images/impacts.pdf}
+	\end{center}
+
+
+	$\Rightarrow$ \textbf{Besoin de valider les scénarios élaborés avant leurs déploiements}
+	\end{block}
+
+\end{frame}
+
+
+
+% \begin{frame}
+% 	\frametitle{Problématique industrielle}
+	
+% 	\begin{block}{}
+% 		\begin{columns}[onlytextwidth]
+%     			\begin{column}{0.8\textwidth}
+%       			Arrivée massive des énergies intermittentes et  des véhicules électriques
+%       			\\$\Rightarrow$ Équilibre consommation-production fragilisé
+% 			\end{column}
+			
+%     			\begin{column}{0.2\textwidth}
+%       			\centering
+% 				\includegraphics[scale=0.2]{images/desequilibre.png}
+%     			\end{column}
+%     		\end{columns}	
+% 	\end{block}
+	
+% 	\begin{block}{}
+% 		\begin{columns}[onlytextwidth]
+%     			\begin{column}{0.8\textwidth}
+%       			Smart Grids : capteurs et points de contrôle commandés 
+%       			\\à distance 
+%       			\\$\Rightarrow$ Gestion automatique et en temps réel
+% 			\end{column}
+			
+%     			\begin{column}{0.2\textwidth}
+%       			\centering
+% 				\includegraphics[scale=0.18]{images/equilibre.png}
+%     			\end{column}
+%     		\end{columns}	
+% 	\end{block}
+	
+% 	\begin{block}{}
+% 		Profonds changements au niveau du SI
+% 		\begin{itemize}
+% 			\item Nouveaux flux d'information
+% 			\item Nouveaux acteurs (producteurs décentralisés)
+% 			\item Nouveaux équipements (compteurs intelligents)
+% 			\item Nouveaux usages (véhicules électriques, maisons connectées)
+% 		\end{itemize}
+% 		$\Rightarrow$ \textbf{Besoin de valider les scénarios élaborés avant leurs déploiements} 
+		
+% 	\end{block}
+			
+% \end{frame}
+
+\begin{frame}
+		\frametitle{Problématique de recherche}
+		\begin{block}{}
+		\begin{center}
+			\includegraphics[trim = 0cm 8cm 10cm 3cm, scale=0.5]{images/enterprise1.pdf}
+		\end{center}
+		\end{block}
+	
+\end{frame}
+
+\begin{frame}
+	
+		\frametitle{Problématique de recherche}
+		\begin{block}{}
+		\begin{center}
+			\includegraphics[trim = 0cm 8cm 10cm 3cm, scale=0.5]{images/enterprise2.pdf}
+		\end{center}
+	
+		$\Rightarrow$ \textbf{Quels modèles, méthodes et outils adopter pour simuler une architecture d'entreprise?}
+		\end{block}		
+	
+\end{frame}
+
+
+
+% \section{Objectif et Verrous}
+
+% %%%%%%%%%%%%%%%% Slide Objectif et Verrous
+% \begin{frame}
+% 		\frametitle{Objectif et Verrous}
+% 		\begin{center}
+% 			\includegraphics[scale=0.35]{images/objectifverrous.png}
+% 		\end{center}		
+	
+% \end{frame}
+
+\section{État de l'art}
+
+%%%%%%%%%%%%%%%% Architecture SI
+\begin{frame}
+	\frametitle{Architecture d'Entreprise}
+
+	\begin{block}{Définition}
+		\justifying
+		\itshape Une architecture d'entreprise est un ensemble pertinent 
+d'artefacts de conception ou de représentations descriptives pour décrire une 
+entreprise de manière à ce que cette entreprise soit créée en respectant certaines 
+exigences et à ce qu'elle soit facilement maintenue tout au long de son cycle de 
+vie.  \upshape \\(Zachman, 1997)  
+	\end{block}
+	
+	\begin{block}{Cadres d'architecture -- Approches par points de vue}
+		\begin{itemize}
+			\item Séparer les préoccupations des différents acteurs
+			\item Points de vue hiérarchisés : \itshape << IT follows Business >>
+			\item \upshape Quatre points de vue identifiés : métier, fonctionnel,applicatif, technique
+		\end{itemize}
+	\end{block}
+	
+	\begin{center}
+		\includegraphics[scale=0.23]{images/frameworks.png}
+	\end{center}		
+
+		
+\end{frame}
+
+
+%%%%%%%%%%%%%%%% Slide Modèle, métamodèle et Relation de l'IDM
+\begin{frame}
+	\frametitle{Ingénierie Dirigée par les Modèles}
+
+		\begin{block}{Modèle -- Définition}
+		\justifying
+\itshape Un modèle est une \textbf{abstraction} d'un système, construite \textbf{selon le bon point de vue}, qui permet de répondre à des questions prédéfinies sur ce système en lieu et place de celui-ci. 
+\upshape (Bézivin, Gerbé, 2001)
+		\end{block}
+		
+		\begin{block}{Relations fondamentales de l'IDM (Favre 2004)}
+			\begin{itemize}					
+				\item $\chi$ :  \itshape ConformeÀ 
+				\item $\mu$ : \itshape ReprésentationDe 
+			\end{itemize}
+		\end{block}
+		
+		\begin{center}
+			\includegraphics[scale=0.25]{images/idm.png}
+		\end{center}
+		
+		
+\end{frame}
+
+
+%%%%%%%%%%%%%%%% Slide Transformation de modèles et Model Typinge
+\begin{frame}
+	\frametitle{Ingénierie Dirigée par les Modèles}
+	
+	\begin{block}{Transformation de modèle (Mens, Van Gorp, 2006)}
+		\justifying
+			\begin{itemize}					
+				\item Des modèles << contemplatifs >> aux modèles << productifs >>
+				\item Construire des SI évolutifs, s'alignant rapidement sur le métier 
+			\end{itemize}
+	\end{block}
+	
+	\begin{center}
+			\includegraphics[scale=0.2]{images/transformation.png}
+	\end{center}
+	
+	\begin{block}{Model Typing (Steel, Jézéquel, 2007)}
+		\justifying
+			\begin{itemize}					
+				\item Contrôler les modèles manipulés par les transformations
+				\item Augmenter la réutilisabilité des transformations
+			\end{itemize}
+	\end{block}	
+\end{frame}
+
+\begin{frame}
+	\frametitle{Simulation du SI }
+
+	\begin{block}{Simulation -- Définition}
+		\justifying
+		\textit{La simulation consiste à \textbf{modéliser} un système réel et à mener des expérimentations sur le modèle obtenu dans le but de comprendre le \textbf{comportement} du système et/ou d'\textbf{évaluer} différentes stratégies concernant son fonctionnement.} (Shannon, 1975)
+
+		\begin{itemize}
+			\item Augmenter l'évolutivité des modèles en aidant à leur validation
+			\item Lever les ambiguïtés des modèles purement contemplatifs
+		\end{itemize} 
+
+	\end{block}
+	
+	
+	\begin{block}{Langages de modélisation pour la simulation}
+		$\Rightarrow$ Utilisation de langages \textbf{standardisés}, \textbf{exécutables}, \textbf{compréhensibles} par les experts (Chesbrough, Spohrer, 2006)
+		\begin{center}
+		
+		\begin{tabular}{cccc} 
+		     & métier & fonctionnel & applicatif \\ \hline 
+		BPMN & \checkmark &   &     \\ 
+		fUML & \checkmark & \checkmark &     \\ 
+		OCL &   & \checkmark &    \\
+		MiniZinc &   &  & \checkmark   
+		\end{tabular}
+		\end{center}	
+	\end{block}
+	
+\end{frame}
+
+
+
+\section{Approche proposée}
+
+\begin{frame}
+
+	\frametitle{Approche proposée}
+	\centering
+    \includegraphics[scale=0.35]{images/approche1.png}
+    	
+\end{frame}
+
+\begin{frame}
+
+	\frametitle{Approche proposée}
+	\centering
+    \includegraphics[scale=0.35]{images/demarche.png}
+    	
+\end{frame}
+
+\begin{frame}
+
+	\frametitle{Approche proposée -- Objectif -- État de l'art}
+	\centering
+    \includegraphics[scale=0.4]{images/approcheobjectif.png}
+    	
+\end{frame}
+
+\begin{frame}
+
+	\frametitle{Métamodèle de l'approche}
+	\centering
+    \includegraphics[scale=0.35]{images/ApprocheMetamodel.png}
+
+\end{frame}
+
+
+\section{Cas métier et mise en \oe{}uvre de l'approche}
+
+\begin{frame}
+ 	\frametitle{Cas métier -- SI de gestion d'une flotte de Véhicules électriques (VE)}
+ 	
+ 	\begin{itemize}
+ 		\item Véhicules chargés au départ
+ 		\item Pas de possibilité de recharge pendant la tournée
+ 		\item \textbf{Objectif métier :} optimiser l'utilisation des véhicules électriques 		 
+ 	\end{itemize}
+ 	
+ 	\begin{center}
+ 		 \includegraphics[scale=0.3]{images/processusmetier.png}
+ 	\end{center}
+
+ 		
+\end{frame}
+
+    
+\begin{frame}
+ 	\frametitle{Mise en \oe{}uvre de l'approche}
+ 	
+    \includegraphics[scale=0.4]{images/ArchitectureCasMetier.png}
+    	
+\end{frame}
+
+\begin{frame}
+ 	\frametitle{Mise en \oe{}uvre de l'approche}
+	
+	\begin{center}
+		 \includegraphics[scale=0.36]{images/fonctionapplication.png}
+	\end{center}	 	
+    	
+\end{frame}
+
+\begin{frame}
+ 	\frametitle{Mise en \oe{}uvre de l'approche}
+ 	
+	\begin{itemize}
+		\item \textbf{Vue Intégration} 
+		\\Garantir la cohérence entres vues et entre aspects d'une même vue
+	\end{itemize}	
+	
+	\begin{block}{}
+		\begin{columns}[onlytextwidth]
+    			\begin{column}{0.5\textwidth}
+    				\centering
+				\includegraphics[scale=0.25]{images/IntegrationModel.png}
+			\end{column}
+			
+    			\begin{column}{0.5\textwidth}
+      			\centering
+				\includegraphics[scale=0.15]{images/modeltyping.png}
+    			\end{column}
+    		\end{columns}	
+	\end{block}	
+	
+    	
+\end{frame}
+
+
+\section{Conclusion et Perspectives}
+\begin{frame}
+	\begin{block}{Conclusion}
+		\begin{itemize}
+			\item Contribution : Modélisation par points de vue du SI dans un cadre de \textbf{cohérence} par l'ajout d'un point de vue \textbf{Intégration} et le recours systématique aux langages \textbf{exécutables} pour la \textbf{simulation}
+			\item Validation : application Smart Grids à travers la gestion d'une flotte de véhicules électriques
+		\end{itemize} 
+	\end{block}
+	
+		\begin{block}{Perspectives}
+		\begin{itemize}
+			\item Mise en \oe{}uvre du Model Typing pour l'implémentation de la vue Intégration
+			\item Co-simulation des trois points de vue en pilotant la simulation du SI par le processus métier (implémentation avec Papyrus).
+		\end{itemize} 
+	\end{block}
+\end{frame}
+
+\section*{References}
+
+	\begin{frame}
+	
+	\frametitle{Références}
+	\begin{itemize}
+		
+\item Bézivin J., Gerbé O. (2001). Towards a precise definition of the omg/mda framework. In
+Automated software engineering, 2001.(ase 2001). proceedings. 16th annual international conference on, p. 273-280.\\
+
+\item Chesbrough H., Spohrer J. (2006). A research manifesto for services science. Communications of the ACM, vol. 49, no 7, p. 35-40.\\
+
+\item Favre J.-M. (2004). Towards a basic theory to model model driven engineering. In 3rd workshop in software model engineering, wisme, p. 262-271. \\
+
+\item Mens T., Van Gorp P. (2006). A taxonomy of model transformation. Electronic Notes in Theoretical Computer Science, vol. 152, p. 125-142. \\
+
+\item Shannon R. E. (1975). Systems simulation. \\
+
+\item Steel J., Jézéquel J.-M. (2007). On model typing. Software and Systems Modeling, vol. 6, no 4, p. 401-413. \\
+
+\item Reix R., Fallery B., Kalika M., Rowe F. (1995). Systèmes d'information et management des organisations. Vuibert.
+
+	\end{itemize}
+	
+\end{frame}
+
+
+\end{document}
