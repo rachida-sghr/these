@@ -1,0 +1,62 @@
+\begin{tikzpicture}[scale=0.9]
+    \path[
+        mindmap,
+        every node/.style={concept, color=black},
+        level 1/.append style={sibling angle=360/5, distance=1cm},
+        grow cyclic]
+    node {L'analyse en Architecture d'Entreprise}
+    child {
+        node {Sujet de l'analyse}
+        child {
+            node {Structure}
+        }
+        child {
+            node {Dynamique}
+        }
+        child {
+            node {Statistiques}
+        }
+    }
+    child {
+        node {Référence temporelle}
+        child {
+            node {Ex post}
+        }
+        child {
+            node {Ex ante}
+        }
+    }
+    child {
+        node {Techniques}
+        child {
+            node {Basée sur les experts}
+        }
+        child {
+            node {À base de règles}
+        }
+        child {
+            node {À base d'indicateurs}
+        }
+    }
+    child {
+        node {Préoc\-cupations}
+        child {
+            node {Fonction\-nelles}
+        }
+        child {
+            node {Non Fonctionnelles}
+        }
+    }
+    child {
+        node {Auto\-référentialité}
+        child {
+            node {Aucune}
+        }
+        child {
+            node {un niveau}
+        }
+        child {
+            node {plusieurs niveaux}
+        }
+    };
+\end{tikzpicture}
