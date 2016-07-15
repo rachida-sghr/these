@@ -1,15 +1,25 @@
 \documentclass[a4paper,11pt,twoside]{book}
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
-\usepackage[french]{babel}
-\usepackage[left=3cm,right=3cm,headheight=15pt,twoside]{geometry}
+\usepackage[main=french,english]{babel}
+\usepackage[left=3cm,right=3cm,headheight=25pt,twoside]{geometry}
 
 % custom headers/footers
 \usepackage{fancyhdr}
 \pagestyle{fancy}
 \fancyhead[ro,re,c]{}
-\fancyhead[le]{\begin{minipage}[b]{\textwidth}\raggedleft\small\bfseries\slshape\nouppercase\leftmark\\\end{minipage}}
-\fancyhead[lo]{\begin{minipage}[b]{\textwidth}\raggedright\small\bfseries\slshape\nouppercase\rightmark\\\end{minipage}}
+\fancyhead[le]{%
+  \begin{minipage}[b]{\textwidth}
+    \raggedleft\small\bfseries\slshape
+    \nouppercase\leftmark\leavevmode\\
+  \end{minipage}
+}
+\fancyhead[lo]{%
+  \begin{minipage}[b]{\textwidth}
+    \raggedright\small\bfseries\slshape
+    \nouppercase\rightmark\leavevmode\\
+  \end{minipage}
+}
 \fancyfoot[r,c]{}
 \fancyfoot[le]{\raggedright\small\thepage}
 \fancyfoot[lo]{\raggedleft\small\thepage}
@@ -106,16 +116,19 @@
     % ===========================================
     % Content
     % ===========================================
+    \frontmatter
     \include{0_couverture}
-    \cleardoublepage
+%    \cleardoublepage
     % \section*{Remerciements}
     %\include{resume}
+    \include{abstract}
+    \include{resume}
     \setcounter{tocdepth}{3}
     \tableofcontents
-    \clearpage
+%    \clearpage
     \listoffigures
     \listoftables
-    \clearpage
+%    \clearpage
     \mainmatter
 
     \setcounter{tocdepth}{2}
@@ -132,6 +145,7 @@
     \part{Conclusion et perspectives}
     \include{7_bilan}
     
+    \backmatter
     \appendix
     %\include{annexe1}
     \printglossaries
